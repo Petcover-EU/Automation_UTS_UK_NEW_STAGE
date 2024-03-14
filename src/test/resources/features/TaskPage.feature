@@ -14,6 +14,7 @@ Feature: Verify Task Module Features
     When user clicks on add task button
     Then User redirects to page with "Add Task" message
     And Assigned to dropdown appears with initial current user
+
   @Sanity
   Scenario: Appropriate data should display upon selecting an option from the status drop down on managing task page
     When User Selects any option from status dropdown on manage task page

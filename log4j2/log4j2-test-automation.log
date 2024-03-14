@@ -1,5 +1,153 @@
-[INFO ] 2023-06-19 09:44:24.213 [main] Log - User Opens US-UK-2 Website
-[INFO ] 2023-06-19 09:44:53.488 [main] Log - User Opens US-UK-2 Website
-[INFO ] 2023-06-19 09:44:54.516 [main] Log - User Enters Username And Password
-[INFO ] 2023-06-19 09:45:05.956 [main] Log - User Redirects To DashBord And Verify Through Message DashBoard On Page
-[INFO ] 2023-06-19 09:45:08.984 [main] Log - User verify (en-GB) text on right top corner of dash board page 
+[INFO ] 2024-03-14 10:34:10.049 [main] Log - User Opens US-UK-2 Website
+[INFO ] 2024-03-14 10:34:39.362 [main] Log - User Opens US-UK-2 Website
+[INFO ] 2024-03-14 10:34:40.395 [main] Log - User Enters Username And Password
+[INFO ] 2024-03-14 10:34:49.849 [main] Log - User Redirects To DashBord And Verify Through Message DashBoard On Page
+[INFO ] 2024-03-14 10:34:52.884 [main] Log - User verify (en-GB) text on right top corner of dash board page 
+[INFO ] 2024-03-14 10:40:10.265 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:40:17.300 [main] Log - Script Redirect To Page Of====>Manage Policy
+[INFO ] 2024-03-14 10:40:17.302 [main] Log - Script Now Try's To Fetch Policy Data On Manage Policy Page
+[INFO ] 2024-03-14 10:40:17.595 [main] Log - On Manage Policy Page Available Policy Information is ====>  VDVV-00085-HST-00000002 Q0150712 VDVV-00085 fvffv vdvv Saddlery & Tack Active VDVV-00085-HST-2 Kent Dog Walker Horse 14.03.2024 13.03.2025 No TEST-0345-HIB-00000009 Q0150711 TEST-0345 Test Test Basic Cover Active TEST-0345-HIB-9 Charity Horse Test 14.03.2024 13.03.2025 No VDVV-00084-HIB-00000002 Q0150710 VDVV-00084 fvffv vdvv Basic Cover Active VDVV-00084-HIB-2 Animal Club Horse aa 14.03.2024 13.03.2025 No VDVV-00083-HIB-00000002 Q0150709 VDVV-00083 fvffv vdvv Basic Cover Active VDVV-00083-HIB-2 Blog Horse vv 14.03.2024 13.03.2025 No VDVV-00082-HIB-00000002 Q0150708 VDVV-00082 fvffv vdvv Basic Cover Active VDVV-00082-HIB-2 Blog Horse vv 14.03.2024 13.03.2025 No BROW-0428-HIB-00000019 Q0150707 BROW-0428 Lucy Brown Email Basic Cover Active BROW-0428-HIB-19 Cover My Pet Horse Test 13.03.2024 12.03.2025 No BROW-0428-HIB-00000018 Q0150705 BROW-0428 Lucy Brown Email Basic Cover Active BROW-0428-HIB-18 Test Horse All sections 13.03.2024 12.03.2025 No PATE-0090-CMI-00000002 Q0150706 PATE-0090 Avantika Patel Mid Point (Lifetime) Renewal Policy PATE-0090-CMI-2 Unknown Cat test 20.03.2023 19.03.2025 No BROW-0428-HIB-00000017 Q0150702 BROW-0428 Lucy Brown Email Basic Cover Active BROW-0428-HIB-17 Test Horse new policy covering email 13.03.2024 12.03.2025 No BROW-0428-HIB-00000016 Q0150701 BROW-0428 Lucy Brown Email Basic Cover Active BROW-0428-HIB-16 Test Horse new policy covering email 13.03.2024 12.03.2025 No
+[INFO ] 2024-03-14 10:40:37.456 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:40:44.463 [main] Log - Script Now Try's To Verify Date Format Of  Start Date On Manage Policy Page
+[INFO ] 2024-03-14 10:40:44.621 [main] Log - On Manage Policy Page Start Date Displays In Format Of ====>  Horse Horse Horse Horse Horse Horse Horse Cat Horse Horse
+[INFO ] 2024-03-14 10:40:44.622 [main] Log - Script Now Try's To Verify Date Format Of  Expire Date On Manage Policy Page
+[INFO ] 2024-03-14 10:40:44.748 [main] Log - On Manage Policy Page Expire Date Displays In Format Of ====>   Test aa vv vv Test All sections test new policy covering email new policy covering email
+[INFO ] 2024-03-14 10:41:05.947 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:41:12.955 [main] Log - Script Now Try's To Open Policy Information Page By Clicking Each Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:41:13.032 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:41:17.054 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:41:37.462 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:41:44.469 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:41:44.564 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:41:49.600 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:41:52.622 [main] Log - Script Has Reached To Letter Icon On Policy Information Page
+[INFO ] 2024-03-14 10:41:52.719 [main] Log - Script Has Clicked On Letter Icon On Policy Information Page
+[INFO ] 2024-03-14 10:42:15.861 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:42:28.128 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:42:29.206 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:42:50.273 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:42:57.368 [main] Log - Script Has Entered From Policy Date On Manage Policy Page
+[INFO ] 2024-03-14 10:42:58.453 [main] Log - Script Has Entered To Policy Date Manage On Policy Page
+[INFO ] 2024-03-14 10:42:58.540 [main] Log - Script Has Clicked On Search Button To Fetch Data On Manage Policy Page
+[INFO ] 2024-03-14 10:43:04.611 [main] Log - Available Policies Information Upon Start And To Policy Date Values===> VDVV-00085-HST-00000002 Q0150712 VDVV-00085 fvffv vdvv Saddlery & Tack Active VDVV-00085-HST-2 Kent Dog Walker Horse 14.03.2024 13.03.2025 No
+[INFO ] 2024-03-14 10:43:33.530 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:43:58.401 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:44:25.194 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:44:55.144 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:45:07.407 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:45:08.493 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:45:12.500 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:45:12.586 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:45:17.606 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:45:17.736 [main] Log - Script Has Clicked On Cog Icon To Select Policy Information Page
+[INFO ] 2024-03-14 10:45:21.595 [main] Log - Script Has Clicked On Policy Information Page Icon
+[INFO ] 2024-03-14 10:45:25.618 [main] Log - Script Redirects To Page Add Claim Page===>https://stage.petcovergroup.com:7779/Claim/AddClaimForPolicy/52091A
+[INFO ] 2024-03-14 10:45:43.164 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:45:55.407 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:45:56.507 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:46:00.515 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:46:00.593 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:46:05.613 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:46:15.019 [main] Log - Script Redirects To Add Note Window
+[INFO ] 2024-03-14 10:46:33.851 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:46:46.111 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:46:47.193 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:46:51.199 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:46:51.266 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:46:56.283 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:46:56.426 [main] Log - Script Has Clicked On Cog Icon To Select Add Endorsement Page Icon
+[INFO ] 2024-03-14 10:47:03.111 [main] Log - Script Has Clicked On Add Endorsement Page Icon
+[INFO ] 2024-03-14 10:47:07.136 [main] Log - Script Redirects To Add Endorsement Page Is ===>https://stage.petcovergroup.com:7779/Quote/AddEndorsement/52091A
+[INFO ] 2024-03-14 10:47:23.369 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:47:35.624 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:47:36.719 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:47:40.726 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:47:40.799 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:47:45.815 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:48:10.440 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:48:22.692 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:48:23.770 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:48:27.786 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:48:27.875 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:48:32.908 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:48:59.072 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:49:11.485 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:49:12.534 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:49:16.542 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:49:16.589 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:49:21.604 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:49:21.735 [main] Log - Script Has Clicked On Cog Icon To Select Add Allocate Page Icon
+[INFO ] 2024-03-14 10:49:25.408 [main] Log - Script Has Clicked On Add Allocate Page Icon
+[INFO ] 2024-03-14 10:49:29.428 [main] Log - Script Redirects To Add Allocate Page Is===>https://stage.petcovergroup.com:7779/Account/ReceiptVoucherAllocate/4D8A62
+[INFO ] 2024-03-14 10:49:47.227 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:49:59.435 [main] Log - Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page
+[INFO ] 2024-03-14 10:50:00.509 [main] Log - Script Has Clicked On Search Button On Manage Policy Page
+[INFO ] 2024-03-14 10:50:04.518 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:50:04.567 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:50:09.579 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:50:09.711 [main] Log - Script Has Clicked On Cog Icon To Select Add Account Maintenance Page Icon
+[INFO ] 2024-03-14 10:50:12.780 [main] Log - Script Has Clicked On  Add Account Maintenance Page Icon
+[INFO ] 2024-03-14 10:50:16.816 [main] Log - Script Redirects To Add Account Maintenance Page Is===>https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:50:34.114 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:50:41.127 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:50:41.186 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:50:46.214 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:50:46.269 [main] Log - Script Has Clicked On Transaction Tab On Policy Information Page
+[INFO ] 2024-03-14 10:50:49.312 [main] Log - Data Display On Clicking Transaction Tab is==>New 14.03.2024 13.03.2025 Monthly Saddlery & Tack £ 60.20 £0.00
+[INFO ] 2024-03-14 10:51:06.381 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:51:13.382 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:51:13.432 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:51:18.452 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:51:18.517 [main] Log - Script Has Clicked On Insurer Tab On Policy Information Page
+[INFO ] 2024-03-14 10:51:21.551 [main] Log - Data Display On Clicking Insurer Tab is==>AL01 Alwyn Insurance Company Limited 30 % 70 % £ 27.44
+[INFO ] 2024-03-14 10:51:46.016 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:51:53.024 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:51:53.091 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:51:58.106 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:51:58.168 [main] Log - Script Has Clicked On Claim Tab On Policy Information Page
+[INFO ] 2024-03-14 10:52:01.205 [main] Log - Data Display On Clicking Claims Tab is==>No Record Found
+[INFO ] 2024-03-14 10:52:20.188 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:52:27.191 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:52:27.248 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:52:32.271 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:52:32.338 [main] Log - Script Has Clicked On Reversal Claim Tab On Policy Information Page
+[INFO ] 2024-03-14 10:52:35.372 [main] Log - Data Display On Clicking Reversal Claim Tab is==>No Record Found
+[INFO ] 2024-03-14 10:52:57.068 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:53:04.076 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:53:04.129 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:53:09.156 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:53:09.225 [main] Log - Script Has Clicked On Credit Note Tab On Policy Information Page
+[INFO ] 2024-03-14 10:53:12.259 [main] Log - Data Display On Clicking Credit Note Tab is==>No Record Found
+[INFO ] 2024-03-14 10:53:29.448 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:53:36.461 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:53:36.649 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:53:41.683 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:53:41.781 [main] Log - Script Has Clicked On Policy Invoice Credit Note Tab On Policy Information Page
+[INFO ] 2024-03-14 10:53:44.820 [main] Log - Data Display On Clicking Policy Invoice Note Tab is==>No Record Found
+[INFO ] 2024-03-14 10:54:03.762 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:54:10.774 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:54:10.828 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:54:15.856 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:54:15.916 [main] Log - Script Has Clicked On Notes Tab On Policy Information Page
+[INFO ] 2024-03-14 10:54:18.959 [main] Log - Data Display On Clicking Notes Tab is==>No Record Found
+[INFO ] 2024-03-14 10:54:39.854 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:54:46.859 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:54:46.911 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:54:51.930 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:54:51.992 [main] Log - Script Has Clicked On Installment Tab On Policy Information Page
+[INFO ] 2024-03-14 10:54:55.029 [main] Log - Data Display On Clicking Installment Tab is==>VDVV-00085-HST-00000002-01 View 01.04.2024 £ 5.02 Not Yet Due 01.04.2024 £ 0.00 Pay now
+[INFO ] 2024-03-14 10:55:16.285 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:55:23.293 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:55:23.364 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:55:28.378 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:55:28.446 [main] Log - Script Has Clicked On Exclusion Tab On Policy Information Page
+[INFO ] 2024-03-14 10:55:52.555 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:55:59.564 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:55:59.618 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:56:04.630 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:56:04.695 [main] Log - Script Has Clicked On History Tab On Policy Information Page
+[INFO ] 2024-03-14 10:56:24.554 [main] Log - *******Script Clicks On Policy Icon*******
+[INFO ] 2024-03-14 10:56:31.569 [main] Log - Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:56:31.629 [main] Log - Script Has Clicked On Policy Number Link On Manage Policy Page
+[INFO ] 2024-03-14 10:56:36.652 [main] Log - Script Redirects to Respected Policy Information Page Is===> https://stage.petcovergroup.com:7779/Policy/Detail/52091A
+[INFO ] 2024-03-14 10:56:36.710 [main] Log - Script Has Clicked On Policy Ledger Tab On Policy Information Page

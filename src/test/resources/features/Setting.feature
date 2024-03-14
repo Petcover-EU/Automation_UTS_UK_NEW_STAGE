@@ -161,7 +161,6 @@ Feature: Verify Setting Module Features
 
       #Renewal Type
 
-
   Scenario: To verify whether Manage renewal type page displays with renewal type details by clicking on renewal type icon on setting page
     When User clicks on renewal type icon on setting page
     Then Manage renewal type page displays with all debtor code details
@@ -215,7 +214,7 @@ Feature: Verify Setting Module Features
     And User clicks on edit icon against task status  name on manage task status  page
     Then Edit task status page displays in editable format
 
- ##Pet Breed
+ #Pet Breed
 
   @Sanity
   Scenario: To verify whether Manage Pet Breed page displays with Pet Breed details by clicking on Pet Breed icon on setting page
@@ -234,7 +233,7 @@ Feature: Verify Setting Module Features
     And User clicks on edit icon against pet breed  name on manage pet breed page
     Then Edit pet breed page displays in editable format
 
-    ##Exclusion Page
+    #Exclusion Page
 
   @Sanity
   Scenario: To verify whether Manage Exclusion page displays with exclusion details by clicking on exclusion icon on setting page
@@ -266,22 +265,20 @@ Feature: Verify Setting Module Features
     And User clicks on add regular vet icon on manage regular vet page
     Then Add regular vet page displays with all details
 
-      ##Hear About Us
+      #Hear About Us
 
-#  @Sanity
-#  Scenario: To verify whether Manage hear about us page displays with  details by clicking on hear about us icon on setting page
-#    When User clicks on hear about us icon on setting page
-#    Then Manage hear about us page displays with all task details
-#
-#
-#  Scenario:Add hear about us page displays will all details when user clicks on add hear about us icon on manage hear about us page
-#    When User clicks on hear about us icon on setting page
-#    And User clicks on add hear about us icon on manage hear about us page
-#    Then Add hear about us page displays with all details
-#
-#
-#  Scenario:Edit hear about us page displays upon clicking on edit icon against hear about us name on manage hear about us page
-#    When User clicks on hear about us icon on setting page
-#    And User clicks on edit icon against hear about us name on manage hear about us page
-#    Then Edit hear about us page displays in editable format
+  @Sanity
+  Scenario: To verify whether Manage hear about us page displays with  details by clicking on hear about us icon on setting page
+    When User clicks on hear about us icon on setting page
+    Then Manage hear about us page displays with all task details
+
+  Scenario:Add hear about us page displays will all details when user clicks on add hear about us icon on manage hear about us page
+    When User clicks on hear about us icon on setting page
+    And User clicks on add hear about us icon on manage hear about us page
+    Then Add hear about us page displays with all details
+
+  Scenario:Edit hear about us page displays upon clicking on edit icon against hear about us name on manage hear about us page
+    When User clicks on hear about us icon on setting page
+    And User clicks on edit icon against hear about us name on manage hear about us page
+    Then Edit hear about us page displays in editable format
 

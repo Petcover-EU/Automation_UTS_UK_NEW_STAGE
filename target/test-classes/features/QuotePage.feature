@@ -23,11 +23,6 @@ Feature: Verify Quote Module Features
     Then User will able to see  all data under total and monthly premium colum prefixed by £ sign
 
   @Sanity
-  Scenario:To check whether user will able able to redirect and see data on microchip file upload page after clicking on upload microchip button on manage quote page
-    When User clicks on upload microchip file button
-    Then User will be able to see microchip file upload page with data
-
-  @Sanity
   Scenario:On the Add Quote page, verify that the Product dropdown appears with list of products
     When User clicks on add quote button
     Then On add quote page product dropdown will appear with desired list
@@ -48,39 +43,100 @@ Feature: Verify Quote Module Features
     And User clicks on search button on manage quote page
     Then Appropriate list of quote will display
 
-  @Qa
-  Scenario:Fetch quotation based on quote number on manage quote page
-    When User enters quote number inside searc box on manage quote page
-    And User clicks on search button on manage quote page
-    Then Appropriate quote information displays on manage quote page
+#  @Sanity
+#  Scenario: Fetch list of quote based on option from Is referred dropdown on manage quote page
+#    When User selects appropriate option from Is referred dropdown on manage quote page
+#    And User clicks on search button on manage quote page
+#    Then Appropriate list of quote will display upon drop down option
+#
+#  Scenario: Fetch list of quote based on option from division dropdown on manage quote page
+#    When User selects appropriate option from division dropdown on manage quote page
+#    And User clicks on search button on manage quote page
+#    Then Appropriate list of quote will display upon division drop down option
+#
+#  @Sanity
+#  Scenario: Fetch list of quote based on pet id products checkbox on manage quote page
+#    When User selects pet id products checkbox on manage quote page
+#    And User clicks on search button on manage quote page
+#    Then Appropriate list of quote will display upon pet id products checkbox on manage quote page
 
-  @Stage
-  Scenario:Fetch quotation based on quote number on manage quote page
-    When User enters quote number inside search box on manage quote page
-    And User clicks on search button on manage quote page
-    Then Appropriate quote information displays on manage quote page
 
-  @Sanity
   Scenario:Verify include payment feature of quote module
     When User selects include payment only quotes checkbox
     And User clicks on search button on manage quote page
     Then Appropriate quote list displays on manage quote page
 
-#    @Qa
-#    Scenario: Edit quote details and verifies the same
+
+  @Sanity
+  Scenario:To check whether user will able able to redirect and see data on microchip file upload page after clicking on upload microchip button on manage quote page
+    When User clicks on upload microchip file button
+    Then User will be able to see microchip file upload page with data
+
+
+#  @Sanity
+#  Scenario:Upload details window should open by clicking on file name link on microchip file upload page
+#    When User clicks on upload microchip file button
+#    And User clicks on filename link on upload microchip page
+#    Then Upload details window displays with all details
+#
+#
+#  Scenario:Verify that quote information page displays with same status code on by clicking on quote code on manage quote page
+#    When User clicks on quote number link on manage quote page
+#    Then Quote information page displays with sane status code
+#
+#  @Stage
+#  Scenario:verify functionality of upload file feature  on microchip upload file page
+#    When User clicks on upload microchip file button
+#    And user click on upload file button
+#    Then user will able to upload file
+#
+#  @Sanity
+#  Scenario:Pending Microchip displays with details by clicking on pending microchip button on manage quote page
+#    When User clicks on pending microchip file button
+#    Then Pending Microchip page displays with details
+
+#  @Qa
+#  Scenario:Fetch quotation based on quote number on manage quote page
 #    When User enters quote number inside searc box on manage quote page
 #    And User clicks on search button on manage quote page
-##    And User clicks on quote number from list of quote on manage quote page
+#    Then Appropriate quote information displays on manage quote page
+#
+#  @Stage
+#  Scenario:Fetch quotation based on quote number on manage quote page
+#    When User enters quote number inside search box on manage quote page
+#    And User clicks on search button on manage quote page
+#    Then Appropriate quote information displays on manage quote page
+#
+#  @Qa
+#  Scenario: Edit quote details and verifies the same
+#    When User enters quote number inside searc box on manage quote page
+#    And User clicks on search button on manage quote page
+#    And User clicks on quote number from list of quote on manage quote page
 #    And User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 #
 #  @Stage
 #  Scenario: Edit quote details and verifies the same
-#    When User enters quote number inside search box on manage quote page
-#    And User clicks on search button on manage quote page
-#    And User selects edit quote option from cog icon on quote information page
+#    When User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 
+##    Policy creation for Exotic
+#
+#  Scenario: Verify the Quote and Policy creation for Exotic products with different combinations of plan
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select "Exotic" product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page
+#
+##    Policy creation for Cat
+#
+#  Scenario: Verify the Quote and Policy creation for Cat with different plans
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
+#
+##    Policy creation for Dog
+#
+#  Scenario: Verify the Quote and Policy creation for Dog with different plans
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
 
 
 

@@ -1,12 +1,16 @@
 package pages;
 
+import factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Common;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -14,83 +18,77 @@ import java.util.List;
 
 public class ManageClaimPage {
     private WebDriver driver;
+    Common common = new Common(DriverFactory.getDriver());
 
     public ManageClaimPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    private By manageClaimIcon = By.cssSelector("ul[id='side-menu']>li:nth-child(6)");
-
-    private By manageClaimText = By.xpath("//ul[@id='side-menu']/li[6]/ul/li[1]");
-
-    private By displayedMessage = By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
-
+    @FindBy(css = "ul[id='side-menu']>li:nth-child(6)")
+    private WebElement manageClaimIcon;
+    @FindBy(xpath = "//ul[@id='side-menu']/li[6]/ul/li[1]")
+    private WebElement manageClaimText;
+    @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
+    private WebElement displayedMessage;
 
     //Add claim page
-    private By addClaimIcon = By.xpath("//div[@class=' tooltip-demo pull-right']/a[2]");
-
-    private By treatmentDropdown = By.xpath("//div[@class='well1']/div/div/div/div/span/span/span[@class='k-input']");
-
-    private By riskCountryDropDown = By.xpath("//div[@class='ibox-content']/div[6]/div[2]/div[1]/div/div/div[3]/div/div/div/span");
-
-    private By lostCountryDropDown = By.xpath("//div[@class='ibox-content']/div[6]/div[2]/div[2]/div[3]/div/div[3]/div/div/div/span");
-
-    private By insuredCountryDropDown = By.xpath("//div[@class='ibox-content']/div[6]/div[3]/div/div/div[6]/div/div/div/span");
-
-    private By coverDropDown = By.xpath("//div[@class='ibox-content']/div[6]/div[3]/div/div/div[7]/div/div/div/span");
-
-    private By statusDropDown = By.xpath("//div[@class='ibox-content']/div[6]/div[3]/div[3]/div[3]/div/div[5]/div/div/div/span");
-
-    private By notifiedMethodDDown = By.xpath("//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div//div[5]/div/div/div/span");
-
-    private By paymentToDDown = By.xpath("//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div//div[8]/div/div/div/span");
-
-    private By conditionTypeDDown = By.xpath("//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div/div[14]/div/div/div/span");
-
-    private By treatmentStatusDropDown = By.xpath("//div[@class='controls']/div/button");
-
-    private By selectItemFromStatusDropDown = By.xpath("//div[@class='ms-parent']/div/ul/li[2]/label/input");
-
-    private By clickSearchButton = By.cssSelector("button[id='SearchGrid']");
+    @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/a[2]")
+    private WebElement addClaimIcon;
+    @FindBy(xpath = "//div[@class='well1']/div/div/div/div/span/span/span[@class='k-input']")
+    private WebElement treatmentDropdown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[2]/div[1]/div/div/div[3]/div/div/div/span")
+    private WebElement riskCountryDropDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[2]/div[2]/div[3]/div/div[3]/div/div/div/span")
+    private WebElement lostCountryDropDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[3]/div/div/div[6]/div/div/div/span")
+    private WebElement insuredCountryDropDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[3]/div/div/div[7]/div/div/div/span")
+    private WebElement coverDropDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[3]/div[3]/div[3]/div/div[5]/div/div/div/span")
+    private WebElement statusDropDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div//div[5]/div/div/div/span")
+    private WebElement notifiedMethodDDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div//div[8]/div/div/div/span")
+    private WebElement paymentToDDown;
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div[4]/div/div/div[3]/div/div/div[14]/div/div/div/span")
+    private WebElement conditionTypeDDown;
+    @FindBy(xpath = "//div[@class='controls']/div/button")
+    private WebElement treatmentStatusDropDown;
+    @FindBy(xpath = "//div[@class='ms-parent']/div/ul/li[2]/label/input")
+    private WebElement selectItemFromStatusDropDown;
+    @FindBy(css = "button[id='SearchGrid']")
+    private WebElement clickSearchButton;
 
     //Edit claim
-
-    private By cogIcon = By.xpath("//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/a");
-
-    private By editPageIconInFDropDown = By.xpath("//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[1]/a");
-
-    //View Policy
-
-    private By viewPolicyPageIconOnDropDown = By.xpath("//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[3]/a");
-
-    //Claim status dropdown
-
-    private By statusDropDownOnClaim = By.xpath("//div[@id='search']/div[5]/div/span/span");
-
-    private By optionFromStatusDD = By.xpath("//ul[@id='ClaimStatusId_listbox']/li[2]");
-
-    private By verifyDataOnClaimPage = By.xpath("//div[@id='gridName']/table/tbody/tr");
-
-    private By treatmentStatusDropDownOnClaim=By.xpath("//div[@id='search']/div[6]/div/div/div/button");
-
-    private By optionFromTreatmentStatusDD=By.xpath("//div[@id='search']/div[6]/div/div/div/div/ul/li[2]/label");
-
-    private By claimAdvisedFromDate=By.xpath("//div[@id='search']/div[7]/div/span/span/input");
-
-    private By claimAdvisedToDate=By.xpath("//div[@id='search']/div[8]/div/span/span/input");
-
-    private By searchButton=By.cssSelector("button[id='SearchGrid']");
-
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/a")
+    private WebElement cogIcon;
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[1]/a")
+    private WebElement editPageIconInFDropDown;
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[3]/a")
+    private WebElement viewPolicyPageIconOnDropDown;
+    @FindBy(xpath = "//div[@id='search']/div[5]/div/span/span")
+    private WebElement statusDropDownOnClaim;
+    @FindBy(xpath = "//ul[@id='ClaimStatusId_listbox']/li[2]")
+    private WebElement optionFromStatusDD;
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr")
+    private WebElement verifyDataOnClaimPage;
+    @FindBy(xpath = "//div[@id='search']/div[6]/div/div/div/button")
+    private WebElement treatmentStatusDropDownOnClaim;
+    @FindBy(xpath = "//div[@id='search']/div[6]/div/div/div/div/ul/li[2]/label")
+    private WebElement optionFromTreatmentStatusDD;
+    @FindBy(xpath = "//div[@id='search']/div[7]/div/span/span/input")
+    private WebElement claimAdvisedFromDate;
+    @FindBy(xpath = "//div[@id='search']/div[8]/div/span/span/input")
+    private WebElement claimAdvisedToDate;
+    @FindBy(xpath = "button[id='SearchGrid']")
+    private WebElement searchButton;
 
     public void clickManageClaimIcon() {
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(manageClaimIcon)).perform();
-        driver.findElement(manageClaimText).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        actions.moveToElement(manageClaimIcon).perform();
+        manageClaimText.click();
+        common.pause(3);
     }
 
     public String verifyClaimPageInformation() {
@@ -110,7 +108,7 @@ public class ManageClaimPage {
         List<WebElement> claimDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[14]")));
         String treatmentDate = " ";
         for (WebElement startDate : claimDateColumn) {
-            treatmentDate = treatmentDate + " " + startDate.getText().toString();
+            treatmentDate = treatmentDate + " " + startDate.getText();
         }
         return treatmentDate;
     }
@@ -120,7 +118,7 @@ public class ManageClaimPage {
         List<WebElement> claimDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[15]")));
         String fAdvisedDate = " ";
         for (WebElement startDate : claimDateColumn) {
-            fAdvisedDate = fAdvisedDate + " " + startDate.getText().toString();
+            fAdvisedDate = fAdvisedDate + " " + startDate.getText();
         }
         return fAdvisedDate;
 
@@ -132,7 +130,7 @@ public class ManageClaimPage {
         List<WebElement> monthlyPremiumColumn = mWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[16]")));
         String yPremium = " ";
         for (WebElement amountP : monthlyPremiumColumn) {
-            yPremium = yPremium + " " + amountP.getText().toString();
+            yPremium = yPremium + " " + amountP.getText();
         }
         return yPremium;
 
@@ -148,17 +146,13 @@ public class ManageClaimPage {
         for (WebElement cEle : totalColumn) {
             System.out.println(cEle.getText());
             cEle.click();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(3);
             ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
             driver.switchTo().window(tabs2.get(1));
             //System.out.println(driver.getCurrentUrl());
 
             System.out.println(driver.getCurrentUrl());
-            displayMessage = displayMessage + driver.findElement(displayedMessage).getText();
+            displayMessage = displayMessage + displayedMessage.getText();
 
 
             driver.close();
@@ -168,111 +162,53 @@ public class ManageClaimPage {
     }
 
     public String verifyClaimInfoPageText() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(3);
         //driver.close();
         //driver.switchTo().window(tabs2.get(0));
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
 
     }
 
     public void clickAddClaimIcon() {
-        driver.findElement(addClaimIcon).click();
-        try {
-            Thread.sleep(7000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        addClaimIcon.click();
+        common.pause(7);
     }
 
     public String verifyAddClaimPage() {
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
     }
 
     public void verifyDropDown() {
-        driver.findElement(treatmentDropdown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(riskCountryDropDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(lostCountryDropDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(insuredCountryDropDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
-        driver.findElement(coverDropDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(statusDropDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(notifiedMethodDDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(paymentToDDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(conditionTypeDDown).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        treatmentDropdown.click();
+        common.pause(2);
+        riskCountryDropDown.click();
+        common.pause(2);
+        lostCountryDropDown.click();
+        common.pause(2);
+        insuredCountryDropDown.click();
+        common.pause(2);
+        common.scroll_By_Pixel("0","350");
+        coverDropDown.click();
+        common.pause(2);
+        statusDropDown.click();
+        common.pause(2);
+        notifiedMethodDDown.click();
+        common.pause(2);
+        paymentToDDown.click();
+        common.pause(2);
+        conditionTypeDDown.click();
+        common.pause(2);
     }
 
     //Treatment status should reflect upon option selected from treatment status drop down on manage claim page
 
     public void selectItemFromStatusDropDown() {
-        driver.findElement(treatmentStatusDropDown).click();
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(selectItemFromStatusDropDown).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(clickSearchButton).click();
-        try {
-            Thread.sleep(4000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        treatmentStatusDropDown.click();
+        common.pause(3);
+       selectItemFromStatusDropDown.click();
+        common.pause(3);
+        clickSearchButton.click();
+        common.pause(4);
     }
 
     public String verifyTreatmentStatus() {
@@ -292,107 +228,71 @@ public class ManageClaimPage {
     //Edit client details
 
     public void selectEditClientDetails() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(3);
 
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(cogIcon)).perform();
-        driver.findElement(editPageIconInFDropDown).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        actions.moveToElement(cogIcon).perform();
+        editPageIconInFDropDown.click();
+        common.pause(1);
 
 
     }
 
     public String verifyEditClaimPage() {
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
 
     }
 
     //View Policy Page
 
     public void selectViewPolicyPage() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(3);
 
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(cogIcon)).perform();
-        driver.findElement(viewPolicyPageIconOnDropDown).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        actions.moveToElement(cogIcon).perform();
+        viewPolicyPageIconOnDropDown.click();
+        common.pause(1);
 
 
     }
 
     public String verifyViewPolicyPage() {
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
 
     }
 
     //Filter Claim details on manage claim page upon option from claim status drop down
 
     public void selectOptionFromStatusDropDown() {
-        driver.findElement(statusDropDownOnClaim).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromStatusDD).click();
+        statusDropDownOnClaim.click();
+        common.pause(1);
+        optionFromStatusDD.click();
 
     }
 
-    public void clickOnSearchButton(){
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public void clickOnSearchButton() {
+        searchButton.click();
+        common.pause(3);
     }
 
     public String verifyDetailsOfClaim() {
-        return driver.findElement(verifyDataOnClaimPage).getText();
+        return verifyDataOnClaimPage.getText();
     }
 
-    public void selectOptionOfTreatmentStatusDD(){
-        driver.findElement(treatmentStatusDropDownOnClaim).click();
-        try {
-            Thread.sleep(1500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionFromTreatmentStatusDD).click();
+    public void selectOptionOfTreatmentStatusDD() {
+        treatmentStatusDropDownOnClaim.click();
+        common.pause(2);
+        optionFromTreatmentStatusDD.click();
 
     }
 
     //Filter Claim details on manage claim page upon from and to date value of claim first advised on manage claim page
 
-    public void enterValueOfFromAndToDateOfAdvised(){
-        driver.findElement(claimAdvisedFromDate).sendKeys("23.02.2023");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(claimAdvisedToDate).sendKeys("24.06.2024");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public void enterValueOfFromAndToDateOfAdvised() {
+        claimAdvisedFromDate.sendKeys("23.02.2023");
+        common.pause(1);
+        claimAdvisedToDate.sendKeys("24.06.2024");
+        common.pause(1);
     }
 
 }

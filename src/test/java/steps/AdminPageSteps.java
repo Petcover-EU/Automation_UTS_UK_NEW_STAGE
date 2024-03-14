@@ -12,7 +12,6 @@ public class AdminPageSteps {
     @When("User clicks on administration icon on left tool bar")
     public void user_clicks_on_administration_icon_on_left_tool_bar() {
         adminPage.clickAdminIcon();
-
     }
 
     @When("User clicks on letter template icon on administration page")

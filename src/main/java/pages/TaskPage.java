@@ -1,11 +1,15 @@
 package pages;
 
+import factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Common;
 
 import java.time.Duration;
 import java.util.Iterator;
@@ -14,51 +18,50 @@ import java.util.Set;
 
 public class TaskPage {
     private WebDriver driver;
+    Common common = new Common(DriverFactory.getDriver());
 
     public TaskPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    private By taskIcon = By.cssSelector("ul[id='side-menu']>li:nth-child(7)");
-
-    private By displayedMessage = By.xpath("//div[@id='page-wrapper']/div[3]/div/h2");
-
-    private By addTaskButton = By.xpath("//div[@class=' tooltip-demo pull-right']/a[2]");
-
-    private By assignDropDown = By.xpath("//div[@class='ibox float-e-margins']/div[1]/div/div[6]/div/div/div/span/span/span[2]");
-
-    private By statusDropDown = By.xpath("//div[@id='search']/div[2]/div/span/span");
-
-    private By openOptionFromStatusDropDown = By.xpath("//ul[@id='TaskStatusId_listbox']/li[2]");
-
-    private By searchButton = By.cssSelector("button[id='SearchGrid']");
-
-    private By priorityDropDown = By.xpath("//div[@id='search']/div[3]/div/span/span");
-
-    private By optionUnderPriorityDropdown = By.xpath("//ul[@id='TaskPriorityId_listbox']/li[2]");
-
-    private By typeDropDown = By.xpath("//div[@id='search']/div[4]/div/span/span");
-
-    private By optionUnderTypeDropDown = By.xpath("//ul[@id='TaskTypeId_listbox']/li[2]");
-
-    private By clientDropDown = By.xpath("//div[@id='search']/div[5]/div/span/span");
-
-    private By optionUnderClinetrDropDown = By.xpath("//ul[@id='ClientId_listbox']/li[4]");
-
-    private By editIconOnManageTaskPage=By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[11]/div/a[1]");
+    @FindBy(css = "ul[id='side-menu']>li:nth-child(7)")
+    private WebElement taskIcon;
+    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
+    private WebElement displayedMessage;
+    @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/a[2]")
+    private WebElement addTaskButton;
+    @FindBy(xpath = "//div[@class='ibox float-e-margins']/div[1]/div/div[6]/div/div/div/span/span/span[2]")
+    private WebElement assignDropDown;
+    @FindBy(xpath = "//div[@id='search']/div[2]/div/span/span")
+    private WebElement statusDropDown;
+    @FindBy(xpath = "//ul[@id='TaskStatusId_listbox']/li[2]")
+    private WebElement openOptionFromStatusDropDown;
+    @FindBy(css = "button[id='SearchGrid']")
+    private WebElement searchButton;
+    @FindBy(xpath = "//div[@id='search']/div[3]/div/span/span")
+    private WebElement priorityDropDown;
+    @FindBy(xpath = "//ul[@id='TaskPriorityId_listbox']/li[2]")
+    private WebElement optionUnderPriorityDropdown;
+    @FindBy(xpath = "//div[@id='search']/div[4]/div/span/span")
+    private WebElement typeDropDown;
+    @FindBy(xpath = "//ul[@id='TaskTypeId_listbox']/li[2]")
+    private WebElement optionUnderTypeDropDown;
+    @FindBy(xpath = "//div[@id='search']/div[5]/div/span/span")
+    private WebElement clientDropDown;
+    @FindBy(xpath = "//ul[@id='ClientId_listbox']/li[4]")
+    private WebElement optionUnderClinetrDropDown;
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[11]/div/a[1]")
+    private WebElement editIconOnManageTaskPage;
 
 
     public void clickOnTaskIcon() {
-        driver.findElement(taskIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        taskIcon.click();
+        common.pause(3);
     }
 
     public String verifyTaskPage() {
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
     }
 
     public String fetchData() {
@@ -74,26 +77,18 @@ public class TaskPage {
     //To check whether Assign to dropdown on add task page appears with current user after clicking on add task button on add task page
 
     public void clickAddTaskButton() {
-        driver.findElement(addTaskButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        addTaskButton.click();
+        common.pause(3);
     }
 
     public String verifyAddTaskPage() {
-        return driver.findElement(displayedMessage).getText();
+        return displayedMessage.getText();
 
     }
 
     public String verifyDropDown() {
-        driver.findElement(assignDropDown).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        assignDropDown.click();
+        common.pause(2);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> drop = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//ul[@id='AssignedToId_listbox']/li[1]/table/tbody/tr/td")));
         System.out.println(drop.size());
@@ -109,19 +104,11 @@ public class TaskPage {
     //Appropriate data should display upon selecting an option from the status drop down on managing task page
 
     public void selectOptionFromStatus() {
-        driver.findElement(statusDropDown).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(openOptionFromStatusDropDown).click();
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        statusDropDown.click();
+        common.pause(2);
+        openOptionFromStatusDropDown.click();
+        searchButton.click();
+        common.pause(3);
 
     }
 
@@ -137,21 +124,14 @@ public class TaskPage {
 
 
     }
- //Appropriate data should display upon selecting an option from the priority drop down on managing task page
+
+    //Appropriate data should display upon selecting an option from the priority drop down on managing task page
     public void selectOptionFromPriorityDropDown() {
-        driver.findElement(priorityDropDown).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionUnderPriorityDropdown).click();
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        priorityDropDown.click();
+        common.pause(2);
+        optionUnderPriorityDropdown.click();
+        searchButton.click();
+        common.pause(3);
 
     }
 
@@ -169,24 +149,16 @@ public class TaskPage {
     //Appropriate data should display upon selecting an option from the type drop down on managing task page
 
     public void selectOptionFromTypeDropDown() {
-        driver.findElement(typeDropDown).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        typeDropDown.click();
+        common.pause(2);
         /*((JavascriptExecutor) driver).executeScript("document.getElementById('TaskTypeId_listbox').aria-hidden='true';");
         WebElement element = driver.findElement(By.xpath("//ul[@id='TaskPriorityId_listbox']/li[2]"));
         WebDriverWait wait1 = new WebDriverWait(driver, 10);
         wait1.until(ExpectedConditions.visibilityOf(element)).click();*/
 
-        driver.findElement(optionUnderTypeDropDown).click();
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        optionUnderTypeDropDown.click();
+        searchButton.click();
+        common.pause(3);
 
     }
 
@@ -205,35 +177,19 @@ public class TaskPage {
     // Appropriate data should display upon selecting an option from the client drop down on managing task page
 
     public void selectOptionFromClientDropDown() {
-        driver.findElement(clientDropDown).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(optionUnderClinetrDropDown).click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        clientDropDown.click();
+        common.pause(2);
+        optionUnderClinetrDropDown.click();
+        common.pause(1);
 
         // driver.findElement(optionUnderTypeDropDown).click();
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        searchButton.click();
+        common.pause(3);
 
     }
 
     public String verifyClientDataOfTask() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> clientValue = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
         String type = "";
@@ -253,11 +209,7 @@ public class TaskPage {
 
         for (WebElement element : clientValue) {
             element.click();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(3);
             String MainWindow = driver.getWindowHandle();
             System.out.println("Main window handle is " + MainWindow);
 
@@ -292,24 +244,20 @@ public class TaskPage {
 
     //To check add task page displays with all details  by clicking on add task button on manage task page
 
-    public String verifyAddTaskPageOpen(){
-        return  driver.findElement(displayedMessage).getText();
+    public String verifyAddTaskPageOpen() {
+        return displayedMessage.getText();
 
     }
 
     //Edit task page should open in editable format by clicking on edit icon on manage edit page
 
-    public void clickOnEditIcon(){
-        driver.findElement(editIconOnManageTaskPage).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+    public void clickOnEditIcon() {
+        editIconOnManageTaskPage.click();
+        common.pause(3);
     }
 
-    public String verifyEditTaskPage(){
-        return driver.findElement(displayedMessage).getText();
+    public String verifyEditTaskPage() {
+        return displayedMessage.getText();
     }
 
 }

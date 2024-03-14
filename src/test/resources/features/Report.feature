@@ -6,7 +6,7 @@ Feature: Verify Report Module Features
 
   @Sanity
   Scenario: Click on Report icon on the left tool bar.  Verify that the Report Page displays with six sections.
-    Then User will able to see total six section of report category
+    Then User will able to see total eight section of report category
 
   @Sanity
   Scenario: User will able to redirect on respected report page by clicking on report icon on report page
@@ -76,7 +76,6 @@ Feature: Verify Report Module Features
     Then Appropriate data displays on policy payment history page upon selected option from drop down
 
   #Policy Cancellation Report
-
 
   Scenario: Filter policy cancellation report information upon option of insurer drop down
     When User clicks on policy cancellation report button on report page

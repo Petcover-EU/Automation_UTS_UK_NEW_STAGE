@@ -1,11 +1,15 @@
 package pages;
 
+import factory.DriverFactory;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Common;
 
 import java.time.Duration;
 import java.util.Iterator;
@@ -14,80 +18,61 @@ import java.util.Set;
 
 public class AccountPage {
     private WebDriver driver;
+    Common common = new Common(DriverFactory.getDriver());
 
     public AccountPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    private By accountIcon = By.cssSelector("ul[id='side-menu']>li:nth-child(8)");
-
-    //Bank Account Page
-
-    private By bankAccountIcon=By.xpath("//div[@class='ibox-content']/div/div[1]/a");
-
-    private By displayedMessageAtViewBankAccountPage=By.xpath("//div[@class='ibox-content padding-right7']/div/div/div/div/div");
-
-    private By addBankAccountIcon=By.xpath("//div[@class='form-group pull-right']/div/a[2]");
-
-    private By displayedMessageAtAddBankAccountPage=By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
-
-
-    //Manage Receipt Page
-
-    private By manageReceiptIcon=By.xpath("//div[@class='ibox-content']/div/div[2]/a");
-
-    private By addReceiptIcon=By.xpath("//div[@class='form-group pull-right']/div/a[2]");
-
-    private By displayedMessageAtAddAllocatePaymentPage=By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
-
-
-
-    private By accountNumberInput = By.cssSelector("input[id='AccountNumber']");
-
-    private By searchButton = By.cssSelector("button[id='SearchGrid']");
-
-    private By clientNameInput = By.cssSelector("input[id='Name']");
-
-
-    //Manage breach register Page
-
-    private By manageBreachRegisterIcon=By.xpath("//div[@class='ibox-content']/div/div[10]/a");
-
-    private By addBreachRegisterIcon=By.xpath("//div[@class='form-group pull-right']/div/a[2]");
-
-    private By displayedMessageAtAddBreachRegisterPage=By.xpath("//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2");
-
-    //Process Credit Card Payment  Page
-
-    private By policyReviewIcon=By.xpath("//div[@class='ibox-content']/div/div[7]/a");
-
-    private By policyEndDate=By.xpath("//div[@id='search']/div[1]/div/span/span/input");
-
-    private By policyToDate=By.xpath("//div[@id='search']/div[2]/div/span/span/input");
-
-    private By searchButtonOnPolicyReview = By.cssSelector("button[id='SearchGrid']");
-
-
-    //Process Credit Card Payment  Page
-
-    private By processCreditCardPaymentIcon=By.xpath("//div[@class='ibox-content']/div/div[14]/a");
-
-    private By paymentDueDate=By.xpath("//div[@id='search']/div/div[1]/div/span/span/input");
-
-    private By receiptDate=By.xpath("//div[@id='search']/div/div[2]/div/span/span/input");
-
-    private By searchButtonOnProcessCreditCardPayment = By.cssSelector("button[id='SearchGrid']");
-
-
-
+    @FindBy(css = "ul[id='side-menu']>li:nth-child(8)")
+    private WebElement accountIcon;
+    @FindBy(xpath = "//div[@class='ibox-content']/div/div[1]/a")
+    private WebElement bankAccountIcon;
+    @FindBy(xpath = "//div[@class='ibox-content padding-right7']/div/div/div/div/div")
+    private WebElement displayedMessageAtViewBankAccountPage;
+    @FindBy(xpath = "//div[@class='form-group pull-right']/div/a[2]")
+    private WebElement addBankAccountIcon;
+    @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
+    private WebElement displayedMessageAtAddBankAccountPage;
+    @FindBy(xpath = "//div[@class='ibox-content']/div/div[2]/a")
+    private WebElement manageReceiptIcon;
+    @FindBy(xpath = "//div[@class='form-group pull-right']/div/a[2]")
+    private WebElement addReceiptIcon;
+    @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
+    private WebElement displayedMessageAtAddAllocatePaymentPage;
+    @FindBy(css = "input[id='AccountNumber']")
+    private WebElement accountNumberInput;
+    @FindBy(css = "button[id='SearchGrid']")
+    private WebElement searchButton;
+    @FindBy(css = "input[id='Name']")
+    private WebElement clientNameInput;
+    @FindBy(xpath = "//div[@class='ibox-content']/div/div[10]/a")
+    private WebElement manageBreachRegisterIcon;
+    @FindBy(xpath = "//div[@class='form-group pull-right']/div/a[2]")
+    private WebElement addBreachRegisterIcon;
+    @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
+    private WebElement displayedMessageAtAddBreachRegisterPage;
+    @FindBy(xpath = "//div[@class='ibox-content']/div/div[7]/a")
+    private WebElement policyReviewIcon;
+    @FindBy(xpath = "//div[@id='search']/div[1]/div/span/span/input")
+    private WebElement policyEndDate;
+    @FindBy(xpath = "//div[@id='search']/div[2]/div/span/span/input")
+    private WebElement policyToDate;
+    @FindBy(css = "button[id='SearchGrid']")
+    private WebElement searchButtonOnPolicyReview;
+    @FindBy(xpath = "//div[@class='ibox-content']/div/div[14]/a")
+    private WebElement processCreditCardPaymentIcon;
+    @FindBy(xpath = "//div[@id='search']/div/div[1]/div/span/span/input")
+    private WebElement paymentDueDate;
+    @FindBy(xpath = "//div[@id='search']/div/div[2]/div/span/span/input")
+    private WebElement receiptDate;
+    @FindBy(css = "button[id='SearchGrid']")
+    private WebElement searchButtonOnProcessCreditCardPayment;
 
     public void clickOnAccountIcon() {
-        driver.findElement(accountIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        accountIcon.click();
+        common.pause(1);
     }
 
     public void traversingThroughPages() {
@@ -95,481 +80,236 @@ public class AccountPage {
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(1);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
-
+        common.pause(1);
+        accountIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
+        common.pause(1);
+        accountIcon.click();
 
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(1);
         //From here make comment
-        driver.findElement(accountIcon).click();
+        accountIcon.click();
 
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[16]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[16]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[16]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(accountIcon).click();
+        common.pause(1);
+        accountIcon.click();
 
 
         if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[17]/a")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[17]/a")).click();
         } else {
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(2);
             driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[17]/a")).click();
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(2);
         System.out.println(driver.getCurrentUrl());
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        common.pause(1);
 
         //Report Pages
 
-
-//        driver.findElement(accountIcon).click();
-//
+//        accountIcon.click();
 //
 //        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[18]/a")).isEnabled()) {
 //            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[18]/a")).click();
 //        } else {
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
+//           common.pause(2);
 //            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[18]/a")).click();
 //        }
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+//        common.pause(2);
 //        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+//        common.pause(1);
 
-
-        /*driver.findElement(accountIcon).click();
-        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[19]/a")).click();
-        System.out.println(driver.getCurrentUrl());
-        driver.findElement(accountIcon).click();
-        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[20]/a")).click();
-        System.out.println(driver.getCurrentUrl());
-        driver.findElement(accountIcon).click();
-        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[21]/a")).click();
-        System.out.println(driver.getCurrentUrl());
-        driver.findElement(accountIcon).click();
-        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[22]/a")).click();
-        System.out.println(driver.getCurrentUrl());
-        driver.findElement(accountIcon).click();*/
-
+//        accountIcon.click();
+//        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[19]/a")).click();
+//        System.out.println(driver.getCurrentUrl());
+//        accountIcon.click();
+//        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[20]/a")).click();
+//        System.out.println(driver.getCurrentUrl());
+//        accountIcon.click();
+//        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[21]/a")).click();
+//        System.out.println(driver.getCurrentUrl());
+//        accountIcon.click();
+//        driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[22]/a")).click();
+//        System.out.println(driver.getCurrentUrl());
+//        accountIcon.click();
 
     }
+
     public void clickOnBankIcon() {
-        driver.findElement(bankAccountIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        bankAccountIcon.click();
+        common.pause(3);
     }
-
-
 
     public void enterAccountNumber() {
-        driver.findElement(accountNumberInput).sendKeys("55771199");
+        accountNumberInput.sendKeys("55771199");
 
     }
 
     public void clickOnSearchButton() {
-        driver.findElement(searchButton).click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        searchButton.click();
+        common.pause(2);
     }
 
     public String verifyAccountNumber() {
@@ -584,8 +324,7 @@ public class AccountPage {
     }
 
     public void enterClientName() {
-        driver.findElement(clientNameInput).sendKeys("Petplan Claims CUL");
-
+        clientNameInput.sendKeys("Petplan Claims CUL");
     }
 
     public String verifyClientName() {
@@ -606,134 +345,83 @@ public class AccountPage {
         List<WebElement> bankCode = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridBankList']/table/tbody/tr/td[2]")));
         for (WebElement cLE : bankCode) {
             cLE.click();
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            common.pause(3);
             break;
         }
     }
 
     public String verifyBankDetails() {
-      return driver.findElement(displayedMessageAtViewBankAccountPage).getText();
-
+        return displayedMessageAtViewBankAccountPage.getText();
     }
 
     //Add Bank page  displays will all details when user clicks on add bank icon on manage bank page
 
     public void clickOnAddBankIcon() {
-        driver.findElement(addBankAccountIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        addBankAccountIcon.click();
+        common.pause(3);
     }
 
     public String verifyAddBankPage() {
-        return driver.findElement(displayedMessageAtAddBankAccountPage).getText();
+        return displayedMessageAtAddBankAccountPage.getText();
 
     }
 
     //Add receipt page  displays will all details when user clicks on add receipt icon on manage receipt page
 
     public void clickOnManageReceiptIcon() {
-        driver.findElement(manageReceiptIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        manageReceiptIcon.click();
+        common.pause(3);
     }
 
-
     public void clickOnAddReceiptIcon() {
-        driver.findElement(addReceiptIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        addReceiptIcon.click();
+        common.pause(3);
     }
 
     public String verifyAddAllocatePaymentPage() {
-        return driver.findElement(displayedMessageAtAddAllocatePaymentPage).getText();
+        return displayedMessageAtAddAllocatePaymentPage.getText();
 
     }
-
 
     //Add breach register page  displays will all details when user clicks on add breach register icon on manage breach register page
 
     public void clickOnManageBreachRegisterIcon() {
-        driver.findElement(manageBreachRegisterIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        manageBreachRegisterIcon.click();
+        common.pause(3);
 
     }
 
 
     public void clickOnAddBreachRegisterIcon() {
-        driver.findElement(addBreachRegisterIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        addBreachRegisterIcon.click();
+        common.pause(3);
     }
 
     public String verifyAddBreachRegisterPage() {
-        return driver.findElement(displayedMessageAtAddBreachRegisterPage).getText();
-
+        return displayedMessageAtAddBreachRegisterPage.getText();
     }
 
     //Filter Policy review information upon policy end date and to date
 
     public void clickOnPolicyReviewIcon() {
-        driver.findElement(policyReviewIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        policyReviewIcon.click();
+        common.pause(2);
     }
 
     public void enterPolicyFromAndToDate() {
 
-        driver.findElement(policyEndDate).clear();
-
-        driver.findElement(policyEndDate).sendKeys("12.04.2022");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(policyToDate).clear();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(policyToDate).sendKeys("12.08.2024");
-
+        policyEndDate.clear();
+        policyEndDate.sendKeys("12.04.2022");
+        common.pause(1);
+        policyToDate.clear();
+        common.pause(1);
+        policyToDate.sendKeys("12.08.2024");
 
     }
 
     public void clickSearchIconOnPolicyReview() {
-        driver.findElement(searchButtonOnPolicyReview).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        searchButtonOnPolicyReview.click();
+        common.pause(3);
     }
 
     public String verifyPolicyReviewData() {
@@ -750,43 +438,23 @@ public class AccountPage {
     //Filter Process Credit Card Payment information upon payment due date and receipt date
 
     public void clickOnProcessCreditCardPaymentIcon() {
-        driver.findElement(processCreditCardPaymentIcon).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
+        processCreditCardPaymentIcon.click();
+        common.pause(3);
     }
 
     public void enterFromAndToDate() {
 
-        driver.findElement(paymentDueDate).clear();
-
-        driver.findElement(paymentDueDate).sendKeys("12.02.2022");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(receiptDate).clear();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        driver.findElement(receiptDate).sendKeys("12.08.2024");
-
-
+        paymentDueDate.clear();
+        paymentDueDate.sendKeys("12.02.2022");
+        common.pause(1);
+        receiptDate.clear();
+        common.pause(1);
+        receiptDate.sendKeys("12.08.2024");
     }
 
     public void clickSearchIconOnPolicyHistory() {
-        driver.findElement(searchButtonOnProcessCreditCardPayment).click();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        searchButtonOnProcessCreditCardPayment.click();
+        common.pause(3);
     }
 
     public String verifyPolicyCreditCardPaymentData() {
@@ -795,10 +463,7 @@ public class AccountPage {
         String details = " ";
         for (WebElement cLE : PolicyCreditCardPaymentDetails) {
             details = details + cLE.getText();
-
         }
         return details;
     }
-
-
 }

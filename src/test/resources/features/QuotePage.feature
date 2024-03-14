@@ -13,7 +13,7 @@ Feature: Verify Quote Module Features
   Scenario:To verify dates under Quote date and Expire date columns displays in dd-mm-yyyy format
     Then User will able to see all data under quote date and expire date column displays with dd-mm-yyyy format
 
-
+  @Sanity
   Scenario: One can redirect to add quote page by clicking add quote button on top right corner of manage quote
     When User clicks add quote button on manage quote page
     Then User will able to see add quote page with data
@@ -21,7 +21,6 @@ Feature: Verify Quote Module Features
   @Sanity
   Scenario:Data under total and monthly premium column should prefixed by £ sign
     Then User will able to see  all data under total and monthly premium colum prefixed by £ sign
-
 
   @Sanity
   Scenario:On the Add Quote page, verify that the Product dropdown appears with list of products
@@ -49,7 +48,6 @@ Feature: Verify Quote Module Features
 #    When User selects appropriate option from Is referred dropdown on manage quote page
 #    And User clicks on search button on manage quote page
 #    Then Appropriate list of quote will display upon drop down option
-#
 #
 #  Scenario: Fetch list of quote based on option from division dropdown on manage quote page
 #    When User selects appropriate option from division dropdown on manage quote page
@@ -85,7 +83,7 @@ Feature: Verify Quote Module Features
 #  Scenario:Verify that quote information page displays with same status code on by clicking on quote code on manage quote page
 #    When User clicks on quote number link on manage quote page
 #    Then Quote information page displays with sane status code
-
+#
 #  @Stage
 #  Scenario:verify functionality of upload file feature  on microchip upload file page
 #    When User clicks on upload microchip file button
@@ -108,12 +106,12 @@ Feature: Verify Quote Module Features
 #    When User enters quote number inside search box on manage quote page
 #    And User clicks on search button on manage quote page
 #    Then Appropriate quote information displays on manage quote page
-
-#    @Qa
-#    Scenario: Edit quote details and verifies the same
+#
+#  @Qa
+#  Scenario: Edit quote details and verifies the same
 #    When User enters quote number inside searc box on manage quote page
 #    And User clicks on search button on manage quote page
-##    And User clicks on quote number from list of quote on manage quote page
+#    And User clicks on quote number from list of quote on manage quote page
 #    And User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 #
@@ -122,6 +120,23 @@ Feature: Verify Quote Module Features
 #    When User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 
+##    Policy creation for Exotic
+#
+#  Scenario: Verify the Quote and Policy creation for Exotic products with different combinations of plan
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select "Exotic" product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page
+#
+##    Policy creation for Cat
+#
+#  Scenario: Verify the Quote and Policy creation for Cat with different plans
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
+#
+##    Policy creation for Dog
+#
+#  Scenario: Verify the Quote and Policy creation for Dog with different plans
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
 
 
 

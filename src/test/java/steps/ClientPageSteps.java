@@ -13,7 +13,7 @@ public class ClientPageSteps {
 
     ClientPage clientPage = new ClientPage(DriverFactory.getDriver());
 
-    String clientNumber=" ";
+    String clientNumber = " ";
 
     @Given("User should log in with username {string} and password {string} to the admin panel")
     public void user_should_log_in_with_username_and_password_to_the_admin_panel(String string, String string2) {
@@ -92,8 +92,8 @@ public class ClientPageSteps {
     @When("User clicks on client code on manage client page to add quote")
     public void user_clicks_on_client_code_on_manage_client_page_to_add_quote() {
 
-       clientNumber= clientPage.clickClientCodeToGetClientNumber();
-       //System.out.println(clientPage);
+        clientNumber = clientPage.clickClientCodeToGetClientNumber();
+        //System.out.println(clientPage);
     }
 
     @When("User clicks on add button on view client page")
@@ -109,9 +109,163 @@ public class ClientPageSteps {
     @Then("Add quote page displays with same client code")
     public void add_quote_page_displays_with_same_client_code() {
         String clientId = clientPage.verifyExistingClientOnAddQuote();
-        Assert.assertEquals(clientId,clientNumber);
+        Assert.assertEquals(clientId, clientNumber);
+    }
+//view client page should displays with all details for each client code link on manage client page
+
+    @When("User clicks on client code link  on manage client page")
+    public void user_clicks_on_client_code_link_on_manage_client_page() {
+        String Message = clientPage.clickOnClientCodeOnManageClient();
+
+        if (Message.length() > 0) {
+            System.out.println(Message);
+        } else {
+            Assert.fail();
+        }
     }
 
+    //Policies details of client displays by clicking on policy tab on view client page
+
+    @When("User clicks on policy tab on view client page")
+    public void user_clicks_on_policy_tab_on_view_client_page() {
+        clientPage.clickOnPolicyIcon();
+
+    }
+
+    @Then("Policies details should display on view client page")
+    public void policies_details_should_display_on_view_client_page() {
+        String pDetails = clientPage.verifyPolicyDetails();
+        if (pDetails.length() > 0) {
+            System.out.println(pDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Claims details of client displays by clicking on policy tab on view client page
+
+    @When("User clicks on claim tab on view client page")
+    public void user_clicks_on_claim_tab_on_view_client_page() {
+        clientPage.clickOnClaimIcon();
+    }
+
+    @Then("Claim details should display on view client page")
+    public void claim_details_should_display_on_view_client_page() {
+        String cDetails = clientPage.verifyClaimDetails();
+        if (cDetails.length() > 0) {
+            System.out.println(cDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Contacts details of client displays by clicking on contact tab on view client page
+
+    @When("User clicks on contact tab on view client page")
+    public void user_clicks_on_contact_tab_on_view_client_page() {
+        clientPage.clickOnContactIcon();
+    }
+
+    @Then("Contact details should display on view client page")
+    public void contact_details_should_display_on_view_client_page() {
+        String cDetails = clientPage.verifyContactDetails();
+        if (cDetails.length() > 0) {
+            System.out.println(cDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Notes details of client displays by clicking on notes tab on view client page
+
+    @When("User clicks on notes tab on view client page")
+    public void user_clicks_on_notes_tab_on_view_client_page() {
+        clientPage.clickOnNotesIcon();
+    }
+
+    @Then("Notes details should display on view client page")
+    public void notes_details_should_display_on_view_client_page() {
+        String nDetails = clientPage.verifyNotesDetails();
+        if (nDetails.length() > 0) {
+            System.out.println(nDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Task details of client displays by clicking on task tab on view client page
+
+    @When("User clicks on task tab on view client page")
+    public void user_clicks_on_task_tab_on_view_client_page() {
+        clientPage.clickOnTaskIcon();
+    }
+
+    @Then("Task details should display on view client page")
+    public void task_details_should_display_on_view_client_page() {
+        String tDetails = clientPage.verifyTaskDetails();
+        if (tDetails.length() > 0) {
+            System.out.println(tDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//History details of client displays by clicking on history tab on view client page
+
+    @When("User clicks on history tab on view client page")
+    public void user_clicks_on_history_tab_on_view_client_page() {
+        clientPage.clickOnHistoryIcon();
+    }
+
+    @Then("History details should display on view client page")
+    public void history_details_should_display_on_view_client_page() {
+        String hDetails = clientPage.verifyHistoryDetails();
+        if (hDetails.length() > 0) {
+            System.out.println(hDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Quotes details of client displays by clicking on quote tab on view client page
+
+    @When("User clicks on quote tab on view client page")
+    public void user_clicks_on_quote_tab_on_view_client_page() {
+        clientPage.clickOnQuoteIcon();
+    }
+
+    @Then("Quote details should display on view client page")
+    public void quote_details_should_display_on_view_client_page() {
+        String qDetails = clientPage.verifyQuoteDetails();
+        if (qDetails.length() > 0) {
+            System.out.println(qDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+//Policies Statement details of client displays by clicking on policies statement tab on view client page
+
+    @When("User clicks on policies statement tab on view client page")
+    public void user_clicks_on_policies_statement_tab_on_view_client_page() {
+        clientPage.clickOnPoliciesStatementIcon();
+    }
+
+    @Then("Policies Statement details should display on view client page")
+    public void policies_statement_details_should_display_on_view_client_page() {
+        String psDetails = clientPage.verifyPoliciesStatementDetails();
+        if (psDetails.length() > 0) {
+            System.out.println(psDetails);
+        } else {
+            Assert.fail();
+        }
+    }
+
+
+    @Then("View client page displays with all details")
+    public void view_client_page_displays_with_all_details() {
+
+    }
     //To add new Client test case step definition
 
     @When("User clicks on add client icon on manage client page")

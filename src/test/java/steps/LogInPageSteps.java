@@ -6,12 +6,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.LogInPage;
+import utils.Common;
 import utils.Log;
 import utils.ScreenRecorderUtil;
 
 
 public class LogInPageSteps {
     //MainPage main = new MainPage();
+    Common common = new Common(DriverFactory.getDriver());
 
     LogInPage main = new LogInPage(DriverFactory.getDriver());
 
@@ -54,11 +56,7 @@ public class LogInPageSteps {
         String verifyRoleText = main.verifyRoleText();
         System.out.println("Text Displayed At Top Right Corner" + verifyRoleText);
         Assert.assertEquals(verifyRoleText, "(en-GB)");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        common.pause(1);
         try {
             ScreenRecorderUtil.stopRecord();
         } catch (Exception e) {

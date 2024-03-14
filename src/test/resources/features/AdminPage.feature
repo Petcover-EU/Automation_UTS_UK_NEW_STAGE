@@ -39,13 +39,6 @@ Feature: Verify Admin Module Features
     And User clicks on agent configuration icon
     Then Agent configuration displays with all details
 
-#do not use this one for production
-#  Scenario: Filter data on manage department page upon entering respective department value in search box
-#    When User clicks on department icon on administrator page
-#    When User enters department value in to search input on manage department page
-#    And User clicks on search button on manage department page
-#    Then Respected data upon department value will display on manage department page
-
   #DepartMent
 
   @Sanity
@@ -106,9 +99,7 @@ Feature: Verify Admin Module Features
     And User clicks on edit icon against insurer name on manage bank account page
     Then Edit Bank account page displays with all fields in editable format
 
-
 #Insurer
-
 
   Scenario: Manage insurer page will displays with all details by clicking on insurer icon on Administrator page
     When User clicks on insurer icon on administration page
@@ -140,7 +131,6 @@ Feature: Verify Admin Module Features
 
    # Agent
 
-
   Scenario: View Agent page displays with all details by clicking on agent reference number on Manage agent page
     When User clicks on agent icon
     And User clicks on agent reference number under list of agent details
@@ -167,7 +157,6 @@ Feature: Verify Admin Module Features
 
     #Company
 
-
   Scenario: Manage Company page displays with list of companies by clicking on company icon on administration page
     When User clicks on company icon
     Then Manage company page displays with list of available companies
@@ -178,13 +167,17 @@ Feature: Verify Admin Module Features
     And User selects options from state and country drop down
     Then Appropriate list of company displays on manage company page
 
-
   Scenario:Add company page displays with all details by clicking on add company button on manage company page
     When User clicks on company icon
     And User clicks on add company button on manage company page
     Then Add company page displays with all details
 
-
+#do not use this one for production
+#  Scenario: Filter data on manage department page upon entering respective department value in search box
+#    When User clicks on department icon on administrator page
+#    When User enters department value in to search input on manage department page
+#    And User clicks on search button on manage department page
+#    Then Respected data upon department value will display on manage department page
 
 
 

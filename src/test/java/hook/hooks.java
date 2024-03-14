@@ -21,7 +21,7 @@ public class hooks {
     private WebDriver driver;
     private ConfigReader configReader;
     Properties prop;
-    public   Constant constant;
+    public Constant constant;
 
 
     @Before(order = 0)
@@ -34,8 +34,9 @@ public class hooks {
     @Before(order = 2)
     public void launchBrowser() {
         String browserName = prop.getProperty("browser");
+        String browserMode = prop.getProperty("headless");
         driverFactory = new DriverFactory();
-        driver = driverFactory.init_browser(browserName);
+        driver = driverFactory.init_browser(browserName,browserMode);
         /*String urlName = prop.getProperty("url");
         if (urlName.equals("http://52.32.106.250:7779/"))
             DriverFactory.getDriver().get(urlName);
@@ -44,8 +45,8 @@ public class hooks {
         } else {
             System.out.println("Please pass the correct url value: " + urlName);
         }*/
-       // String constant.url
-        DriverFactory.getDriver().get(constant.url);
+        // String constant.url
+        DriverFactory.getDriver().get(Constant.url);
 
     }
 
@@ -65,10 +66,11 @@ public class hooks {
 
 
     }
+
     @After(order = 2)
     public void displayUrl(Scenario scenario) {
-        String name=scenario.getName();
-        scenario.log(constant.url);
+        String name = scenario.getName();
+        scenario.log(Constant.url);
 
     }
 
