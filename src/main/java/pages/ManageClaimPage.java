@@ -1,18 +1,13 @@
 package pages;
 
 import factory.DriverFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Common;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,11 +56,11 @@ public class ManageClaimPage {
     private WebElement clickSearchButton;
 
     //Edit claim
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[22]/ul/li/a")
     private WebElement cogIcon;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[1]/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[22]/ul/li/ul/li[1]/a")
     private WebElement editPageIconInFDropDown;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[21]/ul/li/ul/li[3]/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]/td[22]/ul/li/ul/li[3]/a")
     private WebElement viewPolicyPageIconOnDropDown;
     @FindBy(xpath = "//div[@id='search']/div[5]/div/span/span")
     private WebElement statusDropDownOnClaim;
@@ -75,14 +70,16 @@ public class ManageClaimPage {
     private WebElement verifyDataOnClaimPage;
     @FindBy(xpath = "//div[@id='search']/div[6]/div/div/div/button")
     private WebElement treatmentStatusDropDownOnClaim;
-    @FindBy(xpath = "//div[@id='search']/div[6]/div/div/div/div/ul/li[2]/label")
+    @FindBy(xpath = "//div[@id='search']/div[6]/div/div/div/div/ul/li[10]/label/input")
     private WebElement optionFromTreatmentStatusDD;
     @FindBy(xpath = "//div[@id='search']/div[7]/div/span/span/input")
     private WebElement claimAdvisedFromDate;
     @FindBy(xpath = "//div[@id='search']/div[8]/div/span/span/input")
     private WebElement claimAdvisedToDate;
-    @FindBy(xpath = "button[id='SearchGrid']")
+    @FindBy(css = "button[id='SearchGrid']")
     private WebElement searchButton;
+    @FindBy(css = "div[class='spiner-example']")
+    private WebElement loadSpinner;
 
     public void clickManageClaimIcon() {
         Actions actions = new Actions(driver);
@@ -92,86 +89,73 @@ public class ManageClaimPage {
     }
 
     public String verifyClaimPageInformation() {
-
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr")));
-        String itemsDisplayed = " ";
-        for (WebElement cEle : totalColumn) {
-            itemsDisplayed = itemsDisplayed + " " + cEle.getText();
-
+        if (common.isElementDisplayed("//div[@id='gridName']/table/tbody[1]/tr")) {
+            List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr");
+            StringBuilder itemsDisplayed = new StringBuilder();
+            for (WebElement cEle : totalColumn) {
+                itemsDisplayed.append(cEle.getText()).append("\n");
+            }
+            return itemsDisplayed.toString();
         }
-        return itemsDisplayed;
+        return null;
     }
 
     public String verifyTreatmentDate() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> claimDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[14]")));
-        String treatmentDate = " ";
+        List<WebElement> claimDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[14]");
+        StringBuilder treatmentDate = new StringBuilder();
         for (WebElement startDate : claimDateColumn) {
-            treatmentDate = treatmentDate + " " + startDate.getText();
+            treatmentDate.append(startDate.getText()).append("\n");
         }
-        return treatmentDate;
+        return treatmentDate.toString();
     }
 
     public String verifyFirstAdvisedDate() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> claimDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[15]")));
-        String fAdvisedDate = " ";
+        List<WebElement> claimDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[15]");
+        StringBuilder fAdvisedDate = new StringBuilder();
         for (WebElement startDate : claimDateColumn) {
-            fAdvisedDate = fAdvisedDate + " " + startDate.getText();
+            fAdvisedDate.append(startDate.getText()).append("\n");
         }
-        return fAdvisedDate;
-
+        return fAdvisedDate.toString();
     }
 
 
     public String verifyAmountPayableColumn() {
-        WebDriverWait mWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> monthlyPremiumColumn = mWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[16]")));
-        String yPremium = " ";
+        List<WebElement> monthlyPremiumColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[16]");
+        StringBuilder yPremium = new StringBuilder();
         for (WebElement amountP : monthlyPremiumColumn) {
-            yPremium = yPremium + " " + amountP.getText();
+            yPremium.append(amountP.getText()).append("\n");
         }
-        return yPremium;
-
+        return yPremium.toString();
     }
 
     public String redirectToClaimInformationPage() {
 
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[5]/a")));
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[5]/a");
         int cSize = totalColumn.size();
-        String displayMessage = " ";
+        StringBuilder displayMessage = new StringBuilder();
 
         for (WebElement cEle : totalColumn) {
             System.out.println(cEle.getText());
             cEle.click();
-            common.pause(3);
-            ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
-            //System.out.println(driver.getCurrentUrl());
-
+            common.pause(2);
+            common.switchToWindow(1);
             System.out.println(driver.getCurrentUrl());
-            displayMessage = displayMessage + displayedMessage.getText();
-
+            displayMessage.append(displayedMessage.getText()).append("\n");
 
             driver.close();
-            driver.switchTo().window(tabs2.get(0));
+            common.switchToWindow(0);
         }
-        return displayMessage;
+        return displayMessage.toString();
     }
 
     public String verifyClaimInfoPageText() {
-        common.pause(3);
-        //driver.close();
-        //driver.switchTo().window(tabs2.get(0));
+        common.pause(2);
         return displayedMessage.getText();
-
     }
 
     public void clickAddClaimIcon() {
         addClaimIcon.click();
-        common.pause(7);
+        common.pause(2);
     }
 
     public String verifyAddClaimPage() {
@@ -179,6 +163,8 @@ public class ManageClaimPage {
     }
 
     public void verifyDropDown() {
+        common.waitUntilInvisibilityOfElement(loadSpinner);
+        common.pause(2);
         treatmentDropdown.click();
         common.pause(2);
         riskCountryDropDown.click();
@@ -187,7 +173,7 @@ public class ManageClaimPage {
         common.pause(2);
         insuredCountryDropDown.click();
         common.pause(2);
-        common.scroll_By_Pixel("0","350");
+        common.scroll_By_Pixel("0", "350");
         coverDropDown.click();
         common.pause(2);
         statusDropDown.click();
@@ -204,61 +190,48 @@ public class ManageClaimPage {
 
     public void selectItemFromStatusDropDown() {
         treatmentStatusDropDown.click();
-        common.pause(3);
-       selectItemFromStatusDropDown.click();
-        common.pause(3);
-        clickSearchButton.click();
-        common.pause(4);
+        common.pause(1);
+        selectItemFromStatusDropDown.click();
+        common.pause(1);
+        treatmentStatusDropDown.click();
+        common.pause(1);
     }
 
-    public String verifyTreatmentStatus() {
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> treatmentStatus = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
+    public ArrayList<String> verifyTreatmentStatus() {
+        List<WebElement> treatmentStatus = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[21]");
 
-        String Status = " ";
+        ArrayList<String> statusArray = new ArrayList<>();
         for (WebElement cEle : treatmentStatus) {
-            // System.out.println(cEle.getText());
-            Status = Status + " " + cEle.getText();
-
+            statusArray.add(cEle.getText());
         }
-        return Status;
-
+        return statusArray;
     }
 
     //Edit client details
 
     public void selectEditClientDetails() {
-        common.pause(3);
+        common.pause(2);
 
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.moveToElement(cogIcon);
         editPageIconInFDropDown.click();
         common.pause(1);
-
-
     }
 
     public String verifyEditClaimPage() {
         return displayedMessage.getText();
-
     }
 
     //View Policy Page
 
     public void selectViewPolicyPage() {
-        common.pause(3);
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         viewPolicyPageIconOnDropDown.click();
         common.pause(1);
-
-
     }
 
     public String verifyViewPolicyPage() {
         return displayedMessage.getText();
-
     }
 
     //Filter Claim details on manage claim page upon option from claim status drop down
@@ -267,12 +240,11 @@ public class ManageClaimPage {
         statusDropDownOnClaim.click();
         common.pause(1);
         optionFromStatusDD.click();
-
     }
 
     public void clickOnSearchButton() {
         searchButton.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public String verifyDetailsOfClaim() {
@@ -281,9 +253,10 @@ public class ManageClaimPage {
 
     public void selectOptionOfTreatmentStatusDD() {
         treatmentStatusDropDownOnClaim.click();
-        common.pause(2);
+        common.pause(1);
         optionFromTreatmentStatusDD.click();
-
+        common.pause(1);
+        treatmentStatusDropDownOnClaim.click();
     }
 
     //Filter Claim details on manage claim page upon from and to date value of claim first advised on manage claim page
@@ -294,7 +267,6 @@ public class ManageClaimPage {
         claimAdvisedToDate.sendKeys("24.06.2024");
         common.pause(1);
     }
-
 }
 
 

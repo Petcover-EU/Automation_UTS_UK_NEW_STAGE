@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/QuotePage.feature",
         glue = {"steps", "hook"},
         monochrome = true,
-        plugin = { "pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
+        plugin = {"pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 
 public class QuotePage {

@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         glue = {"steps", "hook"},
         //tags=("@Production"),
         monochrome = true,
-        plugin = { "pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
+        plugin = {"pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class ClientPage {
 }

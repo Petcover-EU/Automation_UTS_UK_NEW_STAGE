@@ -51,15 +51,15 @@ public class PolicyPage {
     private WebElement searchButton;
 
     //Add claim page
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[18]/ul/li/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/a")
     private WebElement cogIcon;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[18]/ul/li/ul/li[1]/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[1]/a")
     private WebElement addClaimIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
     private WebElement displayedMessageOnAddClaimPage;
 
     //Add note window
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[18]/ul/li/ul/li[2]/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[2]/a")
     private WebElement addNoteIcon;
     @FindBy(css = "input[id='Title']")
     private WebElement titleOfAddNote;
@@ -67,7 +67,7 @@ public class PolicyPage {
     private WebElement descriptionOfAddNote;
     @FindBy(css = "button[value='Cancel']")
     private WebElement cancelButton;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[18]/ul/li/ul/li[4]/a")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[4]/a")
     private WebElement viewQuoteIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
     private WebElement displayedMessageOnViewQuotePage;
@@ -138,24 +138,23 @@ public class PolicyPage {
     private WebElement installmentTab;
     @FindBy(xpath = "//div[@id='gridPolicyInstalmentList']/table/tbody/tr")
     private WebElement detailsOfInstallmentTab;
-    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[9]")
+    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[10]")
     private WebElement exclusionTab;
     @FindBy(xpath = "//div[@id='gridNameExclusion']/table/tbody/tr")
     private WebElement detailsOfExclusionTab;
-    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[12]")
+    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[13]")
     private WebElement historyTab;
     @FindBy(xpath = "//div[@id='gridPolicyHistoryList']/table/tbody/tr")
     private WebElement detailsOfHistoryTab;
-    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[13]")
+    @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[14]")
     private WebElement policyLedgerTab;
     @FindBy(xpath = "//div[@id='gridPolicyDebtorLedgerList']/table/tbody/tr")
     private WebElement detailsOfPolicyLedgerTab;
 
     public void clickPolicyIcon() {
-
         policyIcon.click();
         Log.info("*******Script Clicks On Policy Icon*******");
-        common.pause(7);
+        common.pause(5);
     }
 
     public String verifyManagePolicyPage() {
@@ -165,130 +164,105 @@ public class PolicyPage {
     }
 
     public String fetchAndDisplayData() {
-        String array = " ";
+        StringBuilder array = new StringBuilder();
         Log.info("Script Now Try's To Fetch Policy Data On Manage Policy Page");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
 
         for (WebElement rEle : totalRow) {
-            array = array + " " + rEle.getText();
+            array.append(rEle.getText()).append("\n");
         }
         Log.info("On Manage Policy Page Available Policy Information is ====>" + array);
-        return array;
+        return array.toString();
     }
 
     public String verifyDateFormatOfStartDate() {
         Log.info("Script Now Try's To Verify Date Format Of  Start Date On Manage Policy Page");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> policyDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[13]")));
-        String dateArray = " ";
+        List<WebElement> policyDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[13]");
+        StringBuilder dateArray = new StringBuilder();
         for (WebElement startDate : policyDateColumn) {
-            dateArray = dateArray + " " + startDate.getText();
-
+            dateArray.append(startDate.getText()).append("\n");
         }
         Log.info("On Manage Policy Page Start Date Displays In Format Of ====>" + dateArray);
-        return dateArray;
+        return dateArray.toString();
     }
 
-    public String verfiyDateFormatOfExpireDate() {
+    public String verifyDateFormatOfExpireDate() {
         Log.info("Script Now Try's To Verify Date Format Of  Expire Date On Manage Policy Page");
-        WebDriverWait eWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> endDateColumn = eWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[14]")));
-        String dateArray = " ";
+        List<WebElement> endDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[14]");
+        StringBuilder dateArray = new StringBuilder();
         for (WebElement endDate : endDateColumn) {
-            dateArray = dateArray + " " + endDate.getText();
+            dateArray.append(endDate.getText()).append("\n");
         }
         Log.info("On Manage Policy Page Expire Date Displays In Format Of ====>" + dateArray);
-        return dateArray;
-
+        return dateArray.toString();
     }
 
     public String clickOnPolicyNumberLink() {
         Log.info("Script Now Try's To Open Policy Information Page By Clicking Each Policy Number Link On Manage Policy Page");
-
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[4]/a")));
-
-        String displayMessage = " ";
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[4]/a");
+        StringBuilder displayMessage = new StringBuilder();
         for (WebElement cEle : totalColumn) {
             cEle.click();
             Log.info("Script Has Clicked On Policy Number Link On Manage Policy Page");
             common.pause(4);
-            ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
+            common.switchToWindow(1);
             System.out.println(driver.getCurrentUrl());
             Log.info("Script Redirects to Respected Policy Information Page Is===> " + driver.getCurrentUrl());
-            displayMessage = displayMessage + displayedMessage.getText();
+            displayMessage.append(displayedMessage.getText()).append("\n");
             driver.close();
-            driver.switchTo().window(tabs2.get(0));
-            //break;
-
+            common.switchToWindow(0);
         }
-        return displayMessage;
-
+        return displayMessage.toString();
     }
 
     public String verifyPolicyInformationPage() {
         return displayedMessageOnPolicyInformation.getText();
-
     }
 
     public void clickPolicyPageToDownloadFile() {
         Log.info("Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page");
 
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        WebElement totalColumn = cWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[4]/a")));
+        WebElement totalColumn = common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]/td[4]/a");
         totalColumn.click();
         Log.info("Script Has Clicked On Policy Number Link On Manage Policy Page");
         common.pause(5);
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        common.switchToWindow(1);
         Log.info("Script Redirects to Respected Policy Information Page Is===> " + driver.getCurrentUrl());
         System.out.println(driver.getCurrentUrl());
-
     }
 
     public void LetterIcon() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         common.pause(3);
         Log.info("Script Has Reached To Letter Icon On Policy Information Page");
         letterIcon.click();
         Log.info("Script Has Clicked On Letter Icon On Policy Information Page");
         common.pause(3);
-
     }
 
     public void DownloadIcon() {
-        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-        js1.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//div[@id='gridPolicyLetterList']/table/tbody/tr/td[14]/div/a[1]")));
+        common.scrollToElement(downloadIcon);
         Log.info("Script Has Reached To Letter Download Icon On Policy Information Page");
-        common.pause(5);
+        common.pause(2);
 
-        WebDriverWait dWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalDownLoadSymbol = dWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridPolicyLetterList']/table/tbody/tr/td[14]/div/a[1]")));
+        List<WebElement> totalDownLoadSymbol = common.waitUntilPresenceOfAllElement("//div[@id='gridPolicyLetterList']/table/tbody/tr/td[14]/div/a[1]");
         int dSize = totalDownLoadSymbol.size();
 
-        for (int i = 0; i < dSize; i++) {
-            totalDownLoadSymbol.get(i).click();
+        for (WebElement element : totalDownLoadSymbol) {
+            element.click();
             Log.info("Script Has Clicked On Letter Download Icon On Policy Information Page");
-            common.pause(7);
+            common.pause(5);
             break;
         }
-
-        //driver.switchTo().window(tabs2.get(0));
     }
 
     public String verifyDownLoadFile() {
         File myfile = new File("C:/Users/prowe/Downloads/BPIS Document - Welcome Letter.pdf");
         //FileUtils.touch(myfile);
         String re = "";
-
         if (myfile.exists()) {
             re = "file exist";
-
         } else {
-
             System.out.println("The file does not exist");
         }
         return re;
@@ -297,9 +271,8 @@ public class PolicyPage {
     //Check appropriate policy data should displays against option selected from status drop down on manage policy page
     public void selectOptionFromStatusDropDown() {
         common.pause(4);
-        WebElement element = statusDropDown;
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).click().build().perform();
+        common.moveToElement(statusDropDown);
+        statusDropDown.click();
         common.pause(1);
         optionFromStatusDropdown.click();
         Log.info("Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page");
@@ -307,18 +280,16 @@ public class PolicyPage {
         searchButton.click();
         Log.info("Script Has Clicked On Search Button On Manage Policy Page");
         common.pause(4);
-
     }
 
     public String verifyPolicyStatusUponDropDown() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> policyStatus = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr[1]")));
-        String Status = " ";
+        List<WebElement> policyStatus = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr[1]");
+        StringBuilder Status = new StringBuilder();
         for (WebElement status : policyStatus) {
-            Status = status.getText();
+            Status.append(status.getText()).append("\n");
         }
-        return Status;
+        return Status.toString();
     }
 
     //Filter policy details on manage policy page upon from and to date value of policy  on manage policy page
@@ -346,8 +317,7 @@ public class PolicyPage {
     //Verify that add claim page should open with all details by clicking on add claim icon of cog drop down against policy number on manage policy page
 
     public void clickOnAddClaimPage() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon");
         common.pause(2);
         addClaimIcon.click();
@@ -356,15 +326,14 @@ public class PolicyPage {
     }
 
     public String verifyAddClaimPage() {
-        String displayMessage = " ";
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        String displayMessage;
+        common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Page Add Claim Page===>" + driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessage.getText();
+        displayMessage = displayedMessage.getText();
 
         driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        common.switchToWindow(0);
         return displayMessage;
     }
 
@@ -372,14 +341,12 @@ public class PolicyPage {
     //Verify that add note window should open with all details by clicking on add note icon of cog drop down against policy number on manage policy page
 
     public void clickOnAddNoteIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon To Select Add Note Option");
         common.pause(2);
         addNoteIcon.click();
         Log.info("Script Has Clicked On Add Note Icon");
         common.pause(3);
-
     }
 
     public void verifyAddNoteWindow() {
@@ -394,8 +361,7 @@ public class PolicyPage {
     //Verify that quote information page should open with all details by clicking on view quote icon of cog drop down against policy number on manage policy page
 
     public void clickOnViewQuoteIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon To Select View Quote Page");
         common.pause(2);
         viewQuoteIcon.click();
@@ -404,23 +370,20 @@ public class PolicyPage {
     }
 
     public String verifyQuoteInformationPage() {
-        String displayMessage = " ";
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        String displayMessage;
+        common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To View Quote Page is===>" + driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessageOnViewQuotePage.getText();
-
+        displayMessage = displayedMessageOnViewQuotePage.getText();
         driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        common.switchToWindow(0);
         return displayMessage;
     }
 
     //Add claim page displays with all details by clicking add claim icon of cog drop down on policy information page
 
     public void clickOnAddClaimOnPolicyInformation() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         Log.info("Script Has Clicked On Cog Icon To Select Policy Information Page");
         common.pause(3);
         addClaimIconOfPolicyInformationPage.click();
@@ -431,8 +394,7 @@ public class PolicyPage {
     //Add note window displays with all details by clicking add note icon of cog drop down on policy information page
 
     public void clickOnAddNoteOnPolicyInformation() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         common.pause(3);
         addNoteIconOfPolicyInformationPage.click();
         common.pause(4);
@@ -441,8 +403,7 @@ public class PolicyPage {
     //Policy endorsement page displays with all details by clicking add endorsement icon of cog drop down on policy information page
 
     public void clickOnAddEndorsementOnPolicyInformation() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         Log.info("Script Has Clicked On Cog Icon To Select Add Endorsement Page Icon");
         common.pause(3);
         addEndorsementIconOfPolicyInformationPage.click();
@@ -451,69 +412,54 @@ public class PolicyPage {
     }
 
     public String verifyPolicyEndorsementPage() {
-
-        String displayMessage = " ";
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        String displayMessage;
+        common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Add Endorsement Page Is ===>" + driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessageOnPolicyEndorsementPage.getText();
+        displayMessage = displayedMessageOnPolicyEndorsementPage.getText();
 
         driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        common.switchToWindow(0);
         return displayMessage;
-
-
     }
 
     //Quote information page displays with all details by clicking view quote icon of cog drop down on policy information page
 
     public void selectViewQuoteIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         common.pause(3);
         viewQuoteIconOfPolicyInformationPage.click();
         common.pause(4);
     }
 
     public String verifyQuoteInfoPage() {
-        String displayMessage = " ";
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        String displayMessage;
+        common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessageOnQuoteInformationPage.getText();
+        displayMessage = displayedMessageOnQuoteInformationPage.getText();
 
         driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        common.switchToWindow(0);
         return displayMessage;
-
     }
 
     // Cancel  policy window displays with all details by clicking cancel policy icon of cog drop down on policy information page
 
     public void selectCancelPolicyIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         common.pause(3);
         cancelPolicyIconOfPolicyInformationPage.click();
         common.pause(4);
     }
 
     public void verifyCancelPolicyWindow() {
-
-
-      /*  driver.findElement(cancelPolicyRefundAmount).sendKeys("123.98");
-        driver.findElement(cancelPolicyDescription).sendKeys("Test");
-       common.pause(1);*/
         cancelPolicyCancelButton.click();
-
     }
 
     //Quote information page displays with all details by clicking view quote icon of cog drop down on policy information page
 
     public void selectAddAllocateIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         Log.info("Script Has Clicked On Cog Icon To Select Add Allocate Page Icon");
         common.pause(3);
         addAllocatePaymentIcon.click();
@@ -523,23 +469,20 @@ public class PolicyPage {
 
     public String verifyAddAllocatePage() {
 
-        String displayMessage = " ";
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs2.get(1));
+        String displayMessage;
+        common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Add Allocate Page Is===>" + driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessageOnAddAllocatePage.getText();
+        displayMessage = displayedMessageOnAddAllocatePage.getText();
 
         driver.close();
-        driver.switchTo().window(tabs2.get(0));
+        common.switchToWindow(0);
         return displayMessage;
-
     }
 
     //Client account maintenance displays with all details by clicking add account maintenance icon of cog drop down on policy information page
     public void selectAddAccountMaintenanceIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOfPolicyInformationPage).perform();
+        common.moveToElement(cogIconOfPolicyInformationPage);
         Log.info("Script Has Clicked On Cog Icon To Select Add Account Maintenance Page Icon");
         common.pause(3);
         addAccountMaintenanceIcon.click();
@@ -548,42 +491,33 @@ public class PolicyPage {
     }
 
     public String verifyClientAccountMaintenancePage() {
-        String displayMessage = " ";
-        // ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-        // driver.switchTo().window(tabs2.get(1));
-        //System.out.println(driver.getCurrentUrl());
-        displayMessage = displayMessage + displayedMessageOnAddAccountMaintenancePage.getText();
+        String displayMessage;
+        displayMessage = displayedMessageOnAddAccountMaintenancePage.getText();
         Log.info("Script Redirects To Add Account Maintenance Page Is===>" + driver.getCurrentUrl());
 
         driver.close();
-        // driver.switchTo().window(tabs2.get(0));
         return displayMessage;
-
     }
 
     //Verify appropriate details should reflect by clicking on  transactions tab on policy information page
 
     public void clickOnTransactionTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         transactionalTab.click();
         Log.info("Script Has Clicked On Transaction Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfTabsOnPolicyInformationPage() {
         String data = detailsOfTransactionTab.getText();
         Log.info("Data Display On Clicking Transaction Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on insurer tab on policy information page
 
     public void clickOnInsurerTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         insurerTab.click();
         Log.info("Script Has Clicked On Insurer Tab On Policy Information Page");
         common.pause(3);
@@ -594,53 +528,44 @@ public class PolicyPage {
         String data = detailsOfInsurerTab.getText();
         Log.info("Data Display On Clicking Insurer Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on claim tab on policy information page
 
     public void clickOnClaimTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         claimTab.click();
         Log.info("Script Has Clicked On Claim Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfClaimTabOnPolicyInformationPage() {
         String data = detailsOfClaimTab.getText();
         Log.info("Data Display On Clicking Claims Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on reversal claim tab on policy information page
     public void clickOnReversalClaimTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         reversalClaimTab.click();
         Log.info("Script Has Clicked On Reversal Claim Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfReversalClaimTabOnPolicyInformationPage() {
         String data = detailsOfReversalClaimTab.getText();
         Log.info("Data Display On Clicking Reversal Claim Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on credit note tab on policy information page
 
     public void clickOnCreditNoteTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         creditNoteTab.click();
         Log.info("Script Has Clicked On Credit Note Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfCreditNoteTabOnPolicyInformationPage() {
@@ -653,108 +578,91 @@ public class PolicyPage {
     //Verify appropriate details should reflect by clicking on policy invoice credit note tab on policy information page
 
     public void clickOnPolicyInvoiceCreditNoteTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         policyInvoiceCreditNoteTab.click();
         Log.info("Script Has Clicked On Policy Invoice Credit Note Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfPolicyInvoiceCreditNoteTabOnPolicyInformationPage() {
         String data = detailsOfPolicyInvoiceCreditNoteTab.getText();
         Log.info("Data Display On Clicking Policy Invoice Note Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on policy notes tab on policy information page
 
     public void clickOnNotesTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         notesTab.click();
         Log.info("Script Has Clicked On Notes Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfNotesTabOnPolicyInformationPage() {
         String data = detailsOfNotesTab.getText();
         Log.info("Data Display On Clicking Notes Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on policy  installment tab on policy information page
 
     public void clickOnInstallmentTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         installmentTab.click();
         Log.info("Script Has Clicked On Installment Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfInstallmentTabOnPolicyInformationPage() {
         String data = detailsOfInstallmentTab.getText();
         Log.info("Data Display On Clicking Installment Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on policy exclusion tab on policy information page
 
     public void clickOnExclusionTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         exclusionTab.click();
         Log.info("Script Has Clicked On Exclusion Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfExclusionTabOnPolicyInformationPage() {
+        common.pause(2);
         String data = detailsOfExclusionTab.getText();
         Log.info("Data Display On Clicking Exclusion Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on history tab on policy information page
 
     public void clickOnHistoryTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         historyTab.click();
         Log.info("Script Has Clicked On History Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfHistoryTabOnPolicyInformationPage() {
         String data = detailsOfHistoryTab.getText();
         Log.info("Data Display On Clicking History Tab is==>" + data);
         return data;
-
     }
 
     //Verify appropriate details should reflect by clicking on policy ledger tab on policy information page
 
     public void clickOnPolicyLedgerTab() {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)", "");
+        common.scroll_By_Pixel("0", "350");
         policyLedgerTab.click();
         Log.info("Script Has Clicked On Policy Ledger Tab On Policy Information Page");
         common.pause(3);
-
     }
 
     public String verifyDetailsOfPolicyLedgerTabOnPolicyInformationPage() {
         String data = detailsOfPolicyLedgerTab.getText();
         Log.info("Data Display On Clicking Policy Ledger Tab is==>" + data);
         return data;
-
     }
 }

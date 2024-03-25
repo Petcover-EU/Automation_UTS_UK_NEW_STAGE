@@ -29,29 +29,25 @@ public class LogInPage {
     private WebElement dashBoardTitle;
     @FindBy(xpath = "//span[@class='welcome-message']/label/small")
     private WebElement roleText;
-
+    @FindBy(xpath = "//div[@class='alert alert-danger alert-dismissable']")
+    private WebElement invalidCredentialsAlert;
     //Action Methods
 
     public String verifyUrl() {
         common.pause(1);
         return driver.getCurrentUrl();
-
     }
 
     public void enterUserName(String userN) {
-//        emailField.sendKeys(userN);
-        common.sendKeys(emailField,userN);
-
+        emailField.sendKeys(userN);
     }
 
     public void enterPassword(String Password) {
-//        passwordField.sendKeys(Password);
-        common.sendKeys(passwordField,Password);
-
+        passwordField.sendKeys(Password);
     }
 
     public void clickSubmit() {
-        common.click(accountLoginButton);
+        accountLoginButton.click();
     }
 
     public String verifyDashBoardTitle() {
@@ -63,5 +59,8 @@ public class LogInPage {
         return roleText.getText();
     }
 
+    public String verifyValidationMessage() {
+        return invalidCredentialsAlert.getText();
+    }
 
 }

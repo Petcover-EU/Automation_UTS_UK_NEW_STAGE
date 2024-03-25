@@ -33,10 +33,9 @@ public class ApproveClaimPage {
 
 
     public void clickOnApproveClaimButton() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(claimIcon).perform();
+        common.moveToElement(claimIcon);
         approveClaimIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public String verifyApproveClaimPage() {
@@ -44,14 +43,11 @@ public class ApproveClaimPage {
     }
 
     public String fetchData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> data = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='divLoadApproveClaimsList']/div/table/tbody")));
-        String array = " ";
+        List<WebElement> data = common.waitUntilPresenceOfAllElement("//div[@id='divLoadApproveClaimsList']/div/table/tbody");
+        StringBuilder array = new StringBuilder();
         for (WebElement rEle : data) {
-            array = array + " " + rEle.getText();
+            array.append(rEle.getText()).append("\n");
         }
-
-        return array;
-
+        return array.toString();
     }
 }

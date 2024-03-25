@@ -8,6 +8,8 @@ import pages.ManageClaimPage;
 import utils.Common;
 import utils.ScreenRecorderUtil;
 
+import java.util.ArrayList;
+
 public class ManageClaimsSteps {
     Common common = new Common(DriverFactory.getDriver());
     ManageClaimPage claimPage = new ManageClaimPage(DriverFactory.getDriver());
@@ -21,13 +23,15 @@ public class ManageClaimsSteps {
     @Then("User will able see all data available on manage claim page")
     public void user_will_able_see_all_data_available_on_manage_claim_page() {
         String displayedData = claimPage.verifyClaimPageInformation();
-        if (displayedData.length() > 0) {
+        if (!(displayedData == null)) {
             System.out.println(displayedData);
+        } else {
+            System.out.println("Claim data are not found");
         }
     }
 
-    @Then("All data under treatment and cliam first advised date column displays in dd-mm-yyyy format")
-    public void all_data_under_treatment_and_cliam_first_advised_date_column_displays_in_dd_mm_yyyy_format() {
+    @Then("All data under treatment and claim first advised date column displays in dd-mm-yyyy format")
+    public void all_data_under_treatment_and_claim_first_advised_date_column_displays_in_dd_mm_yyyy_format() {
         String treatmentDate = claimPage.verifyTreatmentDate();
         String tDate[] = treatmentDate.split(" ");
         for (String staDate : tDate) {
@@ -56,8 +60,8 @@ public class ManageClaimsSteps {
 
     }
 
-    @Then("All data under Amount paybale column prefixed by £ sign")
-    public void all_data_under_amount_paybale_column_prefixed_by_£_sign() {
+    @Then("All data under Amount payable column prefixed by £ sign")
+    public void all_data_under_amount_payable_column_prefixed_by_£_sign() {
         String amountPayable = claimPage.verifyAmountPayableColumn();
         //System.out.println(yearlyArray);
 
@@ -115,15 +119,20 @@ public class ManageClaimsSteps {
     @When("User selects any options from treatment status dropdown on manage claim page")
     public void user_selects_any_options_from_treatment_status_dropdown_on_manage_claim_page() {
         claimPage.selectItemFromStatusDropDown();
-
     }
 
     @Then("Appropriate treatment status will display on manage claim page under claim details")
     public void appropriate_treatment_status_will_display_on_manage_claim_page_under_claim_details() {
-        String treatmentStatus = claimPage.verifyTreatmentStatus();
-
-        if (treatmentStatus.length() > 0) {
-            System.out.println("Treatment status appeared as per requirement");
+        ArrayList<String> treatmentStatus = claimPage.verifyTreatmentStatus();
+        if (!treatmentStatus.isEmpty()) {
+            System.out.println(treatmentStatus);
+        } else {
+            System.out.println("Claims not found with following treatment status");
+        }
+        for (String status : treatmentStatus) {
+            if (!treatmentStatus.isEmpty()) {
+                Assert.assertEquals(status, "Pending", "Treatment status not filter upon selected one");
+            }
         }
     }
 
@@ -167,13 +176,12 @@ public class ManageClaimsSteps {
     @When("User clicks on search button on manage claim page")
     public void user_clicks_on_search_button_on_manage_claim_page() {
         claimPage.clickOnSearchButton();
-
     }
 
-    @Then("Details of claim on manage claim page filters upon status drop dwon option")
-    public void details_of_claim_on_manage_claim_page_filters_upon_status_drop_dwon_option() {
+    @Then("Details of claim on manage claim page filters upon status drop down option")
+    public void details_of_claim_on_manage_claim_page_filters_upon_status_drop_down_option() {
         String claimDetails = claimPage.verifyDetailsOfClaim();
-        if (claimDetails.length() > 0) {
+        if (!claimDetails.isEmpty()) {
             System.out.println(claimDetails);
         } else {
             System.out.println("Details of claim does nit displays upon status dropdown option");
@@ -190,13 +198,17 @@ public class ManageClaimsSteps {
 
     @Then("Details of claim on manage claim page filters upon treatment status drop down option")
     public void details_of_claim_on_manage_claim_page_filters_upon_treatment_status_drop_down_option() {
-        String claimDetails = claimPage.verifyDetailsOfClaim();
-        if (claimDetails.length() > 0) {
+        ArrayList<String> claimDetails = claimPage.verifyTreatmentStatus();
+        if (!claimDetails.isEmpty()) {
             System.out.println(claimDetails);
         } else {
-            System.out.println("Details of claim does nit displays upon treatment status dropdown option");
+            System.out.println("Claim details are not found with selected status");
         }
-
+        for (String status : claimDetails) {
+            if (!claimDetails.isEmpty()) {
+                Assert.assertEquals(status, "Settled", "Treatment status not filter upon selected one");
+            }
+        }
     }
 
 //Filter Claim details on manage claim page upon from and to date value of claim first advised on manage claim page

@@ -1,23 +1,18 @@
 package pages;
 
 import factory.DriverFactory;
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Common;
 
 import java.time.Duration;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 public class AdminPage {
     private WebDriver driver;
@@ -206,41 +201,38 @@ public class AdminPage {
     private WebElement addCompanyButtonOnManageCompanyPage;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
     private WebElement displayedMessageOnAddCompanyPage;
+
     public void clickAdminIcon() {
         adminIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public void clickOnLetterIcon() {
         letterIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
-
     public String fetchData() {
-        WebDriverWait waitR = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = waitR.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String data = " ";
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder data = new StringBuilder(" ");
         for (WebElement trRow : totalRow) {
-            data = data + " " + trRow.getText();
+            data.append(trRow.getText()).append("\n");
         }
-        return data;
+        return data.toString();
     }
 
     public void clickOnAddLetterTemplateIcon() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalHead = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[5]/div/a[1]")));
+        List<WebElement> totalHead = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[5]/div/a[1]");
         for (WebElement thHead : totalHead) {
             thHead.click();
             break;
         }
-        common.pause(3);
+        common.pause(2);
     }
 
     public String displayedMessage() {
         common.pause(1);
         return displayMessage.getText();
-
     }
 
     public void editData() {
@@ -263,141 +255,31 @@ public class AdminPage {
     }
 
     public void traversingThroughPages() {
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='ibox-content']/div/div/a")));
-        String product = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).getText();
-        if (product.contains("Run Scheduler") || product.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@class='ibox-content']/div/div/a");
+        System.out.println("Total number of menu displayed in the admin menu: " + totalColumn);
+        for (int i = 1; i <= 11; i++) {
+            String menuTitle = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[" + i + "]/a")).getText();
+            if (menuTitle.contains("Run Scheduler") || menuTitle.contains("Email Logs")) {
+                System.out.println("Do Nothing");
+            } else {
+                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
+                common.pause(2);
+                System.out.println(driver.getCurrentUrl());
+                adminIcon.click();
+                common.pause(2);
+            }
         }
-        String Department = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).getText();
-        if (Department.contains("Run Scheduler") || Department.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String Staff = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).getText();
-        if (Staff.contains("Run Scheduler") || Staff.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String BankAccount = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).getText();
-        if (BankAccount.contains("Run Scheduler") || BankAccount.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String Insurer = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).getText();
-        if (Insurer.contains("Run Scheduler") || Insurer.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String Agent = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).getText();
-        if (Agent.contains("Run Scheduler") || Agent.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String Company = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).getText();
-        if (Company.contains("Run Scheduler") || Company.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String RatingVersion = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).getText();
-        if (RatingVersion.contains("Run Scheduler") || RatingVersion.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String RunScheduler = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).getText();
-        if (RunScheduler.contains("Run Scheduler") || RunScheduler.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String PromoCode = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).getText();
-        if (PromoCode.contains("Run Scheduler") || PromoCode.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).click();
-            common.pause(2);
-            System.out.println(driver.getCurrentUrl());
-            adminIcon.click();
-        }
-        String ProCode = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).getText();
-        if (ProCode.contains("Run Scheduler") || ProCode.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-        } /*else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            //driver.findElement(adminIcon).click();
-        }
-        String PCode = driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).getText();
-        if (PCode.contains("Run Scheduler") || PCode.contains("Email Logs")) {
-            System.out.println("Do Nothing");
-
-
-        } else {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(adminIcon).click();
-        }*/
     }
 
     //To verify whether View Product page displays with product details with status after by clicking on product code on manage product page
 
     public void clickOnProductIcon() {
         productIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public void clickOnProductCode() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> productCode = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]")));
+        List<WebElement> productCode = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[2]");
         for (WebElement pCode : productCode) {
             pCode.click();
             common.pause(2);
@@ -407,21 +289,18 @@ public class AdminPage {
 
     public String verifyProductDetails() {
         return productName.getText();
-
     }
 
     // To verify if insurer pop up windows displays by  clicking on insurer configuration pop up on setting icon on manage product page
 
     public void clickOnInsurerConfigIcon() {
-        Actions actions = new Actions(driver);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> settingIcon = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[5]/ul/li")));
+
+        List<WebElement> settingIcon = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[5]/ul/li");
         for (WebElement stg : settingIcon) {
-            actions.moveToElement(stg).perform();
-            WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-            List<WebElement> insurerConfig = wait1.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[5]/ul[1]/li/ul/li[1]/a[1]")));
-            for (WebElement insu : insurerConfig) {
-                insu.click();
+            common.moveToElement(stg);
+            List<WebElement> insurerConfig = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[5]/ul[1]/li/ul/li[1]/a[1]");
+            for (WebElement insurance : insurerConfig) {
+                insurance.click();
                 break;
             }
             break;
@@ -430,50 +309,47 @@ public class AdminPage {
     }
 
     public String fetchInsurerPageData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> insurerDetail = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridInsurerConfiguration']/table/tbody/tr")));
-        String data = " ";
+        List<WebElement> insurerDetail = common.waitUntilPresenceOfAllElement("//div[@id='gridInsurerConfiguration']/table/tbody/tr");
+        StringBuilder data = new StringBuilder();
         for (WebElement details : insurerDetail) {
-            data = details.getText() + data;
-
+            data.append(details.getText()).append("\n");
         }
-
-        return data;
+        return data.toString();
     }
 
     //To verify if agent configuration pop up windows displays by  clicking on agent configuration on setting icon on manage product page
 
     public void clickOnAgentConfigIcon() {
-        Actions actions = new Actions(driver);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> settingIcon = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[5]/ul/li")));
+        List<WebElement> settingIcon = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[5]/ul/li");
         for (WebElement stg : settingIcon) {
-            actions.moveToElement(stg).perform();
-            WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-            List<WebElement> agentConfig = wait1.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[5]/ul[1]/li/ul/li[2]/a[1]")));
+            common.moveToElement(stg);
+            List<WebElement> agentConfig = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[5]/ul[1]/li/ul/li[2]/a[1]");
             for (WebElement agent : agentConfig) {
                 agent.click();
                 break;
             }
             break;
         }
-        common.pause(3);
+        common.pause(2);
     }
 
     public String fetchAgentConfigData() {
-        List<WebElement> insurerDetail =common.waitUntilPresenceOfAllElement("//div[@id='gridAgentConfiguration']/table/tbody/tr");
-        String data = " ";
-        for (WebElement details : insurerDetail) {
-            data = details.getText() + data;
+        if (common.isElementDisplayed("//div[@id='gridAgentConfiguration']/table/tbody/tr")) {
+            List<WebElement> insurerDetail = common.waitUntilPresenceOfAllElement("//div[@id='gridAgentConfiguration']/table/tbody/tr");
+            StringBuilder data = new StringBuilder();
+            for (WebElement details : insurerDetail) {
+                data.append(details.getText()).append("\n");
+            }
+            return data.toString();
         }
-        return data;
+        return null;
     }
 
 //Department
 
     public void clickDepartmentIcon() {
         departmentIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public void enterDepartmentInSearch() {
@@ -482,47 +358,45 @@ public class AdminPage {
 
     public void clickSearchButton() {
         searchButton.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public String verifyDepartmentName() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> department = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
-        String depart = " ";
+        List<WebElement> department = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
+        StringBuilder depart = new StringBuilder();
         for (WebElement dep : department) {
-            depart = depart + dep.getText();
+            depart.append(dep.getText()).append("\n");
         }
-        return depart;
+        return depart.toString();
     }
+
     //Add department page  displays will all details when user clicks on add department icon on manage department page
 
     public void clickOnAddDepartmentIcon() {
         addDepartmentIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public String verifyAddDepartmentPage() {
         return displayMessageOnAddDepartmentPage.getText();
     }
 
-
     //Edit department page displays upon clicking on edit icon against department name inside list of department on manage department page
 
     public void clickOnEditDepartmentIcon() {
         editDepartmentIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public String verifyEditDepartmentPage() {
         return displayedMessageOnEditDepartmentPage.getText();
-
     }
 
     //Filter data of staff details upon department and active drop down options on manage staff  page
 
     public void clickOnStaffIcon() {
         staffIcon.click();
-        common.pause(3);
+        common.pause(2);
     }
 
     public void selectOptionFromDropDownOnStaffPage() {
@@ -537,26 +411,23 @@ public class AdminPage {
     }
 
     public String verifyDetailsOfStaffPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> staffDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String data = " ";
+        List<WebElement> staffDetails = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td");
+        StringBuilder data = new StringBuilder();
         for (WebElement details : staffDetails) {
-            data = data + details.getText();
-
+            data.append(details.getText()).append("\n");
         }
-        return data;
+        return data.toString();
     }
 
     //Add staff page displays with all details upon clicking on add staff icon on manage staff page
+
     public void clickOnAddStaffButton() {
         addStaffButton.click();
-        common.pause(3);
-
+        common.pause(2);
     }
 
     public String verifyAddStaffPage() {
         return displayedMessageOnAddStaffPage.getText();
-
     }
 
     //Edit staff page displays upon clicking on edit icon against staff name inside list of staff on manage staff page
@@ -564,12 +435,10 @@ public class AdminPage {
     public void clickOnEditStaffIcon() {
         editStaffIcon.click();
         common.pause(3);
-
     }
 
     public String verifyEditStaffPage() {
         return displayedMessageOnEditStaffPage.getText();
-
     }
 
     //Manage Bank Account page displays with all details by clicking on bank account icon on administration page
@@ -580,14 +449,12 @@ public class AdminPage {
     }
 
     public String fetchAndDisplayBankAccountData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> bankDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridBankAccount']/table/tbody/tr")));
-        String bankDetail = " ";
+        List<WebElement> bankDetails = common.waitUntilPresenceOfAllElement("//div[@id='gridBankAccount']/table/tbody/tr");
+        StringBuilder bankDetail = new StringBuilder();
         for (WebElement bankD : bankDetails) {
-            bankDetail = bankDetail + bankD.getText();
+            bankDetail.append(bankD.getText()).append("\n");
         }
-        return bankDetail;
-
+        return bankDetail.toString();
     }
 
     //Filter data of bank details upon bank account and insurer drop down items on manage bank account page
@@ -596,7 +463,6 @@ public class AdminPage {
         bankAccountDropDown.click();
         common.pause(1);
         itemFromBADD.click();
-
     }
 
     public void selectItemFromInsurerDropDown() {
@@ -611,16 +477,12 @@ public class AdminPage {
     }
 
     public String verifyBankAccountDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> insurerName = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridBankAccount']/table/tbody/tr")));
-        String insurer = " ";
-        for (WebElement insu : insurerName) {
-            insurer = insurer + insu.getText();
+        List<WebElement> insurerName = common.waitUntilPresenceOfAllElement("//div[@id='gridBankAccount']/table/tbody/tr");
+        StringBuilder insurer = new StringBuilder();
+        for (WebElement insure : insurerName) {
+            insurer.append(insure.getText()).append("\n");
         }
-
-        return insurer;
-
-
+        return insurer.toString();
     }
 
     //Add Bank account page displays with details after clicking on add bank account button on manage bank account page
@@ -655,7 +517,7 @@ public class AdminPage {
         common.pause(1);
     }
 
-    ////Manage insurer page will displays with all details by clicking on insurer icon on Administrator page
+    ////Manage insurer page will display with all details by clicking on insurer icon on Administrator page
 
     public void clickOnInsurerIcon() {
         insurerIcon.click();
@@ -663,26 +525,23 @@ public class AdminPage {
     }
 
     public String verifyManageInsurerPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> insurerDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String insurerData = " ";
+        List<WebElement> insurerDetails = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder insurerData = new StringBuilder();
         for (WebElement data : insurerDetails) {
-            insurerData = insurerDetails + data.getText();
+            insurerData.append(data.getText()).append("\n");
         }
-        return insurerData;
+        return insurerData.toString();
     }
 
     //View Insurer page displays with all insurer details after clicking on insurer code link on manage insurer page
 
     public void clickOnInsurerCodeLink() {
-
         insurerCode.click();
         common.pause(3);
     }
 
     public String verifyViewInsurerPage() {
         return displayMessageOfViewInsurerCode.getText();
-
     }
 
     public void selectsOptionFromDropDownOnManageInsurerPage() {
@@ -700,22 +559,19 @@ public class AdminPage {
         common.pause(1);
         searchButtonOnManageInsurerPage.click();
         common.pause(3);
-
     }
 
     public String verifyListOfManageInsurerPageUponDD() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> typeDD = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String typeValue = " ";
+        List<WebElement> typeDD = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td");
+        StringBuilder typeValue = new StringBuilder();
         for (WebElement type : typeDD) {
-            typeValue = typeValue + type.getText();
+            typeValue.append(type.getText()).append("\n");
         }
-
-        return typeValue;
-
+        return typeValue.toString();
     }
 
     //Add insurer page displays with all fields by clicking on add insurer icon on manage insurer page
+
     public void clickOnAddInsurerIcon() {
         addInsurerIcon.click();
         common.pause(3);
@@ -725,15 +581,12 @@ public class AdminPage {
         return displayedMessageOnAddInsurerPage.getText();
     }
 
-
     //Edit insurer page displays in editable format by clicking on edit icon against insurer code on manage insurer page
 
     public void clickOnEditInsurerIcon() {
-
-        WebElement editInsurerIcon = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[14]/div/a[1]"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", editInsurerIcon);
-        common.pause(2);
-        editInsurerIcon.click();
+        common.scrollToElement(editIconOfInsurer);
+        common.pause(1);
+        editIconOfInsurer.click();
         common.pause(2);
     }
 
@@ -746,18 +599,15 @@ public class AdminPage {
     public void clickOnAgentIcon() {
         agentIcon.click();
         common.pause(3);
-
     }
 
     public void clickOnAgentReferenceNumber() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> agentRef = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]")));
+        List<WebElement> agentRef = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[2]");
         for (WebElement agent : agentRef) {
             agent.click();
-            common.pause(3);
+            common.pause(2);
             break;
         }
-
     }
 
     public String verifyViewAgentPage() {
@@ -778,27 +628,21 @@ public class AdminPage {
         activeDropDownOnManageAgentPage.click();
         common.pause(1);
         optionFromActiveDropDownOnManageAgentPage.click();
-
-
     }
 
     public void clickOnButtonOnManageAgentPage() {
         searchButtonOnManageAgentPage.click();
         common.pause(3);
-
     }
 
     public String verifyDetailsOfAgentList() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> agentDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String data = " ";
+        List<WebElement> agentDetails = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder data = new StringBuilder();
         for (WebElement details : agentDetails) {
-            data = details.getText() + data;
+            data.append(details.getText()).append("\n");
         }
-        return data;
-
+        return data.toString();
     }
-
 
     //Add agent page displays with all details by clicking on add agent button on manage agent page
 
@@ -812,20 +656,17 @@ public class AdminPage {
     }
 
     //Edit Agent page displays in editable format by selecting edit icon from cog icon dropdown against agent reference number on manage agent page
-    public void clickOnEditAgentIcon() {
 
+    public void clickOnEditAgentIcon() {
         common.pause(1);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIconOnManageAgentPage).perform();
+        common.moveToElement(cogIconOnManageAgentPage);
         editAgentOptionOfCogIcon.click();
         common.pause(3);
     }
 
     public String verifyEditAgentPage() {
         return displayedMessageOnEditAgentPage.getText();
-
     }
-
 
     //Manage Company page displays with list of companies by clicking on company icon on administration page
 
@@ -835,14 +676,12 @@ public class AdminPage {
     }
 
     public String fetchAndDisplaysManageCompanyDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> companyDetails = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String companyDetail = " ";
+        List<WebElement> companyDetails = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td");
+        StringBuilder companyDetail = new StringBuilder();
         for (WebElement company : companyDetails) {
-            companyDetail = companyDetail + company.getText();
-
+            companyDetail.append(company.getText()).append("\n");
         }
-        return companyDetail;
+        return companyDetail.toString();
     }
 
     //Filter details on manage company page upon option of state and country drop down
@@ -857,18 +696,15 @@ public class AdminPage {
         optionFromCountryDropDownOnManageCompanyPage.click();
         searchButtonOnManageCompanyPage.click();
         common.pause(3);
-
     }
 
     public String verifyDetailsOfCompany() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> companyList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td")));
-        String data = " ";
+        List<WebElement> companyList = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td");
+        StringBuilder data = new StringBuilder();
         for (WebElement details : companyList) {
-            data = details.getText() + data;
+            data.append(details.getText()).append("\n");
         }
-        return data;
-
+        return data.toString();
     }
 
     //Add company page displays with all details by clicking on add company button on manage company page
@@ -880,6 +716,5 @@ public class AdminPage {
 
     public String verifyAddCompanyPage() {
         return displayedMessageOnAddCompanyPage.getText();
-
     }
 }

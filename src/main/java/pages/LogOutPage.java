@@ -34,6 +34,4 @@ public class LogOutPage {
         common.pause(2);
         return logInMessage.getText();
     }
-
-
 }

@@ -18,13 +18,12 @@ public class QuotePageSteps {
     public void user_clicks_on_quote_icon_on_left_tool_bar() {
         String Message = quotePage.verifyManageQuotePage();
         Assert.assertEquals(Message, "Manage Quote");
-
     }
 
     @Then("Manage quote page displays with list of quote")
     public void manage_quote_page_displays_with_list_of_quote() {
         String quoteData = quotePage.fetchAndDisplayedData();
-        if (quoteData.length() > 0) {
+        if (!quoteData.isEmpty()) {
             System.out.println(quoteData);
         } else {
             Assert.fail();
@@ -45,7 +44,6 @@ public class QuotePageSteps {
             } else {
                 Assert.fail();
             }
-
         }
 
         String eDate = quotePage.verifyExpireDateColumnFormat();
@@ -66,53 +64,38 @@ public class QuotePageSteps {
     @When("User clicks add quote button on manage quote page")
     public void user_clicks_add_quote_button_on_manage_quote_page() {
         quotePage.clickOnAddQuoteButton();
-
     }
 
     @Then("User will able to see add quote page with data")
     public void user_will_able_to_see_add_quote_page_with_data() {
         String addQuoteMessage = quotePage.verifyAddQuotePage();
         Assert.assertEquals(addQuoteMessage, "Add Quote");
-
     }
 
     @Then("User will able to see  all data under total and monthly premium colum prefixed by £ sign")
     public void user_will_able_to_see_all_data_under_total_and_monthly_premium_colum_prefixed_by_£_sign() {
         String yearlyArray = quotePage.verifyTotalPremiumColumn();
-        //System.out.println(yearlyArray);
-
         String[] split = yearlyArray.split("[ .\\ ]+");
         // System.out.println(split);
         for (int j = 1; j <= split.length - 1; j = j + 3) {
             System.out.println(split[j]);
             if (split[j].contains("£")) {
                 System.out.println("Data Prefixed by £");
-
             } else {
-                // Assert.fail();
                 System.out.println("Data not Prefixed by £");
             }
-
-
         }
 
         String monthlyArray = quotePage.verifyMonthlyPremiumColumn();
-        //System.out.println(monthlyArray);
-
         String monthArray[] = monthlyArray.split("[ .,\\ ]+");
         for (int j = 1; j <= monthArray.length - 1; j = j + 3) {
             System.out.println(monthArray[j]);
             if (monthArray[j].contains("£")) {
                 System.out.println("Data Prefixed by £");
-
             } else {
-                // Assert.fail();
                 System.out.println("Data not Prefixed by £");
             }
-
-
         }
-
     }
 
     @When("User clicks on upload microchip file button")
@@ -124,7 +107,7 @@ public class QuotePageSteps {
     @Then("User will be able to see microchip file upload page with data")
     public void user_will_be_able_to_see_microchip_file_upload_page_with_data() {
         String dataOfMicroPage = quotePage.verifyDataOnMicrochipPage();
-        if (dataOfMicroPage.length() > 0) {
+        if (!dataOfMicroPage.isEmpty()) {
             System.out.println(dataOfMicroPage);
         }
     }
@@ -137,7 +120,7 @@ public class QuotePageSteps {
     @Then("On add quote page product dropdown will appear with desired list")
     public void on_add_quote_page_product_dropdown_will_appear_with_desired_list() {
         String verifyProducts = quotePage.verifyProductList();
-        if (verifyProducts.length() > 0) {
+        if (!verifyProducts.isEmpty()) {
             System.out.println(verifyProducts);
         } else {
             Assert.fail();
@@ -208,6 +191,27 @@ public class QuotePageSteps {
         }
 
     }
+    //Fetch list of quote based on option from Is referred dropdown on manage quote page
+
+    @When("User selects appropriate option from Is referred dropdown on manage quote page")
+    public void user_selects_appropriate_option_from_is_referred_dropdown_on_manage_quote_page() {
+        quotePage.selectOptionFromIsReferredDropDown();
+    }
+
+    @Then("Appropriate list of quote will display upon drop down option")
+    public void appropriate_list_of_quote_will_display_upon_drop_down_option() {
+
+        List<WebElement> quoteDetails = quotePage.verifyListOfQuoteBasedOnIsReferredDD();
+        if (!quoteDetails.isEmpty()) {
+            System.out.println("List of quotes display upon selected Referred or not value ");
+        } else {
+            System.out.println("Failed to display data upon selected Referred or not option");
+            Assert.fail();
+        }
+        for (WebElement isReferred : quoteDetails) {
+            Assert.assertEquals(isReferred.getText(), "No", "Referred quotes also displayed");
+        }
+    }
 
     //Fetch quote on manage quote page based on quote number for qa
 
@@ -220,7 +224,7 @@ public class QuotePageSteps {
     @Then("Appropriate quote information displays on manage quote page")
     public void appropriate_quote_information_displays_on_manage_quote_page() {
         String quoteInformation = quotePage.verifyQuoteDetails();
-        if (quoteInformation.length() > 0) {
+        if (!quoteInformation.isEmpty()) {
             System.out.println(quoteInformation);
         } else {
             Assert.fail();

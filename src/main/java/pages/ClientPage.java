@@ -26,6 +26,7 @@ public class ClientPage {
     }
 
     //Elements
+
     @FindBy(css = "ul[id='side-menu']>li:nth-child(3)")
     private WebElement clientIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
@@ -46,12 +47,14 @@ public class ClientPage {
     private WebElement existingClientId;
 
     //Edit client page
+
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div[2]/div/div/div/div/div/div/div/a")
     private WebElement cogIcon;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div[2]/div/div/div/div/div/div/div/ul/li[1]/a")
     private WebElement editClientIcon;
 
     //Add quote on client
+
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div[2]/div/div/div/div/div/div/div/ul/li[2]/a")
     private WebElement addQuoteIcon;
     @FindBy(xpath = "//div[@class='ibox-content']/div/div/div[4]/div/div/span")
@@ -148,6 +151,7 @@ public class ClientPage {
     private WebElement displayMessageOfViewClientPage;
 
     //Add contact details of client
+
     @FindBy(css = "a[id='dropdownMenu1']")
     private WebElement settingDropDown;
     @FindBy(css = "//ul[@class='dropdown-menu']/li[5]")
@@ -168,6 +172,7 @@ public class ClientPage {
     private WebElement contactData;
 
     //Add notes details of client
+
     @FindBy(xpath = "//ul[@class='dropdown-menu']/li[6]/a")
     private WebElement addNotesOptionOfDD;
     @FindBy(css = "input[id='Title']")
@@ -182,6 +187,7 @@ public class ClientPage {
     private WebElement noteDetails;
 
     //Add task details of client
+
     @FindBy(xpath = "//ul[@class='dropdown-menu']/li[7]/a")
     private WebElement addTaskOptionOfDD;
     @FindBy(css = "input[id='Title']")
@@ -208,6 +214,7 @@ public class ClientPage {
     private WebElement taskDetails;
 
     //Edit client test case
+
     @FindBy(xpath = "//ul[@class='dropdown-menu']/li[1]")
     private WebElement editClientOptionsFromDD;
     @FindBy(css = "input[id='FirstName']")
@@ -252,14 +259,12 @@ public class ClientPage {
     }
 
     public String fetchAndDisplayData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String array = " ";
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder array = new StringBuilder();
         for (WebElement rEle : totalRow) {
-            array = array + " " + rEle.getText();
+            array.append(rEle.getText()).append("\n");
         }
-        return array;
-
+        return array.toString();
     }
 
     public void enterCodeDetails() {
@@ -273,11 +278,10 @@ public class ClientPage {
     }
 
     public String verifyClient() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]")));
-        String clientCode = " ";
+        List<WebElement> clientInfo = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[2]");
+        String clientCode = "";
         for (WebElement client : clientInfo) {
-            clientCode = client.getText();
+            clientCode += client.getText() + "\n";
             break;
         }
         return clientCode;
@@ -290,8 +294,7 @@ public class ClientPage {
     }
 
     public void clickClientCode() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
+        List<WebElement> clientInfo = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
         for (WebElement client : clientInfo) {
             client.click();
             common.pause(3);
@@ -305,13 +308,11 @@ public class ClientPage {
 
     //To check whether add quote page is displays for same user by clicking on add button on view client page
     public String clickClientCodeToGetClientNumber() {
-
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement clientInfo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
+        WebElement clientInfo = common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
         String clientNumber = clientInfo.getText();
         System.out.println(clientNumber);
         clientInfo.click();
-        common.pause(3);
+        common.pause(2);
         return clientNumber;
     }
 
@@ -323,30 +324,22 @@ public class ClientPage {
         return existingClientId.getText();
     }
 
-
     //view client page should displays with all details for each client code link on manage client page
 
     public String clickOnClientCodeOnManageClient() {
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr/td[2]/a")));
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[2]/a");
 
-        String displayMessage = " ";
+        StringBuilder displayMessage = new StringBuilder();
         for (WebElement cEle : totalColumn) {
             cEle.click();
-
-            common.pause(3);
-            ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
+            common.pause(2);
+            common.switchToWindow(1);
             System.out.println(driver.getCurrentUrl());
-            displayMessage = displayMessage + displayedMessage.getText();
-
+            displayMessage.append(displayedMessage.getText()).append("\n");
             driver.close();
-            driver.switchTo().window(tabs2.get(0));
-            //break;
-
+            common.switchToWindow(0);
         }
-        return displayMessage;
-
+        return displayMessage.toString();
     }
 
     //Edit client page should display in editable format by clicking on edit client icon on cog dropdown menu on view client page
@@ -381,23 +374,21 @@ public class ClientPage {
         clientContact.clear();
         common.pause(1);
         clientContact.sendKeys("07459170022");
-
     }
 
     //Add quote page should display in editable format by clicking on add quote icon on cog dropdown menu on view client page
 
     public void clickOnAddQuoteIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         addQuoteIcon.click();
     }
 
     public void verifyAddQuotePage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         productDropdown.click();
         common.pause(1);
         optionOfProductDropDown.click();
+
        /* JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,10)", "");
         driver.findElement(AddressOfClient).clear();
@@ -407,6 +398,7 @@ public class ClientPage {
         JavascriptExecutor js1=(JavascriptExecutor) driver;
         js1.executeScript("window.scrollBy(0,-150)", "");*/
         // driver.findElement(radioButton).click();
+
         common.pause(3);
         speciesDropDown.click();
         common.pause(1);
@@ -422,19 +414,15 @@ public class ClientPage {
         common.pause(1);
         ((JavascriptExecutor) driver).executeScript("document.getElementById('Question_142').style.display='block';");
         priceOfSpecies.sendKeys("1500");
-
-
     }
 
     //Add policy page should display in editable format by clicking on add policy icon on cog dropdown menu on view client page
 
     public void clickOnAddPolicyIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         addPolicyIcon.click();
         common.pause(2);
-
     }
 
     public String verifyAddPolicyPage() {
@@ -444,28 +432,23 @@ public class ClientPage {
     //Add claim page should display with all details by clicking on add claim icon on cog dropdown menu on view client page
 
     public void clickOnAddClaimIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         addClaimIcon.click();
         common.pause(2);
-
     }
 
     public String verifyAddClaimPage() {
         return displayedMessage.getText();
     }
 
-
     //Client Refund Unallocated Balance page displays with all details by clicking on client refund unallocated balance icon on cog dropdown menu on view client page
 
     public void clickOnClientRefundUnallocatedBalanceIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         clientRefundUnallocatedBalanceOptionOfDD.click();
         common.pause(2);
-
     }
 
     public String verifyClientRefundUnallocatedBalancePage() {
@@ -475,12 +458,10 @@ public class ClientPage {
     //Client Refund Credit Note page displays with all details by clicking on client refund credit note icon on cog dropdown menu on view client page
 
     public void clickOnClientRefundCreditNoteIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         clientRefundCreditNoteOptionOfDD.click();
         common.pause(2);
-
     }
 
     public String verifyClientRefundCreditNotePage() {
@@ -490,12 +471,10 @@ public class ClientPage {
     //Client Allocate Payment page displays with all details by clicking on client allocate payment icon on cog dropdown menu on view client page
 
     public void clickOnClientAllocatePaymentIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         clientAllocatePaymentOfDD.click();
         common.pause(2);
-
     }
 
     public String verifyAllocatePaymentPage() {
@@ -505,12 +484,10 @@ public class ClientPage {
     //Client Account Maintenance page displays with all details by clicking on client account maintenance page icon on cog dropdown menu on view client page
 
     public void clickOnClientAccountMaintenanceIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         clientAccountMaintenanceOfDD.click();
         common.pause(2);
-
     }
 
     public String verifyAccountMaintenancePage() {
@@ -520,9 +497,8 @@ public class ClientPage {
     //Debtor ledger page should display in editable format by clicking on debtor ledger icon on cog dropdown menu on view client page
 
     public void clickOnDebtorLedgerIcon() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(cogIcon).perform();
+        common.pause(2);
+        common.moveToElement(cogIcon);
         debtorLedgerIconOfDD.click();
         common.pause(2);
     }
@@ -532,14 +508,18 @@ public class ClientPage {
     }
 
     //Policies details of client displays by clicking on policy tab on view client page
+
     public void clickOnPolicyIcon() {
         policyIcon.click();
         common.pause(2);
     }
 
     public String verifyPolicyDetails() {
-        return policyDetails.getText();
-
+        common.pause(2);
+        if (common.isElementDisplayed(policyDetails)) {
+            return policyDetails.getText();
+        }
+        return null;
     }
 
     //Claims details of client displays by clicking on policy tab on view client page
@@ -626,10 +606,8 @@ public class ClientPage {
         statusDropDownOnViewClientPage.click();
         common.pause(2);
         ((JavascriptExecutor) driver).executeScript("document.getElementById('ClientPolicyStatus').style.display='block';");
-
         optionFromStatusDropDown.click();
         common.pause(2);
-
     }
 
     public String verifyPolicyData() {
@@ -641,7 +619,6 @@ public class ClientPage {
     public void selectOptionFromStatusDD() {
         statusDDOnViewClientPage.click();
         common.pause(2);
-
         optionFromStatusDropDownForClaim.click();
         common.pause(2);
     }
@@ -649,7 +626,6 @@ public class ClientPage {
     public String verifyClaimData() {
         return claimDetails.getText();
     }
-
 
     //Add client scenario
 
@@ -693,11 +669,9 @@ public class ClientPage {
 
     public void selectAddContactOfClient() {
         common.pause(3);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(settingDropDown).perform();
+        common.moveToElement(settingDropDown);
         addContactOptionOfDD.click();
         common.pause(1);
-
     }
 
     public void enterContactDetails() {
@@ -719,12 +693,9 @@ public class ClientPage {
 
     public void selectAddNotesOfClient() {
         common.pause(3);
-        Actions actions = new Actions(driver);
-        actions.moveToElement(settingDropDown).perform();
+        common.moveToElement(settingDropDown);
         addNotesOptionOfDD.click();
         common.pause(1);
-
-
     }
 
     public void enterNotesDetails() {
@@ -732,7 +703,6 @@ public class ClientPage {
         titleOfNote.sendKeys("Test");
         descriptionOFNote.sendKeys("Test Test Test");
         createButtonOfWindow.click();
-
     }
 
     public String verifyGeneratedNotesDetails() {
@@ -746,9 +716,7 @@ public class ClientPage {
 
     public void selectAddTaskOfClient() {
         common.pause(3);
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(settingDropDown).perform();
+        common.moveToElement(settingDropDown);
         addTaskOptionOfDD.click();
         common.pause(1);
     }
@@ -767,7 +735,6 @@ public class ClientPage {
         optionFromTypeDD.click();
         endDate.sendKeys("12.06.2025");
         createButtonOfTask.click();
-
     }
 
     public String verifyGeneratedTaskDetails() {
@@ -781,9 +748,7 @@ public class ClientPage {
 
     public void selectEditClientDetails() {
         common.pause(3);
-
-        Actions actions = new Actions(driver);
-        actions.moveToElement(settingDropDown).perform();
+        common.moveToElement(settingDropDown);
         editClientOptionsFromDD.click();
         common.pause(1);
     }
@@ -832,8 +797,7 @@ public class ClientPage {
     }
 
     public void clickONClientCode() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> clientInfo = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]")));
+        List<WebElement> clientInfo = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
         for (WebElement client : clientInfo) {
             client.click();
             break;

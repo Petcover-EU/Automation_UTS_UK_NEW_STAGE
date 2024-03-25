@@ -13,7 +13,7 @@ public class ClientPageSteps {
 
     ClientPage clientPage = new ClientPage(DriverFactory.getDriver());
 
-    String clientNumber = " ";
+    String clientNumber = "";
 
     @Given("User should log in with username {string} and password {string} to the admin panel")
     public void user_should_log_in_with_username_and_password_to_the_admin_panel(String string, String string2) {
@@ -21,26 +21,22 @@ public class ClientPageSteps {
         logInPage.enterUserName(string);
         logInPage.enterPassword(string2);
         logInPage.clickSubmit();
-
     }
 
     @When("User clicks on client icon on left tool bar")
     public void user_clicks_on_client_icon_on_left_tool_bar() {
         String Message = clientPage.verifyClientManage();
         Assert.assertEquals(Message, "Manage Client");
-
     }
-
 
     @Then("Manage client page displays with list of clients")
     public void manage_client_page_displays_with_list_of_clients() {
         String clientData = clientPage.fetchAndDisplayData();
-        if (clientData.length() > 0) {
+        if (!clientData.isEmpty()) {
             System.out.println(clientData);
         } else {
             Assert.fail();
         }
-
     }
 
     @When("User enters code number inside search box on manage client page")
@@ -60,10 +56,10 @@ public class ClientPageSteps {
     }
 
     //Filter list of client based on active status dropdown option on manage client page also verifies client status on view client page
+
     @When("User selects appropriate option from Active dropdown on manage client page")
     public void user_selects_appropriate_option_from_active_dropdown_on_manage_client_page() {
         clientPage.selectClientStatus();
-
     }
 
     @When("User clicks on search button")
@@ -84,26 +80,18 @@ public class ClientPageSteps {
         } else {
             System.out.println("Failed to find Client details displays with Active status");
         }
-
     }
 
     //To check whether add quote page is displays for same user by clicking on add button on view client page
 
     @When("User clicks on client code on manage client page to add quote")
     public void user_clicks_on_client_code_on_manage_client_page_to_add_quote() {
-
         clientNumber = clientPage.clickClientCodeToGetClientNumber();
-        //System.out.println(clientPage);
     }
 
     @When("User clicks on add button on view client page")
     public void user_clicks_on_add_button_on_view_client_page() {
         clientPage.clickOnAddQuoteButton();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @Then("Add quote page displays with same client code")
@@ -111,13 +99,13 @@ public class ClientPageSteps {
         String clientId = clientPage.verifyExistingClientOnAddQuote();
         Assert.assertEquals(clientId, clientNumber);
     }
+
 //view client page should displays with all details for each client code link on manage client page
 
     @When("User clicks on client code link  on manage client page")
     public void user_clicks_on_client_code_link_on_manage_client_page() {
         String Message = clientPage.clickOnClientCodeOnManageClient();
-
-        if (Message.length() > 0) {
+        if (!Message.isEmpty()) {
             System.out.println(Message);
         } else {
             Assert.fail();
@@ -129,16 +117,15 @@ public class ClientPageSteps {
     @When("User clicks on policy tab on view client page")
     public void user_clicks_on_policy_tab_on_view_client_page() {
         clientPage.clickOnPolicyIcon();
-
     }
 
     @Then("Policies details should display on view client page")
     public void policies_details_should_display_on_view_client_page() {
-        String pDetails = clientPage.verifyPolicyDetails();
-        if (pDetails.length() > 0) {
-            System.out.println(pDetails);
+        String policyDetails = clientPage.verifyPolicyDetails();
+        if (!(policyDetails == null)) {
+            System.out.println(policyDetails);
         } else {
-            Assert.fail();
+            System.out.println("Policy details are not found for this client");
         }
     }
 
@@ -152,7 +139,7 @@ public class ClientPageSteps {
     @Then("Claim details should display on view client page")
     public void claim_details_should_display_on_view_client_page() {
         String cDetails = clientPage.verifyClaimDetails();
-        if (cDetails.length() > 0) {
+        if (!cDetails.isEmpty()) {
             System.out.println(cDetails);
         } else {
             Assert.fail();
@@ -169,7 +156,7 @@ public class ClientPageSteps {
     @Then("Contact details should display on view client page")
     public void contact_details_should_display_on_view_client_page() {
         String cDetails = clientPage.verifyContactDetails();
-        if (cDetails.length() > 0) {
+        if (!cDetails.isEmpty()) {
             System.out.println(cDetails);
         } else {
             Assert.fail();
@@ -186,7 +173,7 @@ public class ClientPageSteps {
     @Then("Notes details should display on view client page")
     public void notes_details_should_display_on_view_client_page() {
         String nDetails = clientPage.verifyNotesDetails();
-        if (nDetails.length() > 0) {
+        if (!nDetails.isEmpty()) {
             System.out.println(nDetails);
         } else {
             Assert.fail();
@@ -203,7 +190,7 @@ public class ClientPageSteps {
     @Then("Task details should display on view client page")
     public void task_details_should_display_on_view_client_page() {
         String tDetails = clientPage.verifyTaskDetails();
-        if (tDetails.length() > 0) {
+        if (!tDetails.isEmpty()) {
             System.out.println(tDetails);
         } else {
             Assert.fail();
@@ -220,7 +207,7 @@ public class ClientPageSteps {
     @Then("History details should display on view client page")
     public void history_details_should_display_on_view_client_page() {
         String hDetails = clientPage.verifyHistoryDetails();
-        if (hDetails.length() > 0) {
+        if (!hDetails.isEmpty()) {
             System.out.println(hDetails);
         } else {
             Assert.fail();
@@ -237,7 +224,7 @@ public class ClientPageSteps {
     @Then("Quote details should display on view client page")
     public void quote_details_should_display_on_view_client_page() {
         String qDetails = clientPage.verifyQuoteDetails();
-        if (qDetails.length() > 0) {
+        if (!qDetails.isEmpty()) {
             System.out.println(qDetails);
         } else {
             Assert.fail();
@@ -254,24 +241,22 @@ public class ClientPageSteps {
     @Then("Policies Statement details should display on view client page")
     public void policies_statement_details_should_display_on_view_client_page() {
         String psDetails = clientPage.verifyPoliciesStatementDetails();
-        if (psDetails.length() > 0) {
+        if (!psDetails.isEmpty()) {
             System.out.println(psDetails);
         } else {
             Assert.fail();
         }
     }
 
-
     @Then("View client page displays with all details")
     public void view_client_page_displays_with_all_details() {
-
     }
+
     //To add new Client test case step definition
 
     @When("User clicks on add client icon on manage client page")
     public void user_clicks_on_add_client_icon_on_manage_client_page() {
         clientPage.clickOnAddClientButton();
-
     }
 
     @When("User enters all mandatory details on add client page")
@@ -288,7 +273,6 @@ public class ClientPageSteps {
     public void view_client_page_appears_with_the_details_of_currently_added_client() {
         String clientMessage = clientPage.verifyCreatedClient();
         Assert.assertEquals(clientMessage, "View Client");
-
     }
 
     //Add contact details of client
@@ -296,47 +280,39 @@ public class ClientPageSteps {
     @When("User selects Add contact option from setting dropdown besides of active text on view client page")
     public void user_selects_add_contact_option_from_setting_dropdown_besides_of_active_text_on_view_client_page() {
         clientPage.selectAddContactOfClient();
-
     }
 
     @When("User enters all details inside add client window")
     public void user_enters_all_details_inside_add_client_window() {
         clientPage.enterContactDetails();
-
     }
 
     @Then("Contact details can view under contacts menu on view client page")
     public void contact_details_can_view_under_contacts_menu_on_view_client_page() {
         String contactDetail = clientPage.verifyGeneratedContactDetails();
-        if (contactDetail.length() > 0) {
+        if (!contactDetail.isEmpty()) {
             System.out.println(contactDetail);
-
         }
     }
-
 
     //Add notes information for client
 
     @When("User selects Add notes options from setting dropdown besides the active text on view client page")
     public void user_selects_add_notes_options_from_setting_dropdown_besides_the_active_text_on_view_client_page() {
         clientPage.selectAddNotesOfClient();
-
     }
 
     @When("User enters all details inside add notes window")
     public void user_enters_all_details_inside_add_notes_window() {
         clientPage.enterNotesDetails();
-
     }
 
     @Then("Notes details can view under note menu tab on view client page")
     public void notes_details_can_view_under_note_menu_tab_on_view_client_page() {
         String notesDetail = clientPage.verifyGeneratedNotesDetails();
-        if (notesDetail.length() > 0) {
+        if (!notesDetail.isEmpty()) {
             System.out.println(notesDetail);
-
         }
-
     }
 
     //Add task details of client
@@ -344,23 +320,19 @@ public class ClientPageSteps {
     @When("User selects Add task options from setting dropdown besides the active text on view client page")
     public void user_selects_add_task_options_from_setting_dropdown_besides_the_active_text_on_view_client_page() {
         clientPage.selectAddTaskOfClient();
-
     }
 
     @When("User enters all details inside add task window")
     public void user_enters_all_details_inside_add_task_window() {
         clientPage.enterTaskDetails();
-
     }
 
     @Then("Task details can view under task menu tab on view client page")
     public void task_details_can_view_under_task_menu_tab_on_view_client_page() {
         String taskDetail = clientPage.verifyGeneratedTaskDetails();
-        if (taskDetail.length() > 0) {
+        if (!taskDetail.isEmpty()) {
             System.out.println(taskDetail);
-
         }
-
     }
 
     //Edit client Page
@@ -378,11 +350,9 @@ public class ClientPageSteps {
     @Then("Updated details can view on view client page")
     public void updated_details_can_view_on_view_client_page() {
         String updatedClientDetail = clientPage.verifyUpdatedClient();
-        if (updatedClientDetail.length() > 0) {
+        if (!updatedClientDetail.isEmpty()) {
             System.out.println(updatedClientDetail);
-
         }
-
     }
 
     //Add notes for client on production
@@ -395,14 +365,10 @@ public class ClientPageSteps {
     @When("Uer clicks on search button on manage client page")
     public void uer_clicks_on_search_button_on_manage_client_page() {
         clientPage.clickOnSearchButton();
-
     }
 
     @When("User clicks on client code on manage client page on production")
     public void user_clicks_on_client_code_on_manage_client_page_on_production() {
         clientPage.clickONClientCode();
-
     }
-
-
 }

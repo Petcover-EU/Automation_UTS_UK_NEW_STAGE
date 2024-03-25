@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Setting.feature",
+        features = "src/test/resources/features/Setting.feature:280",
         glue = {"steps", "hook"},
         monochrome = true,
-        plugin = { "pretty",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }
+        plugin = {"pretty",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class SettingPage {
 }

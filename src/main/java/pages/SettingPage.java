@@ -265,7 +265,7 @@ public class SettingPage {
     private WebElement addHearAboutUsIcon;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
     private WebElement displayedMessageOneAddHearAboutUsPage;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[5]/div/a[1]")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[7]/div/a[1]")
     private WebElement editIconOnManageHearAboutUsPage;
     @FindBy(css = "input[id='Name']")
     private WebElement inputTypeHearAboutUsName;
@@ -273,6 +273,14 @@ public class SettingPage {
     private WebElement inputTypeDescriptionOnEditHearAboutUsPage;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
     private WebElement displayedMessageOnEditHearAboutUsPage;
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[4]")
+    private WebElement petTypeInManagePetBreedPage;
+    @FindBy(xpath = "//input[@id='SpeciesTypeId']//..//span[@class='k-select']")
+    private WebElement speciesTypeDD;
+    @FindBy(css = "ul[id='SpeciesTypeId_listbox'] li:nth-child(2)")
+    private WebElement birdSpeciesOption;
+    @FindBy(xpath = "//input[@id='SpeciesName']")
+    private WebElement speciesName;
 
     public void clickIcon() {
         lookUpIcon.click();
@@ -280,193 +288,20 @@ public class SettingPage {
     }
 
     public void traversingThroughPages() {
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
-        }
         common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).click();
-        } else {
+        for (int i = 1; i <= 15; i++) {
+            if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).isEnabled()) {
+                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
+            } else {
+                common.pause(2);
+                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
+            }
             common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[2]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[3]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[4]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[5]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[6]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[7]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[8]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[9]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[10]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[11]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[12]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[13]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[14]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-        lookUpIcon.click();
-
-        if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).click();
-        } else {
-            common.pause(2);
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[15]/a")).click();
-        }
-        common.pause(2);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
-
-           /* driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[16]/a")).click();
             System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[17]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[18]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[19]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[20]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[21]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();
-            driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[22]/a")).click();
-            System.out.println(driver.getCurrentUrl());
-            driver.findElement(lookUpIcon).click();*/
-        //}
+            common.pause(1);
+            lookUpIcon.click();
+            common.pause(2);
+        }
     }
 
     //To verify whether Manage Policy Type page displays with policy type details by clicking on policy type icon on setting page
@@ -477,13 +312,12 @@ public class SettingPage {
     }
 
     public String verifyManagePolicyTypeIcon() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> policyTypeList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> policyTypeList = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : policyTypeList) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
+        return details.toString();
     }
 
     //Add policy type page  displays will all details when user clicks on add policy type icon on manage policy type page
@@ -531,13 +365,12 @@ public class SettingPage {
     }
 
     public String verifyManageClientClassPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> ClientClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> ClientClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : ClientClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
+        return details.toString();
     }
 
     //Add client class page  displays will all details when user clicks on add client class icon on manage class client page
@@ -582,13 +415,12 @@ public class SettingPage {
     }
 
     public String verifyManageInsurerClassPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> InsurerClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> InsurerClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : InsurerClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
+        return details.toString();
     }
 
     //Add Insurer class page displays will all details when user clicks on add insurer class icon on manage insurer class page
@@ -600,7 +432,6 @@ public class SettingPage {
 
     public String verifyAddInsurerClassPage() {
         return displayedMessageOnAddInsurerClassPage.getText();
-
     }
 
     //Edit Insurer class page displays upon clicking on edit icon against insurer icon on manage insurer class page
@@ -608,7 +439,6 @@ public class SettingPage {
     public void clickOnEditIconOnManageInsurerClassPage() {
         editIconOnManageInsurerClass.click();
         common.pause(3);
-
     }
 
     public String verifyEditInsurerClassPage() {
@@ -625,7 +455,6 @@ public class SettingPage {
         inputTypeDescriptionOfEditInsurerPage.sendKeys("Test");
 
         return displayedMessageOnEditInsurerClassPage.getText();
-
     }
 
     //To verify whether Manage division page displays with division details by clicking on division icon on setting page
@@ -637,14 +466,12 @@ public class SettingPage {
     }
 
     public String verifyManageDivisionPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> divisionClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> divisionClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : divisionClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add division page displays will all details when user clicks on add division icon on manage division page
@@ -687,14 +514,12 @@ public class SettingPage {
     }
 
     public String verifyManageBranchPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> branchClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> branchClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : branchClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add branch page displays will all details when user clicks on add branch icon on manage branch page
@@ -742,14 +567,12 @@ public class SettingPage {
     }
 
     public String verifyManageChangeAreaPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> changeAreaClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> changeAreaClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : changeAreaClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add change area page displays will all details when user clicks on add change area icon on manage change area  page
@@ -757,12 +580,10 @@ public class SettingPage {
     public void clickOnAddChangeAreaIcon() {
         addChangeAreaIcon.click();
         common.pause(3);
-
     }
 
     public String verifyAddChangeAreaPage() {
         return displayedMessageOnAddChangeAreaPage.getText();
-
     }
 
     //Edit change area page displays upon clicking on edit icon against change area name on manage change area page
@@ -770,7 +591,6 @@ public class SettingPage {
     public void clickOnEditIconOnManageChangeAreaPage() {
         editIconOnManageChangeAreaPage.click();
         common.pause(3);
-
     }
 
     public String verifyEditChangeAreaPage() {
@@ -783,7 +603,6 @@ public class SettingPage {
         inputTypeDescriptionOfEditChangeAreaNamePage.sendKeys("Test");
 
         return displayedMessageOneEditChangeAreaPage.getText();
-
     }
 
     //To verify whether Manage sex page of pet displays with pet sex details by clicking on change sex icon on setting page
@@ -794,13 +613,12 @@ public class SettingPage {
     }
 
     public String verifyManageSexPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> sexClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> sexClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : sexClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
+        return details.toString();
     }
 
     //Add sex page of pet displays will all details when user clicks on add sex icon on manage sex page
@@ -841,15 +659,13 @@ public class SettingPage {
         common.pause(3);
     }
 
-    public String verifyManageebtorCodePage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> debtorCodeClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+    public String verifyManageBatorCodePage() {
+        List<WebElement> debtorCodeClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : debtorCodeClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add sex page of pet displays will all details when user clicks on add sex icon on manage sex page
@@ -890,14 +706,12 @@ public class SettingPage {
     }
 
     public String verifyManageRenewalTypePage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> renewalTypeClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> renewalTypeClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : renewalTypeClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add renewal type page displays will all details when user clicks on add renewal type icon on manage renewal type  page
@@ -938,14 +752,12 @@ public class SettingPage {
     }
 
     public String verifyManageTaskTypePage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> taskTypeClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> taskTypeClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : taskTypeClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add task type page displays will all details when user clicks on add task type icon on manage task type  page
@@ -953,12 +765,10 @@ public class SettingPage {
     public void clickOnAddTaskTypeIcon() {
         addTaskTypeIcon.click();
         common.pause(3);
-
     }
 
     public String verifyAddTaskTypePage() {
         return displayedMessageOneAddTaskTypePage.getText();
-
     }
 
     //Edit task type page displays upon clicking on edit icon against task type  name on manage task type  page
@@ -988,14 +798,12 @@ public class SettingPage {
     }
 
     public String verifyManageTaskStatusPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> taskStatusClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> taskStatusClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : taskStatusClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add task status page displays will all details when user clicks on add task status icon on manage task status  page
@@ -1046,14 +854,12 @@ public class SettingPage {
     }
 
     public String verifyManagePetBreedPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> petBreedClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> petBreedClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : petBreedClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add Pet Breed page displays will all details when user clicks on add pet breed icon on manage pet breed  page
@@ -1061,49 +867,44 @@ public class SettingPage {
     public void clickOnAddPetBreedIcon() {
         addPetBreedIcon.click();
         common.pause(3);
-
     }
 
     public String verifyAddPetBreedPage() {
         return displayedMessageOneAddPetBreedPage.getText();
-
     }
 
     //Edit Pet Breed page displays upon clicking on edit icon against pet breed name on manage pet breed page
 
+    String petType;
+
     public void clickOnEditIconOnManagePetBreedPage() {
+        petType = petTypeInManagePetBreedPage.getText();
         editIconOnManagePetBreedPage.click();
         common.pause(3);
 
     }
 
     public String verifyEditPetBreedPage() {
-        inputTypPetBreedName.clear();
-        common.pause(1);
-       inputTypPetBreedName.sendKeys("Test");
+        if (petType.equalsIgnoreCase("Dog")) {
+            inputTypPetBreedName.clear();
+            common.pause(1);
+            inputTypPetBreedName.sendKeys("Test");
 
-        inputTypePetBreedNumber.clear();
-        common.pause(1);
-        inputTypePetBreedNumber.sendKeys("Test");
+            inputTypePetBreedNumber.clear();
+            common.pause(1);
+            inputTypePetBreedNumber.sendKeys("Test");
 
-        ratingClassDropDownOnPetBreedPage.click();
-        common.pause(1);
-        optionFromRatingClassDropDownOnEditPetBreedPage.click();
-
-        common.pause(1);
-
-       /* WebElement selectBreed= driver.findElement(By.cssSelector("input[id='toggle_SelectBreed']"));
-        //((JavascriptExecutor)driver).executeScript("arguments[0].setAttribute('style','visibility:visible;');",selectBreed);
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();", selectBreed);
-
-
-
-       common.pause(1);
-        driver.findElement(inputTypeUnknownBreed).click();
-
-       common.pause(1);
-        driver.findElement(inputTypeIsActive).click();*/
+            ratingClassDropDownOnPetBreedPage.click();
+            common.pause(1);
+            optionFromRatingClassDropDownOnEditPetBreedPage.click();
+            common.pause(1);
+        } else if (petType.equalsIgnoreCase("Exotic")) {
+            speciesTypeDD.click();
+            common.pause(1);
+            birdSpeciesOption.click();
+            speciesName.clear();
+            speciesName.sendKeys("TestEdit");
+        }
         return displayedMessageOnEditPetBreedPage.getText();
 
     }
@@ -1116,14 +917,12 @@ public class SettingPage {
     }
 
     public String verifyManageExclusionPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> exclusionClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> exclusionClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : exclusionClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add exclusion page displays will all details when user clicks on add exclusion icon on manage exclusion page
@@ -1151,7 +950,7 @@ public class SettingPage {
 
         inputTypeExclusionName.clear();
         common.pause(1);
-       inputTypeExclusionName.sendKeys("Test");
+        inputTypeExclusionName.sendKeys("Test");
 
         petClassDropDownOnExclusionPage.click();
         common.pause(1);
@@ -1161,7 +960,7 @@ public class SettingPage {
         common.pause(1);
         inputTypeDescription.sendKeys("Test");
 
-       defaultDurationDropDownOnExclusionPage.click();
+        defaultDurationDropDownOnExclusionPage.click();
         common.pause(1);
         optionFromDefaultDurationDropDownOnExclusionPage.click();
 
@@ -1177,14 +976,12 @@ public class SettingPage {
     }
 
     public String verifyManageRegularVetPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> regularVetClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> regularVetClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : regularVetClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add regular vet page displays will all details when user clicks on add regular vet icon on manage regular vet page
@@ -1192,7 +989,6 @@ public class SettingPage {
     public void clickOnAddRegularVetIcon() {
         addRegularVetIcon.click();
         common.pause(3);
-
     }
 
     public String verifyAddRegularVetPage() {
@@ -1207,14 +1003,12 @@ public class SettingPage {
     }
 
     public String verifyManageHearAboutUsPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> hearAboutUsClass = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String details = " ";
+        List<WebElement> hearAboutUsClass = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder details = new StringBuilder();
         for (WebElement data : hearAboutUsClass) {
-            details = details + data.getText();
+            details.append(data.getText());
         }
-        return details;
-
+        return details.toString();
     }
 
     //Add hear about us page displays will all details when user clicks on add hear about us icon on manage hear about us page
@@ -1226,7 +1020,6 @@ public class SettingPage {
 
     public String verifyAddHearAboutUsPage() {
         return displayedMessageOneAddHearAboutUsPage.getText();
-
     }
 
     //Edit hear about us page displays upon clicking on edit icon against hear about us name on manage hear about us page

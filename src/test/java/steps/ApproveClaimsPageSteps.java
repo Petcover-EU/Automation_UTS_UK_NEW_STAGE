@@ -13,7 +13,6 @@ public class ApproveClaimsPageSteps {
     @When("User clicks on approve claims icon on left tool bar")
     public void user_clicks_on_approve_claims_icon_on_left_tool_bar() {
         approveClaimPage.clickOnApproveClaimButton();
-
     }
 
     @Then("User will redirect to page with {string} message on it")
@@ -25,12 +24,8 @@ public class ApproveClaimsPageSteps {
     @Then("User will able to see data on approve claims page")
     public void user_will_able_to_see_data_on_approve_claims_page() {
         String data = approveClaimPage.fetchData();
-       if(data.isBlank())
-       {
-          // Assert.fail();
-           System.out.println("Claim data does not found");
-       }
+        if (data.isBlank()) {
+            System.out.println("Claim data does not found");
+        }
     }
-
-
 }

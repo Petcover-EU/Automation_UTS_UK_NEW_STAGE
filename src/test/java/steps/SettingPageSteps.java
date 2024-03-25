@@ -40,7 +40,7 @@ public class SettingPageSteps {
     @Then("Manage Policy Type page displays with all policy type details")
     public void manage_policy_type_page_displays_with_all_policy_type_details() {
         String policyTypeDetails = settingPage.verifyManagePolicyTypeIcon();
-        if (policyTypeDetails.length() > 0) {
+        if (!policyTypeDetails.isEmpty()) {
             System.out.println(policyTypeDetails);
         } else {
             System.out.println("Manage Policy Type displays with no policy type data");
@@ -87,7 +87,7 @@ public class SettingPageSteps {
     @Then("Manage client class page displays with all client class details")
     public void manage_client_class_page_displays_with_all_client_class_details() {
         String clientClassDetails = settingPage.verifyManageClientClassPage();
-        if (clientClassDetails.length() > 0) {
+        if (!clientClassDetails.isEmpty()) {
             System.out.println(clientClassDetails);
         } else {
             System.out.println("Manage Client Class Page displays with no client class data");
@@ -132,7 +132,7 @@ public class SettingPageSteps {
     @Then("Manage insurer class page displays with all client class details")
     public void manage_insurer_class_page_displays_with_all_client_class_details() {
         String insurerClassDetails = settingPage.verifyManageInsurerClassPage();
-        if (insurerClassDetails.length() > 0) {
+        if (!insurerClassDetails.isEmpty()) {
             System.out.println(insurerClassDetails);
         } else {
             System.out.println("Manage Insurer Class Page displays with no insurer class data");
@@ -180,7 +180,7 @@ public class SettingPageSteps {
     @Then("Manage division page displays with all division details")
     public void manage_division_page_displays_with_all_division_details() {
         String divisionDetails = settingPage.verifyManageDivisionPage();
-        if (divisionDetails.length() > 0) {
+        if (!divisionDetails.isEmpty()) {
             System.out.println(divisionDetails);
         } else {
             System.out.println("Manage division Page displays with no division data");
@@ -224,12 +224,11 @@ public class SettingPageSteps {
     @Then("Manage branch page displays with all branch details")
     public void manage_branch_page_displays_with_all_branch_details() {
         String branchDetails = settingPage.verifyManageBranchPage();
-        if (branchDetails.length() > 0) {
+        if (!branchDetails.isEmpty()) {
             System.out.println(branchDetails);
         } else {
             System.out.println("Manage branch Page displays with no branch data");
         }
-
     }
 
     //Add branch page displays will all details when user clicks on add branch icon on manage branch page
@@ -266,7 +265,7 @@ public class SettingPageSteps {
     @Then("Manage change area page displays with all area details")
     public void manage_change_area_page_displays_with_all_area_details() {
         String changeAreaDetails = settingPage.verifyManageChangeAreaPage();
-        if (changeAreaDetails.length() > 0) {
+        if (!changeAreaDetails.isEmpty()) {
             System.out.println(changeAreaDetails);
         } else {
             System.out.println("Change area Page displays with no area data");
@@ -307,7 +306,7 @@ public class SettingPageSteps {
     @Then("Manage sex page displays with all area details")
     public void manage_sex_page_displays_with_all_area_details() {
         String sexDetails = settingPage.verifyManageSexPage();
-        if (sexDetails.length() > 0) {
+        if (!sexDetails.isEmpty()) {
             System.out.println(sexDetails);
         } else {
             System.out.println("Sex Page of pet displays with no data");
@@ -347,8 +346,8 @@ public class SettingPageSteps {
 
     @Then("Manage Debtor Codes page displays with all debtor code details")
     public void manage_debtor_codes_page_displays_with_all_debtor_code_details() {
-        String debtorCodeDetails = settingPage.verifyManageebtorCodePage();
-        if (debtorCodeDetails.length() > 0) {
+        String debtorCodeDetails = settingPage.verifyManageBatorCodePage();
+        if (!debtorCodeDetails.isEmpty()) {
             System.out.println(debtorCodeDetails);
         } else {
             System.out.println("Debtor code Page of pet displays with no data");
@@ -387,8 +386,8 @@ public class SettingPageSteps {
 
     @Then("Manage renewal type page displays with all debtor code details")
     public void manage_renewal_type_page_displays_with_all_debtor_code_details() {
-        String renewTypeDetails = settingPage.verifyManageebtorCodePage();
-        if (renewTypeDetails.length() > 0) {
+        String renewTypeDetails = settingPage.verifyManageBatorCodePage();
+        if (!renewTypeDetails.isEmpty()) {
             System.out.println(renewTypeDetails);
         } else {
             System.out.println("Renew Type Page of pet displays with no data");
@@ -429,7 +428,7 @@ public class SettingPageSteps {
     @Then("Manage task type page displays with all task details")
     public void manage_task_type_page_displays_with_all_task_details() {
         String taskTypeDetails = settingPage.verifyManageTaskTypePage();
-        if (taskTypeDetails.length() > 0) {
+        if (!taskTypeDetails.isEmpty()) {
             System.out.println(taskTypeDetails);
         } else {
             System.out.println("Task Type Page of pet displays with no data");
@@ -470,7 +469,7 @@ public class SettingPageSteps {
     @Then("Manage task status page displays with all task details")
     public void manage_task_status_page_displays_with_all_task_details() {
         String taskStatusDetails = settingPage.verifyManageTaskStatusPage();
-        if (taskStatusDetails.length() > 0) {
+        if (!taskStatusDetails.isEmpty()) {
             System.out.println(taskStatusDetails);
         } else {
             System.out.println("Task Status Page of pet displays with no data");
@@ -512,7 +511,7 @@ public class SettingPageSteps {
     @Then("Manage pet breed page displays with all task details")
     public void manage_pet_breed_page_displays_with_all_task_details() {
         String petBreedDetails = settingPage.verifyManagePetBreedPage();
-        if (petBreedDetails.length() > 0) {
+        if (!petBreedDetails.isEmpty()) {
             System.out.println(petBreedDetails);
         } else {
             System.out.println("Task Status Page of pet displays with no data");
@@ -555,7 +554,7 @@ public class SettingPageSteps {
     public void manage_exclusion_page_displays_with_all_task_details() {
 
         String exclusionDetails = settingPage.verifyManageExclusionPage();
-        if (exclusionDetails.length() > 0) {
+        if (!exclusionDetails.isEmpty()) {
             System.out.println(exclusionDetails);
         } else {
             System.out.println("Exclusion Page of pet displays with no data");
@@ -598,7 +597,7 @@ public class SettingPageSteps {
     @Then("Manage regular vet displays with all task details")
     public void manage_regular_vet_displays_with_all_task_details() {
         String regularVetDetails = settingPage.verifyManageRegularVetPage();
-        if (regularVetDetails.length() > 0) {
+        if (!regularVetDetails.isEmpty()) {
             System.out.println(regularVetDetails);
         } else {
             System.out.println("Regular vet Page of pet displays with no data");
@@ -627,7 +626,7 @@ public class SettingPageSteps {
     @Then("Manage hear about us page displays with all task details")
     public void manage_hear_about_us_page_displays_with_all_task_details() {
         String hearAboutUsDetails = settingPage.verifyManageHearAboutUsPage();
-        if (hearAboutUsDetails.length() > 0) {
+        if (!hearAboutUsDetails.isEmpty()) {
             System.out.println(hearAboutUsDetails);
         } else {
             System.out.println("Hear About Us Page of pet displays with no data");
@@ -656,6 +655,4 @@ public class SettingPageSteps {
         String addRegularVetPage = settingPage.verifyEditHearAboutUsPage() ;
         Assert.assertEquals(addRegularVetPage, "Edit Hear About Us");
     }
-
-
 }

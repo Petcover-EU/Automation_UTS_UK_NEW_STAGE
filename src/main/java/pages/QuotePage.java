@@ -55,7 +55,7 @@ public class QuotePage {
     private WebElement optionsFromProductDD;
     @FindBy(xpath = "//div[@class='ibox-content-search m-b-sm']/div[1]/div[1]/div[3]/div/span")
     private WebElement isReferredDropdown;
-    @FindBy(xpath = "//ul[@id='IsReferRequired_listbox']/li[2]")
+    @FindBy(xpath = "//ul[@id='IsReferRequired_listbox']/li[3]")
     private WebElement optionsFromIsReferredDD;
     @FindBy(xpath = "//div[@class='ibox-content-search m-b-sm']/div[1]/div[2]/div[3]/div/span")
     private WebElement divisionDropdown;
@@ -327,37 +327,30 @@ public class QuotePage {
     }
 
     public String fetchAndDisplayedData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String array = " ";
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder array = new StringBuilder();
         for (WebElement rEle : totalRow) {
-            array = array + " " + rEle.getText();
+            array.append(rEle.getText()).append("\n");
         }
-        return array;
+        return array.toString();
     }
 
     public String verifyQuoteDateColumnFormat() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> quoteDateColumn = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[3]")));
-        String date = "";
+        List<WebElement> quoteDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[3]");
+        StringBuilder date = new StringBuilder();
         for (WebElement quoteDate : quoteDateColumn) {
-            date = date + " " + quoteDate.getText();
-
+            date.append(quoteDate.getText()).append("\n");
         }
-        return date;
-
+        return date.toString();
     }
 
     public String verifyExpireDateColumnFormat() {
-        WebDriverWait eWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> expireDateColumn = eWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[4]")));
-        String date = "";
+        List<WebElement> expireDateColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[4]");
+        StringBuilder date = new StringBuilder();
         for (WebElement expireDate : expireDateColumn) {
-            date = date + " " + expireDate.getText();
-
+            date.append(expireDate.getText()).append("\n");
         }
-        return date;
-
+        return date.toString();
     }
 
     public void clickOnAddQuoteButton() {
@@ -372,28 +365,24 @@ public class QuotePage {
     }
 
     public String verifyTotalPremiumColumn() {
-        common.pause(3);
-        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-        js1.executeScript("arguments[0].scrollIntoView();", monthlyPremiumColumn);
-        common.pause(3);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> yearlyPremiumColum = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[17]")));
-        String yPremium = " ";
+        common.pause(2);
+        common.scrollToElement(monthlyPremiumColumn);
+        common.pause(2);
+        List<WebElement> yearlyPremiumColum = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[17]");
+        StringBuilder yPremium = new StringBuilder();
         for (WebElement amountP : yearlyPremiumColum) {
-            yPremium = yPremium + " " + amountP.getText();
+            yPremium.append(amountP.getText()).append("\n");
         }
-        return yPremium;
+        return yPremium.toString();
     }
 
     public String verifyMonthlyPremiumColumn() {
-        WebDriverWait mWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> monthlyPremiumColumn = mWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[18]")));
-        String yPremium = " ";
+        List<WebElement> monthlyPremiumColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[18]");
+        StringBuilder yPremium = new StringBuilder();
         for (WebElement amountP : monthlyPremiumColumn) {
-            yPremium = yPremium + " " + amountP.getText();
+            yPremium.append(amountP.getText()).append("\n");
         }
-        return yPremium;
-
+        return yPremium.toString();
     }
 
     public String clickOnMicrochipButton() {
@@ -403,53 +392,44 @@ public class QuotePage {
     }
 
     public String verifyDataOnMicrochipPage() {
-        WebDriverWait rWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = rWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='MicrochipFileUploadAuditGrid']/table/tbody/tr")));
-        String data = " ";
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='MicrochipFileUploadAuditGrid']/table/tbody/tr");
+        StringBuilder data = new StringBuilder();
         for (WebElement rEle : totalRow) {
-            data = data + " " + rEle.getText();
+            data.append(rEle.getText()).append("\n");
         }
-        return data;
+        return data.toString();
     }
 
     public String verifyProductList() {
         common.pause(2);
         productListDropDown.click();
         common.pause(2);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> pList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul[id='PrimaryProductId_listbox']>li")));
+        List<WebElement> pList = common.waitUntilPresenceOfAllElement("//ul[@id='PrimaryProductId_listbox']//li");
         System.out.println(pList.size());
 
-        String verfiy = " ";
+        StringBuilder verfiy = new StringBuilder();
         for (WebElement product : pList) {
-
-            verfiy = verfiy + product.getText() + " ";
-
+            verfiy.append(product.getText()).append("\n");
         }
-        return verfiy;
+        return verfiy.toString();
     }
 
     public String fetchDataOfQuoteInformation() {
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody[1]/tr/td[2]/a")));
-        String displayMessage = " ";
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody[1]/tr/td[2]/a");
+        StringBuilder displayMessage = new StringBuilder();
         for (WebElement cEle : totalColumn) {
             System.out.println(cEle.getText());
 
             cEle.click();
             common.pause(3);
-            ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs2.get(1));
-            //System.out.println(driver.getCurrentUrl());
-
+            common.switchToWindow(1);
             System.out.println(driver.getCurrentUrl());
-            displayMessage = displayMessage + displayedMessage.getText();
+            displayMessage.append(displayedMessage.getText()).append("\n");
 
             driver.close();
-            driver.switchTo().window(tabs2.get(0));
+            common.switchToWindow(0);
         }
-
-        return displayMessage;
+        return displayMessage.toString();
     }
 
     //Items on manage quote page displays upon option selects from quote status dropdown
@@ -463,13 +443,12 @@ public class QuotePage {
 
     public String fetchAndVerifyDataAgainstDropDown() {
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalRow = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
-        String array = " ";
+        List<WebElement> totalRow = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
+        StringBuilder array = new StringBuilder();
         for (WebElement rEle : totalRow) {
-            array = array + " " + rEle.getText();
+            array.append(rEle.getText()).append("\n");
         }
-        return array;
+        return array.toString();
     }
 
     //Fetch list of quote based upon product drop down
@@ -487,22 +466,19 @@ public class QuotePage {
     }
 
     public List<WebElement> verifyListOfQuoteBasedOnProductDD() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='gridName']/table/tbody/tr")));
+        return common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
     }
 
     //Fetch list of quote based on option from Is referred dropdown on manage quote page
 
     public void selectOptionFromIsReferredDropDown() {
-
         isReferredDropdown.click();
         common.pause(1);
         optionsFromIsReferredDD.click();
     }
 
-
-    public String verifyListOfQuoteBasedOnIsReferredDD() {
-        return detailsOfQuotes.getText();
+    public List<WebElement> verifyListOfQuoteBasedOnIsReferredDD() {
+        return common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr//td[20]");
     }
 
     //Fetch list of quote based on option from division dropdown on manage quote page
@@ -532,8 +508,7 @@ public class QuotePage {
     //Upload details window should open by clicking on file name link on microchip file upload page
 
     public void clickOnFileNameLink() {
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalColumn = cWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='MicrochipFileUploadAuditGrid']/table/tbody/tr")));
+        List<WebElement> totalColumn = common.waitUntilPresenceOfAllElement("//div[@id='MicrochipFileUploadAuditGrid']/table/tbody/tr");
 
         for (WebElement cEle : totalColumn) {
             cEle.click();
@@ -586,8 +561,7 @@ public class QuotePage {
     }
 
     public String verifyQuoteDetails() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement quoteInfo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]")));
+        WebElement quoteInfo =common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]");
         return quoteInfo.getText();
     }
 
@@ -604,8 +578,6 @@ public class QuotePage {
     public void selectIncludePaymentCheckBox() {
         common.pause(1);
         includePaymentCheckBox.click();
-
-
     }
 
     public String verifyIncludePaymentDetailsOfQuote() {
@@ -622,45 +594,35 @@ public class QuotePage {
     //Edit quote information and verifies the same
 
     public void clickOnQuoteNumber() {
-
-        WebDriverWait cWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement quoteNumber = cWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[2]/a")));
+        WebElement quoteNumber = common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]/a");
         quoteNumber.click();
-
         common.pause(5);
-
     }
 
     public void selectEditQuoteOption() {
-        WebElement cogIcon = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[1]/td[20]/ul/li/a"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cogIcon);
+        common.scrollToElement(selectCogIcon);
         common.pause(1);
 
-        Actions actions = new Actions(driver);
-        actions.moveToElement(selectCogIcon).perform();
+        common.moveToElement(selectCogIcon);
         selectEditQuoteIcon.click();
         common.pause(5);
     }
 
     public void editQuoteDetails() {
         //Scroll up
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,250)", "");
+        common.scroll_By_Pixel("0","250");
         enterPostCodeInAddressDropDown.clear();
         enterPostCodeInAddressDropDown.sendKeys("RM8 2TE");
         common.pause(2);
         selectPostCodeFromDD.click();
-
         common.pause(1);
-
         hearAboutUsDropDown.click();
         common.pause(1);
         selectOptionFromHearAboutUsDD.click();
         common.pause(2);
 
         //Scroll up
-        JavascriptExecutor js1 = (JavascriptExecutor) driver;
-        js1.executeScript("window.scrollBy(0,-150)", "");
+        common.scroll_By_Pixel("0","-150");
         petSpeciesDropDown.click();
         common.pause(1);
         selectOptionFromPetSpeciesDD.click();
@@ -817,7 +779,7 @@ public class QuotePage {
             }
 
             common.pause(1);
-            String petBDate = row.getCell(13).getStringCellValue().replace("/",".");
+            String petBDate = row.getCell(13).getStringCellValue().replace("/", ".");
             petBirthDate.sendKeys(petBDate);
 
             common.pause(2);
@@ -1113,7 +1075,7 @@ public class QuotePage {
 
     public void enterCoverStartDateAndAnswer() {
         common.pause(2);
-        coverStartDateInput.sendKeys(common.getFutureDate(15,"dd/MM/yyyy"));
+        coverStartDateInput.sendKeys(common.getFutureDate(15, "dd/MM/yyyy"));
         common.pause(3);
         common.jsClick(assumptionYesRadioButton);
         common.jsClick(informationConfirmCheckbox);
@@ -1566,7 +1528,7 @@ public class QuotePage {
 
         planPopupCloseButton.click();
         common.pause(1);
-        coverStartDateInput.sendKeys(common.getFutureDate(15,"dd/MM/yyyy"));
+        coverStartDateInput.sendKeys(common.getFutureDate(15, "dd/MM/yyyy"));
         common.pause(2);
         common.jsClick(assumptionYesRadioButton);
         common.jsClick(assumptionRadioButtonCat);
@@ -1918,13 +1880,11 @@ public class QuotePage {
 
         planPopupCloseButton.click();
         common.pause(1);
-        coverStartDateInputForDog.sendKeys(common.getFutureDate(15,"dd/MM/yyyy"));
+        coverStartDateInputForDog.sendKeys(common.getFutureDate(15, "dd/MM/yyyy"));
         common.pause(1);
         petMicrochipNumberInput.sendKeys(common.generateRandomNumber(4));
         common.jsClick(petAssumption1ForDog);
         common.jsClick(petAssumption2ForDog);
         common.jsClick(petAssumption3ForDog);
     }
-
-
 }

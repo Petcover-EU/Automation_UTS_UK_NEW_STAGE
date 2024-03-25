@@ -22,54 +22,55 @@ public class DashBoardPage {
 
     public DashBoardPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     //Elements
+
     @FindBy(xpath = "//div[@class='panel panel-primary']/div/div/div/div/a")
-    private WebElement clientTag ;
+    private WebElement clientTag;
     @FindBy(xpath = "//div[@class='panel panel-primary']/div/div/div[2]/div/span")
-    private WebElement totalClient ;
+    private WebElement totalClient;
     @FindBy(xpath = "//div[@class='panel panel-primary']/div/div/div[3]/div/span")
-    private WebElement monthlyClient ;
+    private WebElement monthlyClient;
     @FindBy(xpath = "//div[@class='panel panel-green']/div/div/div/div/a")
-    private WebElement quoteTag ;
+    private WebElement quoteTag;
     @FindBy(xpath = "//div[@class='panel panel-green']/div/div/div[2]/div/span")
-    private WebElement totalQuote ;
+    private WebElement totalQuote;
     @FindBy(xpath = "//div[@class='panel panel-green']/div/div/div[3]/div/span")
-    private WebElement monthlyQuote ;
+    private WebElement monthlyQuote;
     @FindBy(xpath = "//div[@class='panel panel-yellow']/div/div/div/div/a")
-    private WebElement policyTag ;
+    private WebElement policyTag;
     @FindBy(xpath = "//div[@class='panel panel-yellow']/div/div/div[2]/div/span")
-    private WebElement totalPolicy ;
+    private WebElement totalPolicy;
     @FindBy(xpath = "//div[@class='panel panel-yellow']/div/div/div[3]/div/span")
-    private WebElement monthlyPolicy ;
+    private WebElement monthlyPolicy;
     @FindBy(xpath = "//div[@class='panel panel-red']/div/div/div/div/a")
-    private WebElement claimTag ;
+    private WebElement claimTag;
     @FindBy(xpath = "//div[@class='panel panel-red']/div/div/div[2]/div/span")
-    private WebElement totalClaims ;
+    private WebElement totalClaims;
     @FindBy(xpath = "//div[@class='panel panel-red']/div/div/div[3]/div/span")
-    private WebElement monthlyClaims ;
+    private WebElement monthlyClaims;
     @FindBy(css = "ul[id='side-menu']>li:nth-child(2)")
-    private WebElement dashboardIcon ;
+    private WebElement dashboardIcon;
     @FindBy(xpath = "//tbody//tr[8]//td[3]")
-    private WebElement clientName8thRow ;
+    private WebElement clientName8thRow;
     @FindBy(xpath = "//tbody//tr[8]//td[4]")
-    private WebElement policyNumber8thRow ;
+    private WebElement policyNumber8thRow;
     @FindBy(xpath = "//tbody//tr[8]//td[5]")
-    private WebElement claimNumber8thRow ;
+    private WebElement claimNumber8thRow;
     @FindBy(xpath = "//button[@class='btn btn-white dropdown-toggle']")
-    private WebElement globalSearchDropdown ;
+    private WebElement globalSearchDropdown;
     @FindBy(css = "a[data-val='Client']")
-    private WebElement clientOption ;
+    private WebElement clientOption;
     @FindBy(css = "a[data-val='Policy']")
-    private WebElement policyOption ;
+    private WebElement policyOption;
     @FindBy(css = "a[data-val='Claim']")
-    private WebElement claimOption ;
+    private WebElement claimOption;
     @FindBy(xpath = "//input[@id='txtSearch']")
-    private WebElement searchInputField ;
+    private WebElement searchInputField;
     @FindBy(xpath = "//button[@id='btnSearch']")
-    private WebElement searchButton ;
+    private WebElement searchButton;
 
     public String verifyClientDetails() {
         common.pause(3);
@@ -84,7 +85,6 @@ public class DashBoardPage {
         String totalQ = totalQuote.getText();
         String monthQ = monthlyQuote.getText();
         return quote + " " + totalQ + " " + monthQ;
-
     }
 
     public String verifyPolicy() {
@@ -103,7 +103,7 @@ public class DashBoardPage {
 
     public void clickOnTheDashboardIcon() {
         common.waitUntilVisibilityOfElement(dashboardIcon);
-       dashboardIcon.click();
+        dashboardIcon.click();
 
     }
 
@@ -148,9 +148,7 @@ public class DashBoardPage {
 
 
     public String verifyTheSearchedResultOfClientGlobalSearch() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody//tr//td[3]")));
-
+        List<WebElement> totalList = common.waitUntilPresenceOfAllElement("//tbody//tr//td[3]");
         StringBuilder listOfClient = new StringBuilder();
         for (WebElement eachOne : totalList) {
             listOfClient.append(eachOne.getText()).append("\n");
@@ -159,9 +157,7 @@ public class DashBoardPage {
     }
 
     public String verifyTheSearchedResultOfPolicy() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalPolicyList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody//tr//td[4]")));
-
+        List<WebElement> totalPolicyList = common.waitUntilPresenceOfAllElement("//tbody//tr//td[4]");
         StringBuilder listOfPolicies = new StringBuilder();
         for (WebElement eachOne : totalPolicyList) {
             listOfPolicies.append(eachOne.getText()).append("\n");
@@ -170,9 +166,7 @@ public class DashBoardPage {
     }
 
     public String verifyTheSearchedResultOfClaim() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> totalClaimList = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//tbody//tr//td[5]")));
-
+        List<WebElement> totalClaimList = common.waitUntilPresenceOfAllElement("//tbody//tr//td[5]");
         StringBuilder listOfClaims = new StringBuilder();
         for (WebElement eachOne : totalClaimList) {
             listOfClaims.append(eachOne.getText()).append("\n");
