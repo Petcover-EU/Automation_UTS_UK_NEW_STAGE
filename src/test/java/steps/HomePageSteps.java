@@ -17,8 +17,7 @@ public class HomePageSteps {
     public void user_verify_admin_login_page_through_url() {
         String url = homePage.verifyUrl();
         System.out.println("Current Page Url" + url);
-        Assert.assertEquals(url, constant.url);
-
+        Assert.assertEquals(url, Constant.url);
     }
 
     @Then("User will able to see text {string} behind copyright message")
@@ -29,6 +28,5 @@ public class HomePageSteps {
         } else {
             Assert.fail();
         }
-
     }
 }

@@ -1,11 +1,10 @@
 package steps;
 
 import factory.DriverFactory;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import pages.PolicyPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
+import pages.PolicyPage;
 
 public class PolicyPageSteps {
     PolicyPage policyPage = new PolicyPage(DriverFactory.getDriver());
@@ -93,7 +92,6 @@ public class PolicyPageSteps {
         } else {
             Assert.fail();
         }*/
-
     }
 
     //Check appropriate policy data should displays against option selected from status drop down on manage policy page
@@ -124,12 +122,7 @@ public class PolicyPageSteps {
 
     @Then("Details of policy on manage policy page filters upon value of from and to date value of policy")
     public void details_of_policy_on_manage_policy_page_filters_upon_value_of_from_and_to_date_value_of_policy() {
-        String policyDetails = policyPage.verifyPolicyDetails();
-        if (!policyDetails.isEmpty()) {
-            System.out.println(policyDetails);
-        } else {
-            System.out.println("Policy details do not displays upon from and to date values of policy");
-        }
+        policyPage.verifyPolicyDetails();
     }
 
 //Verify that add claim page should open with all details by clicking on add claim icon of cog drop down against policy number on manage policy page

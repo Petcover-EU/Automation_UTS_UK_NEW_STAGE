@@ -82,8 +82,8 @@ public class ManageClaimPage {
     private WebElement loadSpinner;
 
     public void clickManageClaimIcon() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(manageClaimIcon).perform();
+        common.moveToElement(manageClaimIcon);
+        manageClaimIcon.click();
         manageClaimText.click();
         common.pause(3);
     }

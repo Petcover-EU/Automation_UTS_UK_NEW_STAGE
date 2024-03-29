@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Common;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -100,21 +101,24 @@ public class TaskPage {
     //Appropriate data should display upon selecting an option from the status drop down on managing task page
 
     public void selectOptionFromStatus() {
+        common.waitUntilVisibilityOfElement(statusDropDown);
         statusDropDown.click();
-        common.pause(2);
+        common.pause(1);
         openOptionFromStatusDropDown.click();
+        common.pause(1);
+        statusDropDown.click();
+        common.pause(1);
         searchButton.click();
         common.pause(3);
     }
 
-    public String verifyStatusOfManageTaskData() {
-        List<WebElement> statusValue = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr");
-        StringBuilder status = new StringBuilder();
+    public ArrayList<String> verifyStatusOfManageTaskData() {
+        List<WebElement> statusValue = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr/td[8]");
+        ArrayList<String> statusArray=new ArrayList<>();
         for (WebElement element : statusValue) {
-            status.append(element.getText()).append("\n");
-            System.out.println(element.getText());
+            statusArray.add(element.getText());
         }
-        return status.toString();
+        return statusArray;
     }
 
     //Appropriate data should display upon selecting an option from the priority drop down on managing task page
@@ -165,11 +169,11 @@ public class TaskPage {
     // Appropriate data should display upon selecting an option from the client drop down on managing task page
 
     public void selectOptionFromClientDropDown() {
+        common.waitUntilVisibilityOfElement(clientDropDown);
         clientDropDown.click();
-        common.pause(2);
+        common.pause(1);
         optionUnderClinetrDropDown.click();
         common.pause(1);
-
         searchButton.click();
         common.pause(3);
     }

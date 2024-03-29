@@ -46,7 +46,6 @@ public class LogInPageSteps {
         Log.info("User Redirects To DashBord And Verify Through Message DashBoard On Page");
         String expectedTitle = logInPage.verifyDashBoardTitle();
         Assert.assertEquals(expectedTitle, "Dashboard", "LogIn Failed");
-
     }
 
     @Then("User will be able to see {string} text on right top corner of page")
@@ -68,5 +67,4 @@ public class LogInPageSteps {
         String alertMsg = logInPage.verifyValidationMessage();
         Assert.assertTrue(alertMsg.contains("Invalid Username or Password"),"Validation alert is not displayed");
     }
-
 }

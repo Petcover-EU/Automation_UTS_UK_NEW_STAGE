@@ -55,6 +55,7 @@ public class Common {
     public void waitUntilElementToBeClickable(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
+        pause(1);
     }
 
     /**
@@ -63,6 +64,7 @@ public class Common {
     public void waitUntilElementToBeClickable(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(element));
+        pause(1);
     }
 
     /**
@@ -259,6 +261,7 @@ public class Common {
 
     /**
      * Checks if given element is being displayed on page.
+     *
      * @return true if displayed else false.
      */
     public boolean isElementDisplayed(String xpath) {

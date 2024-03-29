@@ -23,13 +23,13 @@ Feature:  Verify Client Module Features
     Then Client status displays on view client page
 
   @Sanity
-  Scenario: To check whether add quote page is displays for same user by clicking on add button on view client page
+  Scenario: Verify whether add quote page is displays for same user by clicking on add button on view client page
     When User clicks on client code on manage client page to add quote
     And User clicks on add button on view client page
     Then Add quote page displays with same client code
 
   @Sanity
-  Scenario: view client page should displays with all details for each client code link on manage client page
+  Scenario: View client page should displays with all details for each client code link on manage client page
     When User clicks on client code link  on manage client page
     Then View client page displays with all details
 

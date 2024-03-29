@@ -393,6 +393,7 @@ public class AdminPageSteps {
     }
 
     //Add agent page displays with all details by clicking on add agent button on manage agent page
+
     @When("User clicks on add agent button on manage agent page")
     public void user_clicks_on_add_agent_button_on_manage_agent_page() {
         adminPage.clickOnAddAgentButton();

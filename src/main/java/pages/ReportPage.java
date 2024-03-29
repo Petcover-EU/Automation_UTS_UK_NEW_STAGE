@@ -173,7 +173,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         //Client
@@ -185,7 +185,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).isEnabled()) {
@@ -196,7 +196,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         //Policy
@@ -209,7 +209,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).isEnabled()) {
@@ -220,7 +220,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).isEnabled()) {
@@ -231,7 +231,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
 
@@ -267,7 +267,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).isEnabled()) {
@@ -279,7 +279,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         //Claim
@@ -292,7 +292,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
 
@@ -329,7 +329,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
 
@@ -341,7 +341,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[3]")).isEnabled()) {
@@ -352,7 +352,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
 
@@ -364,7 +364,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         //From here make comment
         reportIcon.click();
 
@@ -377,10 +377,11 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         //Bordereaux
+
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]")).isEnabled()) {
             driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]")).click();
         } else {
@@ -389,7 +390,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[2]")).isEnabled()) {
@@ -400,7 +401,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[3]")).isEnabled()) {
@@ -411,7 +412,7 @@ public class ReportPage {
         }
         common.pause(3);
         System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        common.waitUntilElementToBeClickable(reportIcon);
         reportIcon.click();
 
         if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[4]")).isEnabled()) {
@@ -431,7 +432,6 @@ public class ReportPage {
         productDropDown.click();
         common.pause(1);
         optionFromProductDD.click();
-
     }
 
     // Filter quote report information upon options value of quote status and quote from drop downs
@@ -612,13 +612,12 @@ public class ReportPage {
     //Filter policy cancellation report information upon option of insurer drop down
 
     public void clickOnPolicyCancellationIcon() {
-        policyCancellationIcon.click();
-        common.pause(3);
-
+        common.waitUntilVisibilityOfElement(policyCancellationIcon);
+        common.jsClick(policyCancellationIcon);
+        common.pause(2);
     }
 
     public void selectOptionFromInsurerDropDown() {
-
         insurerDropDown.click();
         common.pause(1);
         optionFromInsurerDropDown.click();

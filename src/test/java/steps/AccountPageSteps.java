@@ -150,7 +150,6 @@ public class AccountPageSteps {
         }
     }
 
-
     //Filter Process Credit Card Payment information upon payment due date and receipt date
 
     @When("User clicks on Process Credit Card button on account page")

@@ -2,19 +2,15 @@ package pages;
 
 import factory.DriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import utils.Common;
 import utils.Log;
 
 import java.io.File;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +27,6 @@ public class PolicyPage {
     private WebElement policyIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
     private WebElement displayedMessage;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnPolicyInformation;
     @FindBy(xpath = "//div[@class='project-tabs user-profile dsh-tab']/ul/li[12]")
     private WebElement letterIcon;
     @FindBy(xpath = "//div[@id='gridPolicyLetterList']/table/tbody/tr/td[14]/div/a[1]")
@@ -55,8 +49,6 @@ public class PolicyPage {
     private WebElement cogIcon;
     @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[1]/a")
     private WebElement addClaimIcon;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnAddClaimPage;
 
     //Add note window
     @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[2]/a")
@@ -69,8 +61,6 @@ public class PolicyPage {
     private WebElement cancelButton;
     @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[21]/ul/li/ul/li[4]/a")
     private WebElement viewQuoteIcon;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnViewQuotePage;
 
     //Policy information page
     @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/div/div/div/div/div/div/a")
@@ -95,14 +85,6 @@ public class PolicyPage {
     private WebElement addAllocatePaymentIcon;
     @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/div/div/div/div/div/div/ul/li[11]/a")
     private WebElement addAccountMaintenanceIcon;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnPolicyEndorsementPage;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnQuoteInformationPage;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnAddAllocatePage;
-    @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
-    private WebElement displayedMessageOnAddAccountMaintenancePage;
 
     //All tab on policy information page
 
@@ -216,7 +198,7 @@ public class PolicyPage {
     }
 
     public String verifyPolicyInformationPage() {
-        return displayedMessageOnPolicyInformation.getText();
+        return displayedMessage.getText();
     }
 
     public void clickPolicyPageToDownloadFile() {
@@ -295,32 +277,47 @@ public class PolicyPage {
     //Filter policy details on manage policy page upon from and to date value of policy  on manage policy page
 
     public void enterFromAndToDateValueOfPolicy() {
-        fromDateOfPolicy.sendKeys("23.06.2023");
+        fromDateOfPolicy.sendKeys(common.getPastDate(5, "dd.MM.yyyy"));
         Log.info("Script Has Entered From Policy Date On Manage Policy Page");
         common.pause(1);
-        toDateOfPolicy.sendKeys("20.06.2025");
+        toDateOfPolicy.sendKeys(common.getPastDate(4, "dd.MM.yyyy"));
         Log.info("Script Has Entered To Policy Date Manage On Policy Page");
     }
 
     public void clickOnSearchButtonOnManagePolicyPage() {
+        common.waitUntilElementToBeClickable(searchButton);
         searchButton.click();
         Log.info("Script Has Clicked On Search Button To Fetch Data On Manage Policy Page");
-        common.pause(6);
+        common.pause(4);
     }
 
-    public String verifyPolicyDetails() {
-        String policyValue = policyDetailsOnDateValue.getText();
-        Log.info("Available Policies Information Upon Start And To Policy Date Values===> " + policyValue);
-        return policyValue;
+    public void verifyPolicyDetails() {
+        common.pause(1);
+        List<WebElement> policyDates = driver.findElements(By.xpath("//div[@id='gridName']/table/tbody/tr/td[18]"));
+        ArrayList<String> policyDate1 = new ArrayList<>();
+        for (WebElement policyDate : policyDates) {
+            policyDate1.add(policyDate.getText());
+        }
+
+        for (String s : policyDate1) {
+            if (s.equals(common.getPastDate(5, "dd.MM.yyyy")) || s.equals(common.getPastDate(4, "dd.MM.yyyy"))) {
+                System.out.println("The quote date is: " + s);
+            } else {
+                System.out.println("Expected date between: " + common.getPastDate(5, "dd.MM.yyyy") + " & " + common.getPastDate(4, "dd.MM.yyyy") + " But found: " + s);
+                System.out.println(policyDate1);
+                Assert.fail("Policies details are not displayed upon selected date");
+            }
+        }
     }
 
     //Verify that add claim page should open with all details by clicking on add claim icon of cog drop down against policy number on manage policy page
 
     public void clickOnAddClaimPage() {
+        common.pause(1);
         common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon");
         common.pause(2);
-        addClaimIcon.click();
+        common.jsClick(addClaimIcon);
         Log.info("Script Has Clicked On Add Claim Icon");
         common.pause(3);
     }
@@ -331,9 +328,6 @@ public class PolicyPage {
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Page Add Claim Page===>" + driver.getCurrentUrl());
         displayMessage = displayedMessage.getText();
-
-        driver.close();
-        common.switchToWindow(0);
         return displayMessage;
     }
 
@@ -341,10 +335,11 @@ public class PolicyPage {
     //Verify that add note window should open with all details by clicking on add note icon of cog drop down against policy number on manage policy page
 
     public void clickOnAddNoteIcon() {
+        common.waitUntilVisibilityOfElement(cogIcon);
         common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon To Select Add Note Option");
         common.pause(2);
-        addNoteIcon.click();
+        common.jsClick(addNoteIcon);
         Log.info("Script Has Clicked On Add Note Icon");
         common.pause(3);
     }
@@ -361,10 +356,11 @@ public class PolicyPage {
     //Verify that quote information page should open with all details by clicking on view quote icon of cog drop down against policy number on manage policy page
 
     public void clickOnViewQuoteIcon() {
+        common.waitUntilVisibilityOfElement(cogIcon);
         common.moveToElement(cogIcon);
         Log.info("Script Has Clicked On Cog Icon To Select View Quote Page");
         common.pause(2);
-        viewQuoteIcon.click();
+        common.jsClick(viewQuoteIcon);
         Log.info("Script Has Clicked On View Quote Page Icon");
         common.pause(3);
     }
@@ -374,9 +370,7 @@ public class PolicyPage {
         common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To View Quote Page is===>" + driver.getCurrentUrl());
-        displayMessage = displayedMessageOnViewQuotePage.getText();
-        driver.close();
-        common.switchToWindow(0);
+        displayMessage = displayedMessage.getText();
         return displayMessage;
     }
 
@@ -416,7 +410,7 @@ public class PolicyPage {
         common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Add Endorsement Page Is ===>" + driver.getCurrentUrl());
-        displayMessage = displayedMessageOnPolicyEndorsementPage.getText();
+        displayMessage = displayedMessage.getText();
 
         driver.close();
         common.switchToWindow(0);
@@ -436,7 +430,7 @@ public class PolicyPage {
         String displayMessage;
         common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
-        displayMessage = displayedMessageOnQuoteInformationPage.getText();
+        displayMessage = displayedMessage.getText();
 
         driver.close();
         common.switchToWindow(0);
@@ -473,7 +467,7 @@ public class PolicyPage {
         common.switchToWindow(1);
         System.out.println(driver.getCurrentUrl());
         Log.info("Script Redirects To Add Allocate Page Is===>" + driver.getCurrentUrl());
-        displayMessage = displayedMessageOnAddAllocatePage.getText();
+        displayMessage = displayedMessage.getText();
 
         driver.close();
         common.switchToWindow(0);
@@ -492,7 +486,7 @@ public class PolicyPage {
 
     public String verifyClientAccountMaintenancePage() {
         String displayMessage;
-        displayMessage = displayedMessageOnAddAccountMaintenancePage.getText();
+        displayMessage = displayedMessage.getText();
         Log.info("Script Redirects To Add Account Maintenance Page Is===>" + driver.getCurrentUrl());
 
         driver.close();

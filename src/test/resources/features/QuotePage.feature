@@ -1,6 +1,5 @@
 Feature: Verify Quote Module Features
 
-
   Background:
     Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
     When User clicks on quote icon on left tool bar
@@ -138,5 +137,10 @@ Feature: Verify Quote Module Features
 #    When User clicks add quote button on manage quote page
 #    And Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
 
-
+#  Scenario: Verify the policy creation for a exotic product with a value plan high excess
+#    When User clicks add quote button on manage quote page
+#    And Enter client contact information
+#    And Select Exotic product and product information
+#    And Select plan and answer the questions
+#    And Enter payment details and click on the
 

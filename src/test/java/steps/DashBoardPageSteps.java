@@ -120,14 +120,12 @@ public class DashBoardPageSteps {
         dbp.clickOnTheDashboardIcon();
         dbp.searchThePolicyNumberInGlobalSearch(policyNumber);
         System.out.println("Searched policy number: " + policyNumber);
-
     }
 
     @Then("User will redirects to manage policy page and should able to verify the searched result")
     public void userWillRedirectsToManagePolicyPageAndShouldAbleToVerifyTheSearchedResult() {
         String listOfSearchedPolicy = dbp.verifyTheSearchedResultOfPolicy();
         System.out.println("Global search result: " + listOfSearchedPolicy);
-
 
         if (!listOfSearchedPolicy.isEmpty()) {
             Assert.assertTrue(listOfSearchedPolicy.contains(policyNumber));

@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.ManageClaimPage;
 import utils.Common;
-import utils.ScreenRecorderUtil;
 
 import java.util.ArrayList;
 
@@ -17,7 +16,6 @@ public class ManageClaimsSteps {
     @When("User clicks on manage claims icon on left tool bar")
     public void user_clicks_on_manage_claims_icon_on_left_tool_bar() {
         claimPage.clickManageClaimIcon();
-
     }
 
     @Then("User will able see all data available on manage claim page")
@@ -57,7 +55,6 @@ public class ManageClaimsSteps {
                 Assert.fail();
             }
         }
-
     }
 
     @Then("All data under Amount payable column prefixed by £ sign")
@@ -71,22 +68,17 @@ public class ManageClaimsSteps {
             System.out.println(split[j]);
             if (split[j].contains("£")) {
                 System.out.println("Data Prefixed by £");
-
             } else {
                 // Assert.fail();
                 System.out.println("Data not Prefixed by £");
             }
-
-
         }
-
     }
 
     @When("User clicks on claim number on manage claim page")
     public void user_clicks_on_claim_number_on_manage_claim_page() {
         common.pause(1);
         claimPage.redirectToClaimInformationPage();
-
     }
 
     @Then("User will redirects to respected claim information page")
@@ -94,8 +86,6 @@ public class ManageClaimsSteps {
         common.pause(1);
         String message = claimPage.verifyClaimInfoPageText();
         Assert.assertEquals(message, "Manage Claims");
-
-
     }
 
     @When("User clicks on add claim button")
@@ -112,7 +102,6 @@ public class ManageClaimsSteps {
     @Then("Page has all dropdown with valid list items'")
     public void page_has_all_dropdown_with_valid_list_items() {
         claimPage.verifyDropDown();
-
     }
 
     //Treatment status should reflect upon option selected from treatment status drop down on manage claim page
@@ -141,16 +130,12 @@ public class ManageClaimsSteps {
     @When("User clicks on edit claim icon on cog icon on manage claim page")
     public void user_clicks_on_edit_claim_icon_on_cog_icon_on_manage_claim_page() {
         claimPage.selectEditClientDetails();
-
     }
 
     @Then("Edit claim page displays with editable form")
     public void edit_claim_page_displays_with_editable_form() {
-
         String editClaimPage = claimPage.verifyEditClaimPage();
-
         Assert.assertEquals(editClaimPage, "Edit Claim");
-
     }
 
 //Verify view policy page displays after clicking on view policy icon on manage claim page
@@ -186,7 +171,6 @@ public class ManageClaimsSteps {
         } else {
             System.out.println("Details of claim does nit displays upon status dropdown option");
         }
-
     }
 
 //Filter Claim details on manage claim page upon option from treatment status drop down
@@ -221,12 +205,10 @@ public class ManageClaimsSteps {
     @Then("Details of claim on manage claim page filters upon value of from and to date value of claim first advised on manage claim page")
     public void details_of_claim_on_manage_claim_page_filters_upon_value_of_from_and_to_date_value_of_claim_first_advised_on_manage_claim_page() {
         String claimDetails = claimPage.verifyDetailsOfClaim();
-        if (claimDetails.length() > 0) {
+        if (!claimDetails.isEmpty()) {
             System.out.println(claimDetails);
         } else {
             System.out.println("Details of claim does not displays upon from and to date value of claim first advised on manage claim page");
         }
     }
-
-
 }

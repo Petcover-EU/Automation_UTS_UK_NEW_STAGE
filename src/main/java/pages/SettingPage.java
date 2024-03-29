@@ -290,11 +290,11 @@ public class SettingPage {
     public void traversingThroughPages() {
         common.pause(2);
         for (int i = 1; i <= 15; i++) {
-            if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).isEnabled()) {
-                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
+            if (driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[" + i + "]/a")).isEnabled()) {
+                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[" + i + "]/a")).click();
             } else {
                 common.pause(2);
-                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[1]/a")).click();
+                driver.findElement(By.xpath("//div[@class='ibox-content']/div/div[" + i + "]/a")).click();
             }
             common.pause(2);
             System.out.println(driver.getCurrentUrl());

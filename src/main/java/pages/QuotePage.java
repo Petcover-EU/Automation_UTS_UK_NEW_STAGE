@@ -4,18 +4,13 @@ import factory.DriverFactory;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 import utils.Common;
 import utils.Log;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 public class QuotePage {
@@ -561,7 +556,7 @@ public class QuotePage {
     }
 
     public String verifyQuoteDetails() {
-        WebElement quoteInfo =common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]");
+        WebElement quoteInfo = common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]");
         return quoteInfo.getText();
     }
 
@@ -610,7 +605,7 @@ public class QuotePage {
 
     public void editQuoteDetails() {
         //Scroll up
-        common.scroll_By_Pixel("0","250");
+        common.scroll_By_Pixel("0", "250");
         enterPostCodeInAddressDropDown.clear();
         enterPostCodeInAddressDropDown.sendKeys("RM8 2TE");
         common.pause(2);
@@ -622,7 +617,7 @@ public class QuotePage {
         common.pause(2);
 
         //Scroll up
-        common.scroll_By_Pixel("0","-150");
+        common.scroll_By_Pixel("0", "-150");
         petSpeciesDropDown.click();
         common.pause(1);
         selectOptionFromPetSpeciesDD.click();
@@ -1886,5 +1881,51 @@ public class QuotePage {
         common.jsClick(petAssumption1ForDog);
         common.jsClick(petAssumption2ForDog);
         common.jsClick(petAssumption3ForDog);
+    }
+
+    public void selectProductAndEnterPetDetails(int r) {
+        XSSFSheet sheet = common.readDataFromExcelSheet("Exotic");
+        XSSFRow row = sheet.getRow(r);
+        selectProduct("Exotic");
+        common.waitUntilVisibilityOfElement(petSpeciesDropDown);
+        common.pause(2);
+        petSpeciesDropDown.click();
+        common.waitUntilVisibilityOfElement(speciesDrpDownSearchInputField);
+
+        String species = row.getCell(10).getStringCellValue();
+        speciesDrpDownSearchInputField.sendKeys(species);
+        common.pause(2);
+        speciesDrpDownSearchInputField.sendKeys(Keys.DOWN);
+        speciesDrpDownSearchInputField.sendKeys(Keys.ENTER);
+        common.pause(2);
+
+        String petName = row.getCell(11).getStringCellValue();
+        petNameInputField.sendKeys(petName);
+        common.pause(2);
+
+        String gender = row.getCell(12).getStringCellValue();
+        petGenderDropDown.click();
+        common.pause(1);
+        if (gender.equalsIgnoreCase("Male")) {
+            genderMaleOption.click();
+        } else if (gender.equalsIgnoreCase("Female")) {
+            genderFemaleOption.click();
+        }
+
+        common.pause(1);
+        String petBDate = row.getCell(13).getStringCellValue().replace("/", ".");
+        petBirthDate.sendKeys(petBDate);
+
+        common.pause(2);
+        int price = (int) row.getCell(15).getNumericCellValue();
+        petPurchaseAmount.sendKeys(String.valueOf(price));
+
+        calculateButton.click();
+        common.waitUntilVisibilityOfElement(calculateButton);
+        common.jsClick(calculateButton);
+
+        common.pause(2);
+        common.scroll_By_Pixel("0", "500");
+        common.waitUntilVisibilityOfElement(premierPlanHigh);
     }
 }

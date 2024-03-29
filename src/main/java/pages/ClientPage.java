@@ -296,6 +296,7 @@ public class ClientPage {
     public void clickClientCode() {
         List<WebElement> clientInfo = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
         for (WebElement client : clientInfo) {
+            common.pause(3);
             client.click();
             common.pause(3);
             break;
@@ -597,6 +598,7 @@ public class ClientPage {
     }
 
     public String verifyPoliciesStatementDetails() {
+        common.pause(2);
         return policyStatementDetailsOnViewClient.getText();
     }
 

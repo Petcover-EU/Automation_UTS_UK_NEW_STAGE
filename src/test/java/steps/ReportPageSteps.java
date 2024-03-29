@@ -12,7 +12,6 @@ public class ReportPageSteps {
     @When("User clicks on reports icon on left tool bar")
     public void user_clicks_on_reports_icon_on_left_tool_bar() {
         reportPage.clickOnReportIcon();
-
     }
 
     @Then("User will able to see total eight section of report category")
@@ -20,19 +19,16 @@ public class ReportPageSteps {
         int numberOfSection = reportPage.fetchSections();
         System.out.println("Total number of sections of report page" + numberOfSection);
         Assert.assertEquals(numberOfSection, 7);
-
     }
 
     @When("User clicks on reports icon")
     public void user_clicks_on_reports_icon() {
         reportPage.traversingThroughPages();
-
     }
 
     @Then("Respected report page displays")
     public void respected_report_page_displays() {
         //reportPage.traversingThroughPages();
-
     }
 
     //Filter quote report information upon option of product drop down
@@ -45,7 +41,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on quote report page upon selected option from drop down")
     public void appropriate_data_displays_on_quote_report_page_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyQuoteReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon product drop down options on quote report page");
@@ -67,13 +63,12 @@ public class ReportPageSteps {
     @When("User clicks on search button on quote report page")
     public void user_clicks_on_search_button_on_quote_report_page() {
         reportPage.clickSearchIcon();
-
     }
 
     @Then("Appropriate data displays on quote report page upon selected options from drop down")
     public void appropriate_data_displays_on_quote_report_page_upon_selected_options_from_drop_down() {
         String data = reportPage.verifyQuoteReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon quote from and quote status drop down options on quote report page");
@@ -91,7 +86,7 @@ public class ReportPageSteps {
     @Then("All data on quote report page displays in sorting manner")
     public void all_data_on_quote_report_page_displays_in_sorting_manner() {
         String data = reportPage.verifyQuoteReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon quote number and Ascending drop down options on quote report page");
@@ -118,12 +113,11 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on policy summary report page upon selected option from drop down")
     public void appropriate_data_displays_on_policy_summary_report_page_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyPolicySummaryReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon product drop down options on policy summary report page");
         }
-
     }
 
     //Filter policy report information upon option of status drop down
@@ -136,7 +130,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on policy summary report page upon selected option from status drop down")
     public void appropriate_data_displays_on_policy_summary_report_page_upon_selected_option_from_status_drop_down() {
         String data = reportPage.verifyPolicySummaryReportDataUponStatusDD();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon status drop down options on policy summary report page");
@@ -153,7 +147,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on policy summary report page upon selected option from both drop down")
     public void appropriate_data_displays_on_policy_summary_report_page_upon_selected_option_from_both_drop_down() {
         String data = reportPage.verifyPolicySummaryReportDataUponSortBYDD();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon status drop down options on policy summary report page");
@@ -176,10 +170,11 @@ public class ReportPageSteps {
     public void user_clicks_on_search_button_on_outstanding_renewal_report_page() {
         reportPage.clickSearchIconOnOutstandingRenewalReport();
     }
+
     @Then("Appropriate data displays on outstanding renewal report page upon selected option from drop down")
     public void appropriate_data_displays_on_outstanding_renewal_report_page_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyOutstandingRenewalReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon from and to date values on outstanding renewal report page");
@@ -206,7 +201,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on policy payment history page upon selected option from drop down")
     public void appropriate_data_displays_on_policy_payment_history_page_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyPolicyHistoryReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon from and to date values on policy history report page");
@@ -232,14 +227,12 @@ public class ReportPageSteps {
 
     @Then("Appropriate data displays on policy policy cancellation report page upon selected option from drop down")
     public void appropriate_data_displays_on_policy_policy_cancellation_report_page_upon_selected_option_from_drop_down() {
-
         String data = reportPage.verifyPolicyCancellationReportData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon insurer drop down options on policy cancellation report page");
         }
-
     }
 
     //Sorting data on policy cancellation report via sort by and sort direction dropdowns options
@@ -268,7 +261,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on outstanding claims upon date values")
     public void appropriate_data_displays_on_outstanding_claims_upon_date_values() {
         String data = reportPage.verifyOutstandingClaimData();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon entering from and to date value on outstanding claim report page");
@@ -285,13 +278,12 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on outstanding claims upon selected option from drop down")
     public void appropriate_data_displays_on_outstanding_claims_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyOutstandingClaimDataUponSorting();
-        if (data.length() > 0) {
+        if (!data.isEmpty()) {
             System.out.println(data);
         } else {
             System.out.println("Data does not reflects upon options of sort by and sort direction drop down  on outstanding claim report page");
         }
     }
-
 
     //Add premium and claim adjustments window opens by clicking on adjustment button on section 26 and 27 report page
 
@@ -332,8 +324,5 @@ public class ReportPageSteps {
     @Then("Opening and Closing bank balance window opens with all details")
     public void opening_and_closing_bank_balance_window_opens_with_all_details() {
         reportPage.verifyBankBalanceWindow();
-
     }
-
-
 }
