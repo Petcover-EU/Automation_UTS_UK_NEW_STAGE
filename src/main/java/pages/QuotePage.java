@@ -230,7 +230,6 @@ public class QuotePage {
     @FindBy(xpath = "//ul[@id='CreditCardExpiryYear_listbox']//li[2]")
     private WebElement expiryYear2024Option;
 
-
     @FindBy(xpath = "//input[@id='InstalmentDate']//..//span[@class='k-select']")
     private WebElement instalmentDateDropdown;
     @FindBy(xpath = "//ul[@id='InstalmentDate_listbox']//li[3]")
@@ -778,8 +777,8 @@ public class QuotePage {
             petBirthDate.sendKeys(petBDate);
 
             common.pause(2);
-            int price = (int) row.getCell(15).getNumericCellValue();
-            petPurchaseAmount.sendKeys(String.valueOf(price));
+            String price = row.getCell(15).getStringCellValue();
+            petPurchaseAmount.sendKeys(price);
 
             calculateButton.click();
             common.waitUntilVisibilityOfElement(calculateButton);
@@ -962,7 +961,7 @@ public class QuotePage {
         XSSFSheet sheet = common.readDataFromExcelSheet("Dog");
         String productType = "Dog";
 
-        for (int r = 65; r < 76; r++) {
+        for (int r = 2; r < 76; r++) {
 
             enterClientContactInformation(r, sheet);
             selectProduct(productType);
@@ -1041,12 +1040,13 @@ public class QuotePage {
 
     public void clickOnPolicyCreateButton() {
         common.waitUntilVisibilityOfElement(createPolicyButton);
-        common.waitUntilElementToBeClickable(createPolicyButton);
         createPolicyButton.click();
+        if (common.isElementDisplayed(createPolicyButton)) {
+            common.jsClick(createPolicyButton);
+        }
     }
 
     public void verifyPolicyDetailsOnPolicyInformationPage(int r, XSSFSheet sheet, int cell) {
-
         common.waitUntilVisibilityOfElement(policyNumber);
         String generatedPolicyNum = policyNumber.getText();
         Log.info("Created Policy Number: " + generatedPolicyNum);

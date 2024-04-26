@@ -119,23 +119,23 @@ Feature: Verify Quote Module Features
 #    When User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 
-##    Policy creation for Exotic
+#    Policy creation for Exotic
 
   Scenario: Verify the Quote and Policy creation for Exotic products with different combinations of plan
     When User clicks add quote button on manage quote page
     And Enter client contact information and select "Exotic" product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page
 
-##    Policy creation for Cat
-#
-#  Scenario: Verify the Quote and Policy creation for Cat with different plans
-#    When User clicks add quote button on manage quote page
-#    And Enter client contact information and select product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
-#
-##    Policy creation for Dog
-#
-#  Scenario: Verify the Quote and Policy creation for Dog with different plans
-#    When User clicks add quote button on manage quote page
-#    And Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
+#    Policy creation for Cat
+
+  Scenario: Verify the Quote and Policy creation for Cat with different plans
+    When User clicks add quote button on manage quote page
+    And Enter client contact information and select product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
+
+#    Policy creation for Dog
+
+  Scenario: Verify the Quote and Policy creation for Dog with different plans
+    When User clicks add quote button on manage quote page
+    And Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page
 
 #  Scenario: Verify the policy creation for a exotic product with a value plan high excess
 #    When User clicks add quote button on manage quote page

@@ -116,7 +116,7 @@ public class Common {
      */
     public XSSFSheet readDataFromExcelSheet(String sheetName) {
         try {
-            FileInputStream fis = new FileInputStream("Transactional_Scenarios_Dataset.xlsx");
+            FileInputStream fis = new FileInputStream("Transactional_Scenarios_Dataset_UK.xlsx");
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
             return workbook.getSheet(sheetName);
         } catch (IOException e) {
@@ -173,6 +173,7 @@ public class Common {
     public void jsClick(WebElement element) {
 //        highlightElementClick(element);
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
         js.executeScript("return arguments[0].click();", element);
         pause(1);
     }

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/QuotePage.feature:140",
+        features = "src/test/resources/features/QuotePage.feature",
         glue = {"steps", "hook"},
         monochrome = true,
         plugin = {"pretty",
