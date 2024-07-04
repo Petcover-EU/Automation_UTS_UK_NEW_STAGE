@@ -21,6 +21,8 @@ import org.junit.runner.RunWith;
                 , "src/test/resources/features/Login.feature"
                 , "src/test/resources/features/ClientPage.feature"
                 , "src/test/resources/features/DashBoardItems.feature"
+                , "src/test/resources/features/PolicyCreationScenarios.feature"
+                , "src/test/resources/features/EndToEndScenarios.feature"
         },
         glue = {"steps", "hook"},
         monochrome = true,

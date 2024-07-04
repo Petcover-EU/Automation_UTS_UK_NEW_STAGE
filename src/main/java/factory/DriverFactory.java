@@ -10,6 +10,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.time.Duration;
+
 public class DriverFactory {
     public WebDriver driver;
 
@@ -60,6 +62,7 @@ public class DriverFactory {
 
         getDriver().manage().deleteAllCookies();
         getDriver().manage().window().maximize();
+        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofMinutes(1));
         return getDriver();
     }
 

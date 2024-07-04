@@ -2,6 +2,7 @@ package steps;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
@@ -257,40 +258,5 @@ public class QuotePageSteps {
     @Then("User can edit all required field on edit quote page")
     public void user_can_edit_all_required_field_on_edit_quote_page() {
         quotePage.editQuoteDetails();
-    }
-
-    @And("Enter client contact information and select {string} product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page")
-    public void enterClientContactInformationAndSelectProductThenEnterPetInfoAndClickOnCalculateButtonAndSelectAppropriatePolicyPlanAndEnterPaymentDetailsClickOnCreatePolicyButtonThenVerifyThePolicyDetailsOnPolicyInformationPage(String product) {
-        quotePage.createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForExoticProduct(product);
-    }
-
-    @And("Enter client contact information and select product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page")
-    public void enterClientContactInformationAndSelectProductThenEnterPetInformationAndSelectAppropriatePlanAndEnterPaymentDetailsThenClickOnCreatePolicyButtonAndVerifyThePolicyDetailsOnPolicyInformationPage() {
-        quotePage.createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForCatProduct();
-    }
-
-    @And("Enter client contact information and select Dog product then enter pet information and select appropriate plan and enter payment details then click on create policy button and verify the policy details on policy information page")
-    public void enterClientContactInformationAndSelectDogProductThenEnterPetInformationAndSelectAppropriatePlanAndEnterPaymentDetailsThenClickOnCreatePolicyButtonAndVerifyThePolicyDetailsOnPolicyInformationPage() {
-        quotePage.createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForDogProduct();
-    }
-
-    int dataRow = 2;
-
-    @And("Enter client contact information")
-    public void enterClientContactInformation() {
-        quotePage.enterClientContactInformation(dataRow, common.readDataFromExcelSheet("Exotic"));
-    }
-
-    @And("Select Exotic product and product information")
-    public void selectExoticProductAndProductInformation() {
-        quotePage.selectProductAndEnterPetDetails(dataRow);
-    }
-
-    @And("Select plan and answer the questions")
-    public void selectPlanAndAnswerTheQuestions() {
-    }
-
-    @And("Enter payment details and click on the")
-    public void enterPaymentDetailsAndClickOnThe() {
     }
 }

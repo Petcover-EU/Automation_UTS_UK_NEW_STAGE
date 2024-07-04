@@ -4,8 +4,6 @@ import factory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +26,6 @@ public class hooks {
     public void getProperty() {
         configReader = new ConfigReader();
         prop = configReader.init_prop();
-
     }
 
     @Before(order = 2)
@@ -36,16 +33,7 @@ public class hooks {
         String browserName = prop.getProperty("browser");
         String browserMode = prop.getProperty("headless");
         driverFactory = new DriverFactory();
-        driver = driverFactory.init_browser(browserName,browserMode);
-        /*String urlName = prop.getProperty("url");
-        if (urlName.equals("http://52.32.106.250:7779/"))
-            DriverFactory.getDriver().get(urlName);
-        else if (urlName.equals("http://52.32.106.250:8889/")) {
-            DriverFactory.getDriver().get(urlName);
-        } else {
-            System.out.println("Please pass the correct url value: " + urlName);
-        }*/
-        // String constant.url
+        driver = driverFactory.init_browser(browserName, browserMode);
         DriverFactory.getDriver().get(Constant.url);
 
     }
@@ -63,15 +51,11 @@ public class hooks {
             byte[] sourcePath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(sourcePath, "image/png", screenshotName);
         }
-
-
     }
 
     @After(order = 2)
     public void displayUrl(Scenario scenario) {
         String name = scenario.getName();
         scenario.log(Constant.url);
-
     }
-
 }

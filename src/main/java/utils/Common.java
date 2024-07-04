@@ -1,5 +1,6 @@
 package utils;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.*;
@@ -42,11 +43,13 @@ public class Common {
     public void waitUntilVisibilityOfElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+        pause(1);
     }
 
     public void waitUntilVisibilityOfElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOf(element));
+        pause(1);
     }
 
     /**
@@ -62,7 +65,7 @@ public class Common {
      * Wait until element to be clickable for at least 30 sec before throwing exception
      */
     public void waitUntilElementToBeClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         pause(1);
     }
@@ -171,7 +174,7 @@ public class Common {
      * @param element the element to be clicked.
      */
     public void jsClick(WebElement element) {
-//        highlightElementClick(element);
+        highlightElement(element);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
         js.executeScript("return arguments[0].click();", element);
@@ -283,12 +286,12 @@ public class Common {
      * @return
      */
     public List<WebElement> waitUntilPresenceOfAllElement(String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(xpath)));
     }
 
     public WebElement waitUntilPresenceOfElement(String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
     }
 
@@ -302,5 +305,9 @@ public class Common {
         driver.switchTo().window(windowHandles.get(windowIndex));
         pause(1);
         System.out.println("Page title: " + driver.getTitle());
+    }
+
+    public String getRandomString(int length) {
+        return RandomStringUtils.randomAlphabetic(length).toLowerCase();
     }
 }

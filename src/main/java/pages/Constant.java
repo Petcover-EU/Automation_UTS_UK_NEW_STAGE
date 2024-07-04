@@ -14,14 +14,11 @@ public class Constant {
     public static String url;
 
     static {
-        if (ENVIRONMENT.equals("UTS-UK2Stage")) {
-            url = "https://stage.petcovergroup.com:7779/";
-        } else if (ENVIRONMENT.equals("UTS-UK2production")) {
-            url = "https://fitlocal2.britishpetinsurance.co.uk:94/";
-        } else if (ENVIRONMENT.equals("Test")) {
-            url = "https://stage.petcovergroup.com:5557/";
-        } else {
-            Log.error("Please check environment");
+        switch (ENVIRONMENT) {
+            case "UTS-UK2-Stage" -> url = "https://stage.petcovergroup.com:7779/";
+            case "UTS-UK2-production" -> url = "https://fitlocal2.britishpetinsurance.co.uk:94/";
+            case "Test" -> url = "https://stage.petcovergroup.com:5557/";
+            default -> Log.error("Please check environment");
         }
     }
 

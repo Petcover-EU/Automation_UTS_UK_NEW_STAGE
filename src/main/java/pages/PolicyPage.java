@@ -135,7 +135,7 @@ public class PolicyPage {
 
     public void clickPolicyIcon() {
         policyIcon.click();
-        Log.info("*******Script Clicks On Policy Icon*******");
+        Log.info("Click on the policy icon on the left toolbar");
         common.pause(5);
     }
 
