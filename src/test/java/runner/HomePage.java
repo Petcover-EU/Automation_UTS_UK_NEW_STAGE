@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"steps", "hook"},
-        tags = "@sanity",
-//        tags = "@smoke or @sanity or @regression or @end-to-end",
+//        tags = "@sanity",
+        tags = "@smoke or @sanity or @regression or @end-to-end",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}

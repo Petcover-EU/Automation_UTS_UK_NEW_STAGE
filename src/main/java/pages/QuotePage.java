@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.asserts.SoftAssert;
 import utils.Common;
 
 import java.util.List;
@@ -18,11 +17,11 @@ public class QuotePage {
 
     private static final Logger log = LoggerFactory.getLogger(QuotePage.class);
     Common common = new Common(DriverFactory.getDriver());
-    
+
     private WebDriver driver;
 
-    public QuotePage(WebDriver driver){
-        this.driver=driver;
+    public QuotePage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
