@@ -71,7 +71,7 @@ public class PolicyPageSteps {
 
     @When("User clicks on policy number link")
     public void user_clicks_on_policy_number_link() {
-        policyPage.clickPolicyPageToDownloadFile();
+        policyPage.clickPolicyNumberToGotToPolicyInformationPage();
     }
 
     @When("User clicks on letter tab on policy information page")
@@ -172,7 +172,7 @@ public class PolicyPageSteps {
 
     @When("User clicks on policy number link on manage policy page")
     public void user_clicks_on_policy_number_link_on_manage_policy_page() {
-        policyPage.clickPolicyPageToDownloadFile();
+        policyPage.clickPolicyNumberToGotToPolicyInformationPage();
     }
 
     @When("User selects add claim page icon option from cog drop down on policy information page")

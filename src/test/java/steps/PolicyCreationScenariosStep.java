@@ -31,26 +31,6 @@ public class PolicyCreationScenariosStep {
         policyCreationScenariosPage.createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForHorseProduct();
     }
 
-    int dataRow = 2;
-
-    @And("Enter client contact information")
-    public void enterClientContactInformation() {
-        policyCreationScenariosPage.enterClientContactInformation(dataRow, common.readDataFromExcelSheet("Exotic"));
-    }
-
-    @And("Select Exotic product and product information")
-    public void selectExoticProductAndProductInformation() {
-        policyCreationScenariosPage.selectProductAndEnterPetDetails(dataRow);
-    }
-
-    @And("Select plan and answer the questions")
-    public void selectPlanAndAnswerTheQuestions() {
-    }
-
-    @And("Enter payment details and click on the")
-    public void enterPaymentDetailsAndClickOnThe() {
-    }
-
 //Create the Horse Policy with the Basic Horse plan and the Saddlery and Tack Optional Extra
 
     @And("Select existing client and select the product and enter product details")

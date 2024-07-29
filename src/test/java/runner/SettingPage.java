@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Setting.feature:280",
+        features = "src/test/resources/features/Setting.feature",
         glue = {"steps", "hook"},
+        tags = "@sanity",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}

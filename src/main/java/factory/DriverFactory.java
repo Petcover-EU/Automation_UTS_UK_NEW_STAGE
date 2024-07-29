@@ -1,6 +1,5 @@
 package factory;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +17,7 @@ public class DriverFactory {
     public static ThreadLocal<WebDriver> tlLocal = new ThreadLocal<>();
 
     /*This method is used to initialize the threadLocal driver on the basis of given browser*/
-    public WebDriver init_browser(String browser,String headless) {
+    public WebDriver init_browser(String browser, String headless) {
 
         System.out.println("The name of the browser is " + browser);
 
@@ -27,6 +26,9 @@ public class DriverFactory {
                 if (headless.equalsIgnoreCase("true")) {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--window-size=1920,1080");
                     WebDriver chromeDriver = new ChromeDriver(options);
                     tlLocal.set(chromeDriver);
                 } else {
@@ -38,6 +40,9 @@ public class DriverFactory {
                 if (headless.equalsIgnoreCase("true")) {
                     EdgeOptions options = new EdgeOptions();
                     options.addArguments("--headless");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--window-size=1920,1080");
                     WebDriver edgeDriver = new EdgeDriver(options);
                     tlLocal.set(edgeDriver);
                 } else {
@@ -49,6 +54,9 @@ public class DriverFactory {
                 if (headless.equalsIgnoreCase("true")) {
                     FirefoxOptions options = new FirefoxOptions();
                     options.addArguments("--headless");
+                    options.addArguments("--disable-notifications");
+                    options.addArguments("--disable-popup-blocking");
+                    options.addArguments("--window-size=1920,1080");
                     WebDriver firefoxDriver = new FirefoxDriver(options);
                     tlLocal.set(firefoxDriver);
                 } else {
@@ -67,7 +75,7 @@ public class DriverFactory {
     }
 
 
-    /*This is to used to get the driver with ThreadLocal @return
+    /*This is used to get the driver with ThreadLocal @return
     making it Synchronized just for parallel execution
     */
     public static synchronized WebDriver getDriver() {

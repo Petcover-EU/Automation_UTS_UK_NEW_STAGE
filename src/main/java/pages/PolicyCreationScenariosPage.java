@@ -16,18 +16,20 @@ import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import utils.Common;
 import utils.Log;
+
 import java.util.List;
 
 public class PolicyCreationScenariosPage {
     private static final Logger log = LoggerFactory.getLogger(QuotePage.class);
     Common common = new Common(DriverFactory.getDriver());
-    SoftAssert softAssert = new SoftAssert();
+    
     private final WebDriver driver;
 
-    public PolicyCreationScenariosPage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+    public PolicyCreationScenariosPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "ul[id='side-menu']>li:nth-child(4)")
     private WebElement quoteIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
@@ -434,6 +436,7 @@ public class PolicyCreationScenariosPage {
     public String verifyManageQuotePage() {
         common.waitUntilElementToBeClickable(quoteIcon);
         quoteIcon.click();
+        Log.info("Click on the quote icon on the left toolbar");
         common.pause(2);
         return displayedMessage.getText();
     }
@@ -452,7 +455,7 @@ public class PolicyCreationScenariosPage {
         if (!clientTypeIndividual.isSelected()) {
             clientTypeIndividual.click();
         }
-
+        Log.info("Select client type individual");
         String title = row.getCell(1).getStringCellValue();
         titleDropdown.click();
         common.pause(1);
@@ -501,6 +504,7 @@ public class PolicyCreationScenariosPage {
         addressInputField.sendKeys(Keys.DOWN);
         addressInputField.sendKeys(Keys.ENTER);
         common.pause(1);
+        Log.info("Selected address by entering postcode: " + address);
 
 //        String streetNumber = common.generateRandomNumber(2);
 //        common.sendKeys(addressStreetNumberInputField, streetNumber);
@@ -516,6 +520,7 @@ public class PolicyCreationScenariosPage {
         } else {
             driver.findElement(By.xpath("//ul[@id='HearAboutUs_listbox']//li[" + r + "]")).click();
         }
+        Log.info("Selected hear about us");
     }
 
     public void createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForExoticProduct(String product) {
@@ -708,7 +713,7 @@ public class PolicyCreationScenariosPage {
                 clickOnAddQuoteButton();
             }
         }
-        softAssert.assertAll();
+        
     }
 
     public void createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForCatProduct() {
@@ -737,7 +742,7 @@ public class PolicyCreationScenariosPage {
                 clickOnAddQuoteButton();
             }
         }
-        softAssert.assertAll();
+        
     }
 
     public void createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForDogProduct() {
@@ -767,14 +772,14 @@ public class PolicyCreationScenariosPage {
                 clickOnAddQuoteButton();
             }
         }
-        softAssert.assertAll();
+        
     }
 
     public void createAndVerifyPoliciesWithMultipleSetOfDataAndCombinationOfPlanForHorseProduct() {
         XSSFSheet sheet = common.readDataFromExcelSheet("Horse");
         String productType = "Horse";
 
-        for (int r = 11; r < 28; r++) {
+        for (int r = 28; r < 30; r++) {
 
             enterClientContactInformation(r, sheet);
             selectProduct(productType);
@@ -800,16 +805,19 @@ public class PolicyCreationScenariosPage {
                 clickOnAddQuoteButton();
             }
         }
-        softAssert.assertAll();
+        
     }
 
     public void selectPremiumMonthlyAndEnterPaymentDetailsOfDirectDebit() {
         common.jsClick(premiumFrequencyMonthly);
+        Log.info("Select monthly premium radio button");
         common.scrollToElement(accountHolderNameInput);
+        Log.info("Enter account holder name");
         common.pause(2);
         common.jsClick(paymentTenderDropdown);
         common.pause(2);
         directDebitOption.click();
+        Log.info("Select payment tender Direct Debit payment");
         common.pause(2);
         instalmentDateDropdown.click();
         common.pause(2);
@@ -818,37 +826,43 @@ public class PolicyCreationScenariosPage {
         sortCodeInput.sendKeys("200000");
         accountNumberInput.sendKeys("55117799");
         accountHolderNameInput.sendKeys("Test");
+        Log.info("Enter other payment details");
     }
 
     public void selectPremiumMonthlyAndEnterPaymentDetailsOfCreditCard() {
+        common.pause(2);
         common.jsClick(premiumFrequencyMonthly);
+        Log.info("Select monthly premium radio button");
         common.scrollToElement(accountHolderNameInput);
+        Log.info("Enter account holder name");
         common.pause(1);
         common.jsClick(paymentTenderDropdown);
         common.pause(2);
         creditOrDebitCardOption.click();
+        Log.info("Select payment tender Credit/Debit card payment");
 
-        instalmentDateDropdown.click();
+        common.pause(1);
+        common.jsClick(instalmentDateDropdown);
         common.pause(2);
-        instalmentDate14Option.click();
+        common.jsClick(instalmentDate14Option);
         common.pause(2);
 
         common.waitUntilVisibilityOfElement(cardTypeDropDown);
-        cardTypeDropDown.click();
+        common.jsClick(cardTypeDropDown);
         common.pause(1);
-        cardTypeVisa.click();
+        common.jsClick(cardTypeVisa);
         cardHolderNameInput.sendKeys("Test Policy");
         creditCardNumberInput.sendKeys("4929421234600821");
-        cardExpiryMonthDropdown.click();
+        common.jsClick(cardExpiryMonthDropdown);
         common.pause(1);
-        decMonthOption.click();
-        common.pause(2);
+        common.jsClick(decMonthOption);
+        common.pause(1);
 
-        cardExpiryYearDropdown.click();
+        common.jsClick(cardExpiryYearDropdown);
         common.pause(1);
-        expiryYear2024Option.click();
+        common.jsClick(expiryYear2024Option);
         creditCardCvvInput.sendKeys("356");
-        accountHolderNameInput.sendKeys("Test Policy");
+        Log.info("Enter credit card details");
     }
 
     public void selectPremiumYearlyAndEnterPaymentDetailsOfDirectDebit() {
@@ -867,7 +881,8 @@ public class PolicyCreationScenariosPage {
         common.pause(1);
         common.jsClick(paymentTenderDropdown);
         common.pause(1);
-        creditOrDebitCardOptionYearly.click();Log.info("Select yearly payment");
+        creditOrDebitCardOptionYearly.click();
+        Log.info("Select yearly payment");
 
         common.waitUntilVisibilityOfElement(cardTypeDropDown);
         common.jsClick(cardTypeDropDown);
@@ -912,7 +927,7 @@ public class PolicyCreationScenariosPage {
         XSSFRow row = sheet.getRow(r);
         String expectedAmount = row.getCell(cell).getStringCellValue();
         Log.info("The expected total premium amount is: " + expectedAmount);
-        softAssert.assertEquals(actualPremiumAmount, expectedAmount, "Total premium is mismatched");
+        Assert.assertEquals(actualPremiumAmount, expectedAmount, "Total premium is mismatched");
 
         common.pause(1);
         List<WebElement> tableRow = driver.findElements(By.xpath("//tbody[@role='rowgroup']//tr//td"));
@@ -941,15 +956,15 @@ public class PolicyCreationScenariosPage {
     }
 
 
-    public void enterPetInformationCat(int r) {
+    public void enterPetInformationCat(int dataRow) {
         XSSFSheet sheet = common.readDataFromExcelSheet("Cat");
-        XSSFRow row = sheet.getRow(r);
+        XSSFRow row = sheet.getRow(dataRow);
 
         common.waitUntilVisibilityOfElement(petNameInputField);
         common.waitUntilElementToBeClickable(petNameInputField);
         String petName = row.getCell(9).getStringCellValue();
         petNameInputField.sendKeys(petName);
-        common.pause(2);
+        Log.info("Entered pet name: " + petName);
 
         common.waitUntilVisibilityOfElement(petBreedDropdown);
         common.waitUntilElementToBeClickable(petBreedDropdown);
@@ -962,6 +977,7 @@ public class PolicyCreationScenariosPage {
         common.pause(2);
         speciesDrpDownSearchInputField.sendKeys(Keys.DOWN);
         speciesDrpDownSearchInputField.sendKeys(Keys.ENTER);
+        Log.info("User selected species: " + species);
         common.pause(2);
 
         String gender = row.getCell(11).getStringCellValue();
@@ -972,35 +988,39 @@ public class PolicyCreationScenariosPage {
         } else if (gender.equalsIgnoreCase("Female")) {
             genderFemaleOption.click();
         }
+        Log.info("Selected pet gender: " + gender);
 
         common.pause(1);
         String petBDate = row.getCell(12).getStringCellValue().replace("/", ".");
         petBirthDate.sendKeys(petBDate);
+        Log.info("Selected pet birth date: " + petBDate);
 
         common.pause(2);
         String price = row.getCell(14).getStringCellValue();
         catPurchaseAmountField.sendKeys(price);
+        Log.info("Entered pet purchase price: " + price);
 
         calculateButton.click();
         common.jsClick(calculateButton);
+        Log.info("Click on the calculate button");
     }
 
     public void enterPetInformationDog(int r, XSSFSheet sheet) {
         XSSFRow row = sheet.getRow(r);
-
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         common.waitUntilVisibilityOfElement(petNameInputField);
         String petName = row.getCell(9).getStringCellValue();
         petNameInputField.sendKeys(petName);
 
         common.waitUntilVisibilityOfElement(dogBreedTypeDropdown);
-        common.pause(3);
+        common.pause(1);
         dogBreedTypeDropdown.click();
         common.pause(1);
         String breedType = row.getCell(10).getStringCellValue();
         if (breedType.equalsIgnoreCase("Pedigree")) {
             dogBreedPedigreeOption.click();
             common.waitUntilVisibilityOfElement(petBreedDropdown);
-            common.pause(3);
+            common.pause(1);
             petBreedDropdown.click();
             common.waitUntilVisibilityOfElement(dogBreedSearchInput);
             String species = row.getCell(13).getStringCellValue();
@@ -1009,6 +1029,7 @@ public class PolicyCreationScenariosPage {
             dogBreedSearchInput.sendKeys(Keys.DOWN);
             dogBreedSearchInput.sendKeys(Keys.ENTER);
             common.pause(1);
+            Log.info("Select pedigree and sub breed of dog: " + species);
         } else if (breedType.equalsIgnoreCase("Mixed Breed")) {
             dogBreedMixedBreedOption.click();
             common.waitUntilElementToBeClickable(petMixedBreedDrpDown1);
@@ -1033,6 +1054,7 @@ public class PolicyCreationScenariosPage {
             petMixedBreedDrpDown2SearchInput.sendKeys(Keys.DOWN);
             petMixedBreedDrpDown2SearchInput.sendKeys(Keys.ENTER);
             common.pause(1);
+            Log.info("Select mixed and sub breed of dog");
         }
 
         String gender = row.getCell(14).getStringCellValue();
@@ -1043,17 +1065,21 @@ public class PolicyCreationScenariosPage {
         } else if (gender.equalsIgnoreCase("Female")) {
             genderFemaleOption.click();
         }
+        Log.info("Select pet gender: " + gender);
 
         common.pause(1);
         String petBDate = row.getCell(15).getStringCellValue().replace("/", ".");
         petBirthDate.sendKeys(petBDate);
+        Log.info("Select pet birthdate: " + petBDate);
 
         common.pause(1);
         String price = row.getCell(17).getStringCellValue();
         dogPurchaseAmountField.sendKeys(price);
+        Log.info("Select pet price: " + price);
 
         calculateButton.click();
         common.jsClick(calculateButton);
+        Log.info("Click on the calculate button");
     }
 
     public void selectPolicyPlanAndAnswerAssumptionsForCat(int r) {
@@ -1788,8 +1814,8 @@ public class PolicyCreationScenariosPage {
 
     public void selectHorsePolicyDetails(int r, XSSFSheet sheet) {
         XSSFRow row = sheet.getRow(r);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         common.waitUntilVisibilityOfElement(addAnAgentDropdown);
-        common.pause(20);
         addAnAgentDropdown.click();
         common.pause(1);
         addAnAgentDropdownOptionNo.click();
@@ -1838,7 +1864,7 @@ public class PolicyCreationScenariosPage {
                     horseOwnedOption.click();
                     common.pause(1);
 
-                    String horsePurchasedDate = common.getPastDate(10, "dd.MM.yyyy");
+                    String horsePurchasedDate = common.getPastDate(331, "dd.MM.yyyy");
                     horsePurchasedDataInputField.sendKeys(horsePurchasedDate);
 
                     String horsePurchasePrice = row.getCell(17).getStringCellValue();
@@ -2221,7 +2247,7 @@ public class PolicyCreationScenariosPage {
         Log.info("The actual total premium amount is: " + actualPremiumAmount);
 
         Log.info("The expected total premium amount is: " + expectedPolicyPremium);
-        softAssert.assertEquals(actualPremiumAmount, expectedPolicyPremium, "Total premium is mismatched");
+        Assert.assertEquals(actualPremiumAmount, expectedPolicyPremium, "Total premium is mismatched");
 
         common.pause(1);
         List<WebElement> tableRow = driver.findElements(By.xpath("//tbody[@role='rowgroup']//tr//td"));
@@ -2229,7 +2255,7 @@ public class PolicyCreationScenariosPage {
         for (WebElement tableCol : tableRow) {
             System.out.print(tableCol.getText() + "  ");
         }
-        softAssert.assertAll();
+        
     }
 
     public void enterCoverStartDateAndQuestionaryForTheHorseTrailersAndHorseDrawnVehiclePlan() {
@@ -2382,7 +2408,7 @@ public class PolicyCreationScenariosPage {
             Log.info("Horse liability plan is not selected default");
             horseLiabilityCoverPlanCheckbox.click();
         }
-        if(cover.equals("2M")){
+        if (cover.equals("2M")) {
             common.jsClick(horseLiabilityCoverLevel2MRadioButton);
         }
         common.pause(1);

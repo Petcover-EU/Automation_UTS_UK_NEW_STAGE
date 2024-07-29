@@ -4,6 +4,7 @@ import factory.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -23,7 +24,7 @@ public class PolicyPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "ul[id='side-menu']>li:nth-child(5)")
+    @FindBy(css = "ul[id='side-menu']>li:nth-child(5) a")
     private WebElement policyIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
     private WebElement displayedMessage;
@@ -79,7 +80,7 @@ public class PolicyPage {
     private WebElement cancelPolicyRefundAmount;
     @FindBy(css = "textarea[id='CancellationDescription']")
     private WebElement cancelPolicyDescription;
-    @FindBy(xpath = "//div[@class='ibox-content']/div[5]/div/div/div/a[@id='btnCancel']")
+    @FindBy(xpath = "//div[@class='ibox-content']/div[6]/div/div/div/a[@id='btnCancel']")
     private WebElement cancelPolicyCancelButton;
     @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/div/div/div/div/div/div/ul/li[8]/a")
     private WebElement addAllocatePaymentIcon;
@@ -134,9 +135,10 @@ public class PolicyPage {
     private WebElement detailsOfPolicyLedgerTab;
 
     public void clickPolicyIcon() {
-        policyIcon.click();
+        common.waitUntilElementToBeClickable(policyIcon);
+        common.jsClick(policyIcon);
         Log.info("Click on the policy icon on the left toolbar");
-        common.pause(5);
+        common.pause(2);
     }
 
     public String verifyManagePolicyPage() {
@@ -201,16 +203,22 @@ public class PolicyPage {
         return displayedMessage.getText();
     }
 
-    public void clickPolicyPageToDownloadFile() {
+    public void clickPolicyNumberToGotToPolicyInformationPage() {
         Log.info("Script Now Try's To Open Policy Information Page By Clicking First One Policy Number Link On Manage Policy Page");
-
-        WebElement totalColumn = common.waitUntilPresenceOfElement("//div[@id='gridName']/table/tbody/tr[1]/td[4]/a");
-        totalColumn.click();
+        for (int i = 1; i < 11; i++) {
+            WebElement policyProductName = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[" + i + "]/td[8]"));
+            String productName = policyProductName.getText();
+            if (!productName.equals("BB Commercial")) {
+                WebElement policy = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[" + i + "]/td[4]/a"));
+                common.jsClick(policy);
+                common.pause(1);
+                break;
+            }
+        }
         Log.info("Script Has Clicked On Policy Number Link On Manage Policy Page");
-        common.pause(5);
         common.switchToWindow(1);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         Log.info("Script Redirects to Respected Policy Information Page Is===> " + driver.getCurrentUrl());
-        System.out.println(driver.getCurrentUrl());
     }
 
     public void LetterIcon() {
@@ -251,6 +259,7 @@ public class PolicyPage {
     }
 
     //Check appropriate policy data should displays against option selected from status drop down on manage policy page
+
     public void selectOptionFromStatusDropDown() {
         common.pause(4);
         common.moveToElement(statusDropDown);
@@ -259,7 +268,7 @@ public class PolicyPage {
         optionFromStatusDropdown.click();
         Log.info("Script Has Selected Any Available Options From Status Dropdown On Manage Policy Page");
         common.pause(1);
-        searchButton.click();
+        common.jsClick(searchButton);
         Log.info("Script Has Clicked On Search Button On Manage Policy Page");
         common.pause(4);
     }
@@ -314,23 +323,33 @@ public class PolicyPage {
 
     public void clickOnAddClaimPage() {
         common.pause(1);
-        common.moveToElement(cogIcon);
-        Log.info("Script Has Clicked On Cog Icon");
-        common.pause(2);
-        common.jsClick(addClaimIcon);
-        Log.info("Script Has Clicked On Add Claim Icon");
-        common.pause(3);
+        for (int i = 1; i < 11; i++) {
+            WebElement policyProductName = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[" + i + "]/td[8]"));
+            String productName = policyProductName.getText();
+            if (!productName.equals("BB Commercial")) {
+                common.scrollToElement(cogIcon);
+                WebElement cogIcon = driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[" + i + "]/td[21]/ul/li/a"));
+                Actions action = new Actions(driver);
+                action.moveToElement(cogIcon).perform();
+                Log.info("Script Has Clicked On Cog Icon");
+                common.pause(1);
+                driver.findElement(By.xpath("//div[@id='gridName']/table/tbody/tr[" + i + "]/td[21]/ul/li/ul/li[1]/a")).click();
+                Log.info("Script Has Clicked On Add Claim Icon");
+                common.pause(3);
+                break;
+            }
+        }
     }
 
     public String verifyAddClaimPage() {
         String displayMessage;
         common.switchToWindow(1);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         System.out.println(driver.getCurrentUrl());
-        Log.info("Script Redirects To Page Add Claim Page===>" + driver.getCurrentUrl());
         displayMessage = displayedMessage.getText();
+        Log.info("Script Redirects To Page Add Claim Page===>" + displayMessage);
         return displayMessage;
     }
-
 
     //Verify that add note window should open with all details by clicking on add note icon of cog drop down against policy number on manage policy page
 

@@ -235,7 +235,7 @@ public class SettingPage {
     private WebElement addExclusionIcon;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
     private WebElement displayedMessageOneAddExclusionPage;
-    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[6]/div/a[1]")
+    @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[7]/div/a[1]")
     private WebElement editIconOnManageExclusionPage;
     @FindBy(css = "input[id='Code']")
     private WebElement inputTypeExclusionCode;
@@ -956,9 +956,9 @@ public class SettingPage {
         common.pause(1);
         optionFromPetClassDropDownOnExclusionPage.click();
 
-        inputTypeDescription.clear();
-        common.pause(1);
-        inputTypeDescription.sendKeys("Test");
+//        inputTypeDescription.clear();
+//        common.pause(1);
+//        inputTypeDescription.sendKeys("Test");
 
         defaultDurationDropDownOnExclusionPage.click();
         common.pause(1);

@@ -115,6 +115,17 @@ public class Common {
     }
 
     /**
+     * This method gives the current date in requires format
+     *
+     * @return past date
+     */
+    public String getCurrentDate(String format) {
+        LocalDate todayDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        return formatter.format(todayDate);
+    }
+
+    /**
      * @return workbook sheet
      */
     public XSSFSheet readDataFromExcelSheet(String sheetName) {
@@ -159,13 +170,14 @@ public class Common {
         Alert alert = driver.switchTo().alert();
         alertText = alert.getText();
         alert.accept();
-        pause(2);
+        pause(1);
         return alertText;
     }
 
     public void waitForAlertPresent(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.alertIsPresent());
+        pause(1);
     }
 
     /**
@@ -188,8 +200,7 @@ public class Common {
         waitUntilElementToBeClickable(element);
         highlightElement(element);
         element.click();
-        pause(2);
-
+        pause(1);
     }
 
     /**
@@ -219,7 +230,6 @@ public class Common {
     public String getText(WebElement element) {
         waitUntilVisibilityOfElement(element);
         highlightElement(element);
-
         return element.getText();
     }
 
@@ -291,13 +301,19 @@ public class Common {
     }
 
     public WebElement waitUntilPresenceOfElement(String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+    }
+
+    public WebElement waitUntilPresenceOfElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(getXPathFromWebElement(element))));
     }
 
     public void waitUntilInvisibilityOfElement(WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.invisibilityOf(element));
+        pause(1);
     }
 
     public void switchToWindow(int windowIndex) {

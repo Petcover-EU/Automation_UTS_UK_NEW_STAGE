@@ -20,11 +20,11 @@ public class LogInPageSteps {
     @Given("User is one the website login page")
     public void user_is_one_the_website_login_page() {
         Log.info("User Opens US-UK-2 Website");
-        try {
-            ScreenRecorderUtil.startRecord("main");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            ScreenRecorderUtil.startRecord("main");
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
 
         String url = logInPage.verifyUrl();
         System.out.println(url);
@@ -56,11 +56,11 @@ public class LogInPageSteps {
         System.out.println("Text Displayed At Top Right Corner" + verifyRoleText);
         Assert.assertEquals(verifyRoleText, "(en-GB)");
         common.pause(1);
-        try {
-            ScreenRecorderUtil.stopRecord();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            ScreenRecorderUtil.stopRecord();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Then("User will get proper validation message")

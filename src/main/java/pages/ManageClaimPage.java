@@ -163,7 +163,7 @@ public class ManageClaimPage {
     }
 
     public void verifyDropDown() {
-        common.waitUntilInvisibilityOfElement(loadSpinner);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         common.pause(2);
         treatmentDropdown.click();
         common.pause(2);

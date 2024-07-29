@@ -18,7 +18,7 @@ public class ReportPageSteps {
     public void user_will_able_to_see_total_eight_section_of_report_category() {
         int numberOfSection = reportPage.fetchSections();
         System.out.println("Total number of sections of report page" + numberOfSection);
-        Assert.assertEquals(numberOfSection, 7);
+        Assert.assertEquals(numberOfSection, 8);
     }
 
     @When("User clicks on reports icon")

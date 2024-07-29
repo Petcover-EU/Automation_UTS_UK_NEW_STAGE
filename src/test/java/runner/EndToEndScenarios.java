@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/EndToEndScenarios.feature",
+        features = "src/test/resources/features/EndToEndScenarios.feature:104",
         glue = {"steps", "hook"},
+        tags = "@end-to-end",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}

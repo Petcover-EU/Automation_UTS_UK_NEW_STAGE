@@ -34,7 +34,7 @@ public class TaskPage {
     private WebElement addTaskButton;
     @FindBy(xpath = "//div[@class='ibox float-e-margins']/div[1]/div/div[6]/div/div/div/span/span/span[2]")
     private WebElement assignDropDown;
-    @FindBy(xpath = "//div[@id='search']/div[2]/div/span/span")
+    @FindBy(xpath = "//input[@id='TaskStatusId']//..//span/span[2]")
     private WebElement statusDropDown;
     @FindBy(xpath = "//ul[@id='TaskStatusId_listbox']/li[2]")
     private WebElement openOptionFromStatusDropDown;

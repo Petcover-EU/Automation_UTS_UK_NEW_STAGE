@@ -4,7 +4,7 @@ Feature: Verify Account Module Functionalities
     Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
     When User clicks on account icon on left tool bar
 
-  @Sanity
+  @sanity
   Scenario: All hyperlinks with icons on account page should work
     When User clicks on icon
     Then User will redirect to respected page
@@ -25,13 +25,13 @@ Feature: Verify Account Module Functionalities
 #    And User clicks on search button on manage bank page
 #    Then Data on manage bank page reflects upon client name
 
-  @Sanity
+  @sanity
   Scenario: Bank Information page displays with details after clicking on bank code link on manage bank details
     When User clicks on bank icon
     And User clicks on bank code link on manage bank page
     Then Bank information page displays with details
 
-  @Sanity
+  @sanity
   Scenario:Add Bank page  displays will all details when user clicks on add bank icon on manage bank page
     When User clicks on bank icon
     And User clicks on add bank icon on manage bank page
@@ -48,6 +48,7 @@ Feature: Verify Account Module Functionalities
 
 #  Manage Breach register
 
+  @sanity
   Scenario:Add breach register page  displays will all details when user clicks on Add breach register on manage breach register page
     When User clicks on manage breach registers icon
     And User clicks on Add breach register icon on manage breach register page
@@ -55,7 +56,7 @@ Feature: Verify Account Module Functionalities
 
 #  Policy review
 
-  @Sanity
+  @sanity
   Scenario: Filter Policy review information upon policy end date and to date
     When User clicks on policy review button on account page
     And User enters policy end date and to date value on policy review page
@@ -64,6 +65,7 @@ Feature: Verify Account Module Functionalities
 
 #  Process Credit Card Payment
 
+  @sanity
   Scenario: Filter Process Credit Card Payment information upon payment due date and receipt date
     When User clicks on Process Credit Card button on account page
     And User enters payment due date and receipt date value on Process Credit Card page

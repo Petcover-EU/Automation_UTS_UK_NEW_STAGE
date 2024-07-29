@@ -95,6 +95,11 @@
             <artifactId>testng</artifactId>
             <version>7.9.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit4</artifactId>
+            <version>3.2.5</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -111,13 +116,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
+                <version>3.2.5</version>
                 <configuration>
                     <systemPropertyVariables>
                         <environment>${environment}</environment>
                     </systemPropertyVariables>
                     <includes>
-                        <include>**/HomePage.java</include>
+                        <include>**/runner/HomePage.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>5</threadCount>

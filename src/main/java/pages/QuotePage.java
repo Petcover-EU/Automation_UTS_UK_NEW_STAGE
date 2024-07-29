@@ -18,7 +18,7 @@ public class QuotePage {
 
     private static final Logger log = LoggerFactory.getLogger(QuotePage.class);
     Common common = new Common(DriverFactory.getDriver());
-    SoftAssert softAssert = new SoftAssert();
+    
     private WebDriver driver;
 
     public QuotePage(WebDriver driver){
