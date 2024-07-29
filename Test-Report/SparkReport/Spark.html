@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Jul 24, 2024 03:59:51 pm</span>
+                    <span class="badge badge-primary">Jul 29, 2024 07:20:51 pm</span>
                 </a>
             </li>
         </ul>
@@ -143,8 +143,8 @@
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Verify the End To End scenarios</p>
-							<p class="duration text-sm">0h 3m 34s+327ms</p>
-							<span class="datetime">16:00:04 pm</span>
+							<p class="duration text-sm">0h 0m 58s+994ms</p>
+							<span class="datetime">19:20:59 pm</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
@@ -152,9 +152,9 @@
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
 									<h5 class="test-status text-fail">Verify the End To End scenarios</h5>
-									<span class='badge badge-success'>07.24.2024 16:00:04</span>
-									<span class='badge badge-danger'>07.24.2024 16:03:38</span>
-									<span class='badge badge-default'>0h 3m 34s+327ms</span>
+									<span class='badge badge-success'>07.29.2024 19:20:59</span>
+									<span class='badge badge-danger'>07.29.2024 19:21:58</span>
+									<span class='badge badge-default'>0h 0m 58s+994ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -166,13 +166,10 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Verify the end to end scenario of the Horse Saddlery and Tack</div>
+				<div class="node">Verify the end to end scenario of the Horse Trailer and drown vehicle</div>
 				<div class="status-avatar float-left fail-bg">
 					<i class="fa fa-times text-white"></i>
 				</div>
-					<div class="status-avatar float-right mr-4">
-						<i class="fa fa-paperclip"></i>
-					</div>
 			</div>
 		</div>
 				<div class="collapse">
@@ -191,61 +188,21 @@
 								<span>When User clicks on quote icon on left tool bar</span>
 							</div>
 				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start given" title="steps.EndToEndScenariosStep.clickOnTheQuoteButtonAndEnterTheClientDetails()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>Given Click on the add quote button and enter the client details</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start when" title="steps.EndToEndScenariosStep.selectHorseProductAndSelectSaddleryAndTackProduct()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>When Select Horse product and select Saddlery and Tack product</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.enterSaddleryCurrentMarketValueAndSaveQuoteByVerifyingSaddleryPlanIsSelectedOnCoverTable()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Enter Saddlery current market value and save quote by verifying Saddlery Plan is selected on cover table</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.searchAndEditTheSameQuoteAndSaveApplicationByEnteringUWQuestionsAndCreditCardPaymentMethod()">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
-								</span>
-								<span>And Search and edit the same quote and save application by entering UW questions and Credit card payment method</span>
-							</div>
-				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.createPolicyOfTheSaddleryAndTackByEditingSavedApplication()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyAddAllocatePaymentOnTheHorseTrailerPolicy()">
 								<span class="alert-icon fail-bg">
 									<i class="fa fa-times text-white"></i>
 								</span>
-								<span>And Create policy of the Saddlery and tack by editing saved application</span>
+								<span>And Apply add allocate payment on the Horse trailer policy</span>
 							</div>
-				<textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='row client-details']/div[2]//span[2]' (tried for 60 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at utils.Common.waitUntilVisibilityOfElement(Common.java:51)
-	at pages.EndToEndScenariosPage.createPolicyByEditingTheHorseSaddleryQuoteNumberAndGetPolicyNumber(EndToEndScenariosPage.java:2701)
-	at steps.EndToEndScenariosStep.createPolicyOfTheSaddleryAndTackByEditingSavedApplication(EndToEndScenariosStep.java:462)
-	at ✽.Create policy of the Saddlery and tack by editing saved application(file:///C:/Users/prowe/Desktop/Automation-UTS2-UK/src/test/resources/features/EndToEndScenarios.feature:109)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='row client-details']/div[2]//span[2]"}
-  (Session info: chrome=126.0.6478.183)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+				<textarea disabled class="code-block">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You have £50.00  as UnAllocated.Are you sure to save this receipt?}
+  (Session info: chrome=127.0.6533.72): You have £50.00  as UnAllocated.Are you sure to save this receipt?
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2aec7a6ae8dd9b36125127549a876659, findElement {using=xpath, value=//div[@class='row client-details']/div[2]//span[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53110}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53110/devtoo..., se:cdpVersion: 126.0.6478.183, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2aec7a6ae8dd9b36125127549a876659
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+Command: [f36fc3ab0a69d63b80764fa915b84e97, findElement {using=xpath, value=//div[@id='loading' and @style='display: none;']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52488}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52488/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f36fc3ab0a69d63b80764fa915b84e97
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
@@ -255,112 +212,54 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at utils.Common.waitUntilVisibilityOfElement(Common.java:51)
-	at pages.EndToEndScenariosPage.createPolicyByEditingTheHorseSaddleryQuoteNumberAndGetPolicyNumber(EndToEndScenariosPage.java:2701)
-	at steps.EndToEndScenariosStep.createPolicyOfTheSaddleryAndTackByEditingSavedApplication(EndToEndScenariosStep.java:462)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+	at utils.Common.waitUntilPresenceOfElement(Common.java:305)
+	at pages.EndToEndScenariosPage.clickOnTheCogIconAndAddAllocatePaymentByBankTransfer(EndToEndScenariosPage.java:755)
+	at steps.EndToEndScenariosStep.applyAddAllocatePaymentOnTheHorseTrailerPolicy(EndToEndScenariosStep.java:540)
+	at ✽.Apply add allocate payment on the Horse trailer policy(file:///C:/Users/prowe/Desktop/Automation-UTS2-UK/src/test/resources/features/EndToEndScenarios.feature:127)
 </textarea>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.goToInstalmentTabAndPayThePremiumOfTheSecondInstalmentUsingPayNowLinkOfSaddleryPolicy()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyEndorsementOnTheHorseTrailerAndDrownVehiclePolicy()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Go to instalment tab and pay the premium of the second instalment using Pay Now link of Saddlery policy</span>
+								<span>And Apply endorsement on the Horse Trailer and Drown vehicle policy</span>
 							</div>
 				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyAddAllocatePaymentOnThePolicy()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyVerifyTheClaimGetsAutoDeclineDueToClaimAmountIsLessThanTheExcessValue()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Apply add allocate payment on the policy</span>
+								<span>And Add claim on the Horse Trailer policy verify the claim gets auto decline due to claim amount is less than the excess value</span>
 							</div>
 				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyEndorsementOnTheHorseSaddleryAndTackPolicy()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyAndDeclineTheClaimByAdminUser()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Apply endorsement on the Horse Saddlery and Tack policy</span>
+								<span>And Add claim on the  Horse Trailer policy and decline the claim by admin user</span>
 							</div>
 				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnThePolicyVerifyTheClaimGetsAutoDeclineDueToClaimAmountIsLessThanTheExcessValue()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyAndAuthoriseApproveAndSettleTheClaimUsingChequePaymentMethod()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Add claim on the policy verify the claim gets auto decline due to claim amount is less than the excess value</span>
+								<span>And Add claim on the Horse Trailer policy and Authorise Approve and settle the claim using EFT payment method</span>
 							</div>
 				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnThePolicyAndDeclineTheClaimByAdminUser()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheRenewPolicyAndRenewedPolicyStatusOfHorseTrailerAndDrownVehicle()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Add claim on the  policy and decline the claim by admin user</span>
+								<span>And Verify the Renew policy and renewed policy status of Horse Trailer and Drown vehicle</span>
 							</div>
 				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnThePolicyAndAuthoriseApproveAndSettleTheClaimUsingChequePaymentMethod()">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheCancelPolicyAndCancelledPolicyStatusOfHorseTrailerAndDrownVehicle()">
 								<span class="alert-icon skip-bg">
 									<i class="fa fa-long-arrow-right text-white"></i>
 								</span>
-								<span>And Add claim on the policy and Authorise Approve and settle the claim using cheque payment method</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheRenewPolicyAndRenewedPolicyStatusOfHorseSaddleryAndTack()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Verify the Renew policy and renewed policy status of Horse saddlery and tack</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheCancelPolicyAndCancelledPolicyStatusOfHorseSaddleryAndTack()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Verify the Cancel policy and cancelled policy status of Horse saddlery and tack</span>
+								<span>And Verify the Cancel policy and cancelled policy status of Horse Trailer and Drown vehicle</span>
 							</div>
 				<div class="details">Step skipped</div>
 							<div class="d-flex align-items-center justify-content-start asterisk" title="">
@@ -371,13 +270,30 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 							</div>
 				<div class="details">https://stage.petcovergroup.com:7779/</div>
 							<div class="d-flex align-items-center justify-content-start asterisk" title="">
-								<span class="alert-icon pass-bg">
-									<i class="fa fa-check text-white"></i>
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
 								</span>
 								<span>hook.hooks.takeScreenShotOnFailure(io.cucumber.java.Scenario)</span>
 							</div>
-				<div class="details"></div>
-				<div class="details"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../embedded1.png' src='../embedded1.png'></div>
+				<textarea disabled class="code-block">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You have £50  as UnAllocated.Are you sure to save this receipt?}
+  (Session info: chrome=127.0.6533.72): You have £50  as UnAllocated.Are you sure to save this receipt?
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f36fc3ab0a69d63b80764fa915b84e97, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52488}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52488/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f36fc3ab0a69d63b80764fa915b84e97
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:321)
+	at hook.hooks.takeScreenShotOnFailure(hooks.java:51)
+</textarea>
 					</div>
 				</div>
 	</div>
@@ -457,11 +373,11 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>16:00:04 pm</td>
+									<td>19:20:59 pm</td>
 									<td class='linked' test-id='2'>
-										Verify the end to end scenario of the Horse Saddlery and Tack
+										Verify the end to end scenario of the Horse Trailer and drown vehicle
 										<div class="">
-											<span class="badge badge-default">Verify the End To End scenarios.Verify the end to end scenario of the Horse Saddlery and Tack</span>
+											<span class="badge badge-default">Verify the End To End scenarios.Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
 										</div>
 									</td>
 								</tr>
@@ -509,13 +425,13 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">org.openqa.selenium.TimeoutException</p>
-							<p class="duration text-sm">1 tests</p>
+							<p class="name">org.openqa.selenium.UnhandledAlertException</p>
+							<p class="duration text-sm">2 tests</p>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>org.openqa.selenium.TimeoutException</h4>
+							<h4>org.openqa.selenium.UnhandledAlertException</h4>
 						</div>
 						<table class='table table-sm mt-4'>
 							<thead>
@@ -532,11 +448,25 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>16:01:51 pm</td>
-									<td class='linked' test-id='11'>
-										And Create policy of the Saddlery and tack by editing saved application
+									<td>19:21:10 pm</td>
+									<td class='linked' test-id='7'>
+										And Apply add allocate payment on the Horse trailer policy
 										<div class="">
-											<span class="badge badge-default">Verify the end to end scenario of the Horse Saddlery and Tack</span>
+											<span class="badge badge-default">Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>19:21:58 pm</td>
+									<td class='linked' test-id='15'>
+										hook.hooks.takeScreenShotOnFailure(io.cucumber.java.Scenario)
+										<div class="">
+											<span class="badge badge-default">Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
 										</div>
 									</td>
 								</tr>
@@ -618,10 +548,10 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='47.059%'><b>8</b> steps passed</small></div>
+					<div><small data-tooltip='27.273%'><b>3</b> steps passed</small></div>
 					<div>
-						<small data-tooltip='5.882%'><b>1</b> steps failed, 
-						<b>8</b> skipped, <b data-tooltip='47.059%'>0</b> others
+						<small data-tooltip='18.182%'><b>2</b> steps failed, 
+						<b>6</b> skipped, <b data-tooltip='54.545%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -673,7 +603,7 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Jul 24, 2024 03:59:51 pm</h4>
+							<h4 class="font-weight-light mt-4">Jul 29, 2024 07:20:51 pm</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -689,7 +619,7 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 3m 47s+578ms</h4>
+							<h4 class="font-weight-light mt-4">0h 1m 7s+241ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -809,31 +739,31 @@ Session ID: 2aec7a6ae8dd9b36125127549a876659
 		infoChild: 0,
 		debugChild: 0,
 		exceptionsChild: 1,
-		grandChildCount: 17,
-		passGrandChild: 8,
-		failGrandChild: 1,
+		grandChildCount: 11,
+		passGrandChild: 3,
+		failGrandChild: 2,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
-		skipGrandChild: 8,
+		skipGrandChild: 6,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 9,
-		eventsCount: 17,
-		passEvents: 6,
-		failEvents: 1,
+		exceptionsGrandChild: 8,
+		eventsCount: 11,
+		passEvents: 2,
+		failEvents: 2,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
-		skipEvents: 8,
-		infoEvents: 2,
+		skipEvents: 6,
+		infoEvents: 1,
 		debugEvents: 0,
 		exceptionsEvents: 0
 	};
 </script>
 <script>
 	var timeline = {
-	        "Verify the End To End scenarios":214.327
+	        "Verify the End To End scenarios":58.994
 	};
 </script>
                 </div>

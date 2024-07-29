@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/EndToEndScenarios.feature",
+        features = "src/test/resources/features/EndToEndScenarios.feature:120",
         glue = {"steps", "hook"},
         tags = "@end-to-end",
         monochrome = true,

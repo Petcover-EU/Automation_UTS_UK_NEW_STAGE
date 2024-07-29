@@ -30,8 +30,9 @@ public class EndToEndScenariosStep {
     String horseSaddleryQuoteNumber;
     String horseSaddleryPolicyNumber;
 
-    String horseTrailerQuoteNumber = "Q0174975";
+    String horseTrailerQuoteNumber ;
     String horseTrailerPolicyNumber = "HERN-00011-HTHDV-00000002";
+
 //    Verify the end to end scenario of the Exotic
 
     @Given("Add quote and Enter the client details")
@@ -531,7 +532,6 @@ public class EndToEndScenariosStep {
 
     @And("Go to instalment tab and pay the premium of the first instalment using Pay Now link of Trailer policy")
     public void goToInstalmentTabAndPayThePremiumOfTheSecondInstalmentUsingPayNowLinkOfTrailerPolicy() {
-        endToEndScenariosPage.searchPolicyAndClick(horseTrailerPolicyNumber);
         endToEndScenariosPage.payTheFirstInstallmentsUsingPayNowButtonInInstallmentTab();
     }
 
