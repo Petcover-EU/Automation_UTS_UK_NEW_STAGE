@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Jul 29, 2024 07:20:51 pm</span>
+                    <span class="badge badge-primary">Aug 14, 2024 10:29:42 am</span>
                 </a>
             </li>
         </ul>
@@ -73,14 +73,6 @@
             <i class="fa fa-tag"></i>
           </span>
           <span class="title">Tags</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown" onclick="toggleView('exception-view')">
-        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
-          <span class="icon-holder">
-            <i class="fa fa-bug"></i>
-          </span>
-          <span class="title">Exception</span>
         </a>
       </li>
       <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -112,11 +104,11 @@
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
-						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
 						
 						
 						
-						<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning pull-right"></span></a>
+						
+						
 						<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
@@ -126,35 +118,35 @@
 					<i class="fa fa-tag"></i>
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a class="dropdown-item" href="#">@end-to-end</a>
+						<a class="dropdown-item" href="#">@regression</a>
 					</ul>
 				</li>
 			</ul>
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="fail" test-id="1"
+				<li class="test-item"  status="pass" test-id="1"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar fail-bg">
-						<i class="fa fa-times text-white"></i>
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">Verify the End To End scenarios</p>
-							<p class="duration text-sm">0h 0m 58s+994ms</p>
-							<span class="datetime">19:20:59 pm</span>
+							<p class="name">Verify the policy creation of the different product</p>
+							<p class="duration text-sm">0h 41m 7s+339ms</p>
+							<span class="datetime">10:29:54 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-fail">Verify the End To End scenarios</h5>
-									<span class='badge badge-success'>07.29.2024 19:20:59</span>
-									<span class='badge badge-danger'>07.29.2024 19:21:58</span>
-									<span class='badge badge-default'>0h 0m 58s+994ms</span>
+									<h5 class="test-status text-pass">Verify the policy creation of the different product</h5>
+									<span class='badge badge-success'>08.14.2024 10:29:54</span>
+									<span class='badge badge-danger'>08.14.2024 11:11:01</span>
+									<span class='badge badge-default'>0h 41m 7s+339ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -166,9 +158,9 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Verify the end to end scenario of the Horse Trailer and drown vehicle</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="node">Verify the Quote and Policy creation for Exotic products with different combinations of plan</div>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
@@ -188,80 +180,20 @@
 								<span>When User clicks on quote icon on left tool bar</span>
 							</div>
 				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyAddAllocatePaymentOnTheHorseTrailerPolicy()">
-								<span class="alert-icon fail-bg">
-									<i class="fa fa-times text-white"></i>
+							<div class="d-flex align-items-center justify-content-start when" title="steps.QuotePageSteps.user_clicks_add_quote_button_on_manage_quote_page()">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>And Apply add allocate payment on the Horse trailer policy</span>
+								<span>When User clicks add quote button on manage quote page</span>
 							</div>
-				<textarea disabled class="code-block">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You have £50.00  as UnAllocated.Are you sure to save this receipt?}
-  (Session info: chrome=127.0.6533.72): You have £50.00  as UnAllocated.Are you sure to save this receipt?
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f36fc3ab0a69d63b80764fa915b84e97, findElement {using=xpath, value=//div[@id='loading' and @style='display: none;']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52488}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52488/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f36fc3ab0a69d63b80764fa915b84e97
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
-	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at utils.Common.waitUntilPresenceOfElement(Common.java:305)
-	at pages.EndToEndScenariosPage.clickOnTheCogIconAndAddAllocatePaymentByBankTransfer(EndToEndScenariosPage.java:755)
-	at steps.EndToEndScenariosStep.applyAddAllocatePaymentOnTheHorseTrailerPolicy(EndToEndScenariosStep.java:540)
-	at ✽.Apply add allocate payment on the Horse trailer policy(file:///C:/Users/prowe/Desktop/Automation-UTS2-UK/src/test/resources/features/EndToEndScenarios.feature:127)
-</textarea>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.applyEndorsementOnTheHorseTrailerAndDrownVehiclePolicy()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="steps.PolicyCreationScenariosStep.enterClientContactInformationAndSelectProductThenEnterPetInfoAndClickOnCalculateButtonAndSelectAppropriatePolicyPlanAndEnterPaymentDetailsClickOnCreatePolicyButtonThenVerifyThePolicyDetailsOnPolicyInformationPage(java.lang.String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>And Apply endorsement on the Horse Trailer and Drown vehicle policy</span>
+								<span>And Enter client contact information and select "Exotic" product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page</span>
 							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyVerifyTheClaimGetsAutoDeclineDueToClaimAmountIsLessThanTheExcessValue()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Add claim on the Horse Trailer policy verify the claim gets auto decline due to claim amount is less than the excess value</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyAndDeclineTheClaimByAdminUser()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Add claim on the  Horse Trailer policy and decline the claim by admin user</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.addClaimOnTheHorseTrailerPolicyAndAuthoriseApproveAndSettleTheClaimUsingChequePaymentMethod()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Add claim on the Horse Trailer policy and Authorise Approve and settle the claim using EFT payment method</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheRenewPolicyAndRenewedPolicyStatusOfHorseTrailerAndDrownVehicle()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Verify the Renew policy and renewed policy status of Horse Trailer and Drown vehicle</span>
-							</div>
-				<div class="details">Step skipped</div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.EndToEndScenariosStep.verifyTheCancelPolicyAndCancelledPolicyStatusOfHorseTrailerAndDrownVehicle()">
-								<span class="alert-icon skip-bg">
-									<i class="fa fa-long-arrow-right text-white"></i>
-								</span>
-								<span>And Verify the Cancel policy and cancelled policy status of Horse Trailer and Drown vehicle</span>
-							</div>
-				<div class="details">Step skipped</div>
+				<div class="details"></div>
 							<div class="d-flex align-items-center justify-content-start asterisk" title="">
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
@@ -269,31 +201,6 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 								<span>hook.hooks.displayUrl(io.cucumber.java.Scenario)</span>
 							</div>
 				<div class="details">https://stage.petcovergroup.com:7779/</div>
-							<div class="d-flex align-items-center justify-content-start asterisk" title="">
-								<span class="alert-icon fail-bg">
-									<i class="fa fa-times text-white"></i>
-								</span>
-								<span>hook.hooks.takeScreenShotOnFailure(io.cucumber.java.Scenario)</span>
-							</div>
-				<textarea disabled class="code-block">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : You have £50  as UnAllocated.Are you sure to save this receipt?}
-  (Session info: chrome=127.0.6533.72): You have £50  as UnAllocated.Are you sure to save this receipt?
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f36fc3ab0a69d63b80764fa915b84e97, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52488}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52488/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f36fc3ab0a69d63b80764fa915b84e97
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:591)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:321)
-	at hook.hooks.takeScreenShotOnFailure(hooks.java:51)
-</textarea>
 					</div>
 				</div>
 	</div>
@@ -340,11 +247,11 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 				<li class="test-item">
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">@end-to-end</p>
+							<p class="name">@regression</p>
 							<p class="duration text-sm">1 tests</p>
 							<span class="datetime">
+							<span class='badge badge-success'>1</span>
 							
-							<span class='badge badge-danger'>1</span>
 							
 							
 							</span>
@@ -352,9 +259,9 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					</div>
 					<div class="test-contents d-none">
 						<div class="info">
-							<h4>@end-to-end</h4>
+							<h4>@regression</h4>
+							<span status="pass" class='badge badge-success'>1 passed</span>
 							
-							<span status="fail" class='badge badge-danger'>1 failed</span>
 							
 							
 						</div>
@@ -367,106 +274,17 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="tag-test-status" status="fail">
+								<tr class="tag-test-status" status="pass">
 									<td>
-										<div class='status-avatar fail-bg'>
-											<i class="fa fa-times text-white"></i>
+										<div class='status-avatar pass-bg'>
+											<i class="fa fa-check text-white"></i>
 										</div>
 									</td>
-									<td>19:20:59 pm</td>
+									<td>10:29:54 am</td>
 									<td class='linked' test-id='2'>
-										Verify the end to end scenario of the Horse Trailer and drown vehicle
+										Verify the Quote and Policy creation for Exotic products with different combinations of plan
 										<div class="">
-											<span class="badge badge-default">Verify the End To End scenarios.Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="test-content scrollable">
-		<div class="test-content-tools">
-			<ul>
-				<li>
-					<a class="back-to-test" href="javascript:void(0)">
-					<i class="fa fa-arrow-left"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-content-detail">
-			<div class="detail-body"></div>
-		</div>
-	</div>
-</div><div class="test-wrapper row exception-view attributes-view">
-	<div class="test-list">
-		<div class="test-list-tools">
-			<ul class="tools pull-left">
-				<li>
-					<a href="">
-					<span class="font-size-14">Exception</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="tools text-right">
-				<li>
-					<a href="#">
-					<span class="badge badge-primary">1</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-list-wrapper scrollable">
-			<ul class="test-list-item">
-				<li class="test-item">
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">org.openqa.selenium.UnhandledAlertException</p>
-							<p class="duration text-sm">2 tests</p>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="info">
-							<h4>org.openqa.selenium.UnhandledAlertException</h4>
-						</div>
-						<table class='table table-sm mt-4'>
-							<thead>
-								<tr>
-									<th class="status-col">Status</th>
-									<th class="timestamp-col">Timestamp</th>
-									<th>TestName</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<div class='status-avatar fail-bg'>
-											<i class="fa fa-times text-white"></i>
-										</div>
-									</td>
-									<td>19:21:10 pm</td>
-									<td class='linked' test-id='7'>
-										And Apply add allocate payment on the Horse trailer policy
-										<div class="">
-											<span class="badge badge-default">Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class='status-avatar fail-bg'>
-											<i class="fa fa-times text-white"></i>
-										</div>
-									</td>
-									<td>19:21:58 pm</td>
-									<td class='linked' test-id='15'>
-										hook.hooks.takeScreenShotOnFailure(io.cucumber.java.Scenario)
-										<div class="">
-											<span class="badge badge-default">Verify the end to end scenario of the Horse Trailer and drown vehicle</span>
+											<span class="badge badge-default">Verify the policy creation of the different product.Verify the Quote and Policy creation for Exotic products with different combinations of plan</span>
 										</div>
 									</td>
 								</tr>
@@ -505,12 +323,12 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='0%'>
-						<b>0</b> features passed
+					<div><small data-tooltip='100%'>
+						<b>1</b> features passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='100%'><b>1</b> features failed, 
+						<small data-tooltip='0%'><b>0</b> features failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -528,9 +346,9 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+					<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 					<div>
-						<small data-tooltip='100%'><b>1</b> scenarios failed, 
+						<small data-tooltip='0%'><b>0</b> scenarios failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -548,10 +366,10 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='27.273%'><b>3</b> steps passed</small></div>
+					<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
 					<div>
-						<small data-tooltip='18.182%'><b>2</b> steps failed, 
-						<b>6</b> skipped, <b data-tooltip='54.545%'>0</b> others
+						<small data-tooltip='0%'><b>0</b> steps failed, 
+						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -568,7 +386,7 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>.00%</span>
+							<span>100.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -587,7 +405,7 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>.00%</span>
+							<span>100.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -603,7 +421,7 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Jul 29, 2024 07:20:51 pm</h4>
+							<h4 class="font-weight-light mt-4">Aug 14, 2024 10:29:42 am</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -619,7 +437,7 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 1m 7s+241ms</h4>
+							<h4 class="font-weight-light mt-4">0h 41m 19s+261ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -664,13 +482,13 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 						</thead>
 						<tbody>
 							<tr>
-								<td>@end-to-end</td>
-								<td>0</td>
+								<td>@regression</td>
 								<td>1</td>
 								<td>0</td>
 								<td>0</td>
+								<td>0</td>
 								<td>
-									0%
+									100%
 								</td>
 							</tr>
 						</tbody>
@@ -722,40 +540,40 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 <script>
 	var statusGroup = {
 	    parentCount: 1,
-		passParent: 0,
-		failParent: 1,
+		passParent: 1,
+		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 1,
+		exceptionsParent: 0,
 		childCount: 1,
-		passChild: 0,
-		failChild: 1,
+		passChild: 1,
+		failChild: 0,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 1,
-		grandChildCount: 11,
-		passGrandChild: 3,
-		failGrandChild: 2,
+		exceptionsChild: 0,
+		grandChildCount: 5,
+		passGrandChild: 5,
+		failGrandChild: 0,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
-		skipGrandChild: 6,
+		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 8,
-		eventsCount: 11,
-		passEvents: 2,
-		failEvents: 2,
+		exceptionsGrandChild: 0,
+		eventsCount: 5,
+		passEvents: 4,
+		failEvents: 0,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
-		skipEvents: 6,
+		skipEvents: 0,
 		infoEvents: 1,
 		debugEvents: 0,
 		exceptionsEvents: 0
@@ -763,7 +581,7 @@ Session ID: f36fc3ab0a69d63b80764fa915b84e97
 </script>
 <script>
 	var timeline = {
-	        "Verify the End To End scenarios":58.994
+	        "Verify the policy creation of the different product":2467.339
 	};
 </script>
                 </div>

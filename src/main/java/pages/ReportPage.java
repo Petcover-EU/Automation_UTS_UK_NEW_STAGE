@@ -2,7 +2,6 @@ package pages;
 
 import factory.DriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -151,7 +150,7 @@ public class ReportPage {
 
     public void clickOnReportIcon() {
         reportIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public int fetchSections() {
@@ -159,268 +158,173 @@ public class ReportPage {
         return totalColumn.size();
     }
 
+    public void getCurrentUrlAndClickOnReportIcon() {
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
+        System.out.println(driver.getCurrentUrl());
+        common.pause(1);
+        driver.navigate().back();
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
+    }
+
     public void traversingThroughPages() {
 
         //Quote
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement quoteReport = driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[1]/div/div[2]/a[1]"));
+        common.jsClick(quoteReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement xoomTalkCallReport = driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[1]/div/div[2]/a[2]"));
+        common.jsClick(xoomTalkCallReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement xoomTalkCallUTSUKReport = driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[1]/div/div[2]/a[3]"));
+        common.jsClick(xoomTalkCallUTSUKReport);
+        getCurrentUrlAndClickOnReportIcon();
 
         //Client
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement clientDebtors = driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[1]"));
+        common.jsClick(clientDebtors);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement policyDebtors = driver.findElement(By.xpath("//div[@class='ibox']/div[1]/div[2]/div/div[2]/a[2]"));
+        common.jsClick(policyDebtors);
+        getCurrentUrlAndClickOnReportIcon();
 
         //Policy
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement policySummary = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[1]"));
+        common.jsClick(policySummary);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement policyPremium = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[2]"));
+        common.jsClick(policyPremium);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement outstandingRenewalReport = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[3]"));
+        common.jsClick(outstandingRenewalReport);
+        getCurrentUrlAndClickOnReportIcon();
 
+//        WebElement UnEarnedPremiumReport = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[4]"));
+//        common.jsClick(UnEarnedPremiumReport);
+//        getCurrentUrlAndClickOnReportIcon();
 
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[4]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[4]")).click();
-//        } else {
-//            common.pause(3);
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[4]")).click();
-//        }
-//       common.pause(3);
-//        System.out.println(driver.getCurrentUrl());
-//        common.pause(1);
-//        reportIcon.click();
-//
-//
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[5]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[5]")).click();
-//        } else {
-//            common.pause(3);
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[5]")).click();
-//        }
-//       common.pause(3);
-//        System.out.println(driver.getCurrentUrl());
-//        common.pause(1);
-//        reportIcon.click();
+//        WebElement earnedPremiumReport = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[5]"));
+//        common.jsClick(earnedPremiumReport);
+//        getCurrentUrlAndClickOnReportIcon();
 
+        WebElement paymentHistoryReport = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]"));
+        common.jsClick(paymentHistoryReport);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[6]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement policyCancellationReport = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]"));
+        common.jsClick(policyCancellationReport);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).isEnabled()) {
-            WebElement element = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]"));
-            common.jsClick(element);
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[7]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement activePolicyListing = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[8]"));
+        common.jsClick(activePolicyListing);
+        getCurrentUrlAndClickOnReportIcon();
 
-        //Claim
+        WebElement policiesRequiringELTO = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[1]/div/div[2]/a[9]"));
+        common.jsClick(policiesRequiringELTO);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+//        Claim
 
+        WebElement outstandingClaims = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[1]"));
+        common.jsClick(outstandingClaims);
+        getCurrentUrlAndClickOnReportIcon();
 
-//        if (driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]")).isEnabled()) {
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]")).click();
-//        } else {
-//            try {
-//                Thread.sleep(3000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]")).click();
-//        }
-//        try {
-//            Thread.sleep(3000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        System.out.println(driver.getCurrentUrl());
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driver.findElement(reportIcon).click();
+//        WebElement paidClaims = driver.findElement(By.xpath("//div[@class='ibox']/div[2]/div[2]/div/div[2]/a[2]"));
+//        common.jsClick(paidClaims);
+//        getCurrentUrlAndClickOnReportIcon();
 
+//        Trust Summary
 
-        //Trust Summary
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement commissionProcessed = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[1]"));
+        common.jsClick(commissionProcessed);
+        getCurrentUrlAndClickOnReportIcon();
 
+        WebElement insurerProcessed = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[2]"));
+        common.jsClick(insurerProcessed);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[2]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[2]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[2]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement adminFeeProcessed = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[3]"));
+        common.jsClick(adminFeeProcessed);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[3]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[3]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[3]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement trustSummaryBatch = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[4]"));
+        common.jsClick(trustSummaryBatch);
+        getCurrentUrlAndClickOnReportIcon();
 
+        WebElement trustSummarySection26_27 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[5]"));
+        common.jsClick(trustSummarySection26_27);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[4]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[4]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[4]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        //From here make comment
-        reportIcon.click();
+//        Bordereaux
 
+        WebElement premiumBordereauxv3 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]"));
+        common.jsClick(premiumBordereauxv3);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[5]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[5]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[1]/div/div[2]/a[5]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement premiumBordereauxv4 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[2]"));
+        common.jsClick(premiumBordereauxv4);
+        getCurrentUrlAndClickOnReportIcon();
 
-        //Bordereaux
+        WebElement premiumBordereauxv5 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[3]"));
+        common.jsClick(premiumBordereauxv5);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[1]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement claimBordereaux = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[4]"));
+        common.jsClick(claimBordereaux);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[2]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[2]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[2]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement claimBordereauxv2 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[5]"));
+        common.jsClick(claimBordereauxv2);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[3]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[3]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[3]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.waitUntilElementToBeClickable(reportIcon);
-        reportIcon.click();
+        WebElement claimBordereauxv3 = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[6]"));
+        common.jsClick(claimBordereauxv3);
+        getCurrentUrlAndClickOnReportIcon();
 
-        if (driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[4]")).isEnabled()) {
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[4]")).click();
-        } else {
-            common.pause(3);
-            driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[4]")).click();
-        }
-        common.pause(3);
-        System.out.println(driver.getCurrentUrl());
-        common.pause(1);
+        WebElement riskBordereaux = driver.findElement(By.xpath("//div[@class='ibox']/div[3]/div[2]/div/div[2]/a[7]"));
+        common.jsClick(riskBordereaux);
+        getCurrentUrlAndClickOnReportIcon();
+
+//        Commission
+
+        WebElement agentProductCommissionReport = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[1]/div/div[2]/a[1]"));
+        common.jsClick(agentProductCommissionReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+//        Datacube Bordereaux
+
+        WebElement riskBordereauxReport = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[1]"));
+        common.jsClick(riskBordereauxReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement paidClaimReport = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[2]"));
+        common.jsClick(paidClaimReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement claimBordereauxReport = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[3]"));
+        common.jsClick(claimBordereauxReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement premiumBordereauxReport = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[4]"));
+        common.jsClick(premiumBordereauxReport);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement claimBordereauxReportBBCommercial = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[5]"));
+        common.jsClick(claimBordereauxReportBBCommercial);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement riskBordereauxReportBBCommercial = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[6]"));
+        common.jsClick(riskBordereauxReportBBCommercial);
+        getCurrentUrlAndClickOnReportIcon();
+
+        WebElement premiumBordereauxReportBBCommercial = driver.findElement(By.xpath("//div[@class='ibox']/div[4]/div[2]/div/div[2]/a[7]"));
+        common.jsClick(premiumBordereauxReportBBCommercial);
+        getCurrentUrlAndClickOnReportIcon();
     }
 
     ////Filter quote report information upon option of product drop down
@@ -451,7 +355,7 @@ public class ReportPage {
     public void clickSearchIcon() {
         common.waitUntilVisibilityOfElement(searchButton);
         common.jsClick(searchButton);
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyQuoteReportData() {
@@ -467,11 +371,11 @@ public class ReportPage {
 
     public void selectOptionFromSortByDropDown() {
         sortByDropDown.click();
-        common.pause(2);
+        common.pause(1);
         optionFromSortByDD.click();
 
         sortByDirectionDropDown.click();
-        common.pause(2);
+        common.pause(1);
         optionFromSortByDirectionDD.click();
     }
 
@@ -479,7 +383,7 @@ public class ReportPage {
 
     public void clickOnPolicySummaryIcon() {
         policySummaryIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
 
@@ -491,7 +395,7 @@ public class ReportPage {
 
     public void clickSearchIconOnPolicySummary() {
         searchButtonOnProductSummary.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyPolicySummaryReportData() {
@@ -547,7 +451,7 @@ public class ReportPage {
 
     public void clickOnOutstandingRenewalReportIcon() {
         outstandingRenewalReportIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterFromAndToDateOnOutstandingRenewalReport() {
@@ -562,7 +466,7 @@ public class ReportPage {
 
     public void clickSearchIconOnOutstandingRenewalReport() {
         searchButtonOnOutstandingRenewalReport.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyOutstandingRenewalReportData() {
@@ -578,32 +482,33 @@ public class ReportPage {
 
     public void clickOnPolicyHistoryIcon() {
         policyHistoryIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterFromAndToDate() {
-
         fromDateOnPolicyHistoryReport.clear();
-        fromDateOnPolicyHistoryReport.sendKeys("12.02.2023");
+        fromDateOnPolicyHistoryReport.sendKeys(common.getPastDate(30, "dd.MM.yyyy"));
         common.pause(1);
         toDateOnPolicyHistoryReport.clear();
         common.pause(1);
-        toDateOnPolicyHistoryReport.sendKeys("12.08.2024");
+        toDateOnPolicyHistoryReport.sendKeys(common.getCurrentDate("dd.MM.yyyy"));
 
     }
 
     public void clickSearchIconOnPolicyHistory() {
         searchButtonOnPolicyHistoryReport.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyPolicyHistoryReportData() {
-        List<WebElement> policyHistoryDetails = common.waitUntilPresenceOfAllElement("//div[@class='ibox-grid']/div/table/tbody/tr");
-        StringBuilder details = new StringBuilder();
-        for (WebElement cLE : policyHistoryDetails) {
-            details.append(cLE.getText());
-        }
-        return details.toString();
+        if (common.isElementDisplayed("//div[@class='ibox-grid']/div/table/tbody/tr")) {
+            List<WebElement> policyHistoryDetails = common.waitUntilPresenceOfAllElement("//div[@class='ibox-grid']/div/table/tbody/tr");
+            StringBuilder details = new StringBuilder();
+            for (WebElement cLE : policyHistoryDetails) {
+                details.append(cLE.getText()).append("/n");
+            }
+            return details.toString();
+        } else return null;
     }
 
     //Filter policy cancellation report information upon option of insurer drop down
@@ -611,7 +516,7 @@ public class ReportPage {
     public void clickOnPolicyCancellationIcon() {
         common.waitUntilVisibilityOfElement(policyCancellationIcon);
         common.jsClick(policyCancellationIcon);
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void selectOptionFromInsurerDropDown() {
@@ -623,7 +528,7 @@ public class ReportPage {
 
     public void clickSearchIconOnPolicyCancellation() {
         searchButtonOnPolicyCancellation.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyPolicyCancellationReportData() {
@@ -650,7 +555,7 @@ public class ReportPage {
 
     public void clickOnOutstandingClaimIcon() {
         outStandingClaimsIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterFromAndToDateOnOutstandingClaim() {
@@ -664,7 +569,7 @@ public class ReportPage {
 
     public void clickSearchIconOnOutstandingClaim() {
         searchButtonOnOutStandingClaimsReport.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyOutstandingClaimData() {
@@ -699,17 +604,13 @@ public class ReportPage {
     //Add premium and claim adjustments window opens by clicking on adjustment button on section 26 and 27 report page
 
     public void clickOnTrustSummarySection() {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,200)", "");
-        common.pause(1);
-        trustSummarySectionIcon.click();
-        common.pause(3);
+        common.jsClick(trustSummarySectionIcon);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void clickOnAdjustmentIconOnSectionPage() {
         adjustmentButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void verifyAddPremiumAndClaimAdjustmentWindow() {
@@ -720,7 +621,7 @@ public class ReportPage {
 
     public void clickOnPaymentsSectionPage() {
         paymentsButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void verifyPaymentsWindow() {
@@ -731,7 +632,7 @@ public class ReportPage {
 
     public void clickOnBankIconOnSectionPage() {
         bankButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void verifyBankBalanceWindow() {

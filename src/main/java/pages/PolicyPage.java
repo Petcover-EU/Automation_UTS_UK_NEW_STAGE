@@ -36,9 +36,9 @@ public class PolicyPage {
     private WebElement statusDropDown;
     @FindBy(xpath = "//div[@class='ms-drop']/ul/li[2]/label/input")
     private WebElement optionFromStatusDropdown;
-    @FindBy(xpath = "//div[@id='search']/div[6]/div/span/span/input")
-    private WebElement fromDateOfPolicy;
     @FindBy(xpath = "//div[@id='search']/div[7]/div/span/span/input")
+    private WebElement fromDateOfPolicy;
+    @FindBy(xpath = "//div[@id='search']/div[8]/div/span/span/input")
     private WebElement toDateOfPolicy;
     @FindBy(xpath = "//div[@id='gridName']/table/tbody[1]/tr[1]")
     private WebElement policyDetailsOnDateValue;
@@ -138,7 +138,7 @@ public class PolicyPage {
         common.waitUntilElementToBeClickable(policyIcon);
         common.jsClick(policyIcon);
         Log.info("Click on the policy icon on the left toolbar");
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyManagePolicyPage() {

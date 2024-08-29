@@ -19,8 +19,8 @@ Feature: Verify DashBoard Items
     And Search the same policy in the global search on dashboard and click on the got button
     Then User will redirects to manage policy page and should able to verify the searched result
 
-#  @Sanity
-#  Scenario: Verify the global search functionality for claim
-#    When User get claim number from list of claim in manage claim page
-#    And Search the same claim in the global search on dashboard and click on the got button
-#    Then User will redirects to manage claims page and should able to verify the searched result
+  @sanity
+  Scenario: Verify the global search functionality for claim
+    When User get claim number from list of claim in manage claim page
+    And Search the same claim in the global search on dashboard and click on the got button
+    Then User will redirects to manage claims page and should able to verify the searched result

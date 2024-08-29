@@ -1,18 +1,17 @@
 package runner;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Report.feature",
+        features = "src/test/resources/features/Setting.feature",
         glue = {"steps", "hook"},
         tags = "@sanity",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class ReportPage {
+public class SettingPageRunner {
 }

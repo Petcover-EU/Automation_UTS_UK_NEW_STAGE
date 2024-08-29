@@ -34,7 +34,7 @@ public class AccountPage {
     @FindBy(xpath = "//div[@class='form-group pull-right']/div/a[2]")
     private WebElement addReceiptIcon;
     @FindBy(xpath = "//div[@class='row wrapper border-bottom white-bg page-heading']/div/h2")
-    private WebElement displayedMessageAtAddAllocatePaymentPage;
+    private WebElement displayedMessageAtAddReceiptPage;
     @FindBy(css = "input[id='AccountNumber']")
     private WebElement accountNumberInput;
     @FindBy(css = "button[id='SearchGrid']")
@@ -160,8 +160,8 @@ public class AccountPage {
         common.pause(2);
     }
 
-    public String verifyAddAllocatePaymentPage() {
-        return displayedMessageAtAddAllocatePaymentPage.getText();
+    public String verifyAddReceiptPage() {
+        return displayedMessageAtAddReceiptPage.getText();
     }
 
     //Add breach register page  displays will all details when user clicks on add breach register icon on manage breach register page

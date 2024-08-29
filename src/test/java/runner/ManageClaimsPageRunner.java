@@ -1,16 +1,17 @@
 package runner;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Login.feature",
-        glue = {"steps", "hook"},tags = "@smoke",
+        features = "src/test/resources/features/ManageClaims.feature",
+        glue = {"steps", "hook"},tags = "@sanity",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class LogIn {
+public class ManageClaimsPageRunner {
 }

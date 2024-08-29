@@ -48,12 +48,13 @@ Feature: Verify Quote Module Features
     And User clicks on search button on manage quote page
     Then Appropriate list of quote will display upon drop down option
 
+
 #  Scenario: Fetch list of quote based on option from division dropdown on manage quote page
 #    When User selects appropriate option from division dropdown on manage quote page
 #    And User clicks on search button on manage quote page
 #    Then Appropriate list of quote will display upon division drop down option
 #
-#  @Sanity
+#  @sanity
 #  Scenario: Fetch list of quote based on pet id products checkbox on manage quote page
 #    When User selects pet id products checkbox on manage quote page
 #    And User clicks on search button on manage quote page
@@ -72,7 +73,7 @@ Feature: Verify Quote Module Features
     Then User will be able to see microchip file upload page with data
 
 
-#  @Sanity
+#  @sanity
 #  Scenario:Upload details window should open by clicking on file name link on microchip file upload page
 #    When User clicks on upload microchip file button
 #    And User clicks on filename link on upload microchip page
@@ -83,13 +84,13 @@ Feature: Verify Quote Module Features
 #    When User clicks on quote number link on manage quote page
 #    Then Quote information page displays with sane status code
 #
-#  @Stage
+#  @sanity
 #  Scenario:verify functionality of upload file feature  on microchip upload file page
 #    When User clicks on upload microchip file button
 #    And user click on upload file button
 #    Then user will able to upload file
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Pending Microchip displays with details by clicking on pending microchip button on manage quote page
 #    When User clicks on pending microchip file button
 #    Then Pending Microchip page displays with details
@@ -100,13 +101,13 @@ Feature: Verify Quote Module Features
     And User clicks on search button on manage quote page
     Then Appropriate quote information displays on manage quote page
 
-#  @Stage
-#  Scenario:Fetch quotation based on quote number on manage quote page
-#    When User enters quote number inside search box on manage quote page
-#    And User clicks on search button on manage quote page
-#    Then Appropriate quote information displays on manage quote page
-#
-#  @Qa
+  @sanity
+  Scenario:Fetch quotation based on quote number on manage quote page
+    When User enters quote number inside search box on manage quote page
+    And User clicks on search button on manage quote page
+    Then Appropriate quote information displays on manage quote page
+
+#  @sanity
 #  Scenario: Edit quote details and verifies the same
 #    When User enters quote number inside search box on manage quote page
 #    And User clicks on search button on manage quote page
@@ -114,7 +115,7 @@ Feature: Verify Quote Module Features
 #    And User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page
 #
-#  @Stage
+#  @sanity
 #  Scenario: Edit quote details and verifies the same
 #    When User selects edit quote option from cog icon on quote information page
 #    Then User can edit all required field on edit quote page

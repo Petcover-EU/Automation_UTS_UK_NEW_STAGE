@@ -40,13 +40,12 @@ Feature: Verify Task Module Features
     When User clicks on task tile on task manage page
     Then Task details window will open with all task details
 
-
+#  @sanity
 #  Scenario: To check add task page displays with all details  by clicking on add task button on manage task page
 #    When user clicks on add task button
 #    Then Add task page displays with all details
-
-#    Scenario:Edit task page should open in editable format by clicking on edit icon on manage edit page
-#      When User clicks on edit icon on manage task page
-#      Then Edit task page opens in editable format
-
-
+#
+#  @sanity
+#  Scenario:Edit task page should open in editable format by clicking on edit icon on manage edit page
+#    When User clicks on edit icon on manage task page
+#    Then Edit task page opens in editable format

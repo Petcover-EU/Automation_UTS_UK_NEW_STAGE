@@ -2333,7 +2333,7 @@ public class EndToEndScenariosPage {
         saveRenewApplicationAndVerifyHistory("592.35");
     }
 
-//    Verify the end to end scenario of the Senior Horse
+//    Verify the end to end scenario of the Horse Liability
 
     public void clickOnAddQuoteButtonAndEnterClientDetailsOfHorseLiability(int row, String product) {
         XSSFSheet sheet = common.readDataFromExcelSheet(product);

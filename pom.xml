@@ -122,7 +122,7 @@
                         <environment>${environment}</environment>
                     </systemPropertyVariables>
                     <includes>
-                        <include>**/runner/HomePage.java</include>
+                        <include>**/runner/HomePageRunner.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <threadCount>5</threadCount>

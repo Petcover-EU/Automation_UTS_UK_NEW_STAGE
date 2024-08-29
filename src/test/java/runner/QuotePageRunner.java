@@ -6,12 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Policy.feature",
+        features = "src/test/resources/features/QuotePage.feature",
         glue = {"steps", "hook"},
-        monochrome = true,
         tags = "@sanity",
+        monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class PolicyPage {
+
+public class QuotePageRunner {
 }

@@ -99,10 +99,10 @@ public class AccountPageSteps {
         accountPage.clickOnAddReceiptIcon();
     }
 
-    @Then("Allocate Payment page displays with all details")
-    public void allocate_payment_page_displays_with_all_details() {
-        String addAllocatePaymentPage = accountPage.verifyAddAllocatePaymentPage();
-        Assert.assertEquals(addAllocatePaymentPage, "Allocate Payment");
+    @Then("Add receipt page displays with all details")
+    public void add_Receipt_page_displays_with_all_details() {
+        String addReceiptPage = accountPage.verifyAddReceiptPage();
+        Assert.assertEquals(addReceiptPage, "Add Receipt");
     }
 
     //Add breach register page  displays will all details when user clicks on Add breach register on manage breach register page

@@ -6,6 +6,8 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.ReportPage;
 
+import java.util.Objects;
+
 public class ReportPageSteps {
     ReportPage reportPage = new ReportPage(DriverFactory.getDriver());
 
@@ -21,14 +23,9 @@ public class ReportPageSteps {
         Assert.assertEquals(numberOfSection, 8);
     }
 
-    @When("User clicks on reports icon")
-    public void user_clicks_on_reports_icon() {
-        reportPage.traversingThroughPages();
-    }
-
-    @Then("Respected report page displays")
+    @Then("User click on the hyperlinks displayed in the report page then the respected page should open")
     public void respected_report_page_displays() {
-        //reportPage.traversingThroughPages();
+        reportPage.traversingThroughPages();
     }
 
     //Filter quote report information upon option of product drop down
@@ -201,11 +198,7 @@ public class ReportPageSteps {
     @Then("Appropriate data displays on policy payment history page upon selected option from drop down")
     public void appropriate_data_displays_on_policy_payment_history_page_upon_selected_option_from_drop_down() {
         String data = reportPage.verifyPolicyHistoryReportData();
-        if (!data.isEmpty()) {
-            System.out.println(data);
-        } else {
-            System.out.println("Data does not reflects upon from and to date values on policy history report page");
-        }
+        System.out.println(Objects.requireNonNullElse(data, "Data does not reflects upon from and to date values on policy history report page"));
     }
 
     //Filter policy cancellation report information upon option of insurer drop down

@@ -149,7 +149,7 @@ public class ClientPage {
 
     @FindBy(css = "a[id='dropdownMenu1']")
     private WebElement settingDropDown;
-    @FindBy(css = "//ul[@class='dropdown-menu']/li[5]")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']/li[5]")
     private WebElement addContactOptionOfDD;
     @FindBy(css = "input[id='Name']")
     private WebElement userName;
@@ -249,7 +249,7 @@ public class ClientPage {
 
     public String verifyClientManage() {
         clientIcon.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         return displayedMessage.getText();
     }
 
@@ -291,9 +291,9 @@ public class ClientPage {
     public void clickClientCode() {
         List<WebElement> clientInfo = common.waitUntilPresenceOfAllElement("//div[@id='gridName']/table/tbody/tr[1]/td[2]");
         for (WebElement client : clientInfo) {
-            common.pause(3);
+            common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
             client.click();
-            common.pause(3);
+            common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
             break;
         }
     }
@@ -507,7 +507,7 @@ public class ClientPage {
 
     public void clickOnPolicyIcon() {
         policyIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyPolicyDetails() {
@@ -522,7 +522,7 @@ public class ClientPage {
 
     public void clickOnClaimIcon() {
         claimIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyClaimDetails() {
@@ -533,7 +533,7 @@ public class ClientPage {
 
     public void clickOnContactIcon() {
         contactIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyContactDetails() {
@@ -544,7 +544,7 @@ public class ClientPage {
 
     public void clickOnNotesIcon() {
         noteIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyNotesDetails() {
@@ -555,7 +555,7 @@ public class ClientPage {
 
     public void clickOnTaskIcon() {
         taskIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyTaskDetails() {
@@ -567,7 +567,7 @@ public class ClientPage {
 
     public void clickOnHistoryIcon() {
         historyIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyHistoryDetails() {
@@ -578,7 +578,7 @@ public class ClientPage {
 
     public void clickOnQuoteIcon() {
         quoteIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyQuoteDetails() {
@@ -589,7 +589,7 @@ public class ClientPage {
 
     public void clickOnPoliciesStatementIcon() {
         policyStatementIcon.click();
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyPoliciesStatementDetails() {
@@ -628,7 +628,7 @@ public class ClientPage {
 
     public void clickOnAddClientButton() {
         addClientButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterUserDetails() {
@@ -655,7 +655,7 @@ public class ClientPage {
 
     public void clickOnCreateClientButton() {
         createButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public String verifyCreatedClient() {
@@ -665,14 +665,14 @@ public class ClientPage {
     //Add contact details of client
 
     public void selectAddContactOfClient() {
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         common.moveToElement(settingDropDown);
         addContactOptionOfDD.click();
         common.pause(1);
     }
 
     public void enterContactDetails() {
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         userName.sendKeys("Maitry");
         userEmail.sendKeys("maitry@gmail.com");
         userRelation.sendKeys("Wife");
@@ -681,7 +681,7 @@ public class ClientPage {
     }
 
     public String verifyGeneratedContactDetails() {
-        common.pause(4);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         contactMenu.click();
         return contactData.getText();
     }
@@ -689,21 +689,19 @@ public class ClientPage {
     //Add note information of client
 
     public void selectAddNotesOfClient() {
-        common.pause(3);
         common.moveToElement(settingDropDown);
         addNotesOptionOfDD.click();
-        common.pause(1);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterNotesDetails() {
-        common.pause(2);
         titleOfNote.sendKeys("Test");
         descriptionOFNote.sendKeys("Test Test Test");
         createButtonOfWindow.click();
     }
 
     public String verifyGeneratedNotesDetails() {
-        common.pause(2);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         noteTabOFMenu.click();
         common.pause(1);
         return noteDetails.getText();
@@ -712,14 +710,12 @@ public class ClientPage {
     //Add task details of client
 
     public void selectAddTaskOfClient() {
-        common.pause(3);
         common.moveToElement(settingDropDown);
         addTaskOptionOfDD.click();
-        common.pause(1);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void enterTaskDetails() {
-        common.pause(4);
         titleOfNote.sendKeys("Test");
         statusDropDownOfTask.click();
         common.pause(1);
@@ -735,7 +731,7 @@ public class ClientPage {
     }
 
     public String verifyGeneratedTaskDetails() {
-        common.pause(4);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         taskTabOFMenu.click();
         common.pause(1);
         return taskDetails.getText();
@@ -790,7 +786,7 @@ public class ClientPage {
 
     public void clickOnSearchButton() {
         searchButton.click();
-        common.pause(3);
+        common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
     }
 
     public void clickONClientCode() {

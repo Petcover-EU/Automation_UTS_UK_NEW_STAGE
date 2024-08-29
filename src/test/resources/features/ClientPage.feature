@@ -9,7 +9,7 @@ Feature:  Verify Client Module Features
   Scenario:Ensure that the Manage Client page displays list of client data after clicking on client icon on left tool bar
     Then Manage client page displays with list of clients
 
-#  @Sanity
+#  @sanity
 #  Scenario: Verify the search functionality based on code search on manage client page
 #    When User get code from client list and enter in the search box
 #    And User clicks on search button
@@ -33,47 +33,49 @@ Feature:  Verify Client Module Features
     When User clicks on client code link  on manage client page
     Then View client page displays with all details
 
+#  @sanity
 #  Scenario:Edit client page should display in editable format by clicking on edit client icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on edit client icon on cog dropdown menu on view client page
 #    Then Edit client page displays in editable format
-
-#  @Sanity
+#
+#  @sanity
 #  Scenario:Add quote page should display in editable format by clicking on add quote icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on add quote icon on cog dropdown menu on view client page
 #    Then Add quote page should display in editable format
 #
+#  @sanity
 #  Scenario:Add policy page should display in editable format by clicking on add policy icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on add policy icon on cog dropdown menu on view client page
 #    Then Add policy page should display in editable format
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Add claim page should display with all details by clicking on add claim icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on add claim icon on cog dropdown menu on view client page
 #    Then Add claim page should display with all details
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Client Refund Unallocated Balance page displays with all details by clicking on client refund unallocated balance icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on client refund unallocated balance icon on cog dropdown menu on view client page
 #    Then Client Refund Unallocated Balance page displays with all details
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Client Refund Credit Note page displays with all details by clicking on client refund credit note icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on client refund credit note icon on cog dropdown menu on view client page
 #    Then Client Refund Credit Note page displays with all details
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Client Allocate Payment page displays with all details by clicking on client allocate payment icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on client allocate payment icon on cog dropdown menu on view client page
 #    Then Client Allocate Payment page displays with all details
 #
-#  @Sanity
+#  @sanity
 #  Scenario:Client Account Maintenance page displays with all details by clicking on client account maintenance page icon on cog dropdown menu on view client page
 #    When User clicks on client code on manage client page
 #    And User clicks on client account maintenance page icon on cog dropdown menu on view client page
@@ -132,12 +134,14 @@ Feature:  Verify Client Module Features
     And User clicks on policies statement tab on view client page
     Then Policies Statement details should display on view client page
 
+#  @sanity
 #  Scenario:Filter the list of Policies details under policy tab on view client page by selecting appropriate option from status dropdown
 #    When User clicks on client code on manage client page
 #    And User clicks on policy tab on view client page
 #    And User selects  appropriate option from status dropdown
 #    Then Filtered Policies details should display on view client page
 #
+#  @sanity
 #  Scenario:Filter the list of Policies details under claim tab on view client page by selecting appropriate option from status dropdown
 #    When User clicks on client code on manage client page
 #    And User clicks on claim tab on view client page
@@ -145,47 +149,47 @@ Feature:  Verify Client Module Features
 #    Then Filtered Policies details should display on view client page
 
 
-#  @Qa @Stage
-#  Scenario: To add and verify new client details inside client module
-#    When User clicks on add client icon on manage client page
-#    And User enters all mandatory details on add client page
-#    And User clicks on create button on add client page
-#    Then View client page appears with the details of currently added client
-#
-#  @Qa
-#  Scenario: Appropriate client data will display upon entering  code in search box
-#    When User enters code number inside search box on manage client page
-#    And User clicks on search button manage client page
-#    Then Appropriate client information displays inside table on manage client page
-#
-#  @Qa @Stage
-#  Scenario:Verify add contact feature of client
-#    When User clicks on client code on manage client page
-#    And User selects Add contact option from setting dropdown besides of active text on view client page
-#    And User enters all details inside add client window
-#    Then Contact details can view under contacts menu on view client page
-#
-#  @Qa @Stage
-#  Scenario: Verify add notes feature of client
-#    When User clicks on client code on manage client page
-#    And User selects Add notes options from setting dropdown besides the active text on view client page
-#    And User enters all details inside add notes window
-#    Then Notes details can view under note menu tab on view client page
-#
-#  @Qa @Stage
-#  Scenario: Verify add task feature of client
-#    When User clicks on client code on manage client page
-#    And User selects Add task options from setting dropdown besides the active text on view client page
-#    And User enters all details inside add task window
-#    Then Task details can view under task menu tab on view client page
-#
-#  @Qa @Stage
-#  Scenario: To verify edit client functionality for existing client
-#    When User clicks on client code on manage client page
-#    And User selects edit client sections from setting dropdown besides the active text on view client page
-#    And User enters all details of client on edit client window
-#    Then Updated details can view on view client page
-#
+  @Qa @sanity
+  Scenario: To add and verify new client details inside client module
+    When User clicks on add client icon on manage client page
+    And User enters all mandatory details on add client page
+    And User clicks on create button on add client page
+    Then View client page appears with the details of currently added client
+
+  @Qa
+  Scenario: Appropriate client data will display upon entering  code in search box
+    When User enters code number inside search box on manage client page
+    And User clicks on search button manage client page
+    Then Appropriate client information displays inside table on manage client page
+
+  @Qa @sanity
+  Scenario:Verify add contact feature of client
+    When User clicks on client code on manage client page
+    And User selects Add contact option from setting dropdown besides of active text on view client page
+    And User enters all details inside add client window
+    Then Contact details can view under contacts menu on view client page
+
+  @Qa @sanity
+  Scenario: Verify add notes feature of client
+    When User clicks on client code on manage client page
+    And User selects Add notes options from setting dropdown besides the active text on view client page
+    And User enters all details inside add notes window
+    Then Notes details can view under note menu tab on view client page
+
+  @Qa @sanity
+  Scenario: Verify add task feature of client
+    When User clicks on client code on manage client page
+    And User selects Add task options from setting dropdown besides the active text on view client page
+    And User enters all details inside add task window
+    Then Task details can view under task menu tab on view client page
+
+  @Qa @sanity
+  Scenario: To verify edit client functionality for existing client
+    When User clicks on client code on manage client page
+    And User selects edit client sections from setting dropdown besides the active text on view client page
+    And User enters all details of client on edit client window
+    Then Updated details can view on view client page
+
 #  @Production
 #  Scenario:Verify add primary contact feature of client on production
 #    When User enters test client code inside search box on manage client page
@@ -194,7 +198,7 @@ Feature:  Verify Client Module Features
 #    And User selects Add contact option from setting dropdown besides of active text on view client page
 #    And User enters all details inside add client window
 #    Then Contact details can view under contacts menu on view client page
-#
+
 #  @Production
 #  Scenario: Verify add notes feature of client on production environment
 #    When User enters test client code inside search box on manage client page

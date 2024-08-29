@@ -174,11 +174,12 @@ Feature: Verify Admin Module Features
     Then Add company page displays with all details
 
 #do not use this one for production
-#  Scenario: Filter data on manage department page upon entering respective department value in search box
-#    When User clicks on department icon on administrator page
-#    When User enters department value in to search input on manage department page
-#    And User clicks on search button on manage department page
-#    Then Respected data upon department value will display on manage department page
+  @sanity
+  Scenario: Filter data on manage department page upon entering respective department value in search box
+    When User clicks on department icon on administrator page
+    When User enters department value in to search input on manage department page
+    And User clicks on search button on manage department page
+    Then Respected data upon department value will display on manage department page
 
 
 

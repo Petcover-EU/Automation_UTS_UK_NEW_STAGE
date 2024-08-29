@@ -6,11 +6,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/ApproveClaim.feature",
-        glue = {"steps", "hook"},tags = "@sanity",
+        features = "src/test/resources/features/DashBoardItems.feature",
+        glue = {"steps", "hook"}, tags = "@sanity",
         monochrome = true,
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class ApprovalClaim {
+public class DashboardItemsRunner {
+
 }

@@ -10,8 +10,7 @@ Feature: Verify Report Module Features
 
   @sanity
   Scenario: User will able to redirect on respected report page by clicking on report icon on report page
-    When User clicks on reports icon
-    Then Respected report page displays
+    Then User click on the hyperlinks displayed in the report page then the respected page should open
 
 #  Quote Report
 

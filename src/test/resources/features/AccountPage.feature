@@ -11,19 +11,19 @@ Feature: Verify Account Module Functionalities
 
 #  Bank
 
-#  @Stage
-#  Scenario: Filter data of manage bank page upon entering account number
-#    When User clicks on bank icon
-#    And User enters account number in search box on manage bank page
-#    And User clicks on search button on manage bank page
-#    Then Data on manage bank page reflects upon account number
+  @sanity
+  Scenario: Filter data of manage bank page upon entering account number
+    When User clicks on bank icon
+    And User enters account number in search box on manage bank page
+    And User clicks on search button on manage bank page
+    Then Data on manage bank page reflects upon account number
 
-#  @Sanity
-#  Scenario: Filter data of manage bank page upon entering account number
-#    When User clicks on bank icon
-#    And User enters client name in search box on manage bank page
-#    And User clicks on search button on manage bank page
-#    Then Data on manage bank page reflects upon client name
+  @sanity
+  Scenario: Filter data of manage bank page upon entering client name
+    When User clicks on bank icon
+    And User enters client name in search box on manage bank page
+    And User clicks on search button on manage bank page
+    Then Data on manage bank page reflects upon client name
 
   @sanity
   Scenario: Bank Information page displays with details after clicking on bank code link on manage bank details
@@ -38,13 +38,12 @@ Feature: Verify Account Module Functionalities
     Then Add bank page displays with all details
 
 #  Receipt
-
-#  This scenario is commented due to after clicking on the Add receipt system getting down
-
-#  Scenario:Allocate Payment page displays will all details when user clicks on add receipt icon on manage receipt page
-#    When User clicks on manage receipt icon on account page
-#    And User clicks on add receipt icon on manage receipt page
-#    Then Allocate Payment page displays with all details
+#Not working
+  @sanity
+  Scenario:Add receipt page displays will all details when user clicks on add receipt icon on manage receipt page
+    When User clicks on manage receipt icon on account page
+    And User clicks on add receipt icon on manage receipt page
+    Then Add receipt page displays with all details
 
 #  Manage Breach register
 
