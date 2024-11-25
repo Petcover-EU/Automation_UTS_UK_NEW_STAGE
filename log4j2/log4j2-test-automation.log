@@ -18,3 +18,39 @@
 [INFO ] 2024-11-25 19:03:44.428 [main] Log - User entered primary contact number: 1202915470
 [INFO ] 2024-11-25 19:03:46.719 [main] Log - Selected hear about us
 [INFO ] 2024-11-25 19:03:49.375 [main] Log - User select: Exotic product.
+[INFO ] 2024-11-25 20:29:35.457 [main] Log - Select client type individual
+[INFO ] 2024-11-25 20:29:36.821 [main] Log - Salutation selected: Mr
+[INFO ] 2024-11-25 20:29:37.093 [main] Log - User entered first name: Cleomkhu
+[INFO ] 2024-11-25 20:29:37.362 [main] Log - User entered last name: Smithlwly
+[INFO ] 2024-11-25 20:29:37.642 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-11-25 20:29:37.954 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-11-25 20:29:41.420 [main] Log - Selected address by entering postcode: CF3 2TE
+[INFO ] 2024-11-25 20:29:41.612 [main] Log - User entered primary contact number: 1247563582
+[INFO ] 2024-11-25 20:29:43.990 [main] Log - Selected hear about us
+[INFO ] 2024-11-25 20:29:46.687 [main] Log - User select: Cat product.
+[INFO ] 2024-11-25 20:29:53.816 [main] Log - Entered pet name: Abigail
+[INFO ] 2024-11-25 20:30:02.815 [main] Log - User selected species: Tibeter
+[INFO ] 2024-11-25 20:30:06.255 [main] Log - Selected pet gender: Male
+[INFO ] 2024-11-25 20:30:07.488 [main] Log - Selected pet birth date: 01.01.2020
+[INFO ] 2024-11-25 20:30:09.687 [main] Log - Entered pet purchase price: 12
+[INFO ] 2024-11-25 20:30:14.052 [main] Log - Click on the calculate button
+[INFO ] 2024-11-25 20:30:25.270 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-25 20:30:27.304 [main] Log - Enter account holder name
+[INFO ] 2024-11-25 20:30:32.667 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-11-25 20:30:39.722 [main] Log - Enter other payment details
+[INFO ] 2024-11-25 20:30:50.136 [main] Log - Created Policy Number: (SMIT-01367-CSU-00000002)
+[INFO ] 2024-11-25 20:30:52.226 [main] Log - The actual total premium amount is: 86.64
+[INFO ] 2024-11-25 20:30:52.226 [main] Log - The expected total premium amount is: 268.64
+[INFO ] 2024-11-25 20:30:53.251 [main] Log - The policy details are: 
+[INFO ] 2024-11-25 20:30:55.361 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-25 20:31:01.262 [main] Log - User click on the add quote button
+[INFO ] 2024-11-25 20:31:33.134 [main] Log - Select client type individual
+[INFO ] 2024-11-25 20:31:34.367 [main] Log - Salutation selected: Mr
+[INFO ] 2024-11-25 20:31:34.470 [main] Log - User entered first name: Cleovkxu
+[INFO ] 2024-11-25 20:31:34.571 [main] Log - User entered last name: Smithjlzg
+[INFO ] 2024-11-25 20:31:34.674 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-11-25 20:31:34.791 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-11-25 20:31:38.024 [main] Log - Selected address by entering postcode: CF3 2TE
+[INFO ] 2024-11-25 20:31:38.127 [main] Log - User entered primary contact number: 1281178115
+[INFO ] 2024-11-25 20:31:40.376 [main] Log - Selected hear about us
+[INFO ] 2024-11-25 20:31:43.003 [main] Log - User select: Dog product.
