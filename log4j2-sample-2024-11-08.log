@@ -1,0 +1,13 @@
+[INFO ] 2024-11-08 11:31:40.163 [main] Log - User select: Horse product.
+[INFO ] 2024-11-08 11:31:48.915 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-08 11:31:51.196 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-08 11:31:54.380 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-08 11:31:57.199 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-08 11:31:57.591 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-08 11:32:41.609 [main] Log - Select yearly payment
+[INFO ] 2024-11-08 11:32:44.008 [main] Log - Select Credit/Debit card payment option
+[INFO ] 2024-11-08 11:32:53.085 [main] Log - Enter Credit/Debit card details
+[INFO ] 2024-11-08 11:33:04.677 [main] Log - Created Policy Number: (TEST-00065-HIB-00000020)
+[INFO ] 2024-11-08 11:33:06.816 [main] Log - The actual total premium amount is: 09.01
+[INFO ] 2024-11-08 11:33:06.817 [main] Log - The expected total premium amount is: 409.01
+[INFO ] 2024-11-08 11:33:07.842 [main] Log - The policy details are: 

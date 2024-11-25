@@ -1,0 +1,336 @@
+[INFO ] 2024-11-05 16:18:07.643 [main] Log - Select client type individual
+[INFO ] 2024-11-05 16:18:08.907 [main] Log - Salutation selected: Miss
+[INFO ] 2024-11-05 16:18:09.152 [main] Log - User entered first name: Francesnrnq
+[INFO ] 2024-11-05 16:18:09.396 [main] Log - User entered last name: Thompsoncjme
+[INFO ] 2024-11-05 16:18:09.639 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-11-05 16:18:09.941 [main] Log - User entered email: Frances.Thompson@fakecorp.com
+[INFO ] 2024-11-05 16:18:13.464 [main] Log - Selected address by entering postcode: AB44 1NS
+[INFO ] 2024-11-05 16:18:13.725 [main] Log - User entered primary contact number: 1256205969
+[INFO ] 2024-11-05 16:18:16.112 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 16:18:18.728 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:18:28.252 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:18:30.471 [main] Log - User selects Horse Liability Cover option
+[INFO ] 2024-11-05 16:18:33.671 [main] Log - User select pet name: Olivia
+[INFO ] 2024-11-05 16:18:36.517 [main] Log - User select horse breed: Cleveland Bay X
+[INFO ] 2024-11-05 16:18:36.876 [main] Log - User select horse birth date: 09.08.2002
+[INFO ] 2024-11-05 16:20:13.911 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:20:19.117 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:20:21.378 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:20:24.568 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-05 16:20:27.427 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-05 16:20:27.771 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 16:21:19.495 [main] Log - Created Policy Number: (TEST-00065-HIB-00000017)
+[INFO ] 2024-11-05 16:21:21.605 [main] Log - The actual total premium amount is: 02.33
+[INFO ] 2024-11-05 16:21:21.605 [main] Log - The expected total premium amount is: 302.33
+[INFO ] 2024-11-05 16:23:20.071 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:23:25.275 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:23:27.518 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:23:30.714 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-05 16:23:33.513 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-05 16:23:33.933 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 16:24:20.268 [main] Log - Created Policy Number: (TEST-00065-HIB-00000018)
+[INFO ] 2024-11-05 16:24:22.354 [main] Log - The actual total premium amount is: 02.33
+[INFO ] 2024-11-05 16:24:22.354 [main] Log - The expected total premium amount is: 302.33
+[INFO ] 2024-11-05 16:24:23.390 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 16:27:40.911 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:27:46.399 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:27:48.641 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:27:51.825 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-05 16:27:54.645 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-05 16:27:55.039 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 16:28:38.789 [main] Log - Select yearly payment
+[INFO ] 2024-11-05 16:28:41.156 [main] Log - Select Credit/Debit card payment option
+[INFO ] 2024-11-05 16:28:50.272 [main] Log - Enter Credit/Debit card details
+[INFO ] 2024-11-05 16:28:56.553 [main] Log - Created Policy Number: (TEST-00065-HIB-00000019)
+[INFO ] 2024-11-05 16:28:58.650 [main] Log - The actual total premium amount is: 09.01
+[INFO ] 2024-11-05 16:28:58.650 [main] Log - The expected total premium amount is: 409.01
+[INFO ] 2024-11-05 16:28:59.676 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 16:30:23.320 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:30:29.855 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:30:32.097 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:30:35.278 [main] Log - User select pet name: Jimmy
+[INFO ] 2024-11-05 16:30:38.122 [main] Log - User select horse breed: Arabian X
+[INFO ] 2024-11-05 16:30:38.473 [main] Log - User select horse birth date: 01.01.1999
+[INFO ] 2024-11-05 16:31:26.932 [main] Log - Created Policy Number: (TEST-00065-HISA-00000012)
+[INFO ] 2024-11-05 16:31:29.035 [main] Log - The actual total premium amount is: 03.80
+[INFO ] 2024-11-05 16:31:29.036 [main] Log - The expected total premium amount is: 303.80
+[INFO ] 2024-11-05 16:31:30.070 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 16:32:45.687 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:32:50.308 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:32:52.548 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:32:55.752 [main] Log - User select pet name: Jimmy
+[INFO ] 2024-11-05 16:32:58.672 [main] Log - User select horse breed: Arabian X
+[INFO ] 2024-11-05 16:32:59.056 [main] Log - User select horse birth date: 01.01.1999
+[INFO ] 2024-11-05 16:33:45.058 [main] Log - Select yearly payment
+[INFO ] 2024-11-05 16:33:47.438 [main] Log - Select Credit/Debit card payment option
+[INFO ] 2024-11-05 16:33:56.467 [main] Log - Enter Credit/Debit card details
+[INFO ] 2024-11-05 16:34:02.649 [main] Log - Created Policy Number: (TEST-00065-HISA-00000013)
+[INFO ] 2024-11-05 16:34:04.775 [main] Log - The actual total premium amount is: 81.32
+[INFO ] 2024-11-05 16:34:04.776 [main] Log - The expected total premium amount is: 481.32
+[INFO ] 2024-11-05 16:34:05.806 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 16:35:29.711 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:35:34.840 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:35:37.083 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:35:40.306 [main] Log - User select pet name: Lincoln
+[INFO ] 2024-11-05 16:35:43.180 [main] Log - User select horse breed: British Warmblood X
+[INFO ] 2024-11-05 16:35:43.497 [main] Log - User select horse birth date: 09.08.2003
+[INFO ] 2024-11-05 16:36:31.313 [main] Log - Created Policy Number: (TEST-00065-HISB-00000011)
+[INFO ] 2024-11-05 16:36:33.398 [main] Log - The actual total premium amount is: 31.80
+[INFO ] 2024-11-05 16:36:33.398 [main] Log - The expected total premium amount is: 331.80
+[INFO ] 2024-11-05 16:36:34.434 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 16:38:58.486 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 16:39:03.561 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 16:39:05.847 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 16:39:09.060 [main] Log - User select pet name: Lincoln
+[INFO ] 2024-11-05 16:39:11.738 [main] Log - User select horse breed: British Warmblood X
+[INFO ] 2024-11-05 16:39:11.975 [main] Log - User select horse birth date: 09.08.2003
+[INFO ] 2024-11-05 16:39:56.557 [main] Log - Select yearly payment
+[INFO ] 2024-11-05 16:39:58.941 [main] Log - Select Credit/Debit card payment option
+[INFO ] 2024-11-05 16:40:07.598 [main] Log - Enter Credit/Debit card details
+[INFO ] 2024-11-05 16:40:13.884 [main] Log - Created Policy Number: (TEST-00065-HISB-00000012)
+[INFO ] 2024-11-05 16:40:15.979 [main] Log - The actual total premium amount is: 09.32
+[INFO ] 2024-11-05 16:40:15.979 [main] Log - The expected total premium amount is: 509.32
+[INFO ] 2024-11-05 16:40:17.013 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 17:17:02.502 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 17:17:11.029 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 17:17:13.263 [main] Log - User selects Horse Liability Cover option
+[INFO ] 2024-11-05 17:17:16.446 [main] Log - User select pet name: Olivia
+[INFO ] 2024-11-05 17:17:19.300 [main] Log - User select horse breed: Cleveland Bay X
+[INFO ] 2024-11-05 17:17:19.715 [main] Log - User select horse birth date: 09.08.2002
+[INFO ] 2024-11-05 17:17:44.897 [main] Log - Select yearly payment
+[INFO ] 2024-11-05 17:17:47.283 [main] Log - Select Credit/Debit card payment option
+[INFO ] 2024-11-05 17:17:56.301 [main] Log - Enter Credit/Debit card details
+[INFO ] 2024-11-05 17:18:07.320 [main] Log - Created Policy Number: (TEST-00065-HIL-00000007)
+[INFO ] 2024-11-05 17:18:09.411 [main] Log - The actual total premium amount is: 4.60
+[INFO ] 2024-11-05 17:18:09.411 [main] Log - The expected total premium amount is: 54.60
+[INFO ] 2024-11-05 17:18:10.440 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 17:19:22.755 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 17:19:28.030 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 17:19:30.261 [main] Log - User selects Horse Liability Cover option
+[INFO ] 2024-11-05 17:19:33.456 [main] Log - User select pet name: Olivia
+[INFO ] 2024-11-05 17:19:36.398 [main] Log - User select horse breed: Cleveland Bay X
+[INFO ] 2024-11-05 17:19:36.778 [main] Log - User select horse birth date: 09.08.2002
+[INFO ] 2024-11-05 18:14:17.604 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:14:18.880 [main] Log - Salutation selected: Mr
+[INFO ] 2024-11-05 18:14:19.160 [main] Log - User entered first name: Cleonrzi
+[INFO ] 2024-11-05 18:14:19.428 [main] Log - User entered last name: Smithhhrv
+[INFO ] 2024-11-05 18:14:19.730 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-11-05 18:14:20.018 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-11-05 18:14:23.457 [main] Log - Selected address by entering postcode: CF3 2TE
+[INFO ] 2024-11-05 18:14:23.656 [main] Log - User entered primary contact number: 1223494155
+[INFO ] 2024-11-05 18:14:26.027 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:14:28.619 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:14:37.672 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:14:39.907 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:14:43.137 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-05 18:14:46.134 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-05 18:14:46.565 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 18:14:54.843 [main] Log - Basic Horse plan is not selected default
+[INFO ] 2024-11-05 18:15:10.781 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:15:12.825 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:15:18.228 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-11-05 18:15:25.278 [main] Log - Enter other payment details
+[INFO ] 2024-11-05 18:15:40.429 [main] Log - Created Policy Number: (SMIT-00977-HIB-00000002)
+[INFO ] 2024-11-05 18:15:42.522 [main] Log - The actual total premium amount is: 37.45
+[INFO ] 2024-11-05 18:15:42.524 [main] Log - The expected total premium amount is: 137.45
+[INFO ] 2024-11-05 18:15:43.555 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:15:45.876 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:15:52.287 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:15:54.365 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:15:55.614 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-11-05 18:15:55.863 [main] Log - User entered first name: Johnrtxc
+[INFO ] 2024-11-05 18:15:56.136 [main] Log - User entered last name: Nelsonxbpf
+[INFO ] 2024-11-05 18:15:56.443 [main] Log - User entered date of birth: 30.06.1985
+[INFO ] 2024-11-05 18:15:56.814 [main] Log - User entered email: John.Nelson@fakecorp.com
+[INFO ] 2024-11-05 18:16:00.245 [main] Log - Selected address by entering postcode: AB11 6AW
+[INFO ] 2024-11-05 18:16:00.437 [main] Log - User entered primary contact number: 1250910982
+[INFO ] 2024-11-05 18:16:02.839 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:16:05.410 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:16:11.737 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:16:13.995 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:16:17.173 [main] Log - User select pet name: Audi
+[INFO ] 2024-11-05 18:16:20.164 [main] Log - User select horse breed: Dartmoor
+[INFO ] 2024-11-05 18:16:20.604 [main] Log - User select horse birth date: 01.01.2021
+[INFO ] 2024-11-05 18:16:58.787 [main] Log - Created Policy Number: (NELS-00063-HIB-00000002)
+[INFO ] 2024-11-05 18:17:00.891 [main] Log - The actual total premium amount is: 81.08
+[INFO ] 2024-11-05 18:17:00.891 [main] Log - The expected total premium amount is: 181.08
+[INFO ] 2024-11-05 18:17:01.957 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:17:04.246 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:17:11.667 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:17:13.746 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:17:15.014 [main] Log - Salutation selected: Miss
+[INFO ] 2024-11-05 18:17:15.269 [main] Log - User entered first name: Kennethprqx
+[INFO ] 2024-11-05 18:17:15.539 [main] Log - User entered last name: Millerzehg
+[INFO ] 2024-11-05 18:17:15.814 [main] Log - User entered date of birth: 30.06.1990
+[INFO ] 2024-11-05 18:17:16.203 [main] Log - User entered email: Kenneth.Miller@fakecorp.com
+[INFO ] 2024-11-05 18:17:19.597 [main] Log - Selected address by entering postcode: AB12 3AA
+[INFO ] 2024-11-05 18:17:19.777 [main] Log - User entered primary contact number: 1209968584
+[INFO ] 2024-11-05 18:17:22.141 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:17:24.771 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:17:31.098 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:17:33.326 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:17:36.529 [main] Log - User select pet name: Beetle
+[INFO ] 2024-11-05 18:17:39.381 [main] Log - User select horse breed: Gypsy Cob
+[INFO ] 2024-11-05 18:17:39.806 [main] Log - User select horse birth date: 01.01.2022
+[INFO ] 2024-11-05 18:18:05.182 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:18:07.224 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:18:12.687 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-11-05 18:18:19.759 [main] Log - Enter other payment details
+[INFO ] 2024-11-05 18:18:29.057 [main] Log - Created Policy Number: (MILL-00375-HIB-00000002)
+[INFO ] 2024-11-05 18:18:31.138 [main] Log - The actual total premium amount is: 12.21
+[INFO ] 2024-11-05 18:18:31.138 [main] Log - The expected total premium amount is: 612.21
+[INFO ] 2024-11-05 18:18:32.158 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:18:34.222 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:18:41.018 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:18:43.098 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:18:44.331 [main] Log - Salutation selected: Ms
+[INFO ] 2024-11-05 18:18:44.600 [main] Log - User entered first name: Peterznlp
+[INFO ] 2024-11-05 18:18:44.864 [main] Log - User entered last name: Hallncbn
+[INFO ] 2024-11-05 18:18:45.131 [main] Log - User entered date of birth: 30.06.1984
+[INFO ] 2024-11-05 18:18:45.472 [main] Log - User entered email: Peter.Hall@fakecorp.com
+[INFO ] 2024-11-05 18:18:48.866 [main] Log - Selected address by entering postcode: AB13 0AA
+[INFO ] 2024-11-05 18:18:49.070 [main] Log - User entered primary contact number: 1234516031
+[INFO ] 2024-11-05 18:18:51.437 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:18:54.088 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:18:58.716 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:19:00.940 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:19:04.134 [main] Log - User select pet name: Harpo
+[INFO ] 2024-11-05 18:19:06.957 [main] Log - User select horse breed: Hack
+[INFO ] 2024-11-05 18:19:07.316 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 18:19:35.828 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:19:37.867 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:19:42.311 [main] Log - Select payment tender Credit/Debit card payment
+[INFO ] 2024-11-05 18:20:03.157 [main] Log - Enter credit card details
+[INFO ] 2024-11-05 18:20:11.581 [main] Log - Created Policy Number: (HALL-00347-HIB-00000002)
+[INFO ] 2024-11-05 18:20:13.702 [main] Log - The actual total premium amount is: ,068.64
+[INFO ] 2024-11-05 18:20:13.702 [main] Log - The expected total premium amount is: 1068.64
+[INFO ] 2024-11-05 18:20:14.741 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:20:16.885 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:20:23.199 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:20:25.272 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:20:26.534 [main] Log - Salutation selected: Mx
+[INFO ] 2024-11-05 18:20:26.802 [main] Log - User entered first name: Russellqzhc
+[INFO ] 2024-11-05 18:20:27.062 [main] Log - User entered last name: Davisbttb
+[INFO ] 2024-11-05 18:20:27.347 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-11-05 18:20:27.671 [main] Log - User entered email: Russell.Davis@fakecorp.com
+[INFO ] 2024-11-05 18:20:31.094 [main] Log - Selected address by entering postcode: AB14 0AE
+[INFO ] 2024-11-05 18:20:31.224 [main] Log - User entered primary contact number: 1273770733
+[INFO ] 2024-11-05 18:20:33.530 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:20:36.157 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:20:42.626 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:20:44.790 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:20:47.951 [main] Log - User select pet name: Jackie
+[INFO ] 2024-11-05 18:20:50.691 [main] Log - User select horse breed: Akhal-Teke
+[INFO ] 2024-11-05 18:20:50.941 [main] Log - User select horse birth date: 01.01.2021
+[INFO ] 2024-11-05 18:24:51.979 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:24:53.238 [main] Log - Salutation selected: Mr
+[INFO ] 2024-11-05 18:24:53.476 [main] Log - User entered first name: Cleorbil
+[INFO ] 2024-11-05 18:24:53.724 [main] Log - User entered last name: Smithezcs
+[INFO ] 2024-11-05 18:24:53.929 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-11-05 18:24:54.296 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-11-05 18:24:57.757 [main] Log - Selected address by entering postcode: CF3 2TE
+[INFO ] 2024-11-05 18:24:57.974 [main] Log - User entered primary contact number: 1390549555
+[INFO ] 2024-11-05 18:25:00.321 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:25:03.029 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:25:08.880 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:25:11.146 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:25:14.322 [main] Log - User select pet name: Jack
+[INFO ] 2024-11-05 18:25:17.115 [main] Log - User select horse breed: Andalusian
+[INFO ] 2024-11-05 18:25:17.475 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 18:25:25.698 [main] Log - Basic Horse plan is not selected default
+[INFO ] 2024-11-05 18:25:41.627 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:25:43.664 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:25:49.123 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-11-05 18:25:56.180 [main] Log - Enter other payment details
+[INFO ] 2024-11-05 18:26:04.873 [main] Log - Created Policy Number: (SMIT-00978-HIB-00000002)
+[INFO ] 2024-11-05 18:26:06.981 [main] Log - The actual total premium amount is: 37.45
+[INFO ] 2024-11-05 18:26:06.982 [main] Log - The expected total premium amount is: 137.45
+[INFO ] 2024-11-05 18:26:08.010 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:26:10.187 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:26:16.928 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:26:19.014 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:26:20.334 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-11-05 18:26:20.576 [main] Log - User entered first name: Johnnjbr
+[INFO ] 2024-11-05 18:26:20.845 [main] Log - User entered last name: Nelsonicto
+[INFO ] 2024-11-05 18:26:21.114 [main] Log - User entered date of birth: 30.06.1985
+[INFO ] 2024-11-05 18:26:21.412 [main] Log - User entered email: John.Nelson@fakecorp.com
+[INFO ] 2024-11-05 18:26:24.854 [main] Log - Selected address by entering postcode: AB11 6AW
+[INFO ] 2024-11-05 18:26:25.067 [main] Log - User entered primary contact number: 1299553675
+[INFO ] 2024-11-05 18:26:27.429 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:26:29.997 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:26:35.522 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:26:37.805 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:26:40.983 [main] Log - User select pet name: Audi
+[INFO ] 2024-11-05 18:26:43.730 [main] Log - User select horse breed: Dartmoor
+[INFO ] 2024-11-05 18:26:44.087 [main] Log - User select horse birth date: 01.01.2021
+[INFO ] 2024-11-05 18:27:22.540 [main] Log - Created Policy Number: (NELS-00064-HIB-00000002)
+[INFO ] 2024-11-05 18:27:24.627 [main] Log - The actual total premium amount is: 81.08
+[INFO ] 2024-11-05 18:27:24.627 [main] Log - The expected total premium amount is: 181.08
+[INFO ] 2024-11-05 18:27:25.663 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:27:28.473 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:27:34.948 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:27:37.018 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:27:38.267 [main] Log - Salutation selected: Miss
+[INFO ] 2024-11-05 18:27:38.523 [main] Log - User entered first name: Kennethxmne
+[INFO ] 2024-11-05 18:27:38.795 [main] Log - User entered last name: Millerrozu
+[INFO ] 2024-11-05 18:27:39.074 [main] Log - User entered date of birth: 30.06.1990
+[INFO ] 2024-11-05 18:27:39.429 [main] Log - User entered email: Kenneth.Miller@fakecorp.com
+[INFO ] 2024-11-05 18:27:42.792 [main] Log - Selected address by entering postcode: AB12 3AA
+[INFO ] 2024-11-05 18:27:43.035 [main] Log - User entered primary contact number: 1162245135
+[INFO ] 2024-11-05 18:27:45.410 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:27:48.019 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:27:54.490 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:27:56.723 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:27:59.963 [main] Log - User select pet name: Beetle
+[INFO ] 2024-11-05 18:28:02.740 [main] Log - User select horse breed: Gypsy Cob
+[INFO ] 2024-11-05 18:28:03.056 [main] Log - User select horse birth date: 01.01.2022
+[INFO ] 2024-11-05 18:28:29.008 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:28:31.049 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:28:36.496 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-11-05 18:28:43.593 [main] Log - Enter other payment details
+[INFO ] 2024-11-05 18:28:52.536 [main] Log - Created Policy Number: (MILL-00376-HIB-00000002)
+[INFO ] 2024-11-05 18:28:54.630 [main] Log - The actual total premium amount is: 12.21
+[INFO ] 2024-11-05 18:28:54.630 [main] Log - The expected total premium amount is: 612.21
+[INFO ] 2024-11-05 18:28:55.663 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:28:57.762 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:29:04.449 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:29:06.537 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:29:07.788 [main] Log - Salutation selected: Ms
+[INFO ] 2024-11-05 18:29:08.067 [main] Log - User entered first name: Peterpnjy
+[INFO ] 2024-11-05 18:29:08.340 [main] Log - User entered last name: Hallnddp
+[INFO ] 2024-11-05 18:29:08.631 [main] Log - User entered date of birth: 30.06.1984
+[INFO ] 2024-11-05 18:29:08.943 [main] Log - User entered email: Peter.Hall@fakecorp.com
+[INFO ] 2024-11-05 18:29:12.334 [main] Log - Selected address by entering postcode: AB13 0AA
+[INFO ] 2024-11-05 18:29:12.549 [main] Log - User entered primary contact number: 1051101900
+[INFO ] 2024-11-05 18:29:14.912 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:29:17.504 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:29:23.921 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:29:26.146 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:29:29.327 [main] Log - User select pet name: Harpo
+[INFO ] 2024-11-05 18:29:32.116 [main] Log - User select horse breed: Hack
+[INFO ] 2024-11-05 18:29:32.474 [main] Log - User select horse birth date: 01.01.2020
+[INFO ] 2024-11-05 18:30:00.816 [main] Log - Select monthly premium radio button
+[INFO ] 2024-11-05 18:30:02.856 [main] Log - Enter account holder name
+[INFO ] 2024-11-05 18:30:07.317 [main] Log - Select payment tender Credit/Debit card payment
+[INFO ] 2024-11-05 18:30:28.231 [main] Log - Enter credit card details
+[INFO ] 2024-11-05 18:30:36.809 [main] Log - Created Policy Number: (HALL-00348-HIB-00000002)
+[INFO ] 2024-11-05 18:30:38.899 [main] Log - The actual total premium amount is: ,068.64
+[INFO ] 2024-11-05 18:30:38.899 [main] Log - The expected total premium amount is: 1068.64
+[INFO ] 2024-11-05 18:30:39.933 [main] Log - The policy details are: 
+[INFO ] 2024-11-05 18:30:42.103 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-11-05 18:30:48.812 [main] Log - User click on the add quote button
+[INFO ] 2024-11-05 18:30:50.897 [main] Log - Select client type individual
+[INFO ] 2024-11-05 18:30:52.171 [main] Log - Salutation selected: Mx
+[INFO ] 2024-11-05 18:30:52.434 [main] Log - User entered first name: Russellppeo
+[INFO ] 2024-11-05 18:30:52.709 [main] Log - User entered last name: Davisbohu
+[INFO ] 2024-11-05 18:30:52.963 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-11-05 18:30:53.324 [main] Log - User entered email: Russell.Davis@fakecorp.com
+[INFO ] 2024-11-05 18:30:56.690 [main] Log - Selected address by entering postcode: AB14 0AE
+[INFO ] 2024-11-05 18:30:56.897 [main] Log - User entered primary contact number: 1223810836
+[INFO ] 2024-11-05 18:30:59.300 [main] Log - Selected hear about us
+[INFO ] 2024-11-05 18:31:01.919 [main] Log - User select: Horse product.
+[INFO ] 2024-11-05 18:31:09.206 [main] Log - User select no option in the Agent dropdown
+[INFO ] 2024-11-05 18:31:11.440 [main] Log - User selects Horse Insurance option
+[INFO ] 2024-11-05 18:31:14.619 [main] Log - User select pet name: Jackie
+[INFO ] 2024-11-05 18:31:17.466 [main] Log - User select horse breed: Akhal-Teke
+[INFO ] 2024-11-05 18:31:17.702 [main] Log - User select horse birth date: 01.01.2021
