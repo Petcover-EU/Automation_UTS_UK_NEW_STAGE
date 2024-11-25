@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">Aug 14, 2024 10:29:42 am</span>
+                    <span class="badge badge-primary">Nov 14, 2024 09:34:44 am</span>
                 </a>
             </li>
         </ul>
@@ -73,6 +73,14 @@
             <i class="fa fa-tag"></i>
           </span>
           <span class="title">Tags</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" onclick="toggleView('exception-view')">
+        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
+          <span class="icon-holder">
+            <i class="fa fa-bug"></i>
+          </span>
+          <span class="title">Exception</span>
         </a>
       </li>
       <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -104,11 +112,11 @@
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
+						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
 						
 						
 						
-						
-						
+						<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning pull-right"></span></a>
 						<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
@@ -125,28 +133,28 @@
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="pass" test-id="1"
+				<li class="test-item"  status="fail" test-id="1"
 					author=""
 					tag=""
 					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
+					<div class="status-avatar fail-bg">
+						<i class="fa fa-times text-white"></i>
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">Verify the policy creation of the different product</p>
-							<p class="duration text-sm">0h 41m 7s+339ms</p>
-							<span class="datetime">10:29:54 am</span>
+							<p class="duration text-sm">0h 1m 22s+834ms</p>
+							<span class="datetime">09:35:16 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">Verify the policy creation of the different product</h5>
-									<span class='badge badge-success'>08.14.2024 10:29:54</span>
-									<span class='badge badge-danger'>08.14.2024 11:11:01</span>
-									<span class='badge badge-default'>0h 41m 7s+339ms</span>
+									<h5 class="test-status text-fail">Verify the policy creation of the different product</h5>
+									<span class='badge badge-success'>11.14.2024 09:35:16</span>
+									<span class='badge badge-danger'>11.14.2024 09:36:39</span>
+									<span class='badge badge-default'>0h 1m 22s+834ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -158,10 +166,13 @@
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
-				<div class="node">Verify the Quote and Policy creation for Exotic products with different combinations of plan</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="node">Create policy with the standalone Horse Liability product</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
+					<div class="status-avatar float-right mr-4">
+						<i class="fa fa-paperclip"></i>
+					</div>
 			</div>
 		</div>
 				<div class="collapse">
@@ -187,13 +198,66 @@
 								<span>When User clicks add quote button on manage quote page</span>
 							</div>
 				<div class="details"></div>
-							<div class="d-flex align-items-center justify-content-start and" title="steps.PolicyCreationScenariosStep.enterClientContactInformationAndSelectProductThenEnterPetInfoAndClickOnCalculateButtonAndSelectAppropriatePolicyPlanAndEnterPaymentDetailsClickOnCreatePolicyButtonThenVerifyThePolicyDetailsOnPolicyInformationPage(java.lang.String)">
+							<div class="d-flex align-items-center justify-content-start and" title="steps.PolicyCreationScenariosStep.selectExistingClientAndSelectTheHorseLiabilityProduct()">
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
 								</span>
-								<span>And Enter client contact information and select "Exotic" product then enter pet info and click on calculate button and Select appropriate policy plan and enter payment details Click on create policy button then Verify the policy details on policy information page</span>
+								<span>And Select existing client and select the Horse Liability product</span>
 							</div>
 				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="steps.PolicyCreationScenariosStep.verifyTheHorseLiabilityCheckboxIsSelectedAndSelectCoverOfHorseLiability(java.lang.String)">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>And Verify the horse liability checkbox is selected and select cover of horse liability is "1M"</span>
+							</div>
+				<div class="details"></div>
+							<div class="d-flex align-items-center justify-content-start and" title="steps.PolicyCreationScenariosStep.selectCoverStartDateAndUWQuestionsAndPaymentDetailsAndClickOnTheCreatePolicyButton()">
+								<span class="alert-icon fail-bg">
+									<i class="fa fa-times text-white"></i>
+								</span>
+								<span>And Select cover start date and UW questions and payment details and click on the create policy button</span>
+							</div>
+				<textarea disabled class="code-block">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=130.0.6723.92)
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b81ef43f9b640f47f582ed1e8aa5aebb, clickElement {id=f.50B35327E8588522E1B705FD606147AF.d.F97999B31795EC19F2692192BF5EEEE0.e.15514}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\prowe\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53644}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53644/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b81ef43f9b640f47f582ed1e8aa5aebb)] -> xpath: //ul[@id='Question_33501_listbox']//li[2]]
+Session ID: b81ef43f9b640f47f582ed1e8aa5aebb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+	at pages.PolicyCreationScenariosPage.selectCoverStartDateAndEnterUWQuestionsEnterPaymentDetailsAndClickOnCreatePolicy(PolicyCreationScenariosPage.java:2434)
+	at steps.PolicyCreationScenariosStep.selectCoverStartDateAndUWQuestionsAndPaymentDetailsAndClickOnTheCreatePolicyButton(PolicyCreationScenariosStep.java:130)
+	at ✽.Select cover start date and UW questions and payment details and click on the create policy button(file:///C:/Users/prowe/Desktop/Automation-UTS2-UK/Automation-UTS2-UK/src/test/resources/features/PolicyCreationScenarios.feature:92)
+</textarea>
+							<div class="d-flex align-items-center justify-content-start then" title="steps.PolicyCreationScenariosStep.verifyThePolicyGetCreatedAndAppropriatePolicyPremiumAndPolicyNumberGetGeneratedForHorseLiability()">
+								<span class="alert-icon skip-bg">
+									<i class="fa fa-long-arrow-right text-white"></i>
+								</span>
+								<span>Then Verify the policy get created and appropriate policy premium and policy number get generated for Horse Liability 1M cover</span>
+							</div>
+				<div class="details">Step skipped</div>
 							<div class="d-flex align-items-center justify-content-start asterisk" title="">
 								<span class="alert-icon pass-bg">
 									<i class="fa fa-check text-white"></i>
@@ -201,6 +265,14 @@
 								<span>hook.hooks.displayUrl(io.cucumber.java.Scenario)</span>
 							</div>
 				<div class="details">https://stage.petcovergroup.com:7779/</div>
+							<div class="d-flex align-items-center justify-content-start asterisk" title="">
+								<span class="alert-icon pass-bg">
+									<i class="fa fa-check text-white"></i>
+								</span>
+								<span>hook.hooks.takeScreenShotOnFailure(io.cucumber.java.Scenario)</span>
+							</div>
+				<div class="details"></div>
+				<div class="details"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../embedded1.png' src='../embedded1.png'></div>
 					</div>
 				</div>
 	</div>
@@ -250,8 +322,8 @@
 							<p class="name">@regression</p>
 							<p class="duration text-sm">1 tests</p>
 							<span class="datetime">
-							<span class='badge badge-success'>1</span>
 							
+							<span class='badge badge-danger'>1</span>
 							
 							
 							</span>
@@ -260,8 +332,8 @@
 					<div class="test-contents d-none">
 						<div class="info">
 							<h4>@regression</h4>
-							<span status="pass" class='badge badge-success'>1 passed</span>
 							
+							<span status="fail" class='badge badge-danger'>1 failed</span>
 							
 							
 						</div>
@@ -274,17 +346,92 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="tag-test-status" status="pass">
+								<tr class="tag-test-status" status="fail">
 									<td>
-										<div class='status-avatar pass-bg'>
-											<i class="fa fa-check text-white"></i>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
 										</div>
 									</td>
-									<td>10:29:54 am</td>
+									<td>09:35:16 am</td>
 									<td class='linked' test-id='2'>
-										Verify the Quote and Policy creation for Exotic products with different combinations of plan
+										Create policy with the standalone Horse Liability product
 										<div class="">
-											<span class="badge badge-default">Verify the policy creation of the different product.Verify the Quote and Policy creation for Exotic products with different combinations of plan</span>
+											<span class="badge badge-default">Verify the policy creation of the different product.Create policy with the standalone Horse Liability product</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="test-content scrollable">
+		<div class="test-content-tools">
+			<ul>
+				<li>
+					<a class="back-to-test" href="javascript:void(0)">
+					<i class="fa fa-arrow-left"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-content-detail">
+			<div class="detail-body"></div>
+		</div>
+	</div>
+</div><div class="test-wrapper row exception-view attributes-view">
+	<div class="test-list">
+		<div class="test-list-tools">
+			<ul class="tools pull-left">
+				<li>
+					<a href="">
+					<span class="font-size-14">Exception</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="tools text-right">
+				<li>
+					<a href="#">
+					<span class="badge badge-primary">1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="test-list-wrapper scrollable">
+			<ul class="test-list-item">
+				<li class="test-item">
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">org.openqa.selenium.ElementNotInteractableException</p>
+							<p class="duration text-sm">1 tests</p>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="info">
+							<h4>org.openqa.selenium.ElementNotInteractableException</h4>
+						</div>
+						<table class='table table-sm mt-4'>
+							<thead>
+								<tr>
+									<th class="status-col">Status</th>
+									<th class="timestamp-col">Timestamp</th>
+									<th>TestName</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class='status-avatar fail-bg'>
+											<i class="fa fa-times text-white"></i>
+										</div>
+									</td>
+									<td>09:36:31 am</td>
+									<td class='linked' test-id='10'>
+										And Select cover start date and UW questions and payment details and click on the create policy button
+										<div class="">
+											<span class="badge badge-default">Create policy with the standalone Horse Liability product</span>
 										</div>
 									</td>
 								</tr>
@@ -323,12 +470,12 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'>
-						<b>1</b> features passed
+					<div><small data-tooltip='0%'>
+						<b>0</b> features passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> features failed, 
+						<small data-tooltip='100%'><b>1</b> features failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -346,9 +493,9 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+					<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> scenarios failed, 
+						<small data-tooltip='100%'><b>1</b> scenarios failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -366,10 +513,10 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
+					<div><small data-tooltip='77.778%'><b>7</b> steps passed</small></div>
 					<div>
-						<small data-tooltip='0%'><b>0</b> steps failed, 
-						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+						<small data-tooltip='11.111%'><b>1</b> steps failed, 
+						<b>1</b> skipped, <b data-tooltip='11.111%'>0</b> others
 						</small>
 					</div>
 				</div>
@@ -386,7 +533,7 @@
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -405,7 +552,7 @@
 							<h2 class="font-size-28 font-weight-light mt-3">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>100.00%</span>
+							<span>.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -421,7 +568,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">Aug 14, 2024 10:29:42 am</h4>
+							<h4 class="font-weight-light mt-4">Nov 14, 2024 09:34:44 am</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -437,7 +584,7 @@
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 41m 19s+261ms</h4>
+							<h4 class="font-weight-light mt-4">0h 1m 55s+250ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -483,12 +630,12 @@
 						<tbody>
 							<tr>
 								<td>@regression</td>
+								<td>0</td>
 								<td>1</td>
 								<td>0</td>
 								<td>0</td>
-								<td>0</td>
 								<td>
-									100%
+									0%
 								</td>
 							</tr>
 						</tbody>
@@ -540,48 +687,48 @@
 <script>
 	var statusGroup = {
 	    parentCount: 1,
-		passParent: 1,
-		failParent: 0,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 0,
+		exceptionsParent: 1,
 		childCount: 1,
-		passChild: 1,
-		failChild: 0,
+		passChild: 0,
+		failChild: 1,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 0,
-		grandChildCount: 5,
-		passGrandChild: 5,
-		failGrandChild: 0,
+		exceptionsChild: 1,
+		grandChildCount: 9,
+		passGrandChild: 7,
+		failGrandChild: 1,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
-		skipGrandChild: 0,
+		skipGrandChild: 1,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 0,
-		eventsCount: 5,
-		passEvents: 4,
-		failEvents: 0,
+		exceptionsGrandChild: 2,
+		eventsCount: 9,
+		passEvents: 5,
+		failEvents: 1,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
-		skipEvents: 0,
-		infoEvents: 1,
+		skipEvents: 1,
+		infoEvents: 2,
 		debugEvents: 0,
 		exceptionsEvents: 0
 	};
 </script>
 <script>
 	var timeline = {
-	        "Verify the policy creation of the different product":2467.339
+	        "Verify the policy creation of the different product":82.834
 	};
 </script>
                 </div>

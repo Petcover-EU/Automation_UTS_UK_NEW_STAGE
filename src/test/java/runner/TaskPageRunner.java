@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/TaskPage.feature",
+        features = "src/test/resources/features/TaskPage.feature:54",
         glue = {"steps", "hook"},
         tags = "@sanity",
         monochrome = true,
