@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/DashBoardItems.feature",
+        features = "src/test/resources/features/DashBoardItems.feature:29",
         glue = {"steps", "hook"}, tags = "@sanity",
         monochrome = true,
         plugin = {"pretty",

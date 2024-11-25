@@ -24,3 +24,9 @@ Feature: Verify DashBoard Items
     When User get claim number from list of claim in manage claim page
     And Search the same claim in the global search on dashboard and click on the got button
     Then User will redirects to manage claims page and should able to verify the searched result
+
+  @sanity
+    Scenario: Verify search functionality
+      When clint code taken and enter search bar
+      And select search button
+      Then Clint detail find

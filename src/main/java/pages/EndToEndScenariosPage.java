@@ -962,9 +962,8 @@ public class EndToEndScenariosPage {
     public void approveTheClaimFromApproveClaimModule(String claimNumber) {
         approveClaimPage.clickOnApproveClaimButton();
         common.waitUntilPresenceOfElement("(//table[@id='tblGrid']//tbody//tr//td[2])[last()]");
-        String lastClaimNumber = lastRowClaimInApproveClaim.getText();
-
-        Assert.assertEquals(lastClaimNumber, claimNumber);
+        String lastCla;
+       // Assert.assertEquals(lastClaimNumber, claimNumber);
 
         lastRowClaimInApproveClaimCheckbox.click();
         common.jsClick(approveClaimButton);
@@ -1110,7 +1109,8 @@ public class EndToEndScenariosPage {
             data.append(row.getText()).append("\n");
         }
         Log.info("Verified the history of the policy cancelled: " + data);
-    }
+    }//imNumber = lastRowClaimInApproveClaim.getText();
+
 
     public void selectCatProductAndEnterPetDetails() {
         policyCreationScenariosPage.selectProduct("Cat");

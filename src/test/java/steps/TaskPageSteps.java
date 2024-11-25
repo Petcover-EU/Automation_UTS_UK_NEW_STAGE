@@ -1,6 +1,7 @@
 package steps;
 
 import factory.DriverFactory;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -137,5 +138,18 @@ public class TaskPageSteps {
     @Then("Task details window will open with all task details")
     public void task_details_window_will_open_with_all_task_details() {
 
+    }
+
+    @When("User select task option")
+    public void userSelectTaskOption() {
+        taskPage.userSelectTaskOption();
+    }
+
+    @And("then after select addtskbutton and fild all required detail and create task")
+    public void thenAfterSelectAddtskbuttonAndFildAllRequiredDetailAndCreateTask() {
+    }
+
+    @Then("Sussfully new task create")
+    public void sussfullyNewTaskCreate() {
     }
 }

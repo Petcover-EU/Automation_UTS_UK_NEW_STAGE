@@ -1,0 +1,38 @@
+[INFO ] 2024-10-24 13:49:00.945 [main] Log - Select client type individual
+[INFO ] 2024-10-24 13:49:02.136 [main] Log - Salutation selected: Mr
+[INFO ] 2024-10-24 13:49:02.265 [main] Log - User entered first name: Cleokima
+[INFO ] 2024-10-24 13:49:02.418 [main] Log - User entered last name: Smithugpk
+[INFO ] 2024-10-24 13:49:02.571 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-10-24 13:49:02.780 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-10-24 13:49:06.041 [main] Log - Selected address by entering postcode: AB10 1AU
+[INFO ] 2024-10-24 13:49:06.166 [main] Log - User entered primary contact number: 1209041338
+[INFO ] 2024-10-24 13:49:08.395 [main] Log - Selected hear about us
+[INFO ] 2024-10-24 13:49:10.786 [main] Log - User select: Exotic product.
+[INFO ] 2024-10-24 13:49:39.195 [main] Log - Enter the cover start date
+[INFO ] 2024-10-24 13:49:46.127 [main] Log - Select monthly premium radio button
+[INFO ] 2024-10-24 13:49:48.159 [main] Log - Enter account holder name
+[INFO ] 2024-10-24 13:49:53.404 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-10-24 13:50:00.025 [main] Log - Enter other payment details
+[INFO ] 2024-10-24 13:50:26.995 [main] Log - Created Policy Number: (SMIT-0974-EBBPR-00000001)
+[INFO ] 2024-10-24 13:50:29.077 [main] Log - The actual total premium amount is: 88.00
+[INFO ] 2024-10-24 13:50:29.077 [main] Log - The expected total premium amount is: 188.00
+[INFO ] 2024-10-24 13:50:56.614 [main] Log - Select client type individual
+[INFO ] 2024-10-24 13:51:27.710 [main] Log - Select client type individual
+[INFO ] 2024-10-24 13:51:28.883 [main] Log - Salutation selected: Mr
+[INFO ] 2024-10-24 13:51:28.987 [main] Log - User entered first name: Cleoedjc
+[INFO ] 2024-10-24 13:51:29.109 [main] Log - User entered last name: Smithfyqg
+[INFO ] 2024-10-24 13:51:29.249 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-10-24 13:51:29.449 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-10-24 13:51:32.687 [main] Log - Selected address by entering postcode: CF3 2TE
+[INFO ] 2024-10-24 13:51:32.767 [main] Log - User entered primary contact number: 1267474381
+[INFO ] 2024-10-24 13:51:34.967 [main] Log - Selected hear about us
+[INFO ] 2024-10-24 13:51:37.383 [main] Log - User select: Dog product.
+[INFO ] 2024-10-24 15:01:45.052 [main] Log - Select client type individual
+[INFO ] 2024-10-24 15:01:46.281 [main] Log - Salutation selected: Mr
+[INFO ] 2024-10-24 15:01:46.528 [main] Log - User entered first name: Cleoxjwz
+[INFO ] 2024-10-24 15:01:46.766 [main] Log - User entered last name: Smithqksr
+[INFO ] 2024-10-24 15:01:47.035 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-10-24 15:01:47.353 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-10-24 15:01:50.762 [main] Log - Selected address by entering postcode: AB10 1AU
+[INFO ] 2024-10-24 15:01:50.988 [main] Log - User entered primary contact number: 1400919398
+[INFO ] 2024-10-24 15:01:53.347 [main] Log - Selected hear about us

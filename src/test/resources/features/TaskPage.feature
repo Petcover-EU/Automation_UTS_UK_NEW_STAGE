@@ -49,3 +49,9 @@ Feature: Verify Task Module Features
 #  Scenario:Edit task page should open in editable format by clicking on edit icon on manage edit page
 #    When User clicks on edit icon on manage task page
 #    Then Edit task page opens in editable format
+
+  @sanity
+  Scenario: Perform Add Task action
+    When User select task option
+    And then after select addtskbutton and fild all required detail and create task
+    Then Sussfully new task create

@@ -161,4 +161,18 @@ public class DashBoardPageSteps {
     public void userImportExcelData() {
         dbp.readExcel();
     }
+
+    @When("clint code taken and enter search bar")
+    public void clintCodeTakenAndEnterSearchBar() throws InterruptedException {
+        dbp.clintCodeTakenAndEnterSearchBar();
+
+    }
+
+    @And("select search button")
+    public void selectSearchButton() {
+    }
+
+    @Then("Clint detail find")
+    public void clintDetailFind() {
+    }
 }

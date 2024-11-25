@@ -1,0 +1,587 @@
+[INFO ] 2024-08-14 09:34:06.766 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2024-08-14 09:37:45.190 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2024-08-14 09:37:46.952 [main] Log - Script Has Entered From Policy Date On Manage Policy Page
+[INFO ] 2024-08-14 09:37:48.036 [main] Log - Script Has Entered To Policy Date Manage On Policy Page
+[INFO ] 2024-08-14 09:37:49.210 [main] Log - Script Has Clicked On Search Button To Fetch Data On Manage Policy Page
+[INFO ] 2024-08-14 10:30:14.115 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:30:15.276 [main] Log - Salutation selected: Mr
+[INFO ] 2024-08-14 10:30:15.356 [main] Log - User entered first name: Cleotapa
+[INFO ] 2024-08-14 10:30:15.436 [main] Log - User entered last name: Smithjnhu
+[INFO ] 2024-08-14 10:30:15.523 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-08-14 10:30:15.615 [main] Log - User entered email: Cleo.Smith@fakecorp.com
+[INFO ] 2024-08-14 10:30:18.800 [main] Log - Selected address by entering postcode: AB10 1AU
+[INFO ] 2024-08-14 10:30:18.866 [main] Log - User entered primary contact number: 1278246364
+[INFO ] 2024-08-14 10:30:21.046 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:30:23.429 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:30:52.192 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:30:59.239 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:31:01.276 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:31:06.522 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:31:13.065 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:31:35.627 [main] Log - Created Policy Number: (SMIT-0966-EBBPR-00000001)
+[INFO ] 2024-08-14 10:31:37.681 [main] Log - The actual total premium amount is: 188.00
+[INFO ] 2024-08-14 10:31:37.681 [main] Log - The expected total premium amount is: 188.00
+[INFO ] 2024-08-14 10:31:38.709 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:31:40.480 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:31:46.184 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:31:48.260 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:31:49.406 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-08-14 10:31:49.484 [main] Log - User entered first name: Johnhtws
+[INFO ] 2024-08-14 10:31:49.569 [main] Log - User entered last name: Nelsonslzl
+[INFO ] 2024-08-14 10:31:49.673 [main] Log - User entered date of birth: 30.06.1985
+[INFO ] 2024-08-14 10:31:49.782 [main] Log - User entered email: John.Nelson@fakecorp.com
+[INFO ] 2024-08-14 10:31:52.950 [main] Log - Selected address by entering postcode: AB11 6AW
+[INFO ] 2024-08-14 10:31:53.034 [main] Log - User entered primary contact number: 1079562733
+[INFO ] 2024-08-14 10:31:55.221 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:31:57.662 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:32:23.226 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:32:50.471 [main] Log - Created Policy Number: (NELS-0062-EBBPL-00000001)
+[INFO ] 2024-08-14 10:32:52.548 [main] Log - The actual total premium amount is: 164.48
+[INFO ] 2024-08-14 10:32:52.548 [main] Log - The expected total premium amount is: 164.48
+[INFO ] 2024-08-14 10:32:53.570 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:32:56.622 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:33:02.844 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:33:04.905 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:33:06.039 [main] Log - Salutation selected: Miss
+[INFO ] 2024-08-14 10:33:06.125 [main] Log - User entered first name: Kennethxwmq
+[INFO ] 2024-08-14 10:33:06.187 [main] Log - User entered last name: Milleroqbf
+[INFO ] 2024-08-14 10:33:06.273 [main] Log - User entered date of birth: 30.06.1990
+[INFO ] 2024-08-14 10:33:06.375 [main] Log - User entered email: Kenneth.Miller@fakecorp.com
+[INFO ] 2024-08-14 10:33:09.528 [main] Log - Selected address by entering postcode: AB12 3AA
+[INFO ] 2024-08-14 10:33:09.582 [main] Log - User entered primary contact number: 1051139267
+[INFO ] 2024-08-14 10:33:11.761 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:33:14.060 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:33:39.836 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:33:46.572 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:33:48.590 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:33:53.789 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:34:00.138 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:34:16.402 [main] Log - Created Policy Number: (MILL-0372-EBBV-00000001)
+[INFO ] 2024-08-14 10:34:18.475 [main] Log - The actual total premium amount is: 135.36
+[INFO ] 2024-08-14 10:34:18.475 [main] Log - The expected total premium amount is: 135.36
+[INFO ] 2024-08-14 10:34:19.501 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:34:21.129 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:34:26.606 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:34:28.667 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:34:29.787 [main] Log - Salutation selected: Ms
+[INFO ] 2024-08-14 10:34:29.836 [main] Log - User entered first name: Peterzywc
+[INFO ] 2024-08-14 10:34:29.888 [main] Log - User entered last name: Hallrdrb
+[INFO ] 2024-08-14 10:34:29.950 [main] Log - User entered date of birth: 30.06.1984
+[INFO ] 2024-08-14 10:34:30.013 [main] Log - User entered email: Peter.Hall@fakecorp.com
+[INFO ] 2024-08-14 10:34:33.155 [main] Log - Selected address by entering postcode: AB13 0AA
+[INFO ] 2024-08-14 10:34:33.218 [main] Log - User entered primary contact number: 1180021658
+[INFO ] 2024-08-14 10:34:35.361 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:34:37.670 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:35:02.033 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:35:10.833 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:35:12.877 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:35:17.069 [main] Log - Select payment tender Credit/Debit card payment
+[INFO ] 2024-08-14 10:35:36.074 [main] Log - Enter credit card details
+[INFO ] 2024-08-14 10:35:51.878 [main] Log - Created Policy Number: (HALL-0346-EBBPR-00000001)
+[INFO ] 2024-08-14 10:35:53.944 [main] Log - The actual total premium amount is: 228.42
+[INFO ] 2024-08-14 10:35:53.944 [main] Log - The expected total premium amount is: 228.42
+[INFO ] 2024-08-14 10:35:54.971 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:35:56.527 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:36:02.090 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:36:04.170 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:36:05.293 [main] Log - Salutation selected: Mx
+[INFO ] 2024-08-14 10:36:05.343 [main] Log - User entered first name: Russellxeuu
+[INFO ] 2024-08-14 10:36:05.395 [main] Log - User entered last name: Davisnbui
+[INFO ] 2024-08-14 10:36:05.445 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-08-14 10:36:05.513 [main] Log - User entered email: Russell.Davis@fakecorp.com
+[INFO ] 2024-08-14 10:36:08.657 [main] Log - Selected address by entering postcode: AB14 0AE
+[INFO ] 2024-08-14 10:36:08.723 [main] Log - User entered primary contact number: 1223394687
+[INFO ] 2024-08-14 10:36:10.867 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:36:13.209 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:36:38.181 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:36:45.114 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:36:47.149 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:36:52.373 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:36:58.838 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:37:15.653 [main] Log - Created Policy Number: (DAVI-0711-EBBPL-00000001)
+[INFO ] 2024-08-14 10:37:17.726 [main] Log - The actual total premium amount is: 204.93
+[INFO ] 2024-08-14 10:37:17.726 [main] Log - The expected total premium amount is: 204.93
+[INFO ] 2024-08-14 10:37:18.753 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:37:20.622 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:37:26.301 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:37:28.388 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:37:29.516 [main] Log - Salutation selected: Dr
+[INFO ] 2024-08-14 10:37:29.572 [main] Log - User entered first name: Emmaprtf
+[INFO ] 2024-08-14 10:37:29.628 [main] Log - User entered last name: Riverauqzw
+[INFO ] 2024-08-14 10:37:29.696 [main] Log - User entered date of birth: 30.06.1993
+[INFO ] 2024-08-14 10:37:29.766 [main] Log - User entered email: Emma.Rivera@fakecorp.com
+[INFO ] 2024-08-14 10:37:32.894 [main] Log - Selected address by entering postcode: AB15 6AB
+[INFO ] 2024-08-14 10:37:32.970 [main] Log - User entered primary contact number: 1303349412
+[INFO ] 2024-08-14 10:37:35.151 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:37:38.011 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:38:04.264 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:38:31.978 [main] Log - Created Policy Number: (RIVE-0049-EBBPR-00000001)
+[INFO ] 2024-08-14 10:38:34.039 [main] Log - The actual total premium amount is: 241.99
+[INFO ] 2024-08-14 10:38:34.039 [main] Log - The expected total premium amount is: 241.99
+[INFO ] 2024-08-14 10:38:35.065 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:38:36.876 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:38:43.041 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:38:45.112 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:38:46.224 [main] Log - Salutation selected: Mr
+[INFO ] 2024-08-14 10:38:46.285 [main] Log - User entered first name: Janicegwbb
+[INFO ] 2024-08-14 10:38:46.347 [main] Log - User entered last name: Clarklkou
+[INFO ] 2024-08-14 10:38:46.403 [main] Log - User entered date of birth: 30.06.1988
+[INFO ] 2024-08-14 10:38:46.474 [main] Log - User entered email: Janice.Clark@fakecorp.com
+[INFO ] 2024-08-14 10:38:49.633 [main] Log - Selected address by entering postcode: AB16 5BP
+[INFO ] 2024-08-14 10:38:49.707 [main] Log - User entered primary contact number: 1125238420
+[INFO ] 2024-08-14 10:38:51.914 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:38:54.240 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:39:19.239 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:39:26.275 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:39:28.331 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:39:33.628 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:39:40.215 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:39:57.004 [main] Log - Created Policy Number: (CLAR-0445-EBBPR-00000001)
+[INFO ] 2024-08-14 10:39:59.056 [main] Log - The actual total premium amount is: 201.51
+[INFO ] 2024-08-14 10:39:59.057 [main] Log - The expected total premium amount is: 201.51
+[INFO ] 2024-08-14 10:40:00.077 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:40:01.808 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:40:07.374 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:40:09.427 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:40:10.573 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-08-14 10:40:10.631 [main] Log - User entered first name: Zekelcyz
+[INFO ] 2024-08-14 10:40:10.683 [main] Log - User entered last name: Ramirezbwxr
+[INFO ] 2024-08-14 10:40:10.732 [main] Log - User entered date of birth: 30.06.1982
+[INFO ] 2024-08-14 10:40:10.792 [main] Log - User entered email: Zeke.Ramirez@fakecorp.com
+[INFO ] 2024-08-14 10:40:13.942 [main] Log - Selected address by entering postcode: AB15 8LE
+[INFO ] 2024-08-14 10:40:14.036 [main] Log - User entered primary contact number: 1294758127
+[INFO ] 2024-08-14 10:40:16.308 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:40:18.696 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:40:44.053 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:41:10.743 [main] Log - Created Policy Number: (RAMI-0004-EBMPL-00000001)
+[INFO ] 2024-08-14 10:41:12.820 [main] Log - The actual total premium amount is: 273.32
+[INFO ] 2024-08-14 10:41:12.821 [main] Log - The expected total premium amount is: 273.32
+[INFO ] 2024-08-14 10:41:13.861 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:41:15.557 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:41:21.161 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:41:23.254 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:41:24.395 [main] Log - Salutation selected: Miss
+[INFO ] 2024-08-14 10:41:24.451 [main] Log - User entered first name: Sandrawtgd
+[INFO ] 2024-08-14 10:41:24.504 [main] Log - User entered last name: Garciaglzp
+[INFO ] 2024-08-14 10:41:24.553 [main] Log - User entered date of birth: 30.06.1997
+[INFO ] 2024-08-14 10:41:24.614 [main] Log - User entered email: Sandra.Garcia@fakecorp.com
+[INFO ] 2024-08-14 10:41:27.768 [main] Log - Selected address by entering postcode: AB21 0JZ
+[INFO ] 2024-08-14 10:41:27.839 [main] Log - User entered primary contact number: 1342191529
+[INFO ] 2024-08-14 10:41:30.143 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:41:32.522 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:41:58.060 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:42:05.153 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:42:07.187 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:42:12.467 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:42:18.907 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:42:25.060 [main] Log - Created Policy Number: (GARC-0013-EBMV-00000001)
+[INFO ] 2024-08-14 10:42:27.236 [main] Log - The actual total premium amount is: 227.42
+[INFO ] 2024-08-14 10:42:27.236 [main] Log - The expected total premium amount is: 227.42
+[INFO ] 2024-08-14 10:42:28.260 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:42:29.862 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:42:35.357 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:42:37.617 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:42:38.723 [main] Log - Salutation selected: Ms
+[INFO ] 2024-08-14 10:42:38.771 [main] Log - User entered first name: Garyhqjb
+[INFO ] 2024-08-14 10:42:38.822 [main] Log - User entered last name: Lewisrtwu
+[INFO ] 2024-08-14 10:42:38.875 [main] Log - User entered date of birth: 30.06.1982
+[INFO ] 2024-08-14 10:42:38.950 [main] Log - User entered email: Gary.Lewis@fakecorp.com
+[INFO ] 2024-08-14 10:42:42.096 [main] Log - Selected address by entering postcode: AB22 8AA
+[INFO ] 2024-08-14 10:42:42.176 [main] Log - User entered primary contact number: 1319417316
+[INFO ] 2024-08-14 10:42:44.370 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:42:46.704 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:43:11.906 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:43:39.220 [main] Log - Created Policy Number: (LEWI-0249-EBMV-00000001)
+[INFO ] 2024-08-14 10:43:41.307 [main] Log - The actual total premium amount is: 295.16
+[INFO ] 2024-08-14 10:43:41.307 [main] Log - The expected total premium amount is: 295.16
+[INFO ] 2024-08-14 10:43:42.342 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:43:43.999 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:43:49.572 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:43:51.653 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:43:52.753 [main] Log - Salutation selected: Mx
+[INFO ] 2024-08-14 10:43:52.802 [main] Log - User entered first name: Seanjxsr
+[INFO ] 2024-08-14 10:43:52.853 [main] Log - User entered last name: Martinudoy
+[INFO ] 2024-08-14 10:43:52.905 [main] Log - User entered date of birth: 30.06.1986
+[INFO ] 2024-08-14 10:43:52.961 [main] Log - User entered email: Sean.Martin@fakecorp.com
+[INFO ] 2024-08-14 10:43:56.085 [main] Log - Selected address by entering postcode: AB23 8ES
+[INFO ] 2024-08-14 10:43:56.144 [main] Log - User entered primary contact number: 1280860604
+[INFO ] 2024-08-14 10:43:58.325 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:44:00.679 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:44:25.801 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:44:32.693 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:44:34.729 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:44:39.967 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:44:46.355 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:45:02.960 [main] Log - Created Policy Number: (MART-0308-EBMPL-00000001)
+[INFO ] 2024-08-14 10:45:05.033 [main] Log - The actual total premium amount is: 375.04
+[INFO ] 2024-08-14 10:45:05.033 [main] Log - The expected total premium amount is: 375.04
+[INFO ] 2024-08-14 10:45:06.075 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:45:07.770 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:45:13.349 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:45:15.434 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:45:16.542 [main] Log - Salutation selected: Dr
+[INFO ] 2024-08-14 10:45:16.592 [main] Log - User entered first name: Sarahflug
+[INFO ] 2024-08-14 10:45:16.645 [main] Log - User entered last name: Hernandezpeft
+[INFO ] 2024-08-14 10:45:16.709 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-08-14 10:45:16.784 [main] Log - User entered email: Sarah.Hernandez@fakecorp.com
+[INFO ] 2024-08-14 10:45:19.942 [main] Log - Selected address by entering postcode: AB24 1AW
+[INFO ] 2024-08-14 10:45:20.014 [main] Log - User entered primary contact number: 1178765990
+[INFO ] 2024-08-14 10:45:22.222 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:45:24.550 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:45:50.003 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:46:17.087 [main] Log - Created Policy Number: (HERN-0015-EBMV-00000001)
+[INFO ] 2024-08-14 10:46:19.154 [main] Log - The actual total premium amount is: 329.24
+[INFO ] 2024-08-14 10:46:19.154 [main] Log - The expected total premium amount is: 329.24
+[INFO ] 2024-08-14 10:46:20.196 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:46:21.930 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:46:27.517 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:46:29.598 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:46:30.717 [main] Log - Salutation selected: Mr
+[INFO ] 2024-08-14 10:46:30.776 [main] Log - User entered first name: Janetjmmr
+[INFO ] 2024-08-14 10:46:30.831 [main] Log - User entered last name: Cartersdjo
+[INFO ] 2024-08-14 10:46:30.879 [main] Log - User entered date of birth: 30.06.1985
+[INFO ] 2024-08-14 10:46:30.937 [main] Log - User entered email: Janet.Carter@fakecorp.com
+[INFO ] 2024-08-14 10:46:34.065 [main] Log - Selected address by entering postcode: AB25 1AD
+[INFO ] 2024-08-14 10:46:34.179 [main] Log - User entered primary contact number: 1333061769
+[INFO ] 2024-08-14 10:46:36.344 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:46:38.722 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:47:03.408 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:47:10.346 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:47:12.373 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:47:17.595 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:47:24.024 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:47:40.705 [main] Log - Created Policy Number: (CART-0187-EBMPL-00000001)
+[INFO ] 2024-08-14 10:47:42.781 [main] Log - The actual total premium amount is: 256.32
+[INFO ] 2024-08-14 10:47:42.782 [main] Log - The expected total premium amount is: 256.32
+[INFO ] 2024-08-14 10:47:43.822 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:47:45.507 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:47:51.085 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:47:53.161 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:47:54.252 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-08-14 10:47:54.301 [main] Log - User entered first name: Gracefbkd
+[INFO ] 2024-08-14 10:47:54.352 [main] Log - User entered last name: Lopezkuti
+[INFO ] 2024-08-14 10:47:54.402 [main] Log - User entered date of birth: 30.06.1990
+[INFO ] 2024-08-14 10:47:54.461 [main] Log - User entered email: Grace.Lopez@fakecorp.com
+[INFO ] 2024-08-14 10:47:57.617 [main] Log - Selected address by entering postcode: AB30 1AD
+[INFO ] 2024-08-14 10:47:57.686 [main] Log - User entered primary contact number: 1290309882
+[INFO ] 2024-08-14 10:47:59.838 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:48:02.171 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:48:26.813 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:48:35.783 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:48:37.825 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:48:42.042 [main] Log - Select payment tender Credit/Debit card payment
+[INFO ] 2024-08-14 10:49:01.136 [main] Log - Enter credit card details
+[INFO ] 2024-08-14 10:49:17.018 [main] Log - Created Policy Number: (LOPE-0020-EBRPR-00000001)
+[INFO ] 2024-08-14 10:49:19.092 [main] Log - The actual total premium amount is: 193.60
+[INFO ] 2024-08-14 10:49:19.092 [main] Log - The expected total premium amount is: 193.60
+[INFO ] 2024-08-14 10:49:20.135 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:49:21.777 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:49:27.377 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:49:29.455 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:49:30.583 [main] Log - Salutation selected: Miss
+[INFO ] 2024-08-14 10:49:30.634 [main] Log - User entered first name: Dominiqueqozx
+[INFO ] 2024-08-14 10:49:30.681 [main] Log - User entered last name: Robertsjqbl
+[INFO ] 2024-08-14 10:49:30.729 [main] Log - User entered date of birth: 30.06.1984
+[INFO ] 2024-08-14 10:49:30.793 [main] Log - User entered email: Dominique.Roberts@fakecorp.com
+[INFO ] 2024-08-14 10:49:33.927 [main] Log - Selected address by entering postcode: AB31 4GA
+[INFO ] 2024-08-14 10:49:33.996 [main] Log - User entered primary contact number: 1403765120
+[INFO ] 2024-08-14 10:49:36.155 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:49:38.510 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:50:03.035 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:50:10.033 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:50:12.077 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:50:17.313 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:50:23.739 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:50:40.967 [main] Log - Created Policy Number: (ROBE-0379-EBRV-00000001)
+[INFO ] 2024-08-14 10:50:43.035 [main] Log - The actual total premium amount is: 140.96
+[INFO ] 2024-08-14 10:50:43.035 [main] Log - The expected total premium amount is: 140.96
+[INFO ] 2024-08-14 10:50:44.071 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:50:45.712 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:50:51.302 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:50:53.388 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:50:54.477 [main] Log - Salutation selected: Ms
+[INFO ] 2024-08-14 10:50:54.528 [main] Log - User entered first name: Davidcwua
+[INFO ] 2024-08-14 10:50:54.580 [main] Log - User entered last name: Woodsfifg
+[INFO ] 2024-08-14 10:50:54.641 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-08-14 10:50:54.700 [main] Log - User entered email: David.Woods@fakecorp.com
+[INFO ] 2024-08-14 10:50:57.832 [main] Log - Selected address by entering postcode: AB32 6AA
+[INFO ] 2024-08-14 10:50:57.884 [main] Log - User entered primary contact number: 1188971055
+[INFO ] 2024-08-14 10:51:00.035 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:51:02.428 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:51:27.745 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:51:55.117 [main] Log - Created Policy Number: (WOOD-0417-EBRPR-00000001)
+[INFO ] 2024-08-14 10:51:57.203 [main] Log - The actual total premium amount is: 275.25
+[INFO ] 2024-08-14 10:51:57.203 [main] Log - The expected total premium amount is: 275.25
+[INFO ] 2024-08-14 10:51:58.236 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:51:59.871 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:52:05.442 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:52:07.518 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:52:08.636 [main] Log - Salutation selected: Mx
+[INFO ] 2024-08-14 10:52:08.688 [main] Log - User entered first name: Gregorysyyz
+[INFO ] 2024-08-14 10:52:08.739 [main] Log - User entered last name: Youngjbtx
+[INFO ] 2024-08-14 10:52:08.789 [main] Log - User entered date of birth: 30.06.1993
+[INFO ] 2024-08-14 10:52:08.847 [main] Log - User entered email: Gregory.Young@fakecorp.com
+[INFO ] 2024-08-14 10:52:11.976 [main] Log - Selected address by entering postcode: AB33 8AF
+[INFO ] 2024-08-14 10:52:12.046 [main] Log - User entered primary contact number: 1033335602
+[INFO ] 2024-08-14 10:52:14.236 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:52:16.559 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:52:41.985 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:52:48.911 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:52:50.955 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:52:56.230 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:53:02.624 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:53:19.471 [main] Log - Created Policy Number: (YOUN-0195-EBRPL-00000001)
+[INFO ] 2024-08-14 10:53:21.551 [main] Log - The actual total premium amount is: 240.60
+[INFO ] 2024-08-14 10:53:21.551 [main] Log - The expected total premium amount is: 240.60
+[INFO ] 2024-08-14 10:53:22.587 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:53:24.338 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:53:29.921 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:53:32.009 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:53:33.142 [main] Log - Salutation selected: Dr
+[INFO ] 2024-08-14 10:53:33.203 [main] Log - User entered first name: Brucevenu
+[INFO ] 2024-08-14 10:53:33.278 [main] Log - User entered last name: Fernandezdrui
+[INFO ] 2024-08-14 10:53:33.395 [main] Log - User entered date of birth: 30.06.1988
+[INFO ] 2024-08-14 10:53:33.505 [main] Log - User entered email: Bruce.Fernandez@fakecorp.com
+[INFO ] 2024-08-14 10:53:36.660 [main] Log - Selected address by entering postcode: AB34 4JA
+[INFO ] 2024-08-14 10:53:36.758 [main] Log - User entered primary contact number: 1148718608
+[INFO ] 2024-08-14 10:53:38.988 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:53:41.446 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:54:07.864 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:54:34.971 [main] Log - Created Policy Number: (FERN-0037-EBRV-00000001)
+[INFO ] 2024-08-14 10:54:37.069 [main] Log - The actual total premium amount is: 222.74
+[INFO ] 2024-08-14 10:54:37.069 [main] Log - The expected total premium amount is: 222.74
+[INFO ] 2024-08-14 10:54:38.086 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:54:39.745 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:54:45.512 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:54:47.575 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:54:48.706 [main] Log - Salutation selected: Mr
+[INFO ] 2024-08-14 10:54:48.770 [main] Log - User entered first name: Michellerzua
+[INFO ] 2024-08-14 10:54:48.848 [main] Log - User entered last name: Allenhqqs
+[INFO ] 2024-08-14 10:54:48.906 [main] Log - User entered date of birth: 30.06.1982
+[INFO ] 2024-08-14 10:54:48.970 [main] Log - User entered email: Michelle.Allen@fakecorp.com
+[INFO ] 2024-08-14 10:54:52.081 [main] Log - Selected address by entering postcode: AB35 5AT
+[INFO ] 2024-08-14 10:54:52.140 [main] Log - User entered primary contact number: 1318463021
+[INFO ] 2024-08-14 10:54:54.261 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:54:56.601 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:55:21.140 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:55:27.892 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:55:29.923 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:55:35.125 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:55:41.544 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:55:58.179 [main] Log - Created Policy Number: (ALLE-0154-EBRPR-00000001)
+[INFO ] 2024-08-14 10:56:00.285 [main] Log - The actual total premium amount is: 210.66
+[INFO ] 2024-08-14 10:56:00.285 [main] Log - The expected total premium amount is: 210.66
+[INFO ] 2024-08-14 10:56:01.315 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:56:02.905 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:56:08.448 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:56:10.530 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:56:11.659 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-08-14 10:56:11.708 [main] Log - User entered first name: Laurenupay
+[INFO ] 2024-08-14 10:56:11.757 [main] Log - User entered last name: Smithocdn
+[INFO ] 2024-08-14 10:56:11.817 [main] Log - User entered date of birth: 30.06.1997
+[INFO ] 2024-08-14 10:56:11.877 [main] Log - User entered email: Lauren.Smith@fakecorp.com
+[INFO ] 2024-08-14 10:56:15.045 [main] Log - Selected address by entering postcode: AB55 4AA
+[INFO ] 2024-08-14 10:56:15.119 [main] Log - User entered primary contact number: 1280739602
+[INFO ] 2024-08-14 10:56:17.339 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:56:19.745 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:56:46.003 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:57:13.186 [main] Log - Created Policy Number: (SMIT-0967-EBRPL-00000001)
+[INFO ] 2024-08-14 10:57:15.275 [main] Log - The actual total premium amount is: 175.95
+[INFO ] 2024-08-14 10:57:15.275 [main] Log - The expected total premium amount is: 175.95
+[INFO ] 2024-08-14 10:57:16.300 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:57:18.127 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:57:23.758 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:57:25.838 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:57:26.969 [main] Log - Salutation selected: Miss
+[INFO ] 2024-08-14 10:57:27.018 [main] Log - User entered first name: Dorisrtdk
+[INFO ] 2024-08-14 10:57:27.068 [main] Log - User entered last name: Thomasylwa
+[INFO ] 2024-08-14 10:57:27.118 [main] Log - User entered date of birth: 30.06.1982
+[INFO ] 2024-08-14 10:57:27.178 [main] Log - User entered email: Doris.Thomas@fakecorp.com
+[INFO ] 2024-08-14 10:57:30.328 [main] Log - Selected address by entering postcode: AB37 9AA
+[INFO ] 2024-08-14 10:57:30.426 [main] Log - User entered primary contact number: 1225422532
+[INFO ] 2024-08-14 10:57:32.668 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:57:35.119 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:58:00.390 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:58:07.512 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 10:58:09.537 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 10:58:14.774 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 10:58:21.313 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 10:58:39.434 [main] Log - Created Policy Number: (THOM-0672-EBTV-00000001)
+[INFO ] 2024-08-14 10:58:41.539 [main] Log - The actual total premium amount is: 144.66
+[INFO ] 2024-08-14 10:58:41.539 [main] Log - The expected total premium amount is: 144.66
+[INFO ] 2024-08-14 10:58:42.578 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:58:44.384 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 10:58:50.043 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 10:58:52.128 [main] Log - Select client type individual
+[INFO ] 2024-08-14 10:58:53.237 [main] Log - Salutation selected: Ms
+[INFO ] 2024-08-14 10:58:53.286 [main] Log - User entered first name: Annaaxsh
+[INFO ] 2024-08-14 10:58:53.336 [main] Log - User entered last name: Turnerxhep
+[INFO ] 2024-08-14 10:58:53.400 [main] Log - User entered date of birth: 30.06.1986
+[INFO ] 2024-08-14 10:58:53.456 [main] Log - User entered email: Anna.Turner@fakecorp.com
+[INFO ] 2024-08-14 10:58:56.632 [main] Log - Selected address by entering postcode: AB38 7AA
+[INFO ] 2024-08-14 10:58:56.750 [main] Log - User entered primary contact number: 1330931102
+[INFO ] 2024-08-14 10:58:59.002 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 10:59:01.417 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 10:59:27.324 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 10:59:54.879 [main] Log - Created Policy Number: (TURN-0239-EBTPR-00000001)
+[INFO ] 2024-08-14 10:59:56.994 [main] Log - The actual total premium amount is: 271.42
+[INFO ] 2024-08-14 10:59:56.994 [main] Log - The expected total premium amount is: 271.42
+[INFO ] 2024-08-14 10:59:58.030 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 10:59:59.791 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:00:05.446 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:00:07.525 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:00:08.724 [main] Log - Salutation selected: Mx
+[INFO ] 2024-08-14 11:00:08.789 [main] Log - User entered first name: Donaldgsuk
+[INFO ] 2024-08-14 11:00:08.844 [main] Log - User entered last name: Moorerndz
+[INFO ] 2024-08-14 11:00:08.894 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-08-14 11:00:08.953 [main] Log - User entered email: Donald.Moore@fakecorp.com
+[INFO ] 2024-08-14 11:00:12.073 [main] Log - Selected address by entering postcode: AB39 2NF
+[INFO ] 2024-08-14 11:00:12.157 [main] Log - User entered primary contact number: 1277923317
+[INFO ] 2024-08-14 11:00:14.326 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:00:16.656 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:00:41.640 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:00:48.347 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 11:00:50.364 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 11:00:55.563 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 11:01:02.011 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 11:01:18.964 [main] Log - Created Policy Number: (MOOR-0259-EBTPL-00000001)
+[INFO ] 2024-08-14 11:01:21.048 [main] Log - The actual total premium amount is: 236.77
+[INFO ] 2024-08-14 11:01:21.048 [main] Log - The expected total premium amount is: 236.77
+[INFO ] 2024-08-14 11:01:22.075 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:01:23.777 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:01:29.353 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:01:31.413 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:01:32.526 [main] Log - Salutation selected: Dr
+[INFO ] 2024-08-14 11:01:32.582 [main] Log - User entered first name: Adamdhoq
+[INFO ] 2024-08-14 11:01:32.650 [main] Log - User entered last name: Aliifec
+[INFO ] 2024-08-14 11:01:32.720 [main] Log - User entered date of birth: 30.06.1985
+[INFO ] 2024-08-14 11:01:32.784 [main] Log - User entered email: Adam.Ali@fakecorp.com
+[INFO ] 2024-08-14 11:01:35.910 [main] Log - Selected address by entering postcode: AB41 1AS
+[INFO ] 2024-08-14 11:01:35.975 [main] Log - User entered primary contact number: 1359575874
+[INFO ] 2024-08-14 11:01:38.181 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:01:40.553 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:02:06.101 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:02:15.184 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 11:02:17.216 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 11:02:21.483 [main] Log - Select payment tender Credit/Debit card payment
+[INFO ] 2024-08-14 11:02:40.863 [main] Log - Enter credit card details
+[INFO ] 2024-08-14 11:02:56.344 [main] Log - Created Policy Number: (ALII-0001-EBTV-00000001)
+[INFO ] 2024-08-14 11:02:58.423 [main] Log - The actual total premium amount is: 220.05
+[INFO ] 2024-08-14 11:02:58.423 [main] Log - The expected total premium amount is: 220.05
+[INFO ] 2024-08-14 11:02:59.454 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:03:01.183 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:03:06.775 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:03:08.844 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:03:09.964 [main] Log - Salutation selected: Mr
+[INFO ] 2024-08-14 11:03:10.024 [main] Log - User entered first name: Vincentmxwy
+[INFO ] 2024-08-14 11:03:10.077 [main] Log - User entered last name: Forthygtr
+[INFO ] 2024-08-14 11:03:10.131 [main] Log - User entered date of birth: 30.06.1990
+[INFO ] 2024-08-14 11:03:10.206 [main] Log - User entered email: Vincent.Forth@fakecorp.com
+[INFO ] 2024-08-14 11:03:13.368 [main] Log - Selected address by entering postcode: AB42 0AA
+[INFO ] 2024-08-14 11:03:13.435 [main] Log - User entered primary contact number: 1026010499
+[INFO ] 2024-08-14 11:03:15.601 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:03:17.961 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:03:43.947 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:03:50.902 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 11:03:52.939 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 11:03:58.272 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 11:04:04.779 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 11:04:21.877 [main] Log - Created Policy Number: (FORT-0056-EBBPPR-00000001)
+[INFO ] 2024-08-14 11:04:23.951 [main] Log - The actual total premium amount is: 239.07
+[INFO ] 2024-08-14 11:04:23.951 [main] Log - The expected total premium amount is: 239.07
+[INFO ] 2024-08-14 11:04:24.983 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:04:26.711 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:04:32.287 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:04:34.350 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:04:35.457 [main] Log - Salutation selected: Mrs
+[INFO ] 2024-08-14 11:04:35.508 [main] Log - User entered first name: Pamelanjyw
+[INFO ] 2024-08-14 11:04:35.567 [main] Log - User entered last name: Riveracmlb
+[INFO ] 2024-08-14 11:04:35.631 [main] Log - User entered date of birth: 30.06.1984
+[INFO ] 2024-08-14 11:04:35.697 [main] Log - User entered email: Pamela.Rivera@fakecorp.com
+[INFO ] 2024-08-14 11:04:38.859 [main] Log - Selected address by entering postcode: AB43 1AH
+[INFO ] 2024-08-14 11:04:38.922 [main] Log - User entered primary contact number: 1323573796
+[INFO ] 2024-08-14 11:04:41.117 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:04:43.457 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:05:08.673 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:05:35.975 [main] Log - Created Policy Number: (RIVE-0050-EBBPPL-00000001)
+[INFO ] 2024-08-14 11:05:38.053 [main] Log - The actual total premium amount is: 209.99
+[INFO ] 2024-08-14 11:05:38.053 [main] Log - The expected total premium amount is: 209.99
+[INFO ] 2024-08-14 11:05:39.079 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:05:40.780 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:05:46.414 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:05:48.480 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:05:49.611 [main] Log - Salutation selected: Miss
+[INFO ] 2024-08-14 11:05:49.675 [main] Log - User entered first name: Francespmey
+[INFO ] 2024-08-14 11:05:49.729 [main] Log - User entered last name: Thompsonkbhb
+[INFO ] 2024-08-14 11:05:49.785 [main] Log - User entered date of birth: 30.06.1999
+[INFO ] 2024-08-14 11:05:49.850 [main] Log - User entered email: Frances.Thompson@fakecorp.com
+[INFO ] 2024-08-14 11:05:53.005 [main] Log - Selected address by entering postcode: AB44 1NS
+[INFO ] 2024-08-14 11:05:53.076 [main] Log - User entered primary contact number: 1310849000
+[INFO ] 2024-08-14 11:05:55.316 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:05:57.707 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:06:22.841 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:06:29.814 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 11:06:31.861 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 11:06:37.118 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 11:06:43.666 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 11:06:59.511 [main] Log - Created Policy Number: (THOM-0673-EBBPV-00000001)
+[INFO ] 2024-08-14 11:07:01.595 [main] Log - The actual total premium amount is: 193.21
+[INFO ] 2024-08-14 11:07:01.595 [main] Log - The expected total premium amount is: 193.21
+[INFO ] 2024-08-14 11:07:02.628 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:07:04.359 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:07:09.944 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:07:12.009 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:07:13.121 [main] Log - Salutation selected: Ms
+[INFO ] 2024-08-14 11:07:13.209 [main] Log - User entered first name: Garycvso
+[INFO ] 2024-08-14 11:07:13.291 [main] Log - User entered last name: Lewismjxh
+[INFO ] 2024-08-14 11:07:13.357 [main] Log - User entered date of birth: 30.06.1982
+[INFO ] 2024-08-14 11:07:13.418 [main] Log - User entered email: Gary.Lewis@fakecorp.com
+[INFO ] 2024-08-14 11:07:16.552 [main] Log - Selected address by entering postcode: AB45 1AD
+[INFO ] 2024-08-14 11:07:16.633 [main] Log - User entered primary contact number: 1283630873
+[INFO ] 2024-08-14 11:07:18.864 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:07:21.264 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:07:45.948 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:08:12.185 [main] Log - Created Policy Number: (LEWI-0250-EBBPPR-00000001)
+[INFO ] 2024-08-14 11:08:14.261 [main] Log - The actual total premium amount is: 255.96
+[INFO ] 2024-08-14 11:08:14.261 [main] Log - The expected total premium amount is: 255.96
+[INFO ] 2024-08-14 11:08:15.281 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:08:16.865 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:08:22.363 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:08:24.414 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:08:25.538 [main] Log - Salutation selected: Mx
+[INFO ] 2024-08-14 11:08:25.597 [main] Log - User entered first name: Seanerwy
+[INFO ] 2024-08-14 11:08:25.655 [main] Log - User entered last name: Martineeeh
+[INFO ] 2024-08-14 11:08:25.709 [main] Log - User entered date of birth: 30.06.1986
+[INFO ] 2024-08-14 11:08:25.777 [main] Log - User entered email: Sean.Martin@fakecorp.com
+[INFO ] 2024-08-14 11:08:28.962 [main] Log - Selected address by entering postcode: AB51 3TW
+[INFO ] 2024-08-14 11:08:29.031 [main] Log - User entered primary contact number: 1371119895
+[INFO ] 2024-08-14 11:08:31.199 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:08:33.586 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:08:58.991 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:09:06.001 [main] Log - Select monthly premium radio button
+[INFO ] 2024-08-14 11:09:08.044 [main] Log - Enter account holder name
+[INFO ] 2024-08-14 11:09:13.308 [main] Log - Select payment tender Direct Debit payment
+[INFO ] 2024-08-14 11:09:19.858 [main] Log - Enter other payment details
+[INFO ] 2024-08-14 11:09:36.396 [main] Log - Created Policy Number: (MART-0309-EBBPPL-00000001)
+[INFO ] 2024-08-14 11:09:38.464 [main] Log - The actual total premium amount is: 227.98
+[INFO ] 2024-08-14 11:09:38.465 [main] Log - The expected total premium amount is: 227.98
+[INFO ] 2024-08-14 11:09:39.484 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:09:41.161 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:09:46.791 [main] Log - User click on the add quote button
+[INFO ] 2024-08-14 11:09:48.857 [main] Log - Select client type individual
+[INFO ] 2024-08-14 11:09:49.975 [main] Log - Salutation selected: Dr
+[INFO ] 2024-08-14 11:09:50.028 [main] Log - User entered first name: Sarahvcnb
+[INFO ] 2024-08-14 11:09:50.092 [main] Log - User entered last name: Hernandezjomt
+[INFO ] 2024-08-14 11:09:50.157 [main] Log - User entered date of birth: 30.06.1980
+[INFO ] 2024-08-14 11:09:50.236 [main] Log - User entered email: Sarah.Hernandez@fakecorp.com
+[INFO ] 2024-08-14 11:09:53.391 [main] Log - Selected address by entering postcode: AB52 6AB
+[INFO ] 2024-08-14 11:09:53.466 [main] Log - User entered primary contact number: 1223976737
+[INFO ] 2024-08-14 11:09:55.700 [main] Log - Selected hear about us
+[INFO ] 2024-08-14 11:09:58.086 [main] Log - User select: Exotic product.
+[INFO ] 2024-08-14 11:10:23.300 [main] Log - Enter the cover start date
+[INFO ] 2024-08-14 11:10:49.908 [main] Log - Created Policy Number: (HERN-0016-EBBPV-00000001)
+[INFO ] 2024-08-14 11:10:51.979 [main] Log - The actual total premium amount is: 210.10
+[INFO ] 2024-08-14 11:10:51.979 [main] Log - The expected total premium amount is: 210.10
+[INFO ] 2024-08-14 11:10:53.004 [main] Log - The policy details are: 
+[INFO ] 2024-08-14 11:10:54.606 [main] Log - Click on the quote icon on the left toolbar
+[INFO ] 2024-08-14 11:11:00.440 [main] Log - User click on the add quote button

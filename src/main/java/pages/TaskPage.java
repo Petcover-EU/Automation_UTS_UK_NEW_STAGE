@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Common;
+import utils.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +49,44 @@ public class TaskPage {
     private WebElement optionUnderClinetrDropDown;
     @FindBy(xpath = "//div[@id='gridName']/table/tbody/tr[1]/td[11]/div/a[1]")
     private WebElement editIconOnManageTaskPage;
+    @FindBy(xpath = "//a[@title='Add User']")
+    private WebElement addUserButton;
+    @FindBy(xpath = "//input[@id='Title']")
+    private WebElement taskTile;
+    @FindBy(xpath = "//span[@class='k-widget k-dropdown k-header form-control']//span[@class='k-input']")
+    private WebElement statusBar;
+    @FindBy(xpath = "(//span[@class='boxcolor'])[5]")
+    private WebElement statusBarColLer;
+    @FindBy(xpath = "//body/div[@id='wrapper']/div[@id='page-wrapper']/form[@id='form']/div[@class='row']/div[@class='col-lg-12']/div[@class='ibox float-e-margins']/div[@class='ibox-content']/div[@class='col-lg-6']/div[4]/div[1]/div[1]/div[1]/span[1]/span[1]/span[1]")
+    private WebElement Priority;
+    @FindBy(xpath = "//li[normalize-space()='High']")
+    private WebElement PriorityStatus;
+    @FindBy(xpath = "//span[@class='k-input'][normalize-space()='Select']")
+    private WebElement type;
+    @FindBy(xpath = " //*[@id=\"TaskTypeId_listbox\"]/li[2]\n")
+    private WebElement typeStatus;
+    @FindBy(xpath = "//input[@name='AssignedToId_input']")
+    private WebElement assignedTO;
+    @FindBy(xpath = "//div[6]//div[1]//div[1]//div[1]//span[1]//span[1]//span[2]//span[1]")
+    private WebElement assignedTOStatus;
+    @FindBy(xpath = "//span[normalize-space()='Scheduler']")
+    private WebElement assignedTOStatusNew;
+    @FindBy(xpath = "//textarea[@id='Description']")
+    private WebElement Description;
+    @FindBy(xpath = "//span[@aria-controls='EndDate_dateview']//span[@class='k-icon k-i-calendar']")
+    private WebElement endDate;
+    @FindBy(xpath = "//span[@class='k-icon k-i-arrow-60-right']")
+    private WebElement endDateMonth;
+    @FindBy(xpath = "//a[normalize-space()='29']")
+    private WebElement endDateMonthDate;
+    @FindBy(xpath = "//button[@title='Create']")
+    private WebElement Create;
+    @FindBy(xpath = "//body[1]/div[3]/div[2]/section[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[5]")
+    private WebElement smallWindow;
+    @FindBy(xpath = "//div[@id='ViewTask']")
+    private WebElement CreatePrint;
+
+
 
 
     public void clickOnTaskIcon() {
@@ -228,6 +267,47 @@ public class TaskPage {
 
     public String verifyEditTaskPage() {
         return displayedMessage.getText();
+    }
+
+    public void userSelectTaskOption() {
+
+        addUserButton.click();
+        common.pause(2);
+        taskTile.sendKeys("new04092024-3");
+        statusBar.click();
+        common.pause(2);
+        statusBarColLer.click();
+        common.pause(2);
+        Priority.click();
+        common.pause(2);
+        PriorityStatus.click();
+        common.pause(2);
+        type.click();
+        common.pause(2);
+        typeStatus.click();
+         common.pause(1);
+        assignedTO.click();
+        common.pause(2);
+        assignedTOStatus.click();
+         common.pause(2);
+        Description.sendKeys("Hello today 04/09/024");
+        common.pause(2);
+        endDate.click();
+        common.pause(2);
+        endDateMonth.click();
+        common.pause(2);
+        endDateMonthDate.click();
+        common.pause(5);
+        Create.click();
+        common.pause(5);
+        smallWindow.click();
+        common.pause(5);
+        common.waitUntilVisibilityOfElement(CreatePrint);
+        Log.info(CreatePrint.getText());
+        common.pause(5);
+
+
+
     }
 
 }

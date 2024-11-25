@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Common;
+import utils.Log;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class DashBoardPage {
 
     public DashBoardPage(WebDriver driver) {
         this.driver = driver;
+
         PageFactory.initElements(driver, this);
     }
 
@@ -67,6 +69,12 @@ public class DashBoardPage {
     private WebElement searchInputField;
     @FindBy(xpath = "//button[@id='btnSearch']")
     private WebElement searchButton;
+    @FindBy(xpath = "//input[@id='txtSearch']")
+    private WebElement txtBoxSearch;
+    @FindBy(xpath = "//button[@id='btnSearch']")
+    private WebElement goButton;
+    @FindBy(xpath = "//a[normalize-space()='FRED-0005']")
+    private WebElement userId;
 
     public String verifyClientDetails() {
         common.pause(3);
@@ -193,6 +201,23 @@ public class DashBoardPage {
             System.out.println();
         }
     }
+
+    public void clintCodeTakenAndEnterSearchBar() throws InterruptedException {
+        txtBoxSearch.click();
+        txtBoxSearch.sendKeys("FRED-0005");
+        common.pause(3);
+        goButton.click();
+
+        common.waitUntilVisibilityOfElement(userId);
+         Log.info(userId.getText());
+        userId.click();
+        common.pause(15);
+
+
+
+
+    }
 }
+
 
 
