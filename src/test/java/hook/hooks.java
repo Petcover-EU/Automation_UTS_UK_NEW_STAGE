@@ -40,6 +40,7 @@ public class hooks {
 
     @After(order = 0)
     public void quitBrowser() {
+
         driver.quit();
     }
 

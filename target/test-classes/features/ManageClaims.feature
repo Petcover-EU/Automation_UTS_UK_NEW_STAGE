@@ -1,10 +1,10 @@
-#Feature: Verify Manage Claim Module Features
-#
-#  Background:
-#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-#    When User clicks on manage claims icon on left tool bar
-#
-##    1
+Feature: Verify Manage Claim Module Features
+
+  Background:
+    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+    When User clicks on manage claims icon on left tool bar
+
+#    1
 #  @sanity
 #  Scenario:Manage claims page should open with the claim details after clicking on manage claim icon on left tool bar
 #    Then User will able see all data available on manage claim page

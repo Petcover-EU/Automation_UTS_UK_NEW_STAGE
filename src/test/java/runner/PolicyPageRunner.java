@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/Policy.feature",
         glue = {"steps", "hook"},
         monochrome = true,
-        tags = "@sanity",
+        tags = "@stage",
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )

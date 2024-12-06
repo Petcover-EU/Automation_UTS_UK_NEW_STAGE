@@ -1,5 +1,6 @@
 package factory;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,14 +27,16 @@ public class DriverFactory {
                 if (headless.equalsIgnoreCase("true")) {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless");
-                    options.addArguments("--disable-notifications");
-                    options.addArguments("--disable-popup-blocking");
-                    options.addArguments("--window-size=1920,1080");
-                    WebDriver chromeDriver = new ChromeDriver(options);
-                    tlLocal.set(chromeDriver);
+                    options.addArguments("--window-size=1920x1080");
+                    options.addArguments("--disable-gpu");
+                    options.addArguments("--no-sandbox");
+                    WebDriver chrome = new ChromeDriver(options);
+                    tlLocal.set(chrome);
                 } else {
-                    WebDriver chromeDriver = new ChromeDriver();
-                    tlLocal.set(chromeDriver);
+                    WebDriverManager.chromedriver().setup();
+                    ChromeOptions options = new ChromeOptions();
+                    WebDriver chrome = new ChromeDriver(options);
+                    tlLocal.set(chrome);
                 }
             }
             case "microsoft edge" -> {

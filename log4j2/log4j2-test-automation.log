@@ -1,56 +1,86 @@
-[INFO ] 2024-11-25 18:38:27.243 [main] Log - User click on the add quote button
-[INFO ] 2024-11-25 18:39:20.000 [main] Log - User click on the add quote button
-[INFO ] 2024-11-25 18:51:42.219 [main] Log - User click on the add quote button
-[INFO ] 2024-11-25 18:51:44.317 [main] Log - Select client type individual
-[INFO ] 2024-11-25 18:51:45.586 [main] Log - Salutation selected: Mr
-[INFO ] 2024-11-25 18:51:45.857 [main] Log - User entered first name: Vincentlyrc
-[INFO ] 2024-11-25 18:51:46.089 [main] Log - User entered last name: Forthqlvm
-[INFO ] 2024-11-25 18:51:46.336 [main] Log - User entered date of birth: 30.06.1990
-[INFO ] 2024-11-25 18:51:46.740 [main] Log - User entered email: Vincent.Forth@fakecorp.com
-[INFO ] 2024-11-25 19:03:36.445 [main] Log - User click on the add quote button
-[INFO ] 2024-11-25 19:03:38.553 [main] Log - Select client type individual
-[INFO ] 2024-11-25 19:03:39.850 [main] Log - Salutation selected: Mr
-[INFO ] 2024-11-25 19:03:40.148 [main] Log - User entered first name: Vincentnmfs
-[INFO ] 2024-11-25 19:03:40.446 [main] Log - User entered last name: Forthtzmo
-[INFO ] 2024-11-25 19:03:40.676 [main] Log - User entered date of birth: 30.06.1990
-[INFO ] 2024-11-25 19:03:40.878 [main] Log - User entered email: Vincent.Forth@fakecorp.com
-[INFO ] 2024-11-25 19:03:44.277 [main] Log - Selected address by entering postcode: AB42 0AA
-[INFO ] 2024-11-25 19:03:44.428 [main] Log - User entered primary contact number: 1202915470
-[INFO ] 2024-11-25 19:03:46.719 [main] Log - Selected hear about us
-[INFO ] 2024-11-25 19:03:49.375 [main] Log - User select: Exotic product.
-[INFO ] 2024-11-25 20:29:35.457 [main] Log - Select client type individual
-[INFO ] 2024-11-25 20:29:36.821 [main] Log - Salutation selected: Mr
-[INFO ] 2024-11-25 20:29:37.093 [main] Log - User entered first name: Cleomkhu
-[INFO ] 2024-11-25 20:29:37.362 [main] Log - User entered last name: Smithlwly
-[INFO ] 2024-11-25 20:29:37.642 [main] Log - User entered date of birth: 30.06.1980
-[INFO ] 2024-11-25 20:29:37.954 [main] Log - User entered email: Cleo.Smith@fakecorp.com
-[INFO ] 2024-11-25 20:29:41.420 [main] Log - Selected address by entering postcode: CF3 2TE
-[INFO ] 2024-11-25 20:29:41.612 [main] Log - User entered primary contact number: 1247563582
-[INFO ] 2024-11-25 20:29:43.990 [main] Log - Selected hear about us
-[INFO ] 2024-11-25 20:29:46.687 [main] Log - User select: Cat product.
-[INFO ] 2024-11-25 20:29:53.816 [main] Log - Entered pet name: Abigail
-[INFO ] 2024-11-25 20:30:02.815 [main] Log - User selected species: Tibeter
-[INFO ] 2024-11-25 20:30:06.255 [main] Log - Selected pet gender: Male
-[INFO ] 2024-11-25 20:30:07.488 [main] Log - Selected pet birth date: 01.01.2020
-[INFO ] 2024-11-25 20:30:09.687 [main] Log - Entered pet purchase price: 12
-[INFO ] 2024-11-25 20:30:14.052 [main] Log - Click on the calculate button
-[INFO ] 2024-11-25 20:30:25.270 [main] Log - Select monthly premium radio button
-[INFO ] 2024-11-25 20:30:27.304 [main] Log - Enter account holder name
-[INFO ] 2024-11-25 20:30:32.667 [main] Log - Select payment tender Direct Debit payment
-[INFO ] 2024-11-25 20:30:39.722 [main] Log - Enter other payment details
-[INFO ] 2024-11-25 20:30:50.136 [main] Log - Created Policy Number: (SMIT-01367-CSU-00000002)
-[INFO ] 2024-11-25 20:30:52.226 [main] Log - The actual total premium amount is: 86.64
-[INFO ] 2024-11-25 20:30:52.226 [main] Log - The expected total premium amount is: 268.64
-[INFO ] 2024-11-25 20:30:53.251 [main] Log - The policy details are: 
-[INFO ] 2024-11-25 20:30:55.361 [main] Log - Click on the quote icon on the left toolbar
-[INFO ] 2024-11-25 20:31:01.262 [main] Log - User click on the add quote button
-[INFO ] 2024-11-25 20:31:33.134 [main] Log - Select client type individual
-[INFO ] 2024-11-25 20:31:34.367 [main] Log - Salutation selected: Mr
-[INFO ] 2024-11-25 20:31:34.470 [main] Log - User entered first name: Cleovkxu
-[INFO ] 2024-11-25 20:31:34.571 [main] Log - User entered last name: Smithjlzg
-[INFO ] 2024-11-25 20:31:34.674 [main] Log - User entered date of birth: 30.06.1980
-[INFO ] 2024-11-25 20:31:34.791 [main] Log - User entered email: Cleo.Smith@fakecorp.com
-[INFO ] 2024-11-25 20:31:38.024 [main] Log - Selected address by entering postcode: CF3 2TE
-[INFO ] 2024-11-25 20:31:38.127 [main] Log - User entered primary contact number: 1281178115
-[INFO ] 2024-11-25 20:31:40.376 [main] Log - Selected hear about us
-[INFO ] 2024-11-25 20:31:43.003 [main] Log - User select: Dog product.
+[INFO ] 2026-11-05 10:01:31.426 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:20:48.349 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:22:06.337 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:22:37.425 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:24:12.854 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:25:21.514 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:27:23.451 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:29:32.634 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:31:39.898 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:34:11.870 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:36:07.973 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:37:04.039 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:56:08.792 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:56:58.385 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 10:58:41.492 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 11:10:33.121 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:22:25.626 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:23:47.433 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:25:53.587 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:27:34.475 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:28:45.413 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:30:52.199 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:32:58.929 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:35:02.376 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:37:36.202 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:39:42.571 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 12:42:14.733 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:21:30.441 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:22:18.764 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:24:27.613 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:26:02.820 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:27:10.206 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:29:10.529 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:30:57.564 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:33:23.331 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:36:00.103 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:37:50.510 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 14:40:19.547 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:20:07.878 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:22:07.774 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:25:52.761 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:27:36.555 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:29:26.876 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:31:01.551 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:33:05.894 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:35:22.270 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:36:57.088 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:38:41.172 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:40:15.681 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:42:11.049 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:44:03.558 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:45:23.354 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:47:30.374 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:50:06.826 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:51:57.318 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 15:54:22.124 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:15:12.477 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:19:17.895 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:22:07.484 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:27:41.711 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:29:22.493 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:32:06.389 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:35:06.803 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:36:49.808 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:38:33.726 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:39:10.626 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:40:53.762 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:42:47.873 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:44:24.740 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:44:50.281 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:46:51.210 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:49:20.349 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:50:56.201 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:55:28.809 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:56:22.821 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:57:10.630 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 16:58:49.348 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:00:33.699 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:02:09.635 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:04:07.876 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:06:01.936 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:08:08.396 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:10:12.397 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:12:46.259 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:14:39.482 [main] Log - Click on the policy icon on the left toolbar
+[INFO ] 2026-11-05 17:17:05.905 [main] Log - Click on the policy icon on the left toolbar

@@ -1,6 +1,8 @@
 package steps;
 
 import factory.DriverFactory;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -438,5 +440,139 @@ public class PolicyPageSteps {
         } else {
             System.out.println("Data does not displays upon clicking policy ledger tab");
         }
+    }
+
+    @When("Select Add Quote")
+    public void selectAddQuote() {
+        policyPage.Select_Add_Quote();
+    }
+
+    @And("Select product and field pet detail-Introductory Cover Cat")
+    public void selectProductAndFieldPetDetailIntroductoryCoverCat() {
+        policyPage.selectIntroductory_CatPet_Field_Detail();
+
+    }
+
+    @And("User select calculate button and select UW section table")
+    public void userSelectCalculateButtonAndSelectUWSectionTable() {
+        policyPage.calculate_UW_introductery_cat();
+    }
+
+    @And("field UW quation information")
+    public void fieldUWQuationInformation() {
+
+    }
+
+    @Then("User verify Worning message")
+    public void userVerifyWorningMessage() {
+        policyPage.worningMessageInro();
+    }
+
+    @And("Select product and field pet detail-CoverMy Breakdown Vehicle Cover European Cover Yes")
+    public void selectProductAndFieldPetDetailCoverMyBreakdownVehicleCoverEuropeanCoverYes() {
+        policyPage.Selectproductandfieldpetdetail_CoverMyBreakdownVehicleCoverEuropeanCover_Yes();
+    }
+
+    @And("User select calculate button")
+    public void userSelectCalculateButton() {
+        policyPage.userSelectCalculateButton();
+    }
+
+    @And("field UW quation information-CoverMy Breakdown Vehicle Cover European Cover Yes")
+    public void fieldUWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverYes() {
+        policyPage.UWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverYes();
+    }
+
+    @Then("User verify Worning message-CoverMy Breakdown Vehicle Cover European Cover Yes")
+    public void userVerifyWorningMessageCoverMyBreakdownVehicleCoverEuropeanCoverYes() {
+        policyPage.worningMessageInro_European_Cover_Yes();
+    }
+
+    @And("Select product and field pet detail-CoverMy Breakdown Vehicle Cover European Cover NO")
+    public void selectProductAndFieldPetDetailCoverMyBreakdownVehicleCoverEuropeanCoverNO() {
+        policyPage.Selectproductandfieldpetdetail_CoverMyBreakdownVehicleCoverEuropeanCover_No();
+    }
+
+    @And("field UW quation information-CoverMy Breakdown Vehicle Cover European Cover NO")
+    public void fieldUWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverNO() {
+        policyPage.UWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverNO();
+    }
+
+    @Then("User verify Worning message-CoverMy Breakdown Vehicle Cover European Cover No")
+    public void userVerifyWorningMessageCoverMyBreakdownVehicleCoverEuropeanCoverNo() {
+        policyPage.worningMessageInro_European_Cover_Yes();
+    }
+
+    @And("User select calculate button NO")
+    public void userSelectCalculateButtonNO() {
+        policyPage.userSelectCalculateButtonEurpNO();
+    }
+
+    @And("User field UW detail and select create policy option")
+    public void userFieldUWDetailAndSelectCreatePolicyOption() {
+        policyPage.userFieldUWDetailAndSelectCreatePolicyOption();
+    }
+
+    @Then("User verify detail Introductory Cover Cat")
+    public void userVerifyDetailIntroductoryCoverCat() {
+        policyPage. userVerifyDetailIntroductoryCoverCat();
+    }
+
+    @Then("User verify detail Introductory Cover Dog")
+    public void userVerifyDetailIntroductoryCoverDog() {
+        policyPage. userVerifyDetailIntroductoryCoverCat();
+    }
+
+    @And("Select product and field pet detail-Introductory Cover mixed-breed")
+    public void selectProductAndFieldPetDetailIntroductoryCoverMixedBreed() {
+        policyPage. selectProductAndFieldPetDetailIntroductoryCoverDogMix();
+    }
+
+    @And("User Field UW detail and select Payment Details with Cover European Cover Yes")
+    public void userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverYes() {
+        policyPage. userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverYes();
+    }
+
+    @And("User select create policy option Cover European Cover Yes")
+    public void userSelectCreatePolicyOptionCoverEuropeanCoverYes() {
+        policyPage.  userSelectCreatePolicyOptionCoverEuropeanCoverYes();
+    }
+
+    @Then("User verify create policy detail")
+    public void userVerifyCreatePolicyDetail() {
+        policyPage. userVerifyCreatePolicyDetail();
+
+    }
+
+    @And("User select Save Application option and again select Payment Details with Cover European Cover Yes")
+    public void userSelectSaveApplicationOptionAndAgainSelectPaymentDetailsWithCoverEuropeanCoverYes() {
+        policyPage. userSelectSaveApplicationOptionAndAgainSelectPaymentDetailsWithCoverEuropeanCoverYes();
+    }
+
+    @And("User Field UW detail and select Payment Details with Cover European Cover NO")
+    public void userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverNO() {
+        policyPage.userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverNO();
+
+    }
+
+    @And("User select create policy option Cover European Cover NO")
+    public void userSelectCreatePolicyOptionCoverEuropeanCoverNO() {
+        policyPage.  userSelectCreatePolicyOptionCoverEuropeanCoverYes();
+
+    }
+
+    @And("User select calculate button No")
+    public void userSelectCalculateButtonNo() {
+        policyPage. userSelectCalculateButtonNo();
+    }
+
+    @And("User select Save Application option and again select Payment Details with Cover European Cover NO")
+    public void userSelectSaveApplicationOptionAndAgainSelectPaymentDetailsWithCoverEuropeanCoverNO() {
+        policyPage.userSelectSaveApplicationOptionAndAgainSelectPaymentDetailsWithCoverEuropeanCoverYes();
+    }
+
+    @Then("User verify create policy detail with premium values")
+    public void userVerifyCreatePolicyDetailWithPremiumValues() {
+        policyPage.userVerifyCreatePolicyDetailWithPremiumValues();
     }
 }

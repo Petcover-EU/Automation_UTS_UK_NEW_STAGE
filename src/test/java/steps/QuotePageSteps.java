@@ -1,6 +1,7 @@
 package steps;
 
 import factory.DriverFactory;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -258,5 +259,147 @@ public class QuotePageSteps {
     @Then("User can edit all required field on edit quote page")
     public void user_can_edit_all_required_field_on_edit_quote_page() {
         quotePage.editQuoteDetails();
+    }
+
+    @When("Select quote Icone")
+    public void CoverMy_Pet_CatIconeSelectQuote() {
+        quotePage.CoverMy_Pet_CatIconeSelectQuote();
+
+    }
+
+    @And("User clicks on Add quote Option then select Product -CoverMy PetCat")
+    public void UserClicksOnAddQuoteOptionThenSelectProductCoverMyPetCat() {
+        quotePage.UserClicksOnAddQuoteOptionThenSelectProductCoverMyPetCat();
+
+    }
+
+    @Then("User not field all Mandatory field and select caclulate Option")
+    public void userNotFieldAllMandatoryFieldAndSelectCaclulateOption() {
+        quotePage.calculateforemptyfield();
+
+    }
+
+
+    @And("User clicks on Add quote Option then select Product -CoverMy PetDog")
+    public void userClicksOnAddQuoteOptionThenSelectProductCoverMyPetDog() {
+        quotePage.UserClicksOnAddQuoteOptionThenSelectProductCoverMyPetDog();
+
+    }
+
+    @And("User clicks on Add quote Option then select Product-Exotic Direct")
+    public void userClicksOnAddQuoteOptionThenSelectProductExoticDirect() {
+        quotePage.UserClicksOnAddQuoteOptionThenSelectProductExotic_Direct();
+    }
+
+    @And("User select Existing Client number and all client detail Autofield")
+    public void userSelectExistingClientNumberAndAllClientDetailAutofield() {
+        quotePage.AuttoselectUserDeatail();
+    }
+
+    @And("User select pet BOB currect date")
+    public void userSelectPetBOBCurrectDate() {
+        quotePage.userSelectPetBOBCurrectDate();
+
+    }
+
+    @Then("User verify worning message")
+    public void userVerifyWorningMessage() {
+        quotePage.DOBWorningMessage();
+
+    }
+
+    @And("User select pet BOB Next date")
+    public void userSelectPetBOBNextDate() {
+        quotePage.userSelectPetBOBNEXTDayDate();
+    }
+
+    @And("User select pet BOB Next Month")
+    public void userSelectPetBOBNextMonth() {
+        quotePage.userSelectPetBOBNEXTMonth();
+
+    }
+
+    @And("User select pet BOB currect date-invalid date formate")
+    public void userSelectPetBOBCurrectDateInvalidDateFormate() {
+        quotePage.userSelectPetBOBCurrectDate_invalid_date_formate();
+
+    }
+
+    @And("User select pet BOB currect date-Test box blank")
+    public void userSelectPetBOBCurrectDateTestBoxBlank() {
+        quotePage.userSelectPetBOBCurrectDate_Blanck();
+
+    }
+
+    @And("User select product and field detail CoverMy Pet Cat")
+    public void userSelectProductAndFieldDetailCoverMyPetCat() {
+        quotePage.userSelectProductAndFieldDetailCoverMyPetCat();
+    }
+
+    @And("User select plane and calculate option")
+    public void userSelectPlaneAndCalculateOption() {
+        quotePage. userSelectPlaneAndCalculateOption();
+    }
+
+    @And("User save and reopend quote")
+    public void userSaveAndReopendQuote() {
+        quotePage.userSaveAndReopendQuote();
+    }
+
+    @Then("User verify detail")
+    public void userVerifyDetail() {
+        quotePage.userVerifyDetail();
+    }
+
+    @And("User select product and field detail CoverMy Pet Dog")
+    public void userSelectProductAndFieldDetailCoverMyPetDog() {
+        quotePage.userSelectProductAndFieldDetailCoverMyPetDog();
+
+    }
+
+    @And("User select plane and calculate option CoverMy Pet Dog")
+    public void userSelectPlaneAndCalculateOptionCoverMyPetDog() {
+        quotePage.userSelectPlaneAndCalculateOptionCoverMyPetDog();
+    }
+
+    @And("User select product and field detail Introductory Cover Cat")
+    public void userSelectProductAndFieldDetailIntroductoryCoverCat() {
+
+    }
+
+    @And("User select plane and calculate option Introductory Cover Cat")
+    public void userSelectPlaneAndCalculateOptionIntroductoryCoverCat() {
+        quotePage.userSelectPlaneAndCalculateOptionIntroductoryCoverCat();
+
+    }
+
+    @And("Select product and field pet detail-Introductory Cover Dog")
+    public void selectProductAndFieldPetDetailIntroductoryCoverDog() {
+        quotePage. selectProductAndFieldPetDetailIntroductoryCoverDog();
+    }
+
+    @And("User select plane and calculate option Introductory Cover Dog")
+    public void userSelectPlaneAndCalculateOptionIntroductoryCoverDog() {
+        quotePage.userSelectPlaneAndCalculateOptionIntroductoryCoverCat();
+    }
+
+    @And("Select product and field pet detail old horse")
+    public void selectProductAndFieldPetDetailOldHorse() {
+        quotePage.selectProductAndFieldPetDetailOldHorse();
+    }
+
+    @And("User select plane and calculate option old horse")
+    public void userSelectPlaneAndCalculateOptionOldHorse() {
+        quotePage.userSelectPlaneAndCalculateOptionOldHorse();
+    }
+
+    @And("User save old horse quote")
+    public void userSaveOldHorseQuote() {
+        quotePage. userSaveOldHorseQuote();
+    }
+
+    @Then("User verify old horse detail")
+    public void userVerifyOldHorseDetail() {
+        quotePage. verifyOldHorsedatail();
     }
 }

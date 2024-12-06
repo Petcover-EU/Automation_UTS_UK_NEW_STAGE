@@ -1,9 +1,9 @@
-#Feature: Verify Admin Module Features
-#
-#  Background:
-#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-#    When User clicks on administration icon on left tool bar
-#
+Feature: Verify Admin Module Features
+
+  Background:
+    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+    When User clicks on administration icon on left tool bar
+
 #  @sanity
 #  Scenario:The Letter Templates page should open with the list of existing Letter Templates.
 #    And User clicks on letter template icon on administration page
@@ -180,6 +180,6 @@
 #    When User enters department value in to search input on manage department page
 #    And User clicks on search button on manage department page
 #    Then Respected data upon department value will display on manage department page
-#
-#
-#
+
+
+

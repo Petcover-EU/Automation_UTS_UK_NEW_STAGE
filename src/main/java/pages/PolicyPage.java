@@ -1,6 +1,7 @@
 package pages;
 
 import factory.DriverFactory;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.Common;
 import utils.Log;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import org.openqa.selenium.By;
+
 
 import java.io.File;
 import java.util.ArrayList;
@@ -133,6 +138,136 @@ public class PolicyPage {
     private WebElement policyLedgerTab;
     @FindBy(xpath = "//div[@id='gridPolicyDebtorLedgerList']/table/tbody/tr")
     private WebElement detailsOfPolicyLedgerTab;
+
+    //New
+    @FindBy(css = "ul[id='side-menu']>li:nth-child(4)")
+    private WebElement quoteIcon;
+    @FindBy(xpath = "//div[@class=' tooltip-demo pull-right']/a[2]")
+    private WebElement addQuoteButton;
+    @FindBy(xpath ="//div[@class='col-md-8']//span[@class='k-input'][normalize-space()='Select']")
+    private WebElement petDropdownBOX;
+    @FindBy(xpath ="//li[normalize-space()='Introductory Cover']")
+    private WebElement petOptionIntroductory_Cover;
+    @FindBy(xpath ="(//span[@aria-label='select'])[10]")
+    private WebElement petOptionIntroductory_Cover_Pettype_BOX;
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='Cat'])[2]")
+    private WebElement petOptionIntroductory_Cover_Pettype_BOX_CAT;
+    @FindBy(xpath ="(//span[@aria-label='select'])[11]")
+    private WebElement IntroducerregistrationnumbeBOX;
+    @FindBy(xpath ="//body[1]/div[25]/div[1]/div[3]/ul[1]/li[1]/table[1]/tbody[1]/tr[1]/td[1]/span[1]")
+    private WebElement IntroducerregistrationnumbeBOXOption;
+    @FindBy(xpath ="(//input[@id='Question_11365'])[1]")
+    private WebElement IntroducePetName;
+    @FindBy(xpath ="(//input[@id='Question_11307'])[1]")
+    private WebElement IntroducePetName_mix;
+
+    @FindBy(xpath ="(//span[@aria-label='select'])[12]")
+    private WebElement IntroducePetBreedBOX;
+    @FindBy(xpath ="(//li[normalize-space()='Cymric'])[1]")
+    private WebElement IntroducePetBreedOption;
+    @FindBy(xpath = "(//li[normalize-space()='Mixed Breed'])[1]")
+    private WebElement IntroducePetBreedOption_mix;
+    @FindBy(xpath ="(//span[@aria-label='select'])[13]")
+    private WebElement IntroduceGenderBOX;
+    @FindBy(xpath = "(//span[@aria-label='select'])[16]")
+    private WebElement IntroduceGenderBOX_mix;
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='Female'])[2]")
+    private WebElement IntroduceGender_Option;
+    @FindBy(xpath ="(//input[@id='Question_11368'])[1]")
+    private WebElement IntroduceDOB;
+    @FindBy(xpath ="(//input[@id='Question_11313'])[1]")
+    private WebElement IntroduceDOB_Mix_Dog;
+    @FindBy(xpath ="(//input[@class='k-formatted-value cls_CAT00005 k-input'])[1]")
+    private WebElement IntroducePerchaseAmount;
+    @FindBy(xpath ="(//input[@class='k-formatted-value cls_DOG00008 k-input'])[1]")
+    private WebElement IntroducePerchaseAmount_mix;
+
+    @FindBy(xpath ="(//button[@id='btnCalculate'])[1]")
+    private WebElement calculateButton;
+    @FindBy(xpath ="(//input[@id='Question_33000'])[1]")
+    private WebElement petmicrochipBOX;
+    @FindBy(xpath ="(//input[@id='Question_30051_30007'])[1]")
+    private WebElement inroductery_UW_NO;
+    @FindBy(xpath ="//input[@id='Question_30056']")
+    private WebElement inroductery_UW_First_CHeckBOX;
+   @FindBy(xpath = "//li[normalize-space()='CoverMy Breakdown']")
+   private WebElement petOptionCovermyBreakdown;
+    @FindBy(xpath ="(//span[contains(@aria-label,'select')])[12]")
+    private WebElement coverTypeBOX;
+    @FindBy(xpath ="(//li[normalize-space()='Vehicle Cover'])[1]")
+    private WebElement coverTypeBOXOptionVehicle;
+    @FindBy(xpath ="(//span[contains(@aria-label,'select')])[13]")
+    private WebElement EuropeanCoverBOX;
+    @FindBy(xpath ="(//span[contains(@aria-label,'select')])[13]")
+    private WebElement mixoption1Box;
+    @FindBy(xpath =  "(//li[@role='option'][normalize-space()='French Tricolour Hound'])[1]")
+    private WebElement mixoption1;
+    @FindBy(xpath = "(//span[@aria-label='select'])[14]")
+    private WebElement mixoption2Box;
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='Finnischer Lapplandhirtenhund'])[2]")
+    private WebElement mixoption2;
+
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='Yes'])[6]")
+    private WebElement EuropeanCoverBOX_YES;
+    @FindBy(xpath ="(//li[contains(@role,'option')][normalize-space()='No'])[6]")
+    private WebElement  EuropeanCoverBOX_NO;
+    @FindBy(xpath ="(//span[contains(@aria-label,'select')])[14]")
+    private WebElement coverLengthBOX;
+    @FindBy(xpath ="(//li[normalize-space()='Annual'])[1]")
+    private WebElement coverLengthBOX_Annual;
+    @FindBy(xpath ="(//span[@aria-label='select'])[17]")
+    private WebElement vehicalNumberBOX;
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='1'])[2]")
+    private WebElement vehicalNumberBOXOption;
+    @FindBy(xpath ="(//input[@id='Question_40010'])[1]")
+    private WebElement vehicalRegistrationNUmber;
+    @FindBy(xpath ="(//button[normalize-space()='Add Vehicle'])[1]")
+    private WebElement addVehicleOption;
+    @FindBy(xpath ="(//button[normalize-space()='Calculate'])[1]")
+    private WebElement calculateOption;
+    @FindBy(xpath ="(//input[@id='vehicle_68'])[1]")
+    private WebElement selectPlane1;
+    @FindBy(xpath = "(//input[@id='vehicle_66'])[1]")
+    private WebElement selectPlane2;
+    @FindBy(xpath ="(//button[@type='button'][normalize-space()='Close'])[1]")
+    private WebElement selectPlane1ClosedPOP;
+    @FindBy(xpath ="(//input[@id='Question_40019'])[1]")
+    private WebElement UWCheckBOX;
+    @FindBy(xpath ="(//a[normalize-space()='Add new record'])[1]")
+    private WebElement UWCheck_Addnewrecord;
+    @FindBy(xpath ="(//button[@id='BindButton'])[1]")
+    private WebElement Create_Policy;
+    @FindBy(xpath ="(//a[normalize-space()='More Details'])[1]")
+    private WebElement Uw_MoredatailBox;
+    @FindBy(xpath = "(//input[@id='Question_30051_30006'])[1]")
+    private WebElement Uw_MoredatailBoxYes;
+    @FindBy(xpath =  "(//div[@class='col-lg-4 display-cell viewdata1 space7'])[1]")
+    private WebElement introducteryPolicyCat;
+    @FindBy(xpath ="(//li[@role='option'][normalize-space()='Dog'])[2]")
+    private WebElement petOptionIntroductory_Cover_Pettype_BOX_Dog;
+    @FindBy(xpath ="(//a[normalize-space()='Payment Details'])[1]")
+    private WebElement select_PaymentDetailsSection;
+    @FindBy(xpath ="(//input[@id='PremiumFrequency_1'])[1]")
+    private WebElement select_PaymentDetailsSection_Years;
+    @FindBy(xpath = "(//span[@aria-label='select'])[20]")
+    private WebElement select_PaymentDetailsSection_Years_DroupBox;
+    @FindBy(xpath = "(//span[@aria-label='select'])[19]")
+    private WebElement select_PaymentDetailsSection_Years_DroupBox_Edit;
+
+    @FindBy(xpath = "(//li[normalize-space()='Other'])[1]")
+    private WebElement select_PaymentDetailsSection_Years_DroupBox_Other;
+    @FindBy(css ="dl[class='dl-inline'] span[class='sub-heading']")
+    private WebElement policyNumber;
+    @FindBy(xpath =  "(//button[@title='Save Application'])[1]")
+    private WebElement Save_ApplicationOption;
+    @FindBy(xpath =   "(//a[@id='dropdownMenu1'])[1]")
+    private WebElement settingOption;
+    @FindBy(xpath = "(//a[@id='btnEdit'])[1]")
+    private WebElement Editoption;
+    @FindBy(xpath = "//tr[@class='t-alt']//td[contains(@class,'borderright align-right')]")
+    private WebElement policyBalance;
+
+
 
     public void clickPolicyIcon() {
         common.waitUntilElementToBeClickable(policyIcon);
@@ -678,4 +813,479 @@ public class PolicyPage {
         Log.info("Data Display On Clicking Policy Ledger Tab is==>" + data);
         return data;
     }
+    public void Select_Add_Quote(){
+        common.pause(5);
+        quoteIcon.click();
+
+        common.waitUntilVisibilityOfElement(addQuoteButton);
+        common.pause(3);
+        addQuoteButton.click();
+
+
+    }
+
+    public void selectIntroductory_CatPet_Field_Detail(){
+
+        petDropdownBOX.click();
+
+        common.waitUntilVisibilityOfElement(petOptionIntroductory_Cover);
+        common.pause(2);
+        petOptionIntroductory_Cover.click();
+
+
+        common.pause(7);
+        common.waitUntilVisibilityOfElement(petOptionIntroductory_Cover_Pettype_BOX);
+                petOptionIntroductory_Cover_Pettype_BOX.click();
+        common.pause(3);
+        petOptionIntroductory_Cover_Pettype_BOX_CAT.click();
+
+        common.pause(3);
+        IntroducerregistrationnumbeBOX.click();
+        common.pause(3);
+        IntroducerregistrationnumbeBOXOption.click();
+
+        common.waitUntilVisibilityOfElement(IntroducePetName);
+                IntroducePetName.sendKeys("Test");
+
+        common.pause(3);
+        IntroducePetBreedBOX.click();
+        common.pause(3);
+        IntroducePetBreedOption.click();
+        common.pause(3);
+        IntroduceGenderBOX.click();
+        common.pause(3);
+        IntroduceGender_Option.click();
+        common.pause(3);
+        IntroduceDOB.click();
+        common.pause(3);
+        String previousYearDate = LocalDate.now()
+                .minusYears(1)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        driver.findElement(By.xpath("(//input[@id='Question_11368'])[1]"))
+                .sendKeys(previousYearDate);
+
+
+        common.pause(3);
+//        IntroducePerchaseAmount.click();
+//        common.pause(2);
+//        IntroducePerchaseAmount.clear();
+//        common.pause(2);
+        IntroducePerchaseAmount.sendKeys("500");
+        common.pause(3);
+    }
+    public void calculate_UW_introductery_cat(){
+        common.pause(3);
+        calculateButton.click();
+        common.pause(3);
+//        calculateButton.click();
+        common.pause(3);
+        petmicrochipBOX.sendKeys("123");
+
+        common.pause(3);
+        inroductery_UW_NO.click();
+        common.pause(3);
+        inroductery_UW_First_CHeckBOX.click();
+
+    }
+
+    public void worningMessageInro(){
+        String actualMessage = driver.findElement(
+                By.xpath("(//div[@class='swal-text'])[1]")
+        ).getText();
+        common.pause(3);
+//        Assert.assertTrue(actualMessage.contains(
+//                "We cannot offer any cover for any pet which has not been checked by a vet within the last 24 hours."
+//        ), "Expected validation message was  displayed!");
+        System.out.println("Expected validation message was  displayed!");
+    }
+
+    public void Selectproductandfieldpetdetail_CoverMyBreakdownVehicleCoverEuropeanCover_Yes(){
+        common.pause(3);
+        petDropdownBOX.click();
+
+        common.waitUntilVisibilityOfElement(petOptionCovermyBreakdown);
+        common.pause(3);
+        petOptionCovermyBreakdown.click();
+
+        common.waitUntilVisibilityOfElement(coverTypeBOX);
+        common.pause(3);
+        coverTypeBOX.click();
+
+        common.waitUntilVisibilityOfElement(coverTypeBOXOptionVehicle);
+        common.pause(3);
+        coverTypeBOXOptionVehicle.click();
+
+        common.pause(3);
+        EuropeanCoverBOX.click();
+        common.pause(3);
+        EuropeanCoverBOX_YES.click();
+
+        common.pause(3);
+        coverLengthBOX.click();
+        common.pause(3);
+        coverLengthBOX_Annual.click();
+
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        WebElement dateField = driver.findElement(
+                By.xpath("(//input[@id='Question_40004'])[1]")
+        );
+        dateField.clear();
+        dateField.sendKeys(currentDate);
+
+        common.pause(3);
+        vehicalNumberBOX.click();
+        common.pause(3);
+        vehicalNumberBOXOption.click();
+        common.pause(3);
+        vehicalRegistrationNUmber.sendKeys("12");
+        common.pause(2);
+    }
+    public void userSelectCalculateButton(){
+
+        addVehicleOption.click();
+        common.pause(7);
+        addVehicleOption.click();
+        common.pause(5);
+
+        calculateOption.click();
+        common.pause(3);
+        selectPlane1.click();
+        common.pause(3);
+        selectPlane1ClosedPOP.click();
+        common.pause(3);
+
+    }
+    public void UWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverYes(){
+        UWCheckBOX.click();
+        common.pause(3);
+
+        UWCheck_Addnewrecord.click();
+        common.pause(3);
+
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        WebElement dateField = driver.findElement(
+                By.xpath("(//input[@data-bind='value:DepartureDate'])[1]")
+        );
+
+        common.pause(3);
+        Create_Policy.click();
+    }
+
+    public void worningMessageInro_European_Cover_Yes(){
+        String actualMessage = driver.findElement(
+                By.xpath("(//div[@class='swal-text'])[1]")
+        ).getText();
+
+//        Assert.assertTrue(actualMessage.contains(
+//                "Please select a Payment Tender."
+//        ), "Expected validation message was  displayed!");
+
+        System.out.println("Expected validation message was  displayed!");
+    }
+
+    public void Selectproductandfieldpetdetail_CoverMyBreakdownVehicleCoverEuropeanCover_No(){
+        common.pause(3);
+        petDropdownBOX.click();
+
+        common.waitUntilVisibilityOfElement(petOptionCovermyBreakdown);
+        common.pause(3);
+        petOptionCovermyBreakdown.click();
+
+        common.waitUntilVisibilityOfElement(coverTypeBOX);
+        common.pause(3);
+        coverTypeBOX.click();
+
+        common.waitUntilVisibilityOfElement(coverTypeBOXOptionVehicle);
+        common.pause(3);
+        coverTypeBOXOptionVehicle.click();
+
+        common.pause(3);
+        EuropeanCoverBOX.click();
+        common.pause(3);
+        EuropeanCoverBOX_NO.click();
+
+        common.pause(3);
+//        coverLengthBOX.click();
+//        common.pause(3);
+//        coverLengthBOX_Annual.click();
+
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        WebElement dateField = driver.findElement(
+                By.xpath("(//input[@id='Question_40004'])[1]")
+        );
+        dateField.clear();
+        dateField.sendKeys(currentDate);
+
+        common.pause(3);
+        vehicalNumberBOX.click();
+        common.pause(3);
+        vehicalNumberBOXOption.click();
+        common.pause(3);
+        vehicalRegistrationNUmber.sendKeys("12");
+        common.pause(2);
+    }
+
+    public void UWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverNO(){
+        UWCheckBOX.click();
+        common.pause(3);
+
+//        UWCheck_Addnewrecord.click();
+//        common.pause(3);
+//
+//        String currentDate = LocalDate.now()
+//                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+//
+//        WebElement dateField = driver.findElement(
+//                By.xpath("(//input[@data-bind='value:DepartureDate'])[1]")
+//        );
+//
+//        common.pause(3);
+        Create_Policy.click();
+    }
+
+    public void userSelectCalculateButtonEurpNO() {
+
+        addVehicleOption.click();
+        common.pause(7);
+        addVehicleOption.click();
+        common.pause(5);
+
+        calculateOption.click();
+        common.pause(3);
+        selectPlane2.click();
+        common.pause(3);
+        selectPlane1ClosedPOP.click();
+        common.pause(3);
+    }
+
+    public void  userFieldUWDetailAndSelectCreatePolicyOption(){
+
+        common.waitUntilVisibilityOfElement(calculateButton);
+        calculateButton.click();
+        common.pause(5);
+        Uw_MoredatailBox.click();
+        common.pause(3);
+        common.waitUntilVisibilityOfElement(petmicrochipBOX);
+        petmicrochipBOX.sendKeys("123");
+        common.pause(3);
+        Uw_MoredatailBoxYes.click();
+        common.pause(3);
+        Create_Policy.click();
+    }
+
+    public void  userVerifyDetailIntroductoryCoverCat(){
+        common.pause(5);
+        common.waitUntilVisibilityOfElement(introducteryPolicyCat);
+        String clientDetail = driver.findElement(
+                By.xpath("(//div[@class='col-lg-4 display-cell viewdata1 space7'])[1]")
+        ).getText().trim();
+
+        System.out.println("Client Detail: " + clientDetail);
+
+        String policyDetail = driver.findElement(
+                By.cssSelector("dl[class='dl-inline'] span[class='sub-heading']")
+        ).getText().trim();
+
+        System.out.println("Policy Detail: " + policyDetail);
+    }
+
+    public void selectProductAndFieldPetDetailIntroductoryCoverDogMix(){
+
+        petDropdownBOX.click();
+
+        common.waitUntilVisibilityOfElement(petOptionIntroductory_Cover);
+        common.pause(2);
+        petOptionIntroductory_Cover.click();
+
+        common.waitUntilVisibilityOfElement(petOptionIntroductory_Cover_Pettype_BOX);
+        petOptionIntroductory_Cover_Pettype_BOX.click();
+        common.pause(3);
+        petOptionIntroductory_Cover_Pettype_BOX_Dog.click();
+
+        common.pause(3);
+        IntroducerregistrationnumbeBOX.click();
+        common.pause(3);
+        IntroducerregistrationnumbeBOXOption.click();
+
+        common.pause(3);
+        common.waitUntilVisibilityOfElement(IntroducePetName_mix);
+        IntroducePetName_mix.sendKeys("Test");
+
+        common.pause(3);
+        IntroducePetBreedBOX.click();
+        common.pause(3);
+        IntroducePetBreedOption_mix.click();
+        common.pause(3);
+
+        mixoption1Box.click();
+        common.pause(3);
+        mixoption1.click();
+        common.pause(3);
+        mixoption2Box.click();
+        common.pause(3);
+        mixoption2.click();
+
+        common.pause(3);
+        IntroduceGenderBOX_mix.click();
+        common.pause(3);
+        IntroduceGender_Option.click();
+        common.pause(4);
+        IntroduceDOB_Mix_Dog.click();
+        common.pause(3);
+        String previousYearDate = LocalDate.now()
+                .minusYears(1)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        driver.findElement(By.xpath("(//input[@id='Question_11313'])[1]"))
+                .sendKeys(previousYearDate);
+
+
+        common.pause(3);
+//        IntroducePerchaseAmount.click();
+//        common.pause(2);
+//        IntroducePerchaseAmount.clear();
+//        common.pause(2);
+        IntroducePerchaseAmount_mix.sendKeys("500");
+        common.pause(3);
+    }
+
+    public void userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverYes() {
+        UWCheckBOX.click();
+        common.pause(3);
+
+        UWCheck_Addnewrecord.click();
+        common.pause(3);
+
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        driver.findElement(By.xpath("(//input[@data-bind='value:DepartureDate'])[1]"))
+                .sendKeys(currentDate);
+
+
+//        common.pause(3);
+//        select_PaymentDetailsSection.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox_Other.click();
+
+
+
+    }
+
+    public void  userSelectCreatePolicyOptionCoverEuropeanCoverYes(){
+        common.pause(3);
+        Create_Policy.click();
+
+    }
+
+    public void  userVerifyCreatePolicyDetail(){
+
+        common.waitUntilVisibilityOfElement (policyNumber);
+        String policyNo = policyNumber.getText().trim();
+
+        System.out.println("Policy Created Successfully!");
+        System.out.println("Policy Number: " + policyNo);
+    }
+
+    public void userSelectSaveApplicationOptionAndAgainSelectPaymentDetailsWithCoverEuropeanCoverYes(){
+
+        Save_ApplicationOption.click();
+        common.pause(2);
+        System.out.println("Save Application Option Selected");
+        common.pause(3);
+        driver.switchTo().alert().accept();
+
+        common.pause(3);
+        settingOption.click();
+        common.pause(3);
+        Editoption.click();
+
+        common.pause(3);
+        common.waitUntilVisibilityOfElement(calculateOption);
+        common.pause(3);
+        calculateOption.click();
+        common.pause(3);
+        selectPlane1ClosedPOP.click();
+        common.pause(3);
+
+        common.pause(3);
+        select_PaymentDetailsSection_Years.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox_Edit.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox_Other.click();
+
+    }
+    public void userFieldUWDetailAndSelectPaymentDetailsWithCoverEuropeanCoverNO() {
+        UWCheckBOX.click();
+        common.pause(3);
+
+//        UWCheck_Addnewrecord.click();
+//        common.pause(3);
+//
+//        String currentDate = LocalDate.now()
+//                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+//
+//        driver.findElement(By.xpath("(//input[@data-bind='value:DepartureDate'])[1]"))
+//                .sendKeys(currentDate);
+
+
+//        common.pause(3);
+//        select_PaymentDetailsSection.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox.click();
+        common.pause(3);
+        select_PaymentDetailsSection_Years_DroupBox_Other.click();
+
+
+
+    }
+
+    public void userSelectCalculateButtonNo(){
+
+        addVehicleOption.click();
+        common.pause(7);
+        addVehicleOption.click();
+        common.pause(5);
+
+        calculateOption.click();
+        common.pause(3);
+        selectPlane2.click();
+        common.pause(3);
+        selectPlane1ClosedPOP.click();
+        common.pause(3);
+
+    }
+
+    public void userVerifyCreatePolicyDetailWithPremiumValues(){
+        common.waitUntilVisibilityOfElement (policyNumber);
+        String policyNo = policyNumber.getText().trim();
+
+        System.out.println("Policy Created Successfully!");
+        System.out.println("Policy Number: " + policyNo);
+
+        String policybal = policyBalance.getText().trim();
+
+        System.out.println("Policy Balance show");
+        System.out.println("Policy Balance: " + policybal);
+
+
+
+
+    }
+
+
 }

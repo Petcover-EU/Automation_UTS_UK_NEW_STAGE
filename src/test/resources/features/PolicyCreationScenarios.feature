@@ -1,11 +1,11 @@
-#Feature: Verify the policy creation of the different product
-#
-#  Background:
-#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-#    When User clicks on quote icon on left tool bar
-#
-#    #    Policy creation for Exotic  -> 31 policies
-#
+Feature: Verify the policy creation of the different product
+
+  Background:
+    Given User should log in with username "sa" and password "H2T~w1£4tG#i" to the admin panel
+    When User clicks on quote icon on left tool bar
+
+    #    Policy creation for Exotic  -> 31 policies
+
 #  @regression
 #  Scenario: Verify the Quote and Policy creation for Exotic products with different combinations of plan
 #    When User clicks add quote button on manage quote page
