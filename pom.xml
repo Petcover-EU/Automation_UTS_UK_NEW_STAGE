@@ -10,10 +10,11 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
         <junit.version>4.13.1</junit.version>
         <testng.version>7.9.0</testng.version>
         <cucumber.version>6.9.0</cucumber.version>
-        <maven.compiler.version>3.8.1</maven.compiler.version>
+
         <maven.surefire.version>3.2.5</maven.surefire.version>
         <environment>UTS-UK2-Stage</environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -172,6 +173,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
+                    <release>17</release>
 
                     <annotationProcessorPaths>
                         <path>
@@ -180,7 +182,6 @@
                             <version>1.18.30</version>
                         </path>
                     </annotationProcessorPaths>
-
                 </configuration>
             </plugin>
 
