@@ -1,8 +1,8 @@
-Feature: Verify the policy creation of the different product
-
-  Background:
-    Given User should log in with username "sa" and password "H2T~w1£4tG#i" to the admin panel
-    When User clicks on quote icon on left tool bar
+#Feature: Verify the policy creation of the different product
+#
+#  Background:
+#    Given User should log in with username "sa" and password "H2T~w1£4tG#i" to the admin panel
+#    When User clicks on quote icon on left tool bar
 
     #    Policy creation for Exotic  -> 31 policies
 

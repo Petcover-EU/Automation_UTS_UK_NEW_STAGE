@@ -1,7 +1,7 @@
-Feature: Verify DashBoard Items
-
-  Background:
-    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+#Feature: Verify DashBoard Items
+#
+#  Background:
+#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
 
 #  @sanity
 #  Scenario: Verify Client,Quote,Policy,Claim details on dash board page

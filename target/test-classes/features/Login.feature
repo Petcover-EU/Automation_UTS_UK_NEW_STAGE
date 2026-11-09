@@ -1,7 +1,7 @@
-Feature:Login To Admin Panel
-
-  Background:
-    Given User is one the website login page
+#Feature:Login To Admin Panel
+#
+#  Background:
+#    Given User is one the website login page
 
 #  @smoke
 #  Scenario: Verify Login event

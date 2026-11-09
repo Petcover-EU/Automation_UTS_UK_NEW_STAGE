@@ -19,7 +19,7 @@
 #    And Click on the cog icon on the policy information page and add claim and settle the claim with EFT payment
 #    And Renew the policy and verify the policy status
 #    And Cancel the policy and verify the policy status
-#
+##
 #  @end-to-end
 #  Scenario: Verify the end to end scenario of the Cat
 #    Given Add quote and Enter the client details for cat

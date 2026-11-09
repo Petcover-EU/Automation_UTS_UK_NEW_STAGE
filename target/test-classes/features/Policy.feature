@@ -194,7 +194,7 @@ Feature: Verify Policy Module Features
 
   ##NEW
 
-  @sanity
+  @stage
   Scenario:Verify a negative underwriting confirmation does not allow silent policy creation-Introductory Cover / Cat.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -204,7 +204,7 @@ Feature: Verify Policy Module Features
     Then User verify Worning message
 
 
-  @sanity
+  @stage
   Scenario: Verify payment validation prevents policy creation when required tender details are missing-CoverMy Breakdown / Vehicle Cover / European Cover Yes.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -213,7 +213,7 @@ Feature: Verify Policy Module Features
   And field UW quation information-CoverMy Breakdown Vehicle Cover European Cover Yes
     Then User verify Worning message-CoverMy Breakdown Vehicle Cover European Cover Yes
 
-  @sanity
+  @stage
   Scenario:Verify payment validation prevents policy creation when required tender details are missing-CoverMy Breakdown / Vehicle Cover / European Cover NO.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -223,7 +223,7 @@ Feature: Verify Policy Module Features
     Then User verify Worning message-CoverMy Breakdown Vehicle Cover European Cover No
 
     ##NewCode
-  @sanity
+  @stage
   Scenario:Verify the complete journey from quote creation to policy creation Introductory Cover Cat
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -233,7 +233,7 @@ Feature: Verify Policy Module Features
     And User field UW detail and select create policy option
     Then User verify detail Introductory Cover Cat
 
-  @sanity
+  @stage
   Scenario: Verify the complete journey from quote creation to policy creation Introductory Cover Dog Pedigree
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -243,7 +243,7 @@ Feature: Verify Policy Module Features
     And User field UW detail and select create policy option
     Then User verify detail Introductory Cover Dog
 
-  @sanity
+  @stage
   Scenario: Verify the complete journey from quote creation to policy creation Introductory Cover Dog mixed-breed
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -253,7 +253,7 @@ Feature: Verify Policy Module Features
     And User field UW detail and select create policy option
     Then User verify detail Introductory Cover Dog
 
-  @sanity
+  @stage
   Scenario:Verify the complete quote-to-policy journey for CoverMy Breakdown Vehicle Cover with European Cover enabled.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -263,7 +263,7 @@ Feature: Verify Policy Module Features
     And User select create policy option Cover European Cover Yes
     Then User verify create policy detail
 
-  @sanity
+  @stage
   Scenario:Verify the complete quote-to-policy journey for CoverMy Breakdown Vehicle Cover with European Cover enabled with Save Application
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -274,7 +274,7 @@ Feature: Verify Policy Module Features
     And User select create policy option Cover European Cover Yes
     Then User verify create policy detail
 
-  @sanity
+  @stage
   Scenario:Verify the complete quote-to-policy journey for CoverMy Breakdown Vehicle Cover with European Cover No.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -285,7 +285,7 @@ Feature: Verify Policy Module Features
     Then User verify create policy detail
 
 
-  @sanity
+  @stage
   Scenario:Verify the complete quote-to-policy journey for CoverMy Breakdown Vehicle Cover with European Cover enabled with Save Application
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -297,7 +297,7 @@ Feature: Verify Policy Module Features
    Then User verify create policy detail
 
 
- @sanity
+  @stage
   Scenario:Verify the complete quote-to-policy journey for CoverMy Breakdown Vehicle Cover with European Cover No with premium values verify.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield

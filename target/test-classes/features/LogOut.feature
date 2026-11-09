@@ -1,7 +1,7 @@
-Feature: Verify Log out functionality
-
-  Background:
-    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+#Feature: Verify Log out functionality
+#
+#  Background:
+#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
 
 #  @sanity
 #  Scenario: Verify log out feature of system

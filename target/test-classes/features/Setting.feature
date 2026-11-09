@@ -1,8 +1,8 @@
-Feature: Verify Setting Module Features
-
-  Background:
-    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-    When User clicks on look up values icon on left tool bar
+#Feature: Verify Setting Module Features
+#
+#  Background:
+#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+#    When User clicks on look up values icon on left tool bar
 
 #  @sanity
 #  Scenario: All hyperlinks with icons on setting page should work

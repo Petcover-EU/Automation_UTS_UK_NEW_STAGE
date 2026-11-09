@@ -121,19 +121,19 @@ Feature: Verify Quote Module Features
 ##    Then User can edit all required field on edit quote page
 
   ## New Code
-  @sanity
+  @stage
   Scenario:Verify that required client and pet fields are validated when left blank-CoverMy Pet /Cat.
     When Select quote Icone
     And User clicks on Add quote Option then select Product -CoverMy PetCat
     Then User not field all Mandatory field and select caclulate Option
 
-  @sanity
+  @stage
   Scenario: Verify that required client and pet fields are validated when left blank-CoverMy Pet /Dog.
     When Select quote Icone
     And User clicks on Add quote Option then select Product -CoverMy PetDog
     Then User not field all Mandatory field and select caclulate Option
 
-  @sanity
+  @stage
   Scenario: Confirm a past date is accepted and eligibility is assessed correctly-Enter Current Date-Exotic Direct.
     When Select quote Icone
     And User clicks on Add quote Option then select Product-Exotic Direct
@@ -142,14 +142,15 @@ Feature: Verify Quote Module Features
     Then User verify worning message
 
 
-  @sanity
+  @stage
   Scenario:Verify that a future birth/hatch date is rejected-Exotic Direct.
     When Select quote Icone
     And User clicks on Add quote Option then select Product-Exotic Direct
     And User select Existing Client number and all client detail Autofield
     And User select pet BOB Next date
     Then User verify worning message
-  @sanity
+
+  @stage
   Scenario: Verify consistent rejection of a date several months in the future-Exotic Direct.
     When Select quote Icone
     And User clicks on Add quote Option then select Product-Exotic Direct
@@ -158,14 +159,15 @@ Feature: Verify Quote Module Features
     Then User verify worning message
 
 
-  @sanity
+  @stage
   Scenario: Ensure an invalid date is rejected-Enter invalid date formate-Exotic Direct.
     When Select quote Icone
     And User clicks on Add quote Option then select Product-Exotic Direct
     And User select Existing Client number and all client detail Autofield
     And User select pet BOB currect date-invalid date formate
     Then User verify worning message
-  @sanity
+
+  @stage
   Scenario:Verify required-field validation.-Date test box blank-Exotic Direct
     When Select quote Icone
     And User clicks on Add quote Option then select Product-Exotic Direct
@@ -175,7 +177,7 @@ Feature: Verify Quote Module Features
 
     ###New create
 
-  @sanity
+  @stage
   Scenario:Verify that a quote can be saved and reopened with its previously entered data-CoverMy Pet /Cat.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -184,7 +186,7 @@ Feature: Verify Quote Module Features
     And User save and reopend quote
     Then User verify detail
 
-   @sanity
+  @stage
   Scenario: Verify that a quote can be saved and reopened with its previously entered data - CoverMy Pet Dog
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -193,7 +195,7 @@ Feature: Verify Quote Module Features
     And User save and reopend quote
     Then User verify detail
 
-  @sanity
+  @stage
   Scenario:Verify that a quote can be saved and reopened with its previously entered data -Introductory Cover Cat
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -202,7 +204,7 @@ Feature: Verify Quote Module Features
     And User save and reopend quote
     Then User verify detail
 
-  @sanity
+  @stage
   Scenario:Verify that a quote can be saved and reopened with its previously entered data -Introductory Cover Dog
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -211,7 +213,7 @@ Feature: Verify Quote Module Features
     And User save and reopend quote
     Then User verify detail
 
-  @sanity
+  @stage
   Scenario: Verify old horse save quote after successful calculation behaviour across the Old Horse quote journey.
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield

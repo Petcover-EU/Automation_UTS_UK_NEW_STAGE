@@ -14,6 +14,7 @@ import utils.Log;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 
 
 import java.io.File;
@@ -221,6 +222,16 @@ public class PolicyPage {
     private WebElement vehicalNumberBOXOption;
     @FindBy(xpath ="(//input[@id='Question_40010'])[1]")
     private WebElement vehicalRegistrationNUmber;
+    @FindBy(xpath = "(//input[@id='Question_40011'])[1]")
+    private WebElement Vehicle_Manufacturer;
+    @FindBy(xpath ="(//input[@id='Question_40012'])[1]")
+    private WebElement Vehicle_Model;
+    @FindBy(xpath ="//input[@id='Question_40013']")
+    private WebElement Date_of_Registration;
+
+
+    @FindBy(xpath ="(//a[normalize-space()='Delete'])[1]")
+    private WebElement Delete_Button;
     @FindBy(xpath ="(//button[normalize-space()='Add Vehicle'])[1]")
     private WebElement addVehicleOption;
     @FindBy(xpath ="(//button[normalize-space()='Calculate'])[1]")
@@ -266,6 +277,8 @@ public class PolicyPage {
     private WebElement Editoption;
     @FindBy(xpath = "//tr[@class='t-alt']//td[contains(@class,'borderright align-right')]")
     private WebElement policyBalance;
+    @FindBy(xpath = "(//input[@id='Question_40013'])[1]")
+    private WebElement registrationDate;
 
 
 
@@ -942,15 +955,54 @@ public class PolicyPage {
         common.pause(3);
         vehicalRegistrationNUmber.sendKeys("12");
         common.pause(2);
+        Vehicle_Manufacturer.sendKeys("Test");
+        common.pause(3);
+        Vehicle_Model.sendKeys("new");
+        common.pause(3);
+        Date_of_Registration.click();
+        String pastDate = LocalDate.now()
+                .minusDays(3)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        registrationDate.clear();
+        registrationDate.sendKeys(pastDate);
+        common.pause(3);
+        System.out.println("Registration Date entered: " + pastDate);
+
     }
     public void userSelectCalculateButton(){
+ //      common.pause(3);
 
-        addVehicleOption.click();
+//        addVehicleOption.click();
         common.pause(7);
         addVehicleOption.click();
         common.pause(5);
-
         calculateOption.click();
+//        common.pause(3);
+//        driver.switchTo().alert().accept();
+//        common.pause(3);
+//
+//        Delete_Button.click();
+//        common.pause(3);
+//        vehicalRegistrationNUmber.sendKeys("12");
+//        common.pause(2);
+//        Vehicle_Manufacturer.sendKeys("Test");
+//        common.pause(3);
+//        Vehicle_Model.sendKeys("new");
+//        common.pause(3);
+//        Date_of_Registration.click();
+//
+//        String currentDate = LocalDate.now()
+//                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+//
+//        registrationDate.clear();
+//        registrationDate.sendKeys(currentDate);
+//
+//        System.out.println("Current Registration Date entered: " + currentDate);
+//        common.pause(3);
+//        addVehicleOption.click();
+//        common.pause(3);
+//        calculateOption.click();
         common.pause(3);
         selectPlane1.click();
         common.pause(3);
@@ -1030,6 +1082,20 @@ public class PolicyPage {
         common.pause(3);
         vehicalRegistrationNUmber.sendKeys("12");
         common.pause(2);
+        Vehicle_Manufacturer.sendKeys("Test");
+        common.pause(3);
+        Vehicle_Model.sendKeys("new");
+        common.pause(3);
+        Date_of_Registration.click();
+        String pastDate = LocalDate.now()
+                .minusDays(3)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        registrationDate.clear();
+        registrationDate.sendKeys(pastDate);
+        common.pause(3);
+        System.out.println("Registration Date entered: " + pastDate);
+        common.pause(3);
     }
 
     public void UWQuationInformationCoverMyBreakdownVehicleCoverEuropeanCoverNO(){

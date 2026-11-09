@@ -1,8 +1,8 @@
-Feature: Verify Task Module Features
-
-  Background:
-    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-    When User clicks on task icon on left tool bar
+#Feature: Verify Task Module Features
+#
+#  Background:
+#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+#    When User clicks on task icon on left tool bar
 
 #  @sanity
 #  Scenario: User will redirect to manage task page after clicking on task icon on left tool bar

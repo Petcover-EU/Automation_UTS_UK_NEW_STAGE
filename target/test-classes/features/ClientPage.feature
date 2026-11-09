@@ -1,9 +1,9 @@
-Feature:  Verify Client Module Features
-
-
-  Background:
-    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-    When User clicks on client icon on left tool bar
+#Feature:  Verify Client Module Features
+#
+#
+#  Background:
+#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
+#    When User clicks on client icon on left tool bar
 
 #  @sanity
 #  Scenario:Ensure that the Manage Client page displays list of client data after clicking on client icon on left tool bar

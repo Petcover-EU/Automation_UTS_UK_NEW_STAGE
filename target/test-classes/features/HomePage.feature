@@ -1,7 +1,7 @@
-Feature:Launched Page Verification by displayed text
-
-  Background:
-    Given User is one the website login page
+#Feature:Launched Page Verification by displayed text
+#
+#  Background:
+#    Given User is one the website login page
 
 #  @sanity
 #  Scenario: Check displayed text on homepage
