@@ -194,7 +194,7 @@
                         <environment>${environment}</environment>
                     </systemPropertyVariables>
                     <includes>
-                        <include>**/HomePage.java</include>
+                        <include>**/HomePageRunner.java</include>
                     </includes>
                     <parallel>methods</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
