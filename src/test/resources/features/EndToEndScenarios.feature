@@ -138,7 +138,7 @@ Feature: Verify the End To End scenarios
 
 ###New code
   ## Introductory Cover(Cat)
-  @end-to-end
+  @stage
   Scenario: Verify the end to end scenario of the Introductory Cover Cat
     When Select Add Quote
     And User select Existing Client number and all client detail Autofield
@@ -152,7 +152,7 @@ Feature: Verify the End To End scenarios
    And Cancel the policy and verify the policy status Introductory Cover
 
 ## Introductory Cover(Dog)
-#  @end-to-end
+#   @stage
 #  Scenario: Verify the end to end scenario of the Introductory Cover Dog
 #    When Select Add Quote
 #    And User select Existing Client number and all client detail Autofield
@@ -166,7 +166,7 @@ Feature: Verify the End To End scenarios
 #    And Cancel the policy and verify the policy status Introductory Cover
 
  ##CoverMy Pet -cat
-#  @end-to-end
+#   @stage
 #  Scenario: Verify the end to end scenario of the CoverMy Pet Cat
 #    When Select Add Quote
 #    And User select Existing Client number and all client detail Autofield CoverMy Pet Cat

@@ -198,7 +198,7 @@
                     </includes>
                     <parallel>methods</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
-                    <groups>Stage,end-to-end</groups>
+                    <groups>Stage</groups>
                     <!-- exclude tags -->
                     <excludedGroups>slow</excludedGroups>
                 </configuration>
