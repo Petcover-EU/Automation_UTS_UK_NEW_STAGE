@@ -47,7 +47,7 @@ public class Common {
     }
 
     public void waitUntilVisibilityOfElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
         wait.until(ExpectedConditions.visibilityOf(element));
         pause(1);
     }

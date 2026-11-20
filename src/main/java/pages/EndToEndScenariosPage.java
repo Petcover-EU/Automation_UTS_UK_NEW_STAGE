@@ -13,6 +13,27 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import utils.Common;
 import utils.Log;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.Duration;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
 
 import java.util.List;
 
@@ -510,6 +531,443 @@ public class EndToEndScenariosPage {
     private WebElement horseTrailerAndDrawnVehiclePlanCheckbox;
     @FindBy(xpath = "//input[@id='HorseTrailersorHorseDrawnVehiclesValue']//..//input[1]")
     private WebElement horseTrailerAndDrawnVehicleMarketValueInput;
+    @FindBy(css = "dl[class='dl-inline'] span[class='sub-heading']")
+    private WebElement policyNumber;
+    @FindBy(xpath = "//input[@id='PolicyNumber']")
+    private WebElement policyNumberTextBox;
+    @FindBy(xpath ="//a[@href='/Policy']")
+    private WebElement policyIconeOption;
+    @FindBy(xpath ="(//i[@class='fa fa-search'])[1]")
+    private WebElement policySearchButton;
+    @FindBy(xpath ="//a[contains(@href,'/Policy/Detail/') and contains(normalize-space(),'TEST-00065-')]")
+    private WebElement policySelect;
+    @FindBy(xpath ="(//a[contains(@href,'/Policy/Detail/')])[1]")
+    private WebElement policySelect_new;
+    @FindBy(xpath ="(//a[@id='dropdownMenu1'])[1]")
+    private WebElement settingButton;
+    @FindBy(xpath ="(//a[@id='btnAddClaims'])[1]")
+    private WebElement addClaimButton;
+    @FindBy(xpath = "(//input[@id='DateOfLoss'])[1]")
+    private WebElement treatmentDate;
+    @FindBy(xpath = "(//input[@id='NotifiedDate'])[1]")
+    private WebElement dateClaimFirstAdvised;
+    @FindBy(xpath = "(//input[@id='ManifestationDate'])[1]")
+    private WebElement manifestationDate;
+    @FindBy(xpath = "(//span[@class='k-input'][normalize-space()='Select'])[2]")
+    private WebElement coverCheckBox;
+    @FindBy(xpath = "(//li[@role='option'][normalize-space()='Veterinary Fees'])[9]")
+    private WebElement coverCheckBoxOption;
+    @FindBy(xpath = "(//span[@aria-label='select'])[24]")
+    private WebElement notifiedMethodCheckBox;
+    @FindBy(xpath = "(//li[normalize-space()='Email'])[1]")
+    private WebElement notifiedMethodCheckBoxOption;
+    @FindBy(xpath = "(//span[@aria-label='select'])[26]")
+    private WebElement paymentToCheckBox;
+    @FindBy(xpath = "(//li[@role='option'][normalize-space()='Other'])[1]")
+    private WebElement paymentToCheckBoxOption;
+    @FindBy(xpath = "//input[@id='DirectDebitAccountName']")
+    private WebElement accountName;
+
+    @FindBy(xpath = "(//input[@id='DirectDebitAccountNumber'])[1]")
+    private WebElement accountNumber;
+
+    @FindBy(xpath = "(//input[@id='DirectDebitSortCode'])[1]")
+    private WebElement sortCode;
+
+    @FindBy(xpath = "(//input[@id='ThirdPartyEmailAddress'])[1]")
+    private WebElement emailAddress;
+
+    @FindBy(xpath = "(//input[@id='PaymentDetail'])[1]")
+    private WebElement paymentDetail;
+
+    // Condition Type
+    @FindBy(xpath = "//div[@class='col-md-3']//span[@aria-label='select']")
+    private WebElement conditionTypeCheckBox;
+
+    @FindBy(xpath = "(//li[normalize-space()='Illness'])[1]")
+    private WebElement conditionTypeIllness;
+
+    // Loss Cause
+    @FindBy(xpath = "//div[@class='col-md-8']//span[@aria-label='select']")
+    private WebElement lossCauseCheckBox;
+
+    @FindBy(xpath = "//span[normalize-space()='2.2']")
+    private WebElement lossCauseCheckBoxOption;
+
+    // Claim Total
+    @FindBy(xpath = "(//input[@role='spinbutton'])[9]")
+    private WebElement claimTotal;
+
+    // Save Claim
+    @FindBy(xpath = "(//button[@id='SaveButton'])[1]")
+    private WebElement claimSave;
+
+    @FindBy(xpath = "//div[@class='col-lg-3']//h2[@class='h4']")
+    private WebElement claimNumber;
+
+    // Claim Dropdown Menu
+    @FindBy(xpath = "(//button[@id='dropdownMenu1'])[1]")
+    private WebElement dropdownMenuClaimPage;
+
+    // Decline This Claim
+    @FindBy(xpath = "(//a[normalize-space()='Decline This Claim'])[1]")
+    private WebElement declineThisClaimOption;
+
+    // Decline Reason
+    @FindBy(xpath = "(//span[@aria-label='select'])[2]")
+    private WebElement declineReasonCheckBox;
+
+    @FindBy(xpath = "(//li[normalize-space()='Other'])[1]")
+    private WebElement declineReasonCheckBoxOption;
+
+    // Decline Comment
+    @FindBy(xpath = "(//textarea[@id='Comment'])[1]")
+    private WebElement declineComment;
+
+    // Authorise Code
+//    @FindBy(xpath = "(//input[@id='AuthoriseCode'])[1]")
+//    private WebElement authoriseCode;
+
+    @FindBy(xpath ="(//button[@id='btnSave'])[1]")
+    private WebElement declineSave;
+
+    @FindBy(xpath = "(//span[@class='boxcolor boxcolor-red'])[1]")
+    private WebElement claimStatus;
+
+    @FindBy(xpath = "(//a[normalize-space()='Claim Authorisation'])[1]")
+    private WebElement claimAuthorisation;
+    @FindBy(xpath = "(//span[@class='boxcolor boxcolor-orange'])[1]")
+    private WebElement claimAuthorisationStatus;
+    @FindBy(xpath = "(//a)[5]")
+    private WebElement claimIcone;
+
+    // Approve Claims Option
+    @FindBy(xpath = "(//a[normalize-space()='Approve Claims'])[1]")
+    private WebElement approveClaimsOption;
+
+    // Select All Claims Checkbox
+    @FindBy(xpath = "//span[@class='k-link text-center']//ins[@class='iCheck-helper']")
+    private WebElement approveClaimsCheckBoxAll;
+
+    // Approve Claims Save Button
+    @FindBy(xpath = "(//button[@id='btnApproveClaims'])[1]")
+    private WebElement approveClaimsSave;
+    @FindBy(xpath ="(//button[@id='btnclaimauthorisecode'])[1]")
+    private WebElement approveClaimsOK;
+    // Manage Claims
+    @FindBy(xpath = "//a[normalize-space()='Manage Claims']")
+    private WebElement manageClaims;
+
+    // First Claim
+    @FindBy(xpath = "//tbody/tr[1]/td[5]/a[1]")
+    private WebElement manageClaimsFirstClaim;
+
+    // Approved Status
+    @FindBy(xpath = "(//span[@class='boxcolor boxcolor-yellow'])[1]")
+    private WebElement approvedStatus;
+    // Account Dashboard
+    @FindBy(xpath = "(//a[@href='/Account/AccountDashboard'])[1]")
+    private WebElement accountDashboard;
+
+    // Electronic Funds Transfer
+    @FindBy(xpath = "(//a[normalize-space()='Claim Payment - Electronic Funds Transfer'])[1]")
+    private WebElement electronicFundsTransferIcon;
+
+    // Insurer Dropdown
+    @FindBy(xpath = "(//span[@aria-label='select'])[3]")
+    private WebElement insurerDropdownBox;
+
+    @FindBy(xpath = "(//li[normalize-space()='Fortegra Insurance UK Limited'])[1]")
+    private WebElement insurerDropdownBoxOption;
+
+    // Search Button
+    @FindBy(xpath = "(//button[@id='SearchGrid'])[1]")
+    private WebElement searchOption;
+
+    // EFT Checkbox
+    @FindBy(xpath = "//span[@class='k-link text-center']//ins[@class='iCheck-helper']")
+    private WebElement eftCheckBox;
+
+    // Process Claims Electronic Payment
+    @FindBy(xpath = "(//button[normalize-space()='Process Claims Electronic Payment'])[1]")
+    private WebElement processClaimsElectronicPayment;
+    @FindBy(xpath = "(//span[@class='boxcolor boxcolor-purple'])[1]")
+    private WebElement settledStatus;
+
+    // Cancel Policy
+    @FindBy(xpath = "//a[@id='btnCancelPolicy']")
+    private WebElement btnCancelPolicy;
+
+    // Continue Button
+    @FindBy(xpath = "(//button[@title='Continue'])[1]")
+    private WebElement policyCancelContinue;
+
+    // Cancel Reason Dropdown
+    @FindBy(xpath = "(//span[@aria-label='select'])[4]")
+    private WebElement cancelReasonDropdown;
+
+    @FindBy(xpath = "//li[normalize-space()='Client request cancellation - covered elsewhere']")
+    private WebElement cancelReasonOption;
+
+    // Cancellation Description
+    @FindBy(xpath = "(//textarea[@id='CancellationDescription'])[1]")
+    private WebElement cancellationDescription;
+
+    // Cancel Policy Button
+    @FindBy(xpath = "(//button[@title='Cancel Policy'])[1]")
+    private WebElement cancelPolicybtn;
+
+    // Cancel Status
+    @FindBy(xpath = "//button[normalize-space()='Cancel']")
+    private WebElement cancelStatus;
+    @FindBy(xpath = "(//input[@title='ChequeId'])[1]")
+    private WebElement chequeId;
+
+       // Cheque Name
+    @FindBy(xpath = "(//input[@id='ChequeName'])[1]")
+    private WebElement chequeName;
+
+    // Claim Payment - Print Cheque
+    @FindBy(xpath = "(//a[normalize-space()='Claim Payment - Print Cheque'])[1]")
+    private WebElement claimPaymentPrintChequeOption;
+
+    // Claim Entry To Date
+    @FindBy(xpath = "(//input[@id='ToDate'])[1]")
+    private WebElement claimEntryToDate;
+
+    // Search Button
+    @FindBy(xpath = "(//button[@id='SearchGrid'])[1]")
+    private WebElement searchGrid;
+
+    // Print Cheque Checkbox
+    @FindBy(xpath = "//span[@class='k-link text-center']//ins[@class='iCheck-helper']")
+    private WebElement printChequeCheckBox;
+
+    // Claim Payment Button
+    @FindBy(xpath = "(//button[@id='btnClaimPayment'])[1]")
+    private WebElement btnClaimPayment;
+
+    @FindBy(xpath = "(//span[@aria-label='select'])[6]")
+    private WebElement title;
+
+    @FindBy(xpath = "//li[normalize-space()='Ms']")
+    private WebElement titleOption;
+
+    @FindBy(xpath = "(//input[@id='FirstName'])[1]")
+    private WebElement firstName;
+
+    @FindBy(xpath = "(//input[@id='LastName'])[1]")
+    private WebElement lastName;
+
+    @FindBy(xpath = "(//input[@id='BirthDate'])[1]")
+    private WebElement clientBirthDate;
+
+    @FindBy(xpath = "(//input[@id='Email'])[1]")
+    private WebElement clientEmail;
+
+    @FindBy(xpath = "(//input[@id='Address1'])[1]")
+    private WebElement address;
+
+    @FindBy(xpath = "(//li[@title='CT18 8XX, Eurotunnel, UK Terminal, Ashford Road, Folkestone'])[1]")
+    private WebElement addressOption;
+
+    @FindBy(xpath = "(//input[@id='StreetNo'])[1]")
+    private WebElement streetNo;
+
+    @FindBy(xpath = "//li[normalize-space()='Animal Club or Society']")
+    private WebElement HearAboutOptionSelect;
+
+    @FindBy(xpath = "(//input[@id='PrimaryContactNumber'])[1]")
+    private WebElement primaryContactNumber;
+
+    @FindBy(xpath = "(//span[@aria-label='select'])[9]")
+    private WebElement hearAboutCheckbox;
+
+    // Pet Breed
+    @FindBy(xpath = "//span[@class='k-widget k-dropdown k-header cls_CMCD33527']//span[@aria-label='select']")
+    private WebElement petBreedCheckBox;
+
+    @FindBy(xpath = "(//li[normalize-space()='Alpaca'])[1]")
+    private WebElement petBreedOptionAlpaca;
+
+    // Pet Gender
+    @FindBy(xpath = "//span[@class='k-widget k-dropdown k-header cls_CMCD33529']//span[@aria-label='select']")
+    private WebElement petGenderCheckBox;
+
+    @FindBy(xpath = "(//li[@class='k-item'][normalize-space()='Female'])[1]")
+    private WebElement petGenderOptionFemale;
+
+    // Pet Date of Birth
+    @FindBy(xpath = "(//input[@id='Question_33531'])[1]")
+    private WebElement petDateOfBirth;
+
+    // Add Pet Button
+    @FindBy(xpath = "(//button[normalize-space()='Add Pet'])[1]")
+    private WebElement addPetButton;
+
+    // Product
+    @FindBy(xpath = "//div[@class='col-md-8']//span[@role='listbox']//span[@aria-label='select']")
+    private WebElement productCheckBox;
+
+    @FindBy(xpath = "(//li[normalize-space()='CoverMy Pet'])[1]")
+    private WebElement coverMyPetOption;
+
+    // Number of Pets
+    @FindBy(xpath = "//span[@class='k-widget k-dropdown k-header cls_CMCD001']//span[@aria-label='select']")
+    private WebElement numberOfPetsCheckBox;
+
+    @FindBy(xpath = "//ul[@id='Question_33523_listbox']//li[@role='option'][normalize-space()='1']")
+    private WebElement numberOfPetsOption;
+
+    // Pet Type
+    @FindBy(xpath = "//span[@class='k-widget k-dropdown k-header cls_CMCD002']//span[@aria-label='select']")
+    private WebElement petTypeCheckBox;
+
+    @FindBy(xpath = "//ul[@id='Question_33524_listbox']//li[@role='option'][normalize-space()='Cat']")
+    private WebElement petTypeOptionCat;
+
+    // Pet Name
+    @FindBy(xpath = "(//input[@id='Question_33525'])[1]")
+    private WebElement petNameTextBox;
+
+    // Pet's Purchase Price
+    @FindBy(xpath = "//input[@class='k-formatted-value cls_CMCD33532 k-input']")
+    private WebElement petPurchasePriceTextBox;
+
+
+
+    // Select Plan
+    @FindBy(xpath = "(//input[@id='caty_48'])[1]")
+    private WebElement selectPlan;
+
+    // Plan Popup Close Button
+    @FindBy(xpath = "(//button[normalize-space()='Close'])[1]")
+    private WebElement planPopupClose;
+
+    // More Details Section
+    @FindBy(xpath = "(//a[normalize-space()='More Details'])[1]")
+    private WebElement moreDetailsSection;
+
+    // Cover To Start Date
+    @FindBy(xpath = "(//input[@id='Question_33536'])[1]")
+    private WebElement coverToStartDateTextBox;
+
+    // Underwriting Option - Yes
+    @FindBy(xpath = "//input[@class='setFontStyle questionradio cls_CMCD33550'][1]")
+    private WebElement uwOptionYes;
+
+    // Premium Frequency - Years
+    @FindBy(xpath = "(//input[@id='PremiumFrequency_1'])[1]")
+    private WebElement premiumYears;
+
+    // Payment Tender Dropdown
+    @FindBy(xpath = "//body[1]/div[3]/div[3]/form[1]/div[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/span[1]/span[1]/span[2]")
+    private WebElement paymentTenderCheckBox;
+
+    // Payment Tender Option - Other
+    @FindBy(xpath = "(//li[normalize-space()='Other'])[1]")
+    private WebElement paymentTenderOptionOther;
+
+    // Sub-Policy Number
+    @FindBy(xpath = "//div[@id='petToClaim']//span[@aria-label='select']")
+    private WebElement subPolicyNumberCheckBox;
+
+    @FindBy(xpath = "//ul[@id='PetDetailId_listbox']/li[@role='option'][2]")
+    private WebElement subPolicyNumberCheckBoxOption;
+
+    // Cover - CoverMy Pet Cat
+    @FindBy(xpath = "(//span[@aria-label='select'])[12]")
+    private WebElement coverCoverMyPetCat;
+
+    @FindBy(xpath = "//div[@class='k-animation-container']//li[@role='option'][normalize-space()='Veterinary Fees']")
+    private WebElement coverVeterinaryFees;
+
+    // Sub Cover
+    @FindBy(xpath = "//div[@id='divSubCover']//span[@aria-label='select']")
+    private WebElement subCoverCoverMyPetCat;
+
+    @FindBy(xpath = "(//li[normalize-space()=\"Diagnostic cap (CT and MRI's)\"])[1]")
+    private WebElement subCoverDiagnosticCap;
+
+    // Notified Method
+    @FindBy(xpath = "(//span[@aria-label='select'])[24]")
+    private WebElement notifiedMethodCoverMyPetCat;
+
+    @FindBy(xpath = "(//li[normalize-space()='Email'])[1]")
+    private WebElement notifiedMethodEmail;
+
+    // Payment To
+    @FindBy(xpath = "(//span[@aria-label='select'])[26]")
+    private WebElement paymentToCoverMyPetCat;
+
+    @FindBy(xpath = "//ul[@id='PayBy_listbox']//li[@role='option'][normalize-space()='Other']")
+    private WebElement paymentToOther;
+
+    // Account Name
+    @FindBy(xpath = "(//input[@id='DirectDebitAccountName'])[1]")
+    private WebElement accountNameCoverMyPetCat;
+
+    // Account Number
+    @FindBy(xpath = "(//input[@id='DirectDebitAccountNumber'])[1]")
+    private WebElement accountNumberCoverMyPetCat;
+
+    // Sort Code
+    @FindBy(xpath = "(//input[@id='DirectDebitSortCode'])[1]")
+    private WebElement sortCodeCoverMyPetCat;
+
+    // Email Address
+    @FindBy(xpath = "(//input[@id='ThirdPartyEmailAddress'])[1]")
+    private WebElement emailAddressCoverMyPetCat;
+
+    // Payment Detail
+    @FindBy(xpath = "(//input[@id='PaymentDetail'])[1]")
+    private WebElement paymentDetailCoverMyPetCat;
+
+    // Condition Type
+    @FindBy(xpath = "//div[@class='col-md-3']//span[@aria-label='select']")
+    private WebElement conditionTypeCoverMyPetCat;
+
+    @FindBy(xpath = "(//li[normalize-space()='Injury'])[1]")
+    private WebElement conditionTypeInjury;
+
+    // Loss Cause
+    @FindBy(xpath = "//div[@class='col-md-8']//span[@aria-label='select']")
+    private WebElement lossCauseCoverMyPetCat;
+
+    @FindBy(xpath = "(//span[normalize-space()='2.2'])[1]")
+    private WebElement lossCauseOption;
+
+    // Claim Total
+    @FindBy(xpath = "(//input[@title='0.00'])[2]")
+    private WebElement claimTotalCoverMyPetCat;
+
+
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(180));
+
+    // Wait for WebElement visibility
+    public void waitForVisibility(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    // Wait for WebElement clickability
+    public void waitForClickability(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    // Wait for locator visibility
+    public void waitForVisibility(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    // Wait for locator clickability
+    public void waitForClickability(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+
+
+
+
 
 
     public void searchPolicyAndClick(String policyNumber) {
@@ -529,6 +987,7 @@ public class EndToEndScenariosPage {
         policyCreationScenariosPage.clickOnAddQuoteButton();
         policyCreationScenariosPage.enterClientContactInformation(row, sheet);
     }
+
 
     public void selectExoticProductAndEnterPetDetails() {
         policyCreationScenariosPage.selectProduct("Exotic");
@@ -876,6 +1335,8 @@ public class EndToEndScenariosPage {
         common.waitUntilPresenceOfElement("//div[@id='loading' and @style='display: none;']");
         common.pause(2);
     }
+
+
 
     public void addClaimAndEnterClaimAmountLessThanExcessAmountAndVerifyClaimStatusIsDeclined(String policyNumber) {
         searchPolicyAndClick(policyNumber);
@@ -3205,5 +3666,1381 @@ public class EndToEndScenariosPage {
         common.pause(3);
 
         saveRenewApplicationAndVerifyHistory("233.35");
+    }
+    // Capture policy number
+    public String getPolicyNumber() {
+        return policyNumber.getText().trim();
+    }
+
+    // Enter captured policy number
+    public void searchPolicyNumber(String policyNumberValue) {
+        policyNumberTextBox.clear();
+        policyNumberTextBox.sendKeys(policyNumberValue);
+    }
+    public void clickOnTheCogIconOnThePolicyInformationPageAndAddClaimAndEnterClaimAmountLessThanExcessAndVerifyTheClaimGetDeclinedForIntroductoryCover(){
+        // 1. Store policy number
+        common.pause(5);
+        common.waitUntilVisibilityOfElement (policyNumber);
+        String policyNumberValue = policyNumber.getText().trim().replaceAll("[()]", "");
+        System.out.println("Stored Policy Number: " + policyNumberValue);
+
+        common.pause(2);
+        policyIconeOption.click();
+        common.pause(3);
+
+
+
+// 2. Paste stored policy number into the text box
+     //   policyNumberTextBox.clear();
+//        common.pause(2);
+        policyNumberTextBox.sendKeys(policyNumberValue);
+        common.pause(2);
+        System.out.println("Entered Policy Number: " + policyNumberValue);
+
+
+        common.pause(5);
+        policySearchButton.click();
+
+        common.pause(2);
+        common.waitUntilVisibilityOfElement (policySelect);
+        common.pause(2);
+        policySelect.click();
+        common.pause(2);
+        common.switchToWindow(1);
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(2);
+        settingButton.click();
+        common.pause(2);
+        addClaimButton.click();
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(treatmentDate);
+        // Get current date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        // Treatment Date
+        treatmentDate.clear();
+        common.pause(2);
+        treatmentDate.sendKeys(currentDate);
+        common.pause(2);
+
+        // Date Claim First Advised
+        dateClaimFirstAdvised.clear();
+        common.pause(2);
+        dateClaimFirstAdvised.sendKeys(currentDate);
+        common.pause(2);
+
+        // Manifestation Date
+        manifestationDate.clear();
+        common.pause(2);
+        manifestationDate.sendKeys(currentDate);
+        common.pause(2);
+
+        System.out.println("Treatment Date: " + currentDate);
+        System.out.println("Date Claim First Advised: " + currentDate);
+        System.out.println("Manifestation Date: " + currentDate);
+
+
+        // Select Cover - Veterinary Fees
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+       coverCheckBox.click();
+        common.pause(2);
+        coverCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Notified Method - Email
+        notifiedMethodCheckBox.click();
+        common.pause(2);
+        notifiedMethodCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Payment To - Other
+        paymentToCheckBox.click();
+        common.pause(2);
+        paymentToCheckBoxOption.click();
+        common.pause(2);
+
+        System.out.println("Cover: Veterinary Fees selected");
+        System.out.println("Notified Method: Email selected");
+        System.out.println("Payment To: Other selected");
+
+        common.pause(2);
+
+        // Enter Account Name
+        accountName.sendKeys("Test");
+
+        // Enter Account Number
+        common.pause(2);
+        accountNumber.sendKeys("1234567899");
+
+        // Enter Sort Code
+        common.pause(2);
+        sortCode.sendKeys("123");
+
+        // Enter Email Address
+        common.pause(2);
+        emailAddress.sendKeys("Test@test.com");
+
+        // Enter Payment Detail
+        common.pause(2);
+        paymentDetail.sendKeys("Test");
+
+        // Select Condition Type - Illness
+        common.pause(2);
+        conditionTypeCheckBox.click();
+        common.pause(2);
+        conditionTypeIllness.click();
+        common.pause(2);
+
+
+        System.out.println("Payment details entered and Condition Type selected successfully.");
+
+        // Select Loss Cause
+        common.pause(2);
+        lossCauseCheckBox.click();
+        common.pause(3);
+        lossCauseCheckBoxOption.click();
+        common.pause(2);
+
+        // Enter Claim Total
+       // claimTotal.clear();
+        common.pause(2);
+        claimTotal.sendKeys("10");
+        common.pause(2);
+
+
+        // Save Claim
+        claimSave.click();
+        common.pause(2);
+        claimSave.click();
+        common.pause(2);
+
+        System.out.println("Loss Cause selected: 2.2");
+        System.out.println("Claim Total entered: 10");
+        System.out.println("Claim saved successfully.");
+
+        // Wait until Claim Number is visible
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(claimNumber);
+
+        // Fetch and store Claim Number
+        common.pause(2);
+        String claimNumberValue = claimNumber.getText().trim();
+
+        // Print Claim Number
+        common.pause(2);
+        System.out.println("Claim Number Created: " + claimNumberValue);
+
+
+        common.pause(2);
+        driver.close();
+        common.switchToWindow(0);
+
+    }
+
+    public void clickOnTheCogIconOnThePolicyInformationPageAndAddClaimAndDeclineTheClaimForIntroductoryCover(){
+        common.waitUntilVisibilityOfElement (policySelect);
+        common.pause(2);
+        policySelect.click();
+        common.pause(2);
+        common.switchToWindow(1);
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(2);
+        settingButton.click();
+        common.pause(2);
+        addClaimButton.click();
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(treatmentDate);
+        // Get current date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        // Treatment Date
+        treatmentDate.clear();
+        common.pause(2);
+        treatmentDate.sendKeys(currentDate);
+        common.pause(2);
+
+        // Date Claim First Advised
+        dateClaimFirstAdvised.clear();
+        common.pause(2);
+        dateClaimFirstAdvised.sendKeys(currentDate);
+        common.pause(2);
+
+        // Manifestation Date
+        manifestationDate.clear();
+        common.pause(2);
+        manifestationDate.sendKeys(currentDate);
+        common.pause(2);
+
+        System.out.println("Treatment Date: " + currentDate);
+        System.out.println("Date Claim First Advised: " + currentDate);
+        System.out.println("Manifestation Date: " + currentDate);
+
+
+        // Select Cover - Veterinary Fees
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+       coverCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Notified Method - Email
+        notifiedMethodCheckBox.click();
+        common.pause(2);
+        notifiedMethodCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Payment To - Other
+        paymentToCheckBox.click();
+        common.pause(2);
+        paymentToCheckBoxOption.click();
+        common.pause(2);
+
+        System.out.println("Cover: Veterinary Fees selected");
+        System.out.println("Notified Method: Email selected");
+        System.out.println("Payment To: Other selected");
+
+        common.pause(2);
+
+        // Enter Account Name
+        accountName.sendKeys("Test");
+
+        // Enter Account Number
+        common.pause(2);
+        accountNumber.sendKeys("1234567899");
+
+        // Enter Sort Code
+        common.pause(2);
+        sortCode.sendKeys("123");
+
+        // Enter Email Address
+        common.pause(2);
+        emailAddress.sendKeys("Test@test.com");
+
+        // Enter Payment Detail
+        common.pause(2);
+        paymentDetail.sendKeys("Test");
+
+        // Select Condition Type - Illness
+        common.pause(2);
+        conditionTypeCheckBox.click();
+        common.pause(2);
+        conditionTypeIllness.click();
+        common.pause(2);
+
+
+        System.out.println("Payment details entered and Condition Type selected successfully.");
+
+        // Select Loss Cause
+        common.pause(2);
+        lossCauseCheckBox.click();
+        common.pause(2);
+        lossCauseCheckBoxOption.click();
+        common.pause(2);
+
+        // Enter Claim Total
+        // claimTotal.clear();
+        common.pause(2);
+        claimTotal.sendKeys("500");
+        common.pause(2);
+
+
+        // Save Claim
+        claimSave.click();
+        common.pause(2);
+        claimSave.click();
+        common.pause(2);
+
+        System.out.println("Loss Cause selected: 2.2");
+        System.out.println("Claim Total entered: 10");
+        System.out.println("Claim saved successfully.");
+
+        // Wait until Claim Number is visible
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(claimNumber);
+
+        // Fetch and store Claim Number
+        common.pause(2);
+        String claimNumberValue = claimNumber.getText().trim();
+
+        // Print Claim Number
+        common.pause(2);
+        System.out.println("Claim Number Created: " + claimNumberValue);
+
+        // Open Claim Dropdown
+        common.pause(2);
+        dropdownMenuClaimPage.click();
+
+        // Select Decline This Claim
+        common.pause(2);
+        declineThisClaimOption.click();
+
+        // Select Decline Reason
+        common.pause(2);
+        declineReasonCheckBox.click();
+        common.pause(2);
+        declineReasonCheckBoxOption.click();
+
+        // Print Selected Decline Reason
+        common.pause(2);
+        String declineReason = declineReasonCheckBoxOption.getText().trim();
+        System.out.println("Decline Reason Selected: " + declineReason);
+
+        // Enter Decline Comment
+        common.pause(2);
+        declineComment.sendKeys("Test");
+
+        // Enter Authorise Code
+        common.pause(2);
+        authoriseCodeInputField.sendKeys(authoriseCode);
+
+        common.pause(2);
+        System.out.println("Decline Comment: Test");
+        System.out.println("Authorise Code: C0022");
+
+        common.pause(2);
+        declineSave.click();
+
+        common.pause(2);
+        String actualStatus = claimStatus.getText().trim();
+
+        common.pause(2);
+        System.out.println("Actual Claim Status: " + actualStatus);
+
+        common.pause(2);
+        Assert.assertEquals(actualStatus, "Declined"
+               );
+
+        common.pause(2);
+        System.out.println("Assertion Passed: Claim status is Declined.");
+
+        common.pause(2);
+        driver.close();
+        common.switchToWindow(0);
+
+
+    }
+    public void claimCreationforIntroductory_Cover(){
+        common.waitUntilVisibilityOfElement (policySelect);
+        common.pause(2);
+        policySelect.click();
+        common.pause(2);
+        common.switchToWindow(1);
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(2);
+        settingButton.click();
+        common.pause(2);
+        addClaimButton.click();
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(treatmentDate);
+        // Get current date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        // Treatment Date
+        treatmentDate.clear();
+        common.pause(2);
+        treatmentDate.sendKeys(currentDate);
+        common.pause(2);
+
+        // Date Claim First Advised
+        dateClaimFirstAdvised.clear();
+        common.pause(2);
+        dateClaimFirstAdvised.sendKeys(currentDate);
+        common.pause(2);
+
+        // Manifestation Date
+        manifestationDate.clear();
+        common.pause(2);
+        manifestationDate.sendKeys(currentDate);
+        common.pause(2);
+
+        System.out.println("Treatment Date: " + currentDate);
+        System.out.println("Date Claim First Advised: " + currentDate);
+        System.out.println("Manifestation Date: " + currentDate);
+
+
+        // Select Cover - Veterinary Fees
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+        coverCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Notified Method - Email
+        notifiedMethodCheckBox.click();
+        common.pause(2);
+        notifiedMethodCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Payment To - Other
+        paymentToCheckBox.click();
+        common.pause(2);
+        paymentToCheckBoxOption.click();
+        common.pause(2);
+
+        System.out.println("Cover: Veterinary Fees selected");
+        System.out.println("Notified Method: Email selected");
+        System.out.println("Payment To: Other selected");
+
+        common.pause(2);
+
+        // Enter Account Name
+        accountName.sendKeys("Test");
+
+        // Enter Account Number
+        common.pause(2);
+        accountNumber.sendKeys("1234567899");
+
+        // Enter Sort Code
+        common.pause(2);
+        sortCode.sendKeys("123");
+
+        // Enter Email Address
+        common.pause(2);
+        emailAddress.sendKeys("Test@test.com");
+
+        // Enter Payment Detail
+        common.pause(2);
+        paymentDetail.sendKeys("Test");
+
+        // Select Condition Type - Illness
+        common.pause(2);
+        conditionTypeCheckBox.click();
+        common.pause(2);
+        conditionTypeIllness.click();
+        common.pause(2);
+
+
+        System.out.println("Payment details entered and Condition Type selected successfully.");
+
+        // Select Loss Cause
+        common.pause(2);
+        lossCauseCheckBox.click();
+        common.pause(2);
+        lossCauseCheckBoxOption.click();
+        common.pause(2);
+
+        // Enter Claim Total
+        // claimTotal.clear();
+        common.pause(2);
+        claimTotal.sendKeys("500");
+        common.pause(2);
+
+
+        // Save Claim
+        claimSave.click();
+        common.pause(2);
+        claimSave.click();
+        common.pause(2);
+
+        System.out.println("Loss Cause selected: 2.2");
+        System.out.println("Claim Total entered: 10");
+        System.out.println("Claim saved successfully.");
+
+        // Wait until Claim Number is visible
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(claimNumber);
+
+        // Fetch and store Claim Number
+        common.pause(2);
+        String claimNumberValue = claimNumber.getText().trim();
+
+        // Print Claim Number
+        common.pause(2);
+        System.out.println("Claim Number Created: " + claimNumberValue);
+
+
+    }
+
+    public void claimAuthoriseforIntroductory_Cover(){
+        // Open Claim Dropdown
+        common.pause(2);
+        dropdownMenuClaimPage.click();
+
+        common.pause(2);
+        claimAuthorisation.click();
+        common.pause(1);
+        System.out.println("Clicked on Claim Authorisation successfully.");
+
+        // Enter Decline Comment
+        common.pause(2);
+        declineComment.sendKeys("Test");
+
+        // Enter Authorise Code
+        common.pause(2);
+        authoriseCodeInputField.clear();
+        common.pause(2);
+        authoriseCodeInputField.sendKeys(authoriseCode);
+
+        common.pause(2);
+        declineSave.click();
+
+        common.pause(5);
+        common.waitUntilVisibilityOfElement (claimAuthorisationStatus);
+        common.pause(2);
+        String actualStatus = claimAuthorisationStatus.getText().trim();
+        common.pause(2);
+        System.out.println("Actual Claim Status: " + actualStatus);
+        common.pause(2);
+        Assert.assertEquals(actualStatus, "Authorise"
+                );
+
+        common.pause(2);
+        System.out.println("Assertion Passed: Claim status is Authorise.");
+
+
+
+    }
+    public void claim_Approve(){
+        common.pause(2);
+        // Click Claim Icon
+        claimIcone.click();
+
+        // Click Approve Claims
+        common.pause(2);
+        approveClaimsOption.click();
+
+        // Select All Claims
+        common.pause(2);
+     //   common.waitUntilVisibilityOfElement (approveClaimsCheckBoxAll);
+        common.pause(2);
+        approveClaimsCheckBoxAll.click();
+
+        // Save Approved Claims
+        common.pause(2);
+        approveClaimsSave.click();
+        common.pause(2);
+        authoriseCodeInputField.sendKeys(authoriseCode);
+        common.pause(2);
+        approveClaimsOK.click();
+        // Click Claim Icon
+        common.pause(5);
+        claimIcone.click();
+
+        // Click Manage Claims
+        common.pause(2);
+        manageClaims.click();
+
+        // Open First Claim
+        common.pause(5);
+        manageClaimsFirstClaim.click();
+
+        // Fetch and print claim status
+        common.switchToWindow(2);
+        common.pause(5);
+        String actualStatus = approvedStatus.getText().trim();
+
+        System.out.println("Claim Status: " + actualStatus);
+
+        // Assertion
+        common.pause(2);
+        Assert.assertEquals(actualStatus, "Approved");
+
+        System.out.println("Assertion Passed: Claim status is Approved.");
+        common.pause(2);
+
+        driver.close();
+        common.switchToWindow(1);
+
+
+
+    }
+    public void claimEFtsattle(){
+        // Click Account Dashboard
+        common.pause(2);
+        accountDashboard.click();
+
+        // Click Electronic Funds Transfer
+        common.pause(2);
+        electronicFundsTransferIcon.click();
+
+        // Select Insurer
+        common.pause(2);
+        insurerDropdownBox.click();
+        common.pause(2);
+        insurerDropdownBoxOption.click();
+
+        // Click Search
+        common.pause(2);
+        searchOption.click();
+
+        // Select EFT Checkbox
+        common.pause(2);
+        eftCheckBox.click();
+
+        // Process Electronic Payment
+        common.pause(2);
+        processClaimsElectronicPayment.click();
+
+        System.out.println("Claim payment processed through Electronic Funds Transfer.");
+        common.pause(2);
+        driver.switchTo().alert().accept();
+        common.pause(7);
+        claimIcone.click();
+
+        // Click Manage Claims
+        common.pause(2);
+        manageClaims.click();
+
+        // Open First Claim
+        common.pause(5);
+        manageClaimsFirstClaim.click();
+
+        // Fetch and print claim status
+        common.switchToWindow(2);
+
+        String actualStatus = settledStatus.getText().trim();
+
+        System.out.println("Actual Claim Status: " + actualStatus);
+
+        common.switchToWindow(2);
+        Assert.assertEquals(actualStatus, "Settled");
+
+        System.out.println("Assertion Passed: Claim status is Settled.");
+        common.pause(2);
+
+        driver.close();
+        common.switchToWindow(1);
+        common.pause(2);
+        driver.close();
+        common.switchToWindow(0);
+    }
+
+
+    public void clickOnTheCogIconOnThePolicyInformationPageAndAddClaimAndSettleTheClaimWithEFTPaymentForIntroductoryCover(){
+        claimCreationforIntroductory_Cover();
+        claimAuthoriseforIntroductory_Cover();
+        claim_Approve();
+        claimEFtsattle();
+
+    }
+    public void cancelThePolicyAndVerifyThePolicyStatusIntroductoryCover() {
+        common.waitUntilVisibilityOfElement (policySelect);
+        common.pause(2);
+        policySelect.click();
+        common.pause(2);
+        common.switchToWindow(1);
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(2);
+        settingButton.click();
+        common.pause(2);
+
+        // Click Cancel Policy
+        String cancelPolicyText = btnCancelPolicy.getText().trim();
+        common.pause(2);
+        System.out.println("Cancel Policy Option: " + cancelPolicyText);
+        common.pause(2);
+        btnCancelPolicy.click();
+
+        // Click Continue
+        common.pause(2);
+        policyCancelContinue.click();
+
+        // Select Cancellation Reason
+        common.pause(2);
+        cancelReasonDropdown.click();
+        common.pause(2);
+        cancelReasonOption.click();
+
+        String selectedReason = cancelReasonOption.getText().trim();
+        common.pause(2);
+        System.out.println("Selected Cancellation Reason: " + selectedReason);
+
+        // Enter Cancellation Description
+        common.pause(2);
+        cancellationDescription.sendKeys("Test");
+        common.pause(2);
+        System.out.println("Cancellation Description: Test");
+        common.pause(2);
+
+        // Click Cancel Policy
+        cancelPolicybtn.click();
+        common.pause(5);
+
+        // Print and Verify Cancellation Status
+        String actualStatus = cancelStatus.getText().trim();
+        common.pause(2);
+        System.out.println("Cancellation Status: " + actualStatus);
+        common.pause(2);
+
+        Assert.assertEquals(actualStatus, "Cancel");
+        common.pause(2);
+
+        System.out.println("Assertion Passed: Policy status is Cancel.");
+
+    }
+
+    public void claimCreationforIntroductory_Cover_check(){
+        common.waitUntilVisibilityOfElement (policySelect);
+        common.pause(2);
+        policySelect.click();
+        common.pause(2);
+        common.switchToWindow(1);
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(2);
+        settingButton.click();
+        common.pause(2);
+        addClaimButton.click();
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(treatmentDate);
+        // Get current date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        // Treatment Date
+        treatmentDate.clear();
+        common.pause(2);
+        treatmentDate.sendKeys(currentDate);
+        common.pause(2);
+
+        // Date Claim First Advised
+        dateClaimFirstAdvised.clear();
+        common.pause(2);
+        dateClaimFirstAdvised.sendKeys(currentDate);
+        common.pause(2);
+
+        // Manifestation Date
+        manifestationDate.clear();
+        common.pause(2);
+        manifestationDate.sendKeys(currentDate);
+        common.pause(2);
+
+        System.out.println("Treatment Date: " + currentDate);
+        System.out.println("Date Claim First Advised: " + currentDate);
+        System.out.println("Manifestation Date: " + currentDate);
+
+
+        // Select Cover - Veterinary Fees
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+        coverCheckBox.click();
+        common.pause(2);
+        coverCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Notified Method - Email
+        notifiedMethodCheckBox.click();
+        common.pause(2);
+        notifiedMethodCheckBoxOption.click();
+        common.pause(2);
+
+        // Select Payment To - Other
+        paymentToCheckBox.click();
+        common.pause(2);
+        paymentToCheckBoxOption.click();
+        common.pause(2);
+
+        System.out.println("Cover: Veterinary Fees selected");
+        System.out.println("Notified Method: Email selected");
+        System.out.println("Payment To: Other selected");
+
+        common.pause(2);
+
+        chequeId.click();
+        common.pause(2);
+        emailAddress.sendKeys("test@test.com");
+        common.pause(2);
+        paymentDetail.sendKeys("Test");
+        common.pause(2);
+        chequeName.sendKeys("1234567899");
+        common.pause(2);
+        System.out.println("Cheque ID: 1234567899");
+        System.out.println("Email Address: test@test.com");
+        System.out.println("Payment Detail: Test");
+        System.out.println("Cheque Name: 1234567899");
+
+        // Select Condition Type - Illness
+        common.pause(2);
+        conditionTypeCheckBox.click();
+        common.pause(2);
+        conditionTypeIllness.click();
+        common.pause(2);
+
+
+        System.out.println("Payment details entered and Condition Type selected successfully.");
+
+        // Select Loss Cause
+        common.pause(2);
+        lossCauseCheckBox.click();
+        common.pause(2);
+        lossCauseCheckBoxOption.click();
+        common.pause(2);
+
+        // Enter Claim Total
+        // claimTotal.clear();
+        common.pause(2);
+        claimTotal.sendKeys("500");
+        common.pause(2);
+
+
+        // Save Claim
+        claimSave.click();
+        common.pause(2);
+        claimSave.click();
+        common.pause(2);
+
+        System.out.println("Loss Cause selected: 2.2");
+        System.out.println("Claim Total entered: 10");
+        System.out.println("Claim saved successfully.");
+
+        // Wait until Claim Number is visible
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(claimNumber);
+
+        // Fetch and store Claim Number
+        common.pause(2);
+        String claimNumberValue = claimNumber.getText().trim();
+
+        // Print Claim Number
+        common.pause(2);
+        System.out.println("Claim Number Created: " + claimNumberValue);
+
+
+    }
+
+    public void claim_Check_sattle(){
+        // Click Account Dashboard
+        common.pause(2);
+        accountDashboard.click();
+
+        common.pause(2);
+        claimPaymentPrintChequeOption.click();
+        common.pause(3);
+
+   //     System.out.println("Selected: " + claimPaymentPrintChequeOption.getText().trim());
+
+        // Enter date after 2 days
+        common.pause(2);
+        String nextTwoDaysDate = LocalDate.now()
+                .plusDays(2)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        claimEntryToDate.clear();
+        common.pause(2);
+        claimEntryToDate.sendKeys(nextTwoDaysDate);
+
+        System.out.println("Claim Entry To Date: " + nextTwoDaysDate);
+
+        // Click Search
+        common.pause(2);
+        searchGrid.click();
+
+        // Select Print Cheque Checkbox
+        common.pause(2);
+        printChequeCheckBox.click();
+
+        // Click Claim Payment
+        common.pause(2);
+        btnClaimPayment.click();
+
+        // Accept Popup
+        common.pause(2);
+        driver.switchTo().alert().accept();
+
+        System.out.println("Print Cheque claim payment processed successfully.");
+
+        common.pause(10);
+        claimIcone.click();
+
+        // Click Manage Claims
+        common.pause(2);
+        manageClaims.click();
+
+        // Open First Claim
+        common.pause(5);
+        manageClaimsFirstClaim.click();
+
+        // Fetch and print claim status
+        common.switchToWindow(2);
+
+        String actualStatus = settledStatus.getText().trim();
+
+        System.out.println("Actual Claim Status: " + actualStatus);
+
+        common.switchToWindow(2);
+        Assert.assertEquals(actualStatus, "Settled");
+
+        System.out.println("Assertion Passed: Claim status is Settled.");
+        common.pause(2);
+
+        driver.close();
+        common.switchToWindow(1);
+        common.pause(2);
+        driver.close();
+        common.switchToWindow(0);
+    }
+
+
+    public void clickOnTheCogIconOnThePolicyInformationPageAndAddClaimAndSettleTheClaimWithCheckPaymentForIntroductoryCover(){
+        claimCreationforIntroductory_Cover_check();
+        claimAuthoriseforIntroductory_Cover();
+        claim_Approve();
+        claim_Check_sattle();
+    }
+    public void userSelectExistingClientNumberAndAllClientDetailAutofieldCoverMyPetCat(){
+
+        // Select Title
+        waitForClickability(title);
+        title.click();
+
+        waitForClickability(titleOption);
+        titleOption.click();
+
+        System.out.println("Title: " + titleOption.getText().trim());
+
+        // First Name
+        waitForVisibility(firstName);
+        firstName.sendKeys("Test");
+        System.out.println("First Name: " + firstName.getAttribute("value"));
+
+        // Last Name
+        waitForVisibility(lastName);
+        lastName.sendKeys("Test-QA");
+        System.out.println("Last Name: " + lastName.getAttribute("value"));
+
+        // Birth Date
+        waitForVisibility(clientBirthDate);
+        clientBirthDate.sendKeys("01.01.2000");
+        System.out.println("Birth Date: " + clientBirthDate.getAttribute("value"));
+
+        // Email
+        waitForVisibility(clientEmail);
+        clientEmail.sendKeys("nitesh.barot@prowerse.com");
+        System.out.println("Email: " + clientEmail.getAttribute("value"));
+
+        // Address
+        waitForVisibility(address);
+        address.sendKeys("uk");
+
+        waitForClickability(addressOption);
+        addressOption.click();
+
+        System.out.println("Address: " + address.getAttribute("value"));
+
+// Enter Primary Contact Number
+        waitForVisibility(primaryContactNumber);
+        primaryContactNumber.sendKeys("1234567899");
+
+        System.out.println("Primary Contact Number: "
+                + primaryContactNumber.getAttribute("value"));
+
+        waitForClickability(hearAboutCheckbox);
+        hearAboutCheckbox.click();
+
+        waitForClickability(HearAboutOptionSelect);
+        HearAboutOptionSelect.click();
+
+        // Street Number
+        waitForVisibility(streetNo);
+        streetNo.sendKeys("1");
+
+        System.out.println("Hear About Option Selected: "
+                + HearAboutOptionSelect.getText().trim());
+
+        System.out.println("Street Number: " + streetNo.getAttribute("value"));
+
+        System.out.println("Client Details Entered Successfully");
+
+
+    }
+
+    public void selectProductAndFieldPetDetailCoverMyPetCat(){
+        // Select Product
+        waitForClickability(productCheckBox);
+        productCheckBox.click();
+
+        waitForClickability(coverMyPetOption);
+        coverMyPetOption.click();
+
+        System.out.println("Product Selected: " + coverMyPetOption.getText().trim());
+
+        // Number of Pets
+        waitForClickability(numberOfPetsCheckBox);
+        numberOfPetsCheckBox.click();
+
+        waitForClickability(numberOfPetsOption);
+        numberOfPetsOption.click();
+
+        System.out.println("Number of Pets: " + numberOfPetsOption.getText().trim());
+
+        // Pet Type
+        waitForClickability(petTypeCheckBox);
+        petTypeCheckBox.click();
+
+        waitForClickability(petTypeOptionCat);
+        petTypeOptionCat.click();
+
+        System.out.println("Pet Type: " + petTypeOptionCat.getText().trim());
+
+        // Pet Name
+        waitForVisibility(petNameTextBox);
+        petNameTextBox.sendKeys("Test");
+
+        System.out.println("Pet Name: " + petNameTextBox.getAttribute("value"));
+
+        // Pet Breed
+        waitForClickability(petBreedCheckBox);
+        petBreedCheckBox.click();
+
+        waitForClickability(petBreedOptionAlpaca);
+        petBreedOptionAlpaca.click();
+
+        System.out.println("Pet Breed: " + petBreedOptionAlpaca.getText().trim());
+
+        // Pet Gender
+        waitForClickability(petGenderCheckBox);
+        petGenderCheckBox.click();
+
+        waitForClickability(petGenderOptionFemale);
+        petGenderOptionFemale.click();
+
+
+
+        // Pet Date of Birth - 6 Months Ago
+        String sixMonthsAgo = LocalDate.now()
+                .minusMonths(6)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        waitForVisibility(petDateOfBirth);
+        petDateOfBirth.sendKeys(sixMonthsAgo);
+        common.pause(2);
+        System.out.println("Pet Date of Birth: " + petDateOfBirth.getAttribute("value"));
+
+        waitForVisibility(petPurchasePriceTextBox);
+        petPurchasePriceTextBox.sendKeys("250");
+
+        System.out.println("Pet's Purchase Price: "
+                + petPurchasePriceTextBox.getAttribute("value"));
+
+        // Add Pet
+        waitForClickability(addPetButton);
+        addPetButton.click();
+
+        System.out.println("Add Pet button clicked successfully.");
+    }
+
+    public void calculateAndSelectPlan() {
+
+        // Click Calculate
+        waitForClickability(calculateButton);
+        calculateButton.click();
+
+        System.out.println("Calculate button clicked successfully.");
+
+        // Select Plan
+        waitForClickability(selectPlan);
+        if (!selectPlan.isSelected()) {
+            selectPlan.click();
+        }
+
+        System.out.println("Plan Selected: " + selectPlan.getAttribute("id"));
+
+        // Close Plan Popup
+        waitForClickability(planPopupClose);
+        planPopupClose.click();
+
+        System.out.println("Plan popup closed successfully.");
+        common.pause(7);
+    }
+
+    public void enterCoverStartAndUWDetails() {
+
+        // Calculate
+        waitForClickability(calculateButton);
+        calculateButton.click();
+        System.out.println("Calculate button clicked successfully.");
+
+        // Close Plan Popup
+        waitForClickability(planPopupClose);
+        planPopupClose.click();
+        System.out.println("Plan popup closed successfully.");
+
+        // More Details
+        waitForClickability(moreDetailsSection);
+        moreDetailsSection.click();
+        System.out.println("More Details section opened successfully.");
+
+        // Cover To Start - Current Date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        waitForVisibility(coverToStartDateTextBox);
+        coverToStartDateTextBox.sendKeys(currentDate);
+
+        System.out.println("Cover To Start Date: "
+                + coverToStartDateTextBox.getAttribute("value"));
+
+        // UW Option - Yes
+        waitForClickability(uwOptionYes);
+
+        if (!uwOptionYes.isSelected()) {
+            uwOptionYes.click();
+        }
+
+        System.out.println("UW Option Selected: Yes");
+
+        // Select Premium Frequency - Years
+        waitForClickability(premiumYears);
+
+        if (!premiumYears.isSelected()) {
+            premiumYears.click();
+        }
+
+        System.out.println("Premium Frequency: Years selected");
+
+        // Select Payment Tender - Other
+        waitForClickability(paymentTenderCheckBox);
+        paymentTenderCheckBox.click();
+
+        waitForClickability(paymentTenderOptionOther);
+        paymentTenderOptionOther.click();
+
+        System.out.println("Payment Tender: "
+                + paymentTenderOptionOther.getText().trim());
+
+        // Create Policy
+        waitForClickability(createPolicyButton);
+        createPolicyButton.click();
+
+        System.out.println("Create Policy button clicked successfully.");
+    }
+
+
+
+    public void enterCoverMyPetCatClaimDetails() {
+        // 1. Store Policy Number
+        common.waitUntilVisibilityOfElement(policyNumber);
+
+        String policyNumberValue = policyNumber.getText()
+                .trim()
+                .replaceAll("[()]", "");
+
+        System.out.println("Stored Policy Number: " + policyNumberValue);
+
+        // 2. Open Policy Search
+        common.waitUntilVisibilityOfElement(policyIconeOption);
+        policyIconeOption.click();
+
+        // 3. Enter Policy Number
+        common.waitUntilVisibilityOfElement(policyNumberTextBox);
+        policyNumberTextBox.clear();
+        policyNumberTextBox.sendKeys(policyNumberValue);
+
+        System.out.println("Entered Policy Number: " + policyNumberValue);
+
+        // 4. Search Policy
+        common.waitUntilVisibilityOfElement(policySearchButton);
+        common.waitUntilVisibilityOfElement(policySearchButton);
+        policySearchButton.click();
+
+        // 5. Select Policy
+        common.waitUntilVisibilityOfElement(policySelect_new);
+        common.waitUntilVisibilityOfElement(policySelect_new);
+        policySelect_new.click();
+
+        // 6. Switch to New Window
+        common.switchToWindow(1);
+
+        // 7. Open Settings
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.waitUntilVisibilityOfElement(settingButton);
+        common.pause(5);
+        settingButton.click();
+
+        // 8. Add Claim
+        common.waitUntilVisibilityOfElement(addClaimButton);
+        addClaimButton.click();
+
+        // 9. Get Current Date
+        String currentDate = LocalDate.now()
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+
+        // Treatment Date
+        common.waitUntilVisibilityOfElement(treatmentDate);
+        treatmentDate.clear();
+        treatmentDate.sendKeys(currentDate);
+
+        // Date Claim First Advised
+        common.waitUntilVisibilityOfElement(dateClaimFirstAdvised);
+        dateClaimFirstAdvised.clear();
+        dateClaimFirstAdvised.sendKeys(currentDate);
+
+        // Manifestation Date
+        common.waitUntilVisibilityOfElement(manifestationDate);
+        manifestationDate.clear();
+        manifestationDate.sendKeys(currentDate);
+
+        System.out.println("Treatment Date: " + currentDate);
+        System.out.println("Date Claim First Advised: " + currentDate);
+        System.out.println("Manifestation Date: " + currentDate);
+
+        // 10. Sub-Policy Number
+        waitForClickability(subPolicyNumberCheckBox);
+        subPolicyNumberCheckBox.click();
+        common.pause(2);
+        subPolicyNumberCheckBox.click();
+
+        waitForClickability(subPolicyNumberCheckBoxOption);
+        subPolicyNumberCheckBoxOption.click();
+        common.pause(2);
+        System.out.println("Sub-Policy Number Selected: "
+                + subPolicyNumberCheckBoxOption.getText().trim());
+
+        // 11. Cover - Veterinary Fees
+        waitForClickability(coverCoverMyPetCat);
+        coverCoverMyPetCat.click();
+        coverCoverMyPetCat.click();
+
+        waitForClickability(coverVeterinaryFees);
+        coverVeterinaryFees.click();
+
+        System.out.println("Cover Selected: "
+                + coverVeterinaryFees.getText().trim());
+
+        // 12. Sub Cover
+        waitForClickability(subCoverCoverMyPetCat);
+        subCoverCoverMyPetCat.click();
+
+        waitForClickability(subCoverDiagnosticCap);
+        subCoverDiagnosticCap.click();
+
+        System.out.println("Sub Cover Selected: "
+                + subCoverDiagnosticCap.getText().trim());
+
+        // 13. Notified Method - Email
+        waitForClickability(notifiedMethodCoverMyPetCat);
+        notifiedMethodCoverMyPetCat.click();
+
+        waitForClickability(notifiedMethodEmail);
+        notifiedMethodEmail.click();
+
+        System.out.println("Notified Method: "
+                + notifiedMethodEmail.getText().trim());
+
+        // 14. Payment To - Other
+        waitForClickability(paymentToCoverMyPetCat);
+        paymentToCoverMyPetCat.click();
+
+        waitForClickability(paymentToOther);
+        paymentToOther.click();
+
+        System.out.println("Payment To: "
+                + paymentToOther.getText().trim());
+
+        // 15. Account Name
+        waitForVisibility(accountNameCoverMyPetCat);
+        accountNameCoverMyPetCat.sendKeys("Test");
+
+        System.out.println("Account Name: "
+                + accountNameCoverMyPetCat.getAttribute("value"));
+
+        // 16. Account Number
+        waitForVisibility(accountNumberCoverMyPetCat);
+        accountNumberCoverMyPetCat.sendKeys("12345678");
+
+        System.out.println("Account Number: "
+                + accountNumberCoverMyPetCat.getAttribute("value"));
+
+        // 17. Sort Code
+        waitForVisibility(sortCodeCoverMyPetCat);
+        sortCodeCoverMyPetCat.sendKeys("122");
+
+        System.out.println("Sort Code: "
+                + sortCodeCoverMyPetCat.getAttribute("value"));
+
+        // 18. Email Address
+        waitForVisibility(emailAddressCoverMyPetCat);
+        emailAddressCoverMyPetCat.sendKeys("test@test.com");
+
+        System.out.println("Email Address: "
+                + emailAddressCoverMyPetCat.getAttribute("value"));
+
+        // 19. Payment Detail
+        waitForVisibility(paymentDetailCoverMyPetCat);
+        paymentDetailCoverMyPetCat.sendKeys("test");
+
+        System.out.println("Payment Detail: "
+                + paymentDetailCoverMyPetCat.getAttribute("value"));
+
+        // 20. Condition Type - Injury
+        waitForClickability(conditionTypeCoverMyPetCat);
+        conditionTypeCoverMyPetCat.click();
+
+        waitForClickability(conditionTypeInjury);
+        conditionTypeInjury.click();
+
+        System.out.println("Condition Type: "
+                + conditionTypeInjury.getText().trim());
+
+        // 21. Loss Cause - 2.2
+        waitForClickability(lossCauseCoverMyPetCat);
+        lossCauseCoverMyPetCat.click();
+
+        waitForClickability(lossCauseOption);
+        lossCauseOption.click();
+
+        System.out.println("Loss Cause: "
+                + lossCauseOption.getText().trim());
+
+        // 22. Claim Total
+        waitForVisibility(claimTotalCoverMyPetCat);
+        claimTotalCoverMyPetCat.sendKeys("10");
+
+        System.out.println("Claim Total: "
+                + claimTotalCoverMyPetCat.getAttribute("value"));
+
+        System.out.println("CoverMy Pet Cat Claim Details Entered Successfully");
+    }
+
+
+
+    public void clickOnTheCogIconOnThePolicyInformationPageAndAddClaimAndEnterClaimAmountLessThanExcessAndVerifyTheClaimGetDeclinedForCoverMyPetCat(){
+
+
+        enterCoverMyPetCatClaimDetails();
+
+
+
+        // Save Claim
+        claimSave.click();
+        common.pause(2);
+        claimSave.click();
+        common.pause(2);
+
+        System.out.println("Loss Cause selected: 2.2");
+        System.out.println("Claim Total entered: 10");
+        System.out.println("Claim saved successfully.");
+
+        // Wait until Claim Number is visible
+        common.pause(2);
+        common.waitUntilVisibilityOfElement(claimNumber);
+
+        // Fetch and store Claim Number
+        common.pause(2);
+        String claimNumberValue = claimNumber.getText().trim();
+
+        // Print Claim Number
+        common.pause(2);
+        System.out.println("Claim Number Created: " + claimNumberValue);
+
+
+        common.pause(2);
+        driver.close();
+        common.switchToWindow(0);
+
     }
 }

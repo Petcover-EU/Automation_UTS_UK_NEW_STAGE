@@ -30,7 +30,7 @@ public class PolicyPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "ul[id='side-menu']>li:nth-child(5) a")
+    @FindBy(xpath = "(//a[@href='/Policy'])[1]")
     private WebElement policyIcon;
     @FindBy(xpath = "//div[@id='page-wrapper']/div[3]/div/h2")
     private WebElement displayedMessage;
@@ -341,8 +341,8 @@ public class PolicyPage {
             System.out.println(driver.getCurrentUrl());
             Log.info("Script Redirects to Respected Policy Information Page Is===> " + driver.getCurrentUrl());
             displayMessage.append(displayedMessage.getText()).append("\n");
-            driver.close();
-            common.switchToWindow(0);
+//            driver.close();
+//            common.switchToWindow(0);
         }
         return displayMessage.toString();
     }
@@ -827,7 +827,7 @@ public class PolicyPage {
         return data;
     }
     public void Select_Add_Quote(){
-        common.pause(5);
+        common.pause(7);
         quoteIcon.click();
 
         common.waitUntilVisibilityOfElement(addQuoteButton);

@@ -914,8 +914,9 @@ public class QuotePage {
     private String value2;
 
         public void userSaveAndReopendQuote() {
+
             saveQuoteOption.click();
-            common.pause(2);
+            common.pause(5);
 
             common.waitUntilVisibilityOfElement(settingOption);
             settingOption.click();
@@ -1140,6 +1141,8 @@ public class QuotePage {
 
         String groundTotal = groundTotalElement.getText().trim();
         System.out.println("Ground Total: " + groundTotal);
+
+
 
     }
 

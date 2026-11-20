@@ -1,9 +1,11 @@
-#Feature: Verify the End To End scenarios
-#
-#  Background:
-#    Given User should log in with username "sa" and password "Good2go@2019" to the admin panel
-#    When User clicks on quote icon on left tool bar
-#
+Feature: Verify the End To End scenarios
+
+  Background:
+    Given User should log in with username "sa" and password "H2T~w1£4tG#i" to the admin panel
+    When User clicks on quote icon on left tool bar
+
+
+
 #  @end-to-end
 #  Scenario: Verify the end to end scenario of the Exotic
 #    Given Add quote and Enter the client details
@@ -19,6 +21,8 @@
 #    And Click on the cog icon on the policy information page and add claim and settle the claim with EFT payment
 #    And Renew the policy and verify the policy status
 #    And Cancel the policy and verify the policy status
+
+
 ##
 #  @end-to-end
 #  Scenario: Verify the end to end scenario of the Cat
@@ -131,3 +135,46 @@
 #    And Add claim on the Horse Trailer policy and Authorise Approve and settle the claim using EFT payment method
 #    And Verify the Renew policy and renewed policy status of Horse Trailer and Drown vehicle
 #    And Verify the Cancel policy and cancelled policy status of Horse Trailer and Drown vehicle
+
+###New code
+  ## Introductory Cover(Cat)
+  @end-to-end
+  Scenario: Verify the end to end scenario of the Introductory Cover Cat
+    When Select Add Quote
+    And User select Existing Client number and all client detail Autofield
+    And Select product and field pet detail-Introductory Cover Cat
+    And User select plane and calculate option Introductory Cover Cat
+    And User save and reopend quote
+    And User field UW detail and select create policy option
+    And Click on the cog icon on the policy information page and add claim and Enter claim amount less than Excess and verify the claim get declined for Introductory Cover
+    And Click on the cog icon on the policy information page and add claim and decline the claim for Introductory Cover
+   And Click on the cog icon on the policy information page and add claim and settle the claim with EFT payment for Introductory Cover
+   And Cancel the policy and verify the policy status Introductory Cover
+
+## Introductory Cover(Dog)
+#  @end-to-end
+#  Scenario: Verify the end to end scenario of the Introductory Cover Dog
+#    When Select Add Quote
+#    And User select Existing Client number and all client detail Autofield
+#    And Select product and field pet detail-Introductory Cover Dog
+#    And User select plane and calculate option Introductory Cover Dog
+#    And User save and reopend quote
+#    And User field UW detail and select create policy option
+#    And Click on the cog icon on the policy information page and add claim and Enter claim amount less than Excess and verify the claim get declined for Introductory Cover
+#    And Click on the cog icon on the policy information page and add claim and decline the claim for Introductory Cover
+#    And Click on the cog icon on the policy information page and add claim and settle the claim with check payment for Introductory Cover
+#    And Cancel the policy and verify the policy status Introductory Cover
+
+ ##CoverMy Pet -cat
+#  @end-to-end
+#  Scenario: Verify the end to end scenario of the CoverMy Pet Cat
+#    When Select Add Quote
+#    And User select Existing Client number and all client detail Autofield CoverMy Pet Cat
+#    And Select product and field pet detail-CoverMy Pet Cat
+#    And User select plane and calculate option CoverMy Pet Cat
+#    And User save and reopend quote
+#    And User field UW detail and select create policy option CoverMy Pet Cat
+#    And Click on the cog icon on the policy information page and add claim and Enter claim amount less than Excess and verify the claim get declined for CoverMy Pet Cat
+#    And Click on the cog icon on the policy information page and add claim and decline the claim for Introductory Cover
+#    And Click on the cog icon on the policy information page and add claim and settle the claim with check payment for Introductory Cover
+#    And Cancel the policy and verify the policy status Introductory Cover
